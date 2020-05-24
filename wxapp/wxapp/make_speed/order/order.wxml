@@ -1,0 +1,96 @@
+<view class="{{order.buy_type==1?'full ':'w--f '}} columns">
+    <view class="w-f" wx:if="{{order.order_type!=6}}">
+        <view class="top" wx:if="{{order.buy_type!=1}}">
+            <view class="top-one-row">发货信息</view>
+            <view class="rows top-rows" wx:if="{{fahuo.person_name}}">
+                <view class="top-rows-left">姓名</view>
+                <view class="top-rows-right">{{fahuo.person_name}}</view>
+            </view>
+            <view class="rows top-rows" wx:if="{{fahuo.person_tel}}">
+                <view class="top-rows-left">电话号码</view>
+                <view class="top-rows-right">{{fahuo.person_tel}}</view>
+            </view>
+            <view class="rows top-rows">
+                <view class="top-rows-left">发货地址</view>
+                <view class="top-rows-right">{{fahuo.title}}</view>
+            </view>
+            <view class="rows top-rows">
+                <view class="top-rows-left">服务时间</view>
+                <view class="top-rows-right" wx:if="{{order.time==1}}">立即服务</view>
+                <view class="top-rows-right" wx:else>{{order.time.day}}-{{order.time.hour}}-{{order.time.minute}}</view>
+            </view>
+        </view>
+        <image class="line-img" src="/image/order_line.png"></image>
+        <view class="top">
+            <view class="top-one-row">收货信息</view>
+            <view class="rows top-rows">
+                <view class="top-rows-left">姓名</view>
+                <view class="top-rows-right">{{shouhuo.person_name}}</view>
+            </view>
+            <view class="rows top-rows">
+                <view class="top-rows-left">电话号码</view>
+                <view class="top-rows-right">{{shouhuo.person_tel}}</view>
+            </view>
+            <view class="rows top-rows">
+                <view class="top-rows-left">收货地址 </view>
+                <view class="top-rows-right">{{shouhuo.title}}</view>
+            </view>
+            <view class="rows top-rows" wx:if="{{order.buy_type==1||order.order_type==2}}">
+                <view class="top-rows-left">服务时间</view>
+                <view class="top-rows-right" wx:if="{{order.time==1}}">立即服务</view>
+                <view class="top-rows-right" wx:else>{{order.time.day}}-{{order.time.hour}}-{{order.time.minute}}</view>
+            </view>
+        </view>
+        <view class="view-box"></view>
+    </view>
+    <view class="w-f" wx:if="{{order.order_type==6}}">
+        <view class="top">
+            <view class="top-one-row">下单人信息</view>
+            <view class="rows top-rows" wx:if="{{fahuo.person_name}}">
+                <view class="top-rows-left">姓名</view>
+                <view class="top-rows-right">{{fahuo.person_name}}</view>
+            </view>
+            <view class="rows top-rows" wx:if="{{fahuo.person_tel}}">
+                <view class="top-rows-left">电话号码</view>
+                <view class="top-rows-right">{{fahuo.person_tel}}</view>
+            </view>
+            <view class="rows top-rows">
+                <view class="top-rows-left">下单地址</view>
+                <view class="top-rows-right">{{fahuo.title}}</view>
+            </view>
+            <view class="rows top-rows">
+                <view class="top-rows-left">服务时间</view>
+                <view class="top-rows-right" wx:if="{{order.time==1}}">立即服务</view>
+                <view class="top-rows-right" wx:else>{{order.time.day}}-{{order.time.hour}}-{{order.time.minute}}</view>
+            </view>
+        </view>
+        <image class="line-img" src="/image/order_line.png"></image>
+    </view>
+    <view class="property-box">
+        <view class="property-item-box betweens">
+            <view class="property-left">服务信息</view>
+            <view class="property-right">{{order.goods_name}} <text class="" wx:if="{{order.weight_num}}"> | {{order.weight_num}}公斤</text>
+            </view>
+        </view>
+        <view class="property-item-box betweens">
+            <view class="property-left">优惠券</view>
+            <view class="property-right" wx:if="{{order.coupons_money>0}}">已优惠{{order.coupons_money}}元</view>
+            <view class="property-right" wx:else>未使用</view>
+        </view>
+        <view class="property-item-box betweens">
+            <view class="property-left">备注信息</view>
+            <view class="property-right no-rows" wx:if="{{order.remark!=''}}">{{order.remark}}</view>
+            <view class="property-right" wx:else>无</view>
+        </view>
+        <view class="property-item-box betweens" wx:if="{{gy_discount>0}}">
+            <view class="property-left">公益订单</view>
+            <view class="property-right">完成订单后平台将捐赠成交金额{{gy_discount}}%给公益基金</view>
+        </view>
+    </view>
+    <view class="footer center" wx:if="{{order.buy_type!=1}}">
+        <m-footer-btn actual_payment="{{order.actual_payment}}" bind:confirm="confirm" loading="{{loading}}" type="1"></m-footer-btn>
+    </view>
+    <view class="footer-all center-c" wx:else>
+        <m-footer-btn actual_payment="{{order.actual_payment}}" bind:confirm="confirm" class="footer-btn" loading="{{loading}}" type="1"></m-footer-btn>
+    </view>
+</view>

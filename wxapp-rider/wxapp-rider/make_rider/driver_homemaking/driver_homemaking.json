@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "技能师傅",
+    "usingComponents": {
+        "m-upload-imgs": "/component/upload_imgs/index",
+        "m-register-top": "/component/register_process/index"
+    }
+}

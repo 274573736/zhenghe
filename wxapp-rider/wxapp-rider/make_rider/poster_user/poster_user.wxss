@@ -1,0 +1,26 @@
+.poster-box {
+    background: #ffffff;
+}
+
+.poster {
+    background: #ffffff;
+    box-shadow: 0 0 15px #888888;
+    margin: 20rpx 0 0 0;
+}
+
+.btn-box {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.save-btn {
+    width: 400rpx;
+    height: 80rpx;
+    background: blue;
+    background: linear-gradient(to right,#2f7aeb,#30a5e8);
+    color: #ffffff;
+    font-size: 32rpx;
+    font-weight: bold;
+    border-radius: 35px;
+    box-shadow: 0 0 10px #888888;
+}

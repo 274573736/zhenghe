@@ -1,0 +1,5 @@
+<view class="column top">
+    <view class="top-top">已关闭</view>
+    <view class="top-center">订单已被取消</view>
+    <view bind:tap="toOrder" class="center top-bottom">再来一单</view>
+</view>

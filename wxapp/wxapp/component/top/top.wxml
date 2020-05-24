@@ -1,0 +1,13 @@
+<view class="top betweens">
+    <form bindsubmit="toInfo" data-id="{{item.id}}" data-idx="{{index}}" reportSubmit="true">
+        <button class="button" formType="submit">
+            <image class="info-img" src="/image/info.png"></image>
+        </button>
+    </form>
+    <view catch:tap="toCity" class="rows">
+        <text class="" wx:if="{{city}}">{{city}}</text>
+        <text class="" wx:else>选择城市</text>
+        <image class="city-img" src="/image/city.png"></image>
+    </view>
+    <image catch:tap="toType" class="app-img" src="/image/app.png"></image>
+</view>

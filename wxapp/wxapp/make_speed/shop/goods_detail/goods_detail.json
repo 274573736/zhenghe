@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "商品详情",
+    "usingComponents": {
+        "m-coupon": "/component/coupon/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

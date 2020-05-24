@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "m-no-hint": "../no_hint/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

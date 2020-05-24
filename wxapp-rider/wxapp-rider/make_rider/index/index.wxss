@@ -1,0 +1,184 @@
+.top {
+}
+
+.rote-img {
+    animation: headRotate 1s linear 1;
+}
+
+@keyframes headRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(220deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.info-img {
+    width: 44rpx;
+    height: 50rpx;
+    position: relative;
+}
+
+.num-sign {
+    position: absolute;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #ff0000;
+    top: 0;
+    right: 0;
+}
+
+.info-btn:after {
+    border: 0;
+}
+
+.msg-img {
+    width: 54rpx;
+    height: 50rpx;
+}
+
+.top-top {
+    width: 100%;
+    padding: 30rpx 30rpx 0 40rpx;
+}
+
+.top-top-center {
+    width: 190rpx;
+    height: 70rpx;
+    color: #00baf5;
+    background: #fff;
+    border-radius: 35px;
+}
+
+.start-order {
+    color: #ffffff;
+    background: #096bf2;
+}
+
+.top-des {
+    color: #fff;
+    font-size: 18rpx;
+    margin-top: 30rpx;
+}
+
+.top-num-box {
+    margin-top: 30rpx;
+    color: #fff;
+    font-size: 24rpx;
+}
+
+.today-box {
+    width: 70rpx;
+    height: 30rpx;
+}
+
+.top-num-box-font {
+    font-size: 50rpx;
+}
+
+.top-day {
+    color: #fff;
+    font-size: 24rpx;
+    margin-top: 30rpx;
+}
+
+.play {
+    width: 29rpx;
+    height: 50rpx;
+    padding: 10rpx;
+    position: absolute;
+    top: 205rpx;
+    right: 60rpx;
+}
+
+.top-float-big-box {
+    width: 100%;
+    position: absolute;
+    top: 360rpx;
+}
+
+.top-float-box {
+    width: 720rpx;
+    background: #fff;
+    padding: 20rpx 40rpx;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #999;
+}
+
+.float-img {
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 10rpx;
+}
+
+.card-box {
+    width: 700rpx;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 130rpx;
+}
+
+.bottom-box {
+    flex-grow: 1;
+}
+
+.boxHeight {
+    flex-grow: 1;
+}
+
+.card-box-top {
+    padding: 0 40rpx;
+    border-bottom: 1px solid #cccccc;
+    height: 100rpx;
+}
+
+.no-order-img {
+    width: 111rpx;
+    height: 114rpx;
+    margin-bottom: 40rpx;
+}
+
+.cash-img {
+    width: 245rpx;
+    height: 175rpx;
+}
+
+.cash-font {
+    font-size: 24rpx;
+}
+
+.btn-cash {
+    font-size: 26rpx;
+    font-weight: bold;
+    width: 220rpx;
+    height: 50rpx;
+    margin-top: 20rpx;
+    border: 1px solid #2c282e;
+    border-radius: 35px;
+}
+
+.hint-box {
+    font-size: 24rpx;
+    flex-grow: 1;
+}
+
+.refresh-box {
+    margin-bottom: 40rpx;
+}
+
+.refresh-img {
+    width: 28rpx;
+    height: 30rpx;
+}
+
+.order-list {
+    width: 100%;
+    flex-grow: 1;
+    background: #eeeeee;
+}

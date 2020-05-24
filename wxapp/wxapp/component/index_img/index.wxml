@@ -1,0 +1,6 @@
+<cover-view class="box center">
+    <cover-view class="column">
+        <cover-image bind:tap="getRed" class="index-img" data-id="{{new_person.coupon_id}}" src="{{new_person.coupon_bg}}"></cover-image>
+        <cover-image bind:tap="closeIndex" class="clear-img" src="/image/index_close.png"></cover-image>
+    </cover-view>
+</cover-view>

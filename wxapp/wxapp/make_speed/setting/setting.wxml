@@ -1,0 +1,14 @@
+<view class="w-f box">
+    <view bind:tap="question" class="betweens item item-up">
+        <view class="item-left">常见问题</view>
+        <image class="icon_r" src="{{img_url}}city_r.png"></image>
+    </view>
+    <view bind:tap="userProtocol" class="betweens item item-bor">
+        <view class="item-left">用户协议</view>
+        <image class="icon_r" src="{{img_url}}city_r.png"></image>
+    </view>
+    <view bind:tap="rechargeProtocol" class="betweens item">
+        <view class="item-left">充值协议</view>
+        <image class="icon_r" src="{{img_url}}city_r.png"></image>
+    </view>
+</view>

@@ -1,0 +1,33 @@
+.full {
+    background: #ffffff;
+    padding: 0 40rpx;
+}
+
+.item {
+    font-weight: bold;
+    padding: 20rpx 0;
+}
+
+.shu {
+    width: 5rpx;
+    height: 30rpx;
+    background: #212330;
+    margin-right: 20rpx;
+}
+
+.img {
+    width: 670rpx;
+    height: 400rpx;
+    background: #f6f6f6;
+}
+
+.footer {
+    width: 750rpx;
+    height: 100rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #ffffff;
+    background: #087bf0;
+    position: fixed;
+    bottom: 0;
+}

@@ -1,0 +1,29 @@
+<view class="flex-c full">
+    <view class="rows top">
+        <view class="center top-left">
+            <view class="no-row top-left-city">{{city}}</view>
+        </view>
+        <input bindinput="searchAddress" class="input-search" confirmType="done" focus="true" placeholder="请输入地址" type="text" value="{{search_value}}"></input>
+        <image bind:tap="clear" class="clear-img" src="{{img_url}}clear.png"></image>
+    </view>
+    <view class="gray-view"></view>
+    <view class="container" wx:if="{{verify.isArray(address_list)==false}}">
+        <m-hint hidden="{{no_data}}" img_url="{{img_url}}">
+            <text class="no-hint-font" slot="after">暂无搜索记录！</text>
+        </m-hint>
+    </view>
+    <view class="w-f column center-box" wx:else>
+        <view class="box-item box-search">
+            <view bind:tap="confirm" class="rows w-f center-item" data-sid="{{index}}" hoverClass="hover-view" wx:for="{{address_list}}" wx:key="id">
+                <view class="center center-left">
+                    <image class="center-left-img" src="{{img_url}}address_map.png"></image>
+                </view>
+                <view class="center-right">
+                    <view class="center-right-top">{{item.title}}</view>
+                    <view class="center-right-bottom">{{item.address}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

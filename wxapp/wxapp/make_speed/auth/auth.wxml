@@ -1,0 +1,7 @@
+<view class="full column">
+    <image class="logo-img" src="{{logo}}"></image>
+    <button bindgetuserinfo="userMessage" class="auth-bnt center" openType="getUserInfo">
+        <image class="bnt-img" src="/image/wechat.png"></image>
+        微信快捷一键登录
+    </button>
+</view>

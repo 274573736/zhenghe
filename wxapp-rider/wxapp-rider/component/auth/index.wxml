@@ -1,0 +1,11 @@
+<view class="center jump-bg">
+    <view class="login-box column">
+        <view class="login-title-font">您还未登录</view>
+        <view class="login-des-font">请先登录再进行操作</view>
+        <image class="logo-img" src="{{logo}}"></image>
+        <view class="betweens w-f">
+            <view catch:tap="noLogin" class="login-no-btn">暂不登录</view>
+            <button bindgetuserinfo="userMessage" class="login-yes-btn" hoverClass="none" openType="getUserInfo">立即登录</button>
+        </view>
+    </view>
+</view>

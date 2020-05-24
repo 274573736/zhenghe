@@ -1,0 +1,22 @@
+<view class="w-f center top">
+    <view bind:tap="callTel" class="center-c">
+        <image class="servic-img" src="{{img_url}}service_tel.png"></image>
+        <text class="">电话咨询</text>
+    </view>
+</view>
+<view class="w-f center top-time">
+    咨询时间：{{protocol.time}}
+</view>
+<view class="w-f rows top-title">
+    猜你想问
+</view>
+<block wx:for="{{protocol.question}}" wx:key="index">
+    <view bind:tap="lookQuestion" class="w-f betweens question-title" data-idx="{{index}}">
+        <text class="">{{item.title}}</text>
+        <image class="servic-xia" src="{{img_url}}service_xia.png"></image>
+    </view>
+    <view class="w-f rows question-content" hidden="{{index==idx?false:true}}">{{item.content}}</view>
+</block>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

@@ -1,0 +1,74 @@
+<form bindsubmit="form" class="w-f">
+    <view class="w-f">
+        <m-register-top img_url="{{img_url}}" register_status="0"></m-register-top>
+    </view>
+    <view class="msg-box">
+        <view class="rows msg-item">
+            <view class="msg-left">姓名</view>
+            <view class="msg-right">
+                <input class="w-f" confirmType="done" cursorSpacing="50" name="name" placeholder="请输入真实姓名" type="text" value="{{name}}"></input>
+            </view>
+        </view>
+        <view class="rows msg-item">
+            <view class="msg-left">性别</view>
+            <view class="msg-right rows">
+                <view bind:tap="selectSex" class="rows" data-id="1">
+                    <image class="sex-img" src="{{img_url}}{{sex==1?'sex-y':'sex-n'}}.png"></image>
+                    <view> 男</view>
+                </view>
+                <view bind:tap="selectSex" class="rows sex-right" data-id="0">
+                    <image class="sex-img" src="{{img_url}}{{sex==0?'sex-y':'sex-n'}}.png"></image>
+                    <view> 女</view>
+                </view>
+            </view>
+        </view>
+        <view class="row business-box">
+            <view class="msg-left business-title">申请业务</view>
+            <view class="msg-right rows">
+                <view bind:tap="selectBusiness" class="rows business-item" data-idx="{{index}}" data-type="{{item.cname}}" wx:if="{{item.status}}" wx:for="{{business}}" wx:key="index">
+                    <image class="sex-img" src="{{img_url}}{{business_idx==index?'sex-y':'sex-n'}}.png"></image>
+                    <view>{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="rows msg-item">
+            <view class="msg-left">身份证号</view>
+            <view class="msg-right">
+                <input class="w-f" confirmType="done" cursorSpacing="50" name="idcard" placeholder="请输入身份证号码" type="idcard" value="{{idcard}}"></input>
+            </view>
+        </view>
+        <view class="rows msg-item">
+            <view class="msg-left">户籍所在地</view>
+            <view class="msg-right">
+                <input class="w-f" confirmType="done" cursorSpacing="50" name="address_detail" placeholder="请输入身份证上的户口所在地" type="text" value="{{address_detail}}"></input>
+            </view>
+        </view>
+    </view>
+    <view class="row idcard-box">
+        <view class="w-f betweens">
+            <view class="idcard-img-box center-c">
+                <image bind:tap="photoFrom" class="idcard-img" data-id="0" src="{{photos[0]?photos[0]:img_url+'idcard-1.png'}}"></image>
+                <view class="font-des">请上传身份证正面</view>
+            </view>
+            <view bind:tap="photoFrom" class="idcard-img-box center-c" data-id="1" style="text-align: center;">
+                <image class="idcard-img" src="{{photos[1]?photos[1]:img_url+'idcard-2.png'}}"></image>
+                <view class="font-des">请上传身份证反面</view>
+            </view>
+        </view>
+        <view class="w-f betweens">
+            <view bind:tap="photoFrom" class="idcard-img-box center-c" data-id="2">
+                <image class="idcard-img" src="{{photos[2]?photos[2]:img_url+'idcard-3.png'}}"></image>
+                <view class="font-des">请上传手持身份证照片</view>
+            </view>
+            <view bind:tap="photoFrom" class="idcard-img-box center-c" data-id="3" style="text-align: center;">
+                <image class="idcard-img" src="{{photos[3]?photos[3]:img_url+'idcard-4.png'}}"></image>
+                <view class="font-des">请上传个人自拍照</view>
+            </view>
+        </view>
+    </view>
+    <view class="center bottom">
+        <button class="center btn-confirm" formType="submit" hoverClass="btn-hover">
+            下一步
+        </button>
+    </view>
+</form>

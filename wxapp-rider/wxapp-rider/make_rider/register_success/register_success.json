@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "m-register-top": "../../component/register_process/index"
+    },
+    "navigationBarTitleText": "注册成功"
+}

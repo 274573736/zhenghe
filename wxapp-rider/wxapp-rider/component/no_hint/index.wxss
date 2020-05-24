@@ -1,0 +1,10 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-message-img {
+    width: 212rpx;
+    height: 200rpx;
+}

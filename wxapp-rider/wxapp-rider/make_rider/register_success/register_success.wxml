@@ -1,0 +1,11 @@
+<view class="w-f column">
+    <view class="w-f">
+        <m-register-top img_url="{{img_url}}" register_status="0"></m-register-top>
+    </view>
+    <image class="register-img" src="{{img_url}}register-icon.png"></image>
+    <view class="font1">恭喜您，注册成功！</view>
+    <view class="font2">骑手进行实名认证后方可培训接单~</view>
+    <view bind:tap="realName" class="center btn1" hoverClass="btn-hover">骑手认证</view>
+    <view bind:tap="realName" class="center btn1" hoverClass="btn-hover">代驾认证</view>
+    <view bind:tap="realName" class="center btn1" hoverClass="btn-hover">司机认证</view>
+</view>

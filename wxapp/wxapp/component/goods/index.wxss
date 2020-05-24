@@ -1,0 +1,59 @@
+.goods_list {
+    width: 100%;
+    padding: 0 30rpx 0 10rpx;
+    flex-wrap: wrap;
+    background: #ffffff;
+}
+
+.goods_box {
+    margin-left: 20rpx;
+}
+
+.goods_img {
+    background: #ffffff;
+    width: 216rpx;
+    height: 170rpx;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJwAAABiCAYAAAClILokAAADYUlEQVR4nO3aQWgcZRjG8f8uSQjYLj1Ib61gET0E0VuOQcRiLR5aPRf06kFvasVj8CSK11JR8FJJDyIWSg859tpiMSII1psK1o2HDSlZDzPVuLOk2ZB9Vr/5/2BhZ+Yb5g08zMy+bzpvffg7wBPAB8DzQG/YYaxx+4cAnb3Xja6ZZHv4YGdju7PHsX18H63zAOdM/H201od8f+g6OuOOLQ5hi8ba5t+ya/sIsNk4Pu6cSfZV+sMON4C3r53p/TAHPAncBI6NX6//maeAWxOe8/g0Cqn1gHPAcy9+01/uAqsYtpK8fIBzXjr0KpqOAatdqseoyvEG1V1lv3rAm1OqZdQLXSYrTv99x4HLNN6sx+rUa49PtaJ/HOmGLqSs88AV4Ogea44CX9ZrYwxcuV4BfgTeAZaAeeAR4FngvfpYNGwAc+kLKupRqh+Fq7Mu5AHvcIoycIoycIoycIryR0Ph5rpwYWmRlRPz0IH1u9t8emfA/Z0Z1TObyyrlwtIiZ08t/L199tQCWztDPr+zNZN6fKQWbuXEfGPf6ccWxqzMMHCKMnCFW/95u7Hv+k/NfSm+wxXus28HAKycrB6t63e3+eK7wczqMXCFu78Dl24PuHR7sNd/5cb4SFWUgVOUj9TC2fhVlI1fRdn4VasZuMLZ+FWUjV9F2fhVqxk4RflILZyNX0XZ+FWUjV+1moErnI1fRdn4VZSNX7WagVOUgVOU73CFc9KgKCcNinLSoFYzcIVz0qAoJw2KctKgVjNwivKRWjgbv4qy8asoG79qNQNXOBu/irLxqygbv2o1A6coA6coA6cofzQUztGWohxtKcrRllrNwBXO0ZaiHG0pytGWWs3AKcrAKcp3uMI5aVCUkwZFOWlQqxm4wjlpUJSTBkU5aVCrGThF+UgtnI1fRdn4VZSNX7WagSucjV9F2fhVlI1ftZqBU5SBU5SBU5SBU5SBK99vwLvA08Bi/XkGeL8+FmVbpGxrwOvAHyP7b9Wfj4HLwPlUQd7hyrUGvEozbLv16zVrkYqoAtdPXUwxvwKvsb8+77Be+8tUK6r82QVuBC6krE+Y7EbSBz6aUi27Xe8CF4F7gYsp56sDnPP1oVfxb/eAi11gA1gGrgKbU76oMjYOcM73h15FZZMqW8vXzvQ2/gK3qYu6i63LGwAAAABJRU5ErkJggg==") no-repeat center;
+    background-size: 160rpx 100rpx;
+    box-shadow: 0 0 5px #f7f7f7;
+    color: #ffffff;
+    padding-right: 36rpx;
+}
+
+.face_price_box {
+    margin-top: 40rpx;
+}
+
+.face_price {
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.face_font {
+    font-size: 24rpx;
+}
+
+.goods_des {
+    width: 216rpx;
+    height: 150rpx;
+    font-size: 28rpx;
+}
+
+.goods_des_price {
+    margin: 20rpx 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goods_des_num {
+    color: #5870e6;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}

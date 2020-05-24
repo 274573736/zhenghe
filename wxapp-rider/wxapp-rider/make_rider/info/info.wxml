@@ -1,0 +1,119 @@
+<view class="w-f" wx:if="{{!is_login}}">
+    <m-auth bind:authBtn="authBtn" is_login="{{is_login}}"></m-auth>
+</view>
+<view class="w-f flex-c">
+    <view class="column top" style="background: url('{{img_url}}info_bj.jpg') no-repeat center;width: 100%;height: 340rpx;-webkit-background-size: 100% 340rpx;background-size: 100% 340rpx;">
+        <view bind:tap="myMsg" class="head-box column" wx:if="{{auth}}">
+            <view class="head-img">
+                <open-data class="head-img-img" type="userAvatarUrl"></open-data>
+            </view>
+            <view class="head-msg">{{real_name}} {{verify.phoneVerify(mobile)}}</view>
+        </view>
+        <button catch:tap="goLogin" class="click-box column" hoverClass="none" wx:else>
+            <view class="head-img">
+                <open-data class="head-img-img" type="userAvatarUrl"></open-data>
+            </view>
+            <view class="head-msg">点击授权登录</view>
+        </button>
+    </view>
+    <viwe class="betweens top-row">
+        <viwe bind:tap="servicePart" class="rows" style="margin-left: 90rpx;">
+            <image class="v-img" src="{{img_url}}v.png"></image>
+            <view class="">服务分：{{score}}</view>
+        </viwe>
+        <form>
+            <viwe class="rows" style="margin-right: 90rpx;">
+                <image class="dou-img" src="{{img_url}}dou.png"></image>
+                <button catch:tap="notifyBtn" class="count-btn">通知次数：{{notify_count}}</button>
+            </viwe>
+        </form>
+    </viwe>
+    <view class="rows top-center">
+        <view bind:tap="myOrder" class="rows top-center-box top-center-left">
+            <image class="info-img" src="{{img_url}}info-order.png"></image>
+            <view class="">
+                <view class="">我的订单</view>
+                <view class="">{{orderCount}}单</view>
+            </view>
+        </view>
+        <view bind:tap="myMoney" class="rows top-center-box top-center-right">
+            <image class="info-img" src="{{img_url}}info-money.png"></image>
+            <view class="">
+                <view class="">我的钱包</view>
+                <view class="">{{valid_money}}元</view>
+            </view>
+        </view>
+    </view>
+    <view class="row top-bottom">
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="shopping" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-1.png"></image>
+                <view class="">装备商城</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="handbook" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-2.png"></image>
+                <view class="">送货员手册</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="service" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-3.png"></image>
+                <view class="">联系客服</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="share" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-4.png"></image>
+                <view class="">推荐奖励</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="awardPunishment" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-5.png"></image>
+                <view class="">奖惩记录</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="complain" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-6.png"></image>
+                <view class="">处罚申诉</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active" wx:if="{{dj_switch}}">
+            <view bind:tap="tapCity" class="column top-bottom-item">
+                <image class="bottom-img" src="/image/driver_info.png"></image>
+                <view class="">代驾认证</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active" wx:if="{{hy_switch}}">
+            <view bind:tap="tapFreight" class="column top-bottom-item">
+                <image class="bottom-img" src="/image/hy.png"></image>
+                <view class="">货运认证</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active" wx:if="{{jz_switch}}">
+            <view bind:tap="tapHomemaking" class="column top-bottom-item">
+                <image class="bottom-img" src="/image/jz.png"></image>
+                <view class="">技能认证</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="myTrain" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-8.png"></image>
+                <view class="">培训地点</view>
+            </view>
+        </view>
+        <view class="center top-bottom-box" hoverClass="active">
+            <view bind:tap="setting" class="column top-bottom-item">
+                <image class="bottom-img" src="{{img_url}}info-9.png"></image>
+                <view class="">设置</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

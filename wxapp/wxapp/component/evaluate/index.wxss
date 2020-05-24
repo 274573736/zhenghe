@@ -1,0 +1,124 @@
+.evaluate {
+    width: 100%;
+    font-size: 24rpx;
+    background: #ffffff;
+    padding: 60rpx 0 30rpx;
+}
+
+.evaluate-explain {
+    font-size: 18rpx;
+    color: #097bf1;
+    margin: 10rpx 0;
+}
+
+.star-img-box {
+    width: 520rpx;
+    margin: 20rpx 0;
+}
+
+.star-img {
+    width: 58rpx;
+    height: 55rpx;
+}
+
+.evaluate-big-box {
+    width: 640rpx;
+    flex-wrap: wrap;
+}
+
+.evaluate-box {
+    width: 33.33%;
+    margin-top: 25rpx;
+}
+
+.evaluate-item {
+    width: 190rpx;
+    height: 70rpx;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+}
+
+.active-evaluate-item {
+    border: 1px solid #097bf1;
+    background: #cfedf6;
+    color: #097bf1;
+}
+
+.evaluate-btn {
+    font-size: 30rpx;
+    width: 640rpx;
+    height: 100rpx;
+    color: #ffffff;
+    background: #097bf1;
+    margin-top: 20rpx;
+    border-radius: 3px;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.success-box {
+    width: 100%;
+    font-size: 24rpx;
+    padding: 40rpx 0 35rpx 25rpx;
+    background: #ffffff;
+}
+
+.laba-img {
+    width: 28rpx;
+    height: 28rpx;
+    margin: 0 30rpx;
+}
+
+.r-img {
+    width: 9rpx;
+    height: 17rpx;
+    margin-left: 20rpx;
+}
+
+.success-font {
+    font-size: 30rpx;
+    font-weight: bold;
+    margin: 80rpx 0 20rpx 0;
+}
+
+.success-mes {
+    font-size: 18rpx;
+    color: #999999;
+    margin-bottom: 30rpx;
+}
+
+.success-item {
+    width: 180rpx;
+    height: 60rpx;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+}
+
+.success-share-item {
+    border: none;
+    background: #097bf1;
+    color: #ffffff;
+    margin-left: 35rpx;
+}

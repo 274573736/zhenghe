@@ -1,0 +1,13 @@
+<form class="">
+    <cover-view catchtouchmove="true" class="z-index center" hidden="{{close_order}}">
+        <cover-view class="column close-box">
+            <cover-view class="close-title">订单取消提示</cover-view>
+            <cover-view class="close-content">正在为您筛选接单员，您也可以尝试加价让接单员更快接单，如果确定取消支付费用将原路返还</cover-view>
+            <cover-view class="w-f betweens close-btn-box">
+                <button bind:tap="confirmClose" class="close-btn btn-active">确认取消</button>
+                <cover-view bind:tap="closeOrderClose" class="close-btn">暂不取消</cover-view>
+            </cover-view>
+            <cover-view bind:tap="closeOrder" class="close-explain">《取消规则说明》</cover-view>
+        </cover-view>
+    </cover-view>
+</form>

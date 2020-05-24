@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "m-car": "../../component/picker_one/index",
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "navigationBarTitleText": "订单设置"
+}

@@ -1,0 +1,110 @@
+{
+  "pages": [
+    "make_speed/router/router",
+    "make_speed/address_driver/address_driver",
+    "make_speed/info/info",
+    "make_speed/auth/auth",
+    "make_speed/order_pay/order_pay",
+    "make_speed/recharge/recharge",
+    "make_speed/setting/setting",
+    "make_speed/tool/font_discern/font_discern",
+    "make_speed/activity/activity",
+    "make_speed/skin/index/index",
+    "make_speed/replace_driver/replace_driver",
+    "make_speed/new_person/new_person",
+    "make_speed/index/index",
+    "make_speed/help_buy/help_buy",
+    "make_speed/all_powerful/all_powerful",
+    "make_speed/my_money/my_money",
+    "make_speed/address_resort/address_resort",
+    "make_speed/order_list/order_list",
+    "make_speed/order/order",
+    "make_speed/question/question",
+    "make_speed/price_des/price_des",
+    "make_speed/address/address",
+    "make_speed/city/city",
+    "make_speed/business_type/business_type",
+    "make_speed/address_map/address_map",
+    "make_speed/coupons/coupons",
+    "make_speed/protocol/protocol",
+    "make_speed/show_detail/show_detail",
+    "make_speed/skin/speed/speed",
+    "make_speed/skin/all_powerful/all_powerful",
+    "make_speed/skin/help_buy/help_buy",
+    "make_speed/skin/replace_driver/replace_driver",
+    "make_speed/skin/help_buy_index/help_buy_index",
+    "make_speed/skin/all_powerful_index/all_powerful_index",
+    "make_speed/skin/index_two/index_two",
+    "make_speed/tool/img_discern/img_discern",
+    "make_speed/big_customer/staff_edit/staff_edit",
+    "make_speed/big_customer/info/info",
+    "make_speed/big_customer/staff_add/staff_add",
+    "make_speed/big_customer/a_key_order/a_key_order",
+    "make_speed/big_customer/join/join",
+    "make_speed/big_customer/register/register",
+    "make_speed/big_customer/staff/staff",
+    "make_speed/invoice/apply_invoice/apply_invoice",
+    "make_speed/invoice/invoice_list/invoice_list",
+    "make_speed/invoice/invoice_msg/invoice_msg",
+    "make_speed/shop/store/store",
+    "make_speed/shop/goods_detail/goods_detail",
+    "make_speed/freight/freight",
+    "component/homemaking/homemaking",
+    "make_speed/homemaking/homemaking"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "以为您提供最近的服务信息"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "subPackages": [
+    {
+      "root": "sundries",
+      "name": "sundries",
+      "pages": [
+        "make_freight/address_driver/address_driver",
+        "make_freight/search_address/search_address",
+        "make_freight/order/order",
+        "make_freight/selectCity/selectCity",
+        "make_freight/car_detail/car_detail",
+        "distributor/join/join",
+        "distributor/info/info",
+        "distributor/order/order",
+        "distributor/line/line",
+        "distributor/price_detail/price_detail",
+        "distributor/whithdraw/whithdraw",
+        "homemaking/server_type/server_type",
+        "homemaking/order/order"
+      ]
+    }
+  ],
+  "navigateToMiniProgramAppIdList": [
+    {
+      "Appid": "wx64544efff50ccb94"
+    }
+  ],
+  "packages": [
+    {
+      "ork": "all"
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于定位您当前所在的城市"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx36ac0b22e0b6273d"
+  ],
+  "usingComponents": {
+    "m-collect-tip": "/component/collect_tip/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {}
+}

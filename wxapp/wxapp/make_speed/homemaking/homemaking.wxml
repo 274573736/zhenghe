@@ -1,0 +1,33 @@
+<view class="full">
+    <m-collect-tip is_tip_collect="{{is_tip_collect}}" wx:if="{{is_tip_collect}}"></m-collect-tip>
+    <view class="w-f">
+        <m-top></m-top>
+    </view>
+    <view class="homemaking-box row">
+        <scroll-view class="list" scrollY="true">
+            <view bind:tap="serverType" class="item-type center {{index==server_select?'server-select':''}}" data-idx="{{index}}" hoverClass="view-hover" wx:for="{{server_list}}" wx:key="id">
+                <view class="item-select" wx:if="{{index==server_select}}"></view>
+                <view>{{item.title}}</view>
+            </view>
+        </scroll-view>
+        <view class="flex-c">
+            <view class="top-title">{{server_list[server_select].title}}</view>
+            <scroll-view class="child-scroll" scrollY="true">
+                <view class="child-box">
+                    <view catch:tap="goodsBtn" class="column w-f" data-id="{{item.id}}" data-offer="{{item.offer}}" data-title="{{item.title}}" hoverClass="view-hover" wx:for="{{server_list[server_select].child}}" wx:key="id">
+                        <view class="child-item rows">
+                            <image class="child-img" src="{{item.icon}}"></image>
+                            <view class="">
+                                <view class="child-title">{{item.title}}</view>
+                                <view class="child-des">{{item.desc}}</view>
+                            </view>
+                        </view>
+                        <view class="child-line-box" wx:if="{{index<server_list[server_select].child.length-1}}">
+                            <view class="child-line"></view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

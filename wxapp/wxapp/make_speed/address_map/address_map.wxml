@@ -1,0 +1,22 @@
+<view class="full column">
+    <view class="center top">
+        <view bind:tap="searAddress" class="rows top-row">
+            <image class="address-searhc-img" src="/image/address_search.png"></image>
+            <input class="input" disabled="true" placeholder="请输入街道、小区、建筑名称" placeholderClass="input-placeholder" type="text"></input>
+        </view>
+    </view>
+    <map bindregionchange="bindMap" class="map" id="map" latitude="{{location_lat}}" longitude="{{location_lng}}" markers="{{markers}}" scale="{{scale}}">
+        <cover-view class="cover-view-big" wx:if="{{title}}">
+            <cover-view class="cover-view">{{title}}</cover-view>
+        </cover-view>
+        <cover-image class="map_label" src="/image/map_sign.png" wx:if="{{id==0}}"></cover-image>
+        <cover-image class="map_label" src="/image/map_sign.png" wx:if="{{id==1}}"></cover-image>
+        <cover-image catch:tap="location" class="location-img" src="/image/location.png"></cover-image>
+    </map>
+    <scroll-view class="srcoll-view" scrollY="true">
+        <view bindtap="selectAddress" class="scroll-view-tiem" data-id="{{index}}" wx:for="{{address_list}}" wx:key="address_list">
+            <view class="font-title">{{item.title}}</view>
+            <view class="font-address">{{item.address}}</view>
+        </view>
+    </scroll-view>
+</view>

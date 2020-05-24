@@ -1,0 +1,50 @@
+.top {
+    width: 100%;
+    height: 100rpx;
+    background: #ffffff;
+}
+
+.top-item {
+    padding: 0 30rpx;
+    height: 100%;
+}
+
+.top-active {
+    border-bottom: 2px solid #00baf5;
+    color: #00baf5;
+}
+
+.top-search {
+    width: 100%;
+    height: 100rpx;
+    font-size: 24rpx;
+    padding: 0 20rpx;
+}
+
+.date-img {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.no-order-box {
+    flex-grow: 1;
+    width: 100%;
+    background: #ffffff;
+    padding-top: 200rpx;
+}
+
+.no-img {
+    width: 212rpx;
+    height: 200rpx;
+}
+
+.no-font {
+    margin-top: 50rpx;
+    color: #999999;
+    font-size: 24rpx;
+}
+
+.order-box {
+    padding: 20rpx;
+    width: 100%;
+}

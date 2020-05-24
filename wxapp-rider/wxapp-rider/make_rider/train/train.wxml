@@ -1,0 +1,53 @@
+<view class="w-f full allBj">
+    <view class="w-f" wx:if="{{!change_city}}">
+        <m-register-top img_url="{{img_url}}" register_status="2"></m-register-top>
+    </view>
+    <view class="w-f address-box">
+        <view bind:tap="getCity" class="betweens address-item">
+            <view class="address-item-left">选择城市</view>
+            <view class="rows address-item-right">
+                <view class="right-font" wx:if="{{city}}">{{city}}</view>
+                <view class="right-font" wx:else>选择</view>
+                <image class="right-img" src="{{img_url}}b-right.png"></image>
+            </view>
+        </view>
+        <view bind:tap="getTrain" class="betweens address-item">
+            <view class="address-item-left">选择培训站点</view>
+            <view class="rows address-item-right">
+                <view class="right-font train-name" wx:if="{{train_name}}">{{train_name}}</view>
+                <view class="right-font" wx:else>选择</view>
+                <image class="right-img" src="{{img_url}}b-right.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="rows date-box">
+        <view class="address-item-left">预约时间</view>
+    </view>
+    <view class="rows date-item-box">
+        <view class="center date-item black" wx:for="{{week}}" wx:key="index">{{item}}</view>
+    </view>
+    <view class="rows date-item-box date-bottom">
+        <view bind:tap="selectDate" class="center date-item {{item.status==0?'no-date-item':''}}" data-date="{{item.date}}" data-idx="{{index}}" data-status="{{item.status}}" wx:for="{{days.date}}" wx:key="index">
+            <view class="{{select_idx==index?'date-active':''}}">{{item.time}}</view>
+            <image class="select-img" src="{{img_url}}t-y.png" wx:if="{{select_idx==index}}"></image>
+        </view>
+    </view>
+    <view class="w-f space-box"></view>
+    <view class="w-f time-box">
+        <view class="betweens time-item">
+            <view class="">上午场：{{days.morn}}</view>
+            <view bind:tap="selectTime" class="rows" data-idx="0" data-time="{{days.morn}}">
+                <image class="s-img" src="{{img_url}}{{time_idx==0?'t-y':'t-n'}}.png"></image>
+            </view>
+        </view>
+        <view class="betweens time-item">
+            <view class="">下午场：{{days.after}}</view>
+            <view bind:tap="selectTime" class="" data-idx="1" data-time="{{days.after}}">
+                <image class="s-img" src="{{img_url}}{{time_idx==1?'t-y':'t-n'}}.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="center btn-box">
+        <view bind:tap="confirm" class="center btn" hoverClass="btn-hover">提交</view>
+    </view>
+</view>

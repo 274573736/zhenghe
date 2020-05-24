@@ -1,0 +1,67 @@
+<view class="box column" wx:if="{{driver==1}}">
+    <view class="address-box">
+        <view catch:tap="toDriverAddress" class="address-row betweens" data-id="0" wx:if="{{help!=1||help==1&&buy_type==0}}">
+            <view class="rows">
+                <image class="address-img" src="/image/address_start.png"></image>
+                <view class="" wx:if="{{fahuo.person_tel}}">
+                    <view class="">{{fahuo.title}} </view>
+                    <view class="address-detail">{{fahuo.address}} <text class="" wx:if="{{fahuo.person_address}}">({{fahuo.person_address}})</text>
+                    </view>
+                </view>
+                <view class="" wx:else>从哪儿？</view>
+            </view>
+        </view>
+        <view class="address-line" wx:if="{{help!=1||help==1&&buy_type==0}}"></view>
+        <view catch:tap="toDriverAddress" class="address-row betweens" data-id="1">
+            <view class="rows">
+                <image class="address-img" src="/image/address_end.png"></image>
+                <view class="" wx:if="{{shouhuo.title}}">
+                    <view class="">{{shouhuo.title}}</view>
+                    <view class="address-detail">{{shouhuo.address}}<text class="" wx:if="{{shouhuo.person_address}}">({{shouhuo.person_address}})</text>
+                    </view>
+                </view>
+                <view class="" wx:else>到哪儿？</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="box column" wx:else>
+    <view class="address-box">
+        <view class="center-r help-box" wx:if="{{help==1}}">
+            <view catch:tap="sBuyType" class="s-btn center {{buy_type==0?'address-active':''}}" data-idx="0">
+                <image class="address-y-img" hidden="{{buy_type==0?false:true}}" src="/image/address_y.png"></image>
+                <text class="">按地址购买</text>
+            </view>
+            <view catch:tap="sBuyType" class="s-btn center margin-left {{buy_type==1?'address-active':''}}" data-idx="1">
+                <image class="address-y-img" hidden="{{buy_type==1?false:true}}" src="/image/address_y.png"></image>
+                <text class="">就近购买</text>
+            </view>
+        </view>
+        <view catch:tap="toAddress" class="address-row betweens" data-id="0" wx:if="{{help!=1||help==1&&buy_type==0}}">
+            <view class="rows">
+                <image class="address-img" src="/image/fa.png"></image>
+                <view class="" wx:if="{{fahuo.title}}">
+                    <view class="">{{fahuo.title}} </view>
+                    <view class="address-detail">{{fahuo.address}} <text class="" wx:if="{{fahuo.person_address}}">({{fahuo.person_address}})</text>
+                    </view>
+                </view>
+                <view class="" wx:else>从哪儿？</view>
+            </view>
+        </view>
+        <view class="address-line" wx:if="{{help!=1||help==1&&buy_type==0}}"></view>
+        <view catch:tap="toAddress" class="address-row betweens" data-id="1">
+            <view class="rows">
+                <image class="address-img" src="/image/shou.png"></image>
+                <view class="" wx:if="{{shouhuo.title}}">
+                    <view class="rows">
+                        <view class="">{{shouhuo.title}}</view>
+                        <view class="red-font" wx:if="{{!shouhuo.person_tel}}">电话号码未填~</view>
+                    </view>
+                    <view class="address-detail">{{shouhuo.address}}<text class="" wx:if="{{shouhuo.person_address}}">({{shouhuo.person_address}})</text>
+                    </view>
+                </view>
+                <view class="" wx:else>到哪儿？</view>
+            </view>
+        </view>
+    </view>
+</view>

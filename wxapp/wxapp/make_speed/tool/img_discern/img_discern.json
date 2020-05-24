@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "名片识别",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

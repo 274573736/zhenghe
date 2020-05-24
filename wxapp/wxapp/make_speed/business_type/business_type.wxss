@@ -1,0 +1,36 @@
+.item-box {
+    width: 100%;
+    padding: 0 40rpx;
+}
+
+.item {
+    width: 670rpx;
+    height: 150rpx;
+    margin-top: 30rpx;
+    padding: 0;
+}
+
+.item:after {
+    border: 0;
+}
+
+.item-left {
+    width: 150rpx;
+    height: 150rpx;
+    background: #097bf1;
+    border-radius: 3px;
+}
+
+.item-img {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.item-right {
+    width: 520rpx;
+    height: 150rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    padding-left: 50rpx;
+    background: #ffffff;
+}

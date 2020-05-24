@@ -1,0 +1,69 @@
+.bottom-date {
+    width: 100%;
+    background: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    transition: all 0.3s;
+    transform: translateY(100%);
+}
+
+.bottom-date.active {
+    transform: translateY(0%);
+}
+
+.flex-c {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #000;
+    background: rgba(0,0,0,0.3);
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.flex-c.active {
+    opacity: 1;
+}
+
+.anjian-quxiao {
+    padding: 20rpx;
+}
+
+.betweens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.anjian {
+    font-size: 32rpx;
+    width: 100%;
+    height: 100rpx;
+    padding: 0 20rpx;
+    background: #dadada;
+}
+
+.anjian-queding {
+    color: #097bf1;
+}
+
+.z-index {
+    background-color: #000;
+    background: rgba(0,0,0,0.3);
+    flex: 1;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

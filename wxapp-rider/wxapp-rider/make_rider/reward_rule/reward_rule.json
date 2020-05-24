@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "navigationBarTitleText": "奖励规则"
+}

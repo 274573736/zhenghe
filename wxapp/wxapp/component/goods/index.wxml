@@ -1,0 +1,15 @@
+<view class="row goods_list">
+    <view bind:tap="goodDetail" class="goods_box" data-id="{{item.id}}" wx:for="{{list}}" wx:key="*this">
+        <view class="column goods_img">
+            <view class="face_price_box">
+                <text class="">￥</text>
+                <text class="face_price">{{item.money}}</text>
+            </view>
+            <view class="face_font">优惠券</view>
+        </view>
+        <view class="column goods_des">
+            <view class="goods_des_price">{{item.money}} 元优惠券</view>
+            <view class="goods_des_num">{{item.gral}} 积分</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="flex-c {{showAnimation?'active':''}}" hidden="{{hidden}}">
+    <view class="bottom-date {{showAnimation?' active':''}}">
+        <view class="anjian betweens">
+            <view bindtap="closeBtn" class="anjian-quxiao">取消</view>
+            <view bindtap="closeBtn" class="anjian-quxiao">楼层</view>
+            <view bindtap="confirmBtn" class="anjian-quxiao">确定</view>
+        </view>
+        <picker-view bindchange="pickerTime" indicatorStyle="height: 50px;" style="width: 100%;height: 200px;" value="{{floor}}">
+            <picker-view-column>
+                <view class="center" style="line-height: 50px">有电梯楼层</view>
+                <view class="center" style="line-height: 50px" wx:for="{{10}}" wx:key="index">无电梯{{item+1}}楼</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

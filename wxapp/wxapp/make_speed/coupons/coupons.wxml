@@ -1,0 +1,5 @@
+<m-tab bind:Getidx="Getidx" bind:scrollSole="scrollSole" top_item="{{top_item}}" top_p="{{top_p}}">
+    <view class="full column" slot="after{{idx}}">
+        <m-coupon-list bind:getCodeCoupon="getCodeCoupon" distance="{{distance}}" list="{{list}}" money="{{money}}" order_type="{{order_type}}"></m-coupon-list>
+    </view>
+</m-tab>

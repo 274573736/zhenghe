@@ -1,0 +1,39 @@
+.full {
+    background: #f3f3f3;
+    padding-top: 20rpx;
+}
+
+.box {
+    width: 100%;
+    background: #ffffff;
+}
+
+.box:nth-of-type(n+1) {
+    margin-bottom: 20rpx;
+}
+
+.top {
+    border-bottom: 1px solid #f3f3f3;
+    padding: 30rpx 40rpx;
+}
+
+.bottom {
+    padding: 30rpx 40rpx;
+}
+
+.time {
+    color: #808088;
+}
+
+.left {
+    color: #808088;
+    margin-right: 20rpx;
+}
+
+.bottom-b {
+    margin-top: 30rpx;
+}
+
+.status {
+    color: #097bf1;
+}

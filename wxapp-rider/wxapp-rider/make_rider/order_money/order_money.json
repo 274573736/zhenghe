@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "我要收款",
+    "usingComponents": {
+        "m-upload-imgs": "/component/upload_imgs/index"
+    }
+}

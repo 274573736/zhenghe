@@ -1,0 +1,37 @@
+<view class="flex-c {{showAnimation?'active':''}}" hidden="{{hidden}}">
+    <view class="bottom-date {{showAnimation?' active':''}}">
+        <view class="anjian betweens">
+            <view bindtap="closeBtn" class="anjian-quxiao">取消</view>
+            <view class="anjian-quxiao">支付方式</view>
+            <view bindtap="confirmBtn" class="anjian-quxiao">确定</view>
+        </view>
+        <view class="">
+            <view bind:tap="sPay" class="betweens item-row" data-id="1">
+                <view class="rows">
+                    <image class="balance-img" src="/image/balance.png"></image>
+                    <text class="">余额支付 <text class="balance-font">{{my_money}}元</text>
+                        <text class="balance-no-font" wx:if="{{my_money<money}}">(余额不足)</text>
+                    </text>
+                </view>
+                <image class="pay-img" hidden="{{pay_method!=1?false:true}}" src="/image/pay_n.png"></image>
+                <image class="pay-img" hidden="{{pay_method==1?false:true}}" src="/image/pay_s.png"></image>
+            </view>
+            <view bind:tap="sPay" class="betweens {{order_type!=4?'item-row':'item-row-cash'}}" data-id="2">
+                <view class="rows">
+                    <image class="wechat-img" src="/image/wechat_pay.png"></image>
+                    <text class="">微信支付</text>
+                </view>
+                <image class="pay-img" hidden="{{pay_method==2?false:true}}" src="/image/pay_s.png"></image>
+                <image class="pay-img" hidden="{{pay_method!=2?false:true}}" src="/image/pay_n.png"></image>
+            </view>
+            <view bind:tap="sPay" class="betweens item-row" data-id="3" wx:if="{{order_type==4}}">
+                <view class="rows">
+                    <image class="wechat-img" src="/image/cash.png"></image>
+                    <text class="">现金支付</text>
+                </view>
+                <image class="pay-img" hidden="{{pay_method==3?false:true}}" src="/image/pay_s.png"></image>
+                <image class="pay-img" hidden="{{pay_method!=3?false:true}}" src="/image/pay_n.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

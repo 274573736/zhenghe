@@ -1,0 +1,163 @@
+page {
+    background: #ffffff;
+}
+
+.invide-img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.top-btn-box {
+    width: 500rpx;
+    height: 80rpx;
+    border-radius: 35px;
+    color: #999999;
+    background: #ffffff;
+    position: absolute;
+    top: 400rpx;
+    box-shadow: 5px 5px 10px #999999;
+}
+
+.top-btn {
+    width: 50%;
+    height: 80rpx;
+}
+
+.top-active {
+    border-radius: 35px;
+    color: #ffffff;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+}
+
+.logo-img {
+    width: 600rpx;
+    height: 460rpx;
+}
+
+.middle {
+    width: 100%;
+    margin-top: 100rpx;
+}
+
+.input-box {
+    width: 500rpx;
+    height: 100rpx;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.input {
+    flex-grow: 1;
+}
+
+.phone-img {
+    width: 45rpx;
+    height: 45rpx;
+}
+
+.font-code {
+    color: #00baf5;
+    text-decoration: underline;
+}
+
+.bor {
+    border: none;
+}
+
+.login-btn {
+    width: 500rpx;
+    height: 80rpx;
+    margin-bottom: 50rpx;
+    color: #ffffff;
+    border-radius: 35px;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+}
+
+.login-btn:after {
+    border: 0;
+}
+
+.remark-font {
+    margin-top: 80rpx;
+    color: #212330;
+    font-size: 24rpx;
+}
+
+.check-box {
+    margin-bottom: 40rpx;
+}
+
+.check {
+}
+
+.code-img {
+    width: 33rpx;
+    height: 37rpx;
+}
+
+.cooperation {
+    color: #00baf5;
+}
+
+.btn-hover {
+    background: #a1dafb;
+}
+
+.searchWrap {
+    background-color: #efefef;
+    height: 80rpx;
+    justify-content: center;
+    padding-top: 20rpx;
+}
+
+.searchBox {
+    width: 92%;
+    height: 60rpx;
+    background-color: #fff;
+    margin: 0 30rpx;
+    border-radius: 20rpx;
+    font-size: 30rpx;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.searchBox icon {
+    margin: 0 10rpx;
+}
+
+.searchBox input {
+    flex: 1 1 auto;
+}
+
+.bannerImgs {
+    width: 690rpx;
+    margin: 20rpx 30rpx 50rpx;
+    height: 300rpx;
+    border-radius: 10rpx;
+}
+
+.jxList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.jxImgs {
+    width: 320rpx;
+    height: 180rpx;
+    border-radius: 10rpx;
+}
+
+.jxItem {
+    margin-bottom: 50rpx;
+}
+
+.jxBox {
+    font-size: 30rpx;
+    padding: 0 30rpx;
+}
+
+.jxTitle {
+    font-weight: bold;
+    margin-bottom: 30rpx;
+}

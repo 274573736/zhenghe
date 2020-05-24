@@ -1,0 +1,104 @@
+<view class="top">
+    <view class="top-nav column" style="height: {{nav_height}}px;padding-top: {{statusBar}}px">
+        <view class="top-title">推广中心</view>
+    </view>
+    <view class="top-content rows">
+        <view class="head-img-border">
+            <view class="head-img">
+                <open-data class="head-img" type="userAvatarUrl"></open-data>
+            </view>
+        </view>
+        <view class="">
+            <view class="rows">
+                <view class="nickename">
+                   {{verify.subString(info.nick_name)}}
+                </view>
+                <view class="level-box rows">
+                    <image class="level-icon" src="../../image/level.png"></image>
+                    <text class="level-font">{{info.name}}</text>
+                </view>
+            </view>
+            <view class="invite-person">推荐人：{{info.parent}}</view>
+            <view class="rows">
+                <view class="invite-code rows">
+                    邀请码：{{info.invite_code}}
+                </view>
+                <view bind:tap="copyBtn" class="copy-btn center">复制</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="panel-box">
+    <view class="data-panel">
+        <view class="row">
+            <view class="data-panel-box">
+                <view class="gray-font">待提现(元)</view>
+                <view class="back-font">{{info.commission}}</view>
+            </view>
+            <view class="data-panel-box-right">
+                <view bind:tap="orderWhithdraw" class="btn-money center">提现</view>
+            </view>
+        </view>
+        <view class="panel-row-line-box">
+            <view class="panel-row-line"></view>
+        </view>
+        <view class="row">
+            <view class="data-panel-box">
+                <view class="gray-font">累计收入(元)</view>
+                <view class="back-font">{{info.count_commission}}</view>
+            </view>
+            <view class="panel-column-line-box">
+                <view class="panel-column-line"></view>
+            </view>
+            <view bind:tap="orderLine" class="rows data-panel-box-right-2">
+                <view class="">
+                    <view class="gray-font">我的下线(人)</view>
+                    <view class="back-font">{{info.count}}</view>
+                </view>
+                <image class="icon-go" src="../../image/go.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="item-list between">
+    <view bind:tap="orderList" class="item center-c">
+        <image class="item-img" src="../../image/dis_order.png"></image>
+        <view class="">推广订单</view>
+    </view>
+    <view bind:tap="inviteBtn" class="item center-c" wx:if="{{auth}}">
+        <image class="item-img" src="../../image/dis_code.png"></image>
+        <view class="">推广二维码</view>
+    </view>
+    <view bind:tap="goLogin" class="item center-c" wx:else>
+        <image class="item-img" src="../../image/dis_code.png"></image>
+        <view class="">推广二维码</view>
+    </view>
+    <view bind:tap="priceDetail" class="item center-c">
+        <image class="item-img" src="../../image/dis_money.png"></image>
+        <view class="">提现明细</view>
+    </view>
+</view>
+<button catch:tap="hidePoster" class="full center poster-box" wx:if="{{sharePoster}}">
+    <cover-view class="">
+        <canvas canvasId="poster" class="poster" style="width:{{widthPx}}px;height:{{heightPx}}px;"></canvas>
+        <cover-view class="rows share-font-box">
+            <cover-view class="share-line"></cover-view>
+            <cover-view class="share-font">分享到</cover-view>
+            <cover-view class="share-line"></cover-view>
+        </cover-view>
+        <cover-view class="center-r btn-box">
+            <button catch:tap="saveImg" class="column btn">
+                <cover-image class="save-img" src="/image/save-img.png"></cover-image>
+                <cover-view>保存图片</cover-view>
+            </button>
+            <button class="column btn" openType="share" style="margin-left: 100rpx;">
+                <cover-image class="save-img" src="/image/send_h.png"></cover-image>
+                <cover-view>微信好友</cover-view>
+            </button>
+        </cover-view>
+    </cover-view>
+</button>
+<view class="w-f" wx:if="{{!is_login}}">
+    <m-auth bind:authBtn="authBtn" bind:uidBtn="uidBtn" is_login="{{is_login}}"></m-auth>
+</view>
+<wxs module="verify" src="../../../modules/verify.wxs" />

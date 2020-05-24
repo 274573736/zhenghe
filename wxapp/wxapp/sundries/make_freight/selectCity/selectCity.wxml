@@ -1,0 +1,60 @@
+<view class="page">
+    <scroll-view scrollY class="scrollList" scrollIntoView="{{scrollViewId}}" style="height:{{winHeight}}px">
+        <view class="search-bar">
+            <view class="search-bar-form">
+                <view class="search-bar-box">
+                    <input bindinput="inputTyping" class="search-bar-input" confirmType="search" focus="{{inputShowed}}" placeholder="输入城市名称或首字母查询" placeholderClass="phcolor" value="{{inputVal}}"></input>
+                    <view bindtap="clearInput" class="icon-clear" wx:if="{{inputVal}}">
+                        <icon size="15" type="clear"></icon>
+                    </view>
+                </view>
+                <label bindtap="showInput" class="search-bar-label" wx:if="{{!inputShowed}}">
+                    <view class="search-bar-text">输入城市名称或首字母查询</view>
+                </label>
+            </view>
+        </view>
+        <view class="tui-list search-result" wx:if="{{inputShowed}}">
+            <view bindtap="selectCity" class="tui-list-cell" data-name="{{item}}" hoverClass="tui-list-cell-hover" hoverStayTime="150" wx:for="{{searchResult}}" wx:key="index">
+                <view class="tui-list-cell-navigate">
+          {{item}}
+        </view>
+            </view>
+        </view>
+        <view wx:if="{{!inputVal}}">
+            <view class="current-city">
+                <view class="title">定位城市</view>
+                <view bindtap="selectCity" class="city-name" data-name="{{localCity}}">
+          {{localCity}}
+        </view>
+            </view>
+            <view class="hot-city">
+                <view class="title">热门城市</view>
+                <view class="city-names">
+                    <view bindtap="selectCity" class="city-name-item" data-name="{{item}}" hoverClass="tap-city" hoverStayTime="150" wx:for="{{hotCity}}" wx:key="{{index}}">
+            {{item}}
+          </view>
+                </view>
+            </view>
+            <view class="tui-list city-list">
+                <block wx:if="{{list.data[0]}}" wx:for="{{lists}}" wx:for-item="list" wx:key="{{index}}">
+                    <view class="tui-list-cell-divider" id="{{index===0?'suoyin':list.letter}}">
+            {{list.letter}}
+          </view>
+                    <view bindtap="selectCity" class="tui-list-cell" data-name="{{item.cityName}}" hoverClass="tui-list-cell-hover" hoverStayTime="150" wx:for="{{list.data}}" wx:key="{{index}}">
+                        <view class="tui-list-cell-navigate {{list.data.length-1==index?'last':''}}">
+              {{item.cityName}}
+            </view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </scroll-view>
+    <view catchtouchcancel="touchCancel" catchtouchend="touchEnd" catchtouchmove="touchMove" catchtouchstart="touchStart" class="tui-indexed-list-bar" style="height:{{indexBarHeight}}px" wx:if="{{!inputVal}}">
+        <text class="tui-indexed-list-text" key="{{index}}" style="height:{{indexBarItemHeight}}px" wx:for="{{lists}}" wx:for-item="items" wx:key="unique">
+				{{index==0?'':items.letter}}
+			</text>
+    </view>
+    <view class="tui-indexed-list-alert" wx:if="{{touchmove&&lists[touchmoveIndex].letter}}">
+    {{lists[touchmoveIndex].letter}}
+  </view>
+</view>

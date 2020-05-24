@@ -1,0 +1,122 @@
+<view class="w-f">
+    <view class="view-box"></view>
+    <view class="photo-box">
+        <view class="textarea-box">
+            <textarea autoFocus="true" bindinput="textarea" class="textarea" placeholder="请详细描述您的服务需求"></textarea>
+        </view>
+        <m-voice catch:voiceUrl="voiceUrl"></m-voice>
+    </view>
+    <view class="view-box"></view>
+    <view catch:tap="toAddress" class="photo-box">
+        <view class="betweens address-box">
+            <view class="rows">
+                <image class="address-img" src="/image/run_address.png"></image>
+                <view class="" wx:if="{{shouhuo.title}}">
+                    <view class="">
+                        <text class="address-title">{{shouhuo.title}}</text>
+                    </view>
+                    <view class="address-des">{{shouhuo.address}}</view>
+                </view>
+                <view class="" wx:else>去哪服务？</view>
+            </view>
+        </view>
+    </view>
+    <view class="view-box"></view>
+    <view class="photo-box">
+        <view catch:tap="sTime" class="item-row betweens">
+            <view class="item-left rows">
+                <image class="time-img" src="/image/all_time.png"></image>
+                <text class="item-font">选择服务时间</text>
+            </view>
+            <view class="goods-property-right rows">
+                <view class="" wx:if="{{isImmediately==0}}">{{hour}}</view>
+                <view class="" wx:else>{{day}}{{hour}}时{{minute}}分</view>
+                <image class="property-r-img" src="/image/property-r.png"></image>
+            </view>
+        </view>
+        <view class="line-box">
+            <view class="line"></view>
+        </view>
+        <view class="item-row rows">
+            <view class="betweens item-half">
+                <view class="info-img">
+                    <image class="info-img-box" src="/image/all_info.png"></image>
+                </view>
+                <input bindinput="name" class="" confirmType="done" cursorSpacing="50" maxlength="10" placeholder="姓名" type="text"></input>
+            </view>
+            <view class="betweens item-half">
+                <view class="info-img-box box-two">
+                    <image class="info-img" src="/image/all_tel.png"></image>
+                </view>
+                <input bindinput="tel" class="" confirmType="done" cursorSpacing="50" maxlength="11" placeholder="电话号码" type="number" value="{{phone}}"></input>
+            </view>
+        </view>
+    </view>
+    <view class="view-box"></view>
+    <view class="photo-box">
+        <view class="item-row betweens">
+            <text class="item-font">接受议价</text>
+            <image catch:tap="bargain" class="bargain-img" data-id="0" src="/image/bargain.png" wx:if="{{bargain==1}}"></image>
+            <image catch:tap="bargain" class="bargain-img" data-id="1" src="/image/bargain_n.png" wx:else></image>
+        </view>
+    </view>
+    <view class="view-box"></view>
+    <view class="photo-box">
+        <view class="item-row betweens">
+            <view class="slider-font">预付款 <text class="slider-money">{{service_money}}</text> 元</view>
+            <view catch:tap="showInput" class="select-btn center">更多</view>
+        </view>
+    </view>
+    <view class="view-box"></view>
+    <view catch:tap="sCoupon" class="photo-box">
+        <view class="item-row betweens">
+            <view class="item-left rows">
+                <image class="time-img" src="/image/all_coupon.png"></image>
+                <text class="item-font">优惠券</text>
+            </view>
+            <view class="goods-property-right rows">
+                <view class="" wx:if="{{!price_detail.coupon_money}}">未使用优惠券</view>
+                <view class="coupon-font" wx:else>-￥{{price_detail.coupon_money}}元</view>
+                <image class="property-r-img" src="/image/property-r.png"></image>
+            </view>
+        </view>
+        <view class="line-box">
+            <view class="line"></view>
+        </view>
+        <view catch:tap="sPay" class="item-row betweens">
+            <view class="item-left rows">
+                <image class="time-img" src="/image/paotui_coupon.png"></image>
+                <text class="item-font">付款方式</text>
+            </view>
+            <view class="goods-property-right rows">
+                <view class="" wx:if="{{pay_method==1}}">余额支付</view>
+                <view class="" wx:else>微信支付</view>
+                <image class="property-r-img" src="/image/property-r.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="view-box"></view>
+    <m-upload-img bind:imgUpload="imgUpload" img_temp="{{img_temp}}" imgs="{{imgs}}" wx:if="{{unservice_img_switch==1}}"></m-upload-img>
+    <view class="footer center" wx:if="{{actual_payment>-1}}">
+        <m-footer-btn actual_payment="{{actual_payment}}" bind:confirm="confirm"></m-footer-btn>
+    </view>
+    <view class="box-space" wx:if="{{actual_payment>-1}}"></view>
+    <m-voice catch:sVoice="sVoice" hidden="{{voice_bg}}"></m-voice>
+    <view class="z-index center" hidden="{{input_bg}}">
+        <view class="index-box">
+            <view class="index-title">手动输入费用</view>
+            <view class="w-f column">
+                <view class="rows index-input">
+                    <view class="">金额(元)</view>
+                    <input bindinput="inputMoney" class="" type="number" value="{{service_money}}"></input>
+                </view>
+            </view>
+            <view class="rows index-footer">
+                <view catch:tap="cancelBtn" class="cancel-input">取消</view>
+                <view catch:tap="confirmBtn" class="confirm-input">确定</view>
+            </view>
+        </view>
+    </view>
+</view>
+<m-time bind:sTime="sTime" days="{{xTime.days}}" hidden="{{time_bg}}" hours="{{xTime.hours}}" minutes="{{xTime.minutes}}" order_type="2"></m-time>
+<m-pay bind:sPay="sPay" hidden="{{pay_bg}}" money="{{actual_payment}}" my_money="{{my_money}}" pay_method="{{pay_method}}"></m-pay>

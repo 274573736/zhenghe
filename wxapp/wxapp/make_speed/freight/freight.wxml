@@ -1,0 +1,16 @@
+<view class="w-f">
+    <m-collect-tip is_tip_collect="{{is_tip_collect}}" wx:if="{{is_tip_collect}}"></m-collect-tip>
+    <view class="w-f">
+        <m-top></m-top>
+    </view>
+    <swiper autoplay="true" bindchange="cardFreightSwiper" circular="true" class="card-swiper square-dot column" duration="500" indicatorDots="true" interval="5000" nextMargin="70rpx" previousMargin="70rpx">
+        <swiper-item bindtap="jump" class="{{cardFreightCur==index?'cur':''}}" data-app_url="{{item.app_url}}" data-appid="{{item.appid}}" data-type="{{item.type}}" data-url="{{item.url}}" wx:for="{{top_swiper}}">
+            <view class="swiper-item">
+                <image class="full" mode="aspectFill" src="{{item.image}}"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="w-f">
+        <m-freight></m-freight>
+    </view>
+</view>

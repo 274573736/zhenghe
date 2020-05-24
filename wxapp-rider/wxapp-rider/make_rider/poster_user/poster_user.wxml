@@ -1,0 +1,6 @@
+<view class="full column poster-box">
+    <canvas canvasId="poster" class="poster" style="width:{{widthPx}}px;height:{{heightPx}}px;"></canvas>
+    <view class="center btn-box">
+        <view bind:tap="saveImg" class="center save-btn" style="width:{{widthPx}}px;height: 100rpx;">保存图片</view>
+    </view>
+</view>

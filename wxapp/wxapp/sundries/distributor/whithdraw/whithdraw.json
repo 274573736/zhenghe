@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "提现方式",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

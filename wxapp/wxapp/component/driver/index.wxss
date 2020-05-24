@@ -1,0 +1,39 @@
+.driver-box {
+    height: 150rpx;
+    font-size: 24rpx;
+    padding: 0 25rpx;
+    background: #ffffff;
+    border-top: 1px solid #eeeeee;
+}
+
+.head-img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    margin: 0 25rpx 0 10rpx;
+}
+
+.server-num {
+    font-size: 18rpx;
+    color: #999999;
+    margin-top: 10rpx;
+}
+
+.tel-img {
+    width: 55rpx;
+    height: 55rpx;
+    border-radius: 100%;
+}
+
+.betweens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

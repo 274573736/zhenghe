@@ -1,0 +1,14 @@
+<view class="view-box"></view>
+<block wx:for="{{question}}" wx:key="index">
+    <view bind:tap="lookQuestion" class="question-box betweens" data-idx="{{index}}">
+        <view class="">{{item.title}}</view>
+        <image class="question-r {{index==idx?'img-animation':''}}" src="/image/question_r.png"></image>
+    </view>
+    <view class="answer" hidden="{{index==idx?false:true}}">{{item.content}}</view>
+</block>
+<view class="footer column">
+    <view catch:tap="tel" class="server-btn center-r">
+        <image class="server-img" src="/image/server.png"></image>
+        <view class="">联系客服</view>
+    </view>
+</view>

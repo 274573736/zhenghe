@@ -1,0 +1,7 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "m-auth": "/component/auth/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

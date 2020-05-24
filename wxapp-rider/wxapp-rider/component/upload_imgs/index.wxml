@@ -1,0 +1,10 @@
+<view class="row upload-box-big">
+    <view catch:tap="photoFrom" class="upload-box center">
+        <view class="heng"></view>
+        <view class="shu"></view>
+    </view>
+    <view class="box" wx:for="{{img_temp[order_id]}}" wx:key="index">
+        <image catch:tap="preImg" class="store-img" data-idx="{{index}}" src="{{item}}"></image>
+        <image catch:tap="delImg" class="del-icon" data-idx="{{index}}" src="/image/del-img.png"></image>
+    </view>
+</view>

@@ -1,0 +1,68 @@
+page {
+    background: #ffffff;
+}
+
+.top {
+    width: 100%;
+    padding: 0 100rpx;
+}
+
+.title {
+    color: #5c5c5c;
+    margin: 50rpx 0 40rpx 0;
+}
+
+.line {
+    width: 50%;
+    height: 1px;
+    background: #cccccc;
+}
+
+.title_two {
+    color: #5c5c5c;
+    white-space: nowrap;
+    margin: 0 20rpx;
+}
+
+.title-top {
+    margin-top: 30rpx;
+}
+
+.small-box {
+    width: 100%;
+    padding: 50rpx 0 60rpx 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.title_three {
+    width: 100%;
+}
+
+.title_three:nth-of-type(n+2) {
+    margin-top: 40rpx;
+}
+
+.price_des {
+    color: #bbbbbb;
+    font-size: 24rpx;
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.total_price {
+    font-size: 60rpx;
+}
+
+.total_price_des {
+    color: #bbbbbb;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+}
+
+.price-btn {
+    width: 250rpx;
+    height: 80rpx;
+    border-radius: 35px;
+    border: 1px solid #212330;
+    margin-top: 90rpx;
+}

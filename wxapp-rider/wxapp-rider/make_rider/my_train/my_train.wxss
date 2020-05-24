@@ -1,0 +1,21 @@
+.box {
+    margin-top: 20rpx;
+    padding-left: 40rpx;
+    width: 100%;
+    background: #ffffff;
+    flex-grow: 1;
+}
+
+.item {
+    width: 100%;
+    padding: 20rpx 0;
+}
+
+.item-left {
+    width: 180rpx;
+    font-weight: bold;
+}
+
+.item:nth-of-type(n+1) {
+    border-bottom: 1px solid #e6e6e6;
+}

@@ -1,0 +1,135 @@
+.map {
+    width: 100%;
+    height: 500rpx;
+    position: relative;
+}
+
+.again-box {
+    width: 100%;
+    margin-bottom: 15rpx;
+}
+
+.top {
+    width: 100%;
+    background: #ffffff;
+    padding: 40rpx 70rpx;
+}
+
+.top-font {
+    font-weight: bold;
+    margin: 0 0 60rpx 0;
+}
+
+.top-font-time-des {
+    font-weight: bold;
+    margin-bottom: 40rpx;
+}
+
+.car-price-des {
+    font-size: 26rpx;
+    color: #ff0000;
+    margin-top: 30rpx;
+    width: 100%;
+}
+
+.price-1 {
+    color: #808080;
+    font-size: 24rpx;
+}
+
+.price-2 {
+    color: #212330;
+    font-size: 34rpx;
+    align-items: baseline;
+}
+
+.price-2-num {
+    font-size: 60rpx;
+    font-weight: bold;
+    margin: 0 10rpx;
+}
+
+.price-3 {
+    color: #212330;
+    font-size: 24rpx;
+}
+
+.confirm-pay-btn {
+    color: #ffffff;
+    width: 600rpx;
+    height: 70rpx;
+    margin-top: 80rpx;
+    text-align: center;
+    line-height: 70rpx;
+    background: #212330;
+    border-radius: 35px;
+}
+
+.time-font-des {
+    margin-bottom: 40rpx;
+}
+
+.time-font {
+    color: #097bf1;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.r-img {
+    width: 9rpx;
+    height: 17rpx;
+    margin-left: 20rpx;
+}
+
+.btn {
+    width: 180rpx;
+    height: 60rpx;
+    font-size: 28rpx;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+}
+
+.btn-active {
+    background: #097bf1;
+    color: #ffffff;
+    border: none;
+}
+
+.u-index {
+    background-color: #000;
+    background: rgba(0,0,0,0.3);
+    z-index: 10;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.bg-close-btn {
+    width: 180rpx;
+    height: 60rpx;
+    border: 1px solid #cccccc;
+    font-size: 24rpx;
+    border-radius: 6px;
+}
+
+.u-index {
+    background-color: #000;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.u-index-item {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.m {
+    width: 100%;
+}

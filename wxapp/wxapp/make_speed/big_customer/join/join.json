@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "开通大客户",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

@@ -1,0 +1,10 @@
+<view class="betweens bottom-box">
+    <view class="rows">
+        <image class="map-dian" src="{{img_url}}location.png"></image>
+        <view class="no-rows address-font">{{address}}</view>
+    </view>
+    <view bind:tap="updateLocation" class="rows">
+        <image animation="{{animation}}" class="refresh-red-img" mode="aspectFit" src="{{img_url}}refresh_red.png"></image>
+        <view class="refresh-font">刷新</view>
+    </view>
+</view>

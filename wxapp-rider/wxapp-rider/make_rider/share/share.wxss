@@ -1,0 +1,170 @@
+.top {
+    background: #ffffff;
+    margin-top: 20rpx;
+}
+
+.top-box {
+    width: 100%;
+    height: 100rpx;
+}
+
+.top-box view {
+    width: 50%;
+}
+
+.top-line>view {
+    width: 50%;
+    margin-bottom: 2px;
+}
+
+.top-item-line {
+    width: 50rpx;
+    height: 6rpx;
+    background: #0b6ed6;
+    border-radius: 35px;
+}
+
+.top-active {
+    color: #0b6ed6;
+}
+
+.code-box {
+    width: 680rpx;
+    height: 150rpx;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.code-box-font1 {
+    margin: 25rpx 0;
+}
+
+.code-box-font2 {
+    color: #0e70d7;
+    letter-spacing: 5rpx;
+}
+
+.award-box {
+    width: 680rpx;
+    height: 250rpx;
+    margin-top: 20rpx;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.share1-img {
+    width: 28rpx;
+    height: 42rpx;
+    margin-right: 20rpx;
+}
+
+.share2-img {
+    width: 42rpx;
+    height: 42rpx;
+    margin-right: 20rpx;
+}
+
+.award-box-item {
+    width: 50%;
+    padding-top: 30rpx;
+}
+
+.award-box-item-top {
+    margin-bottom: 20rpx;
+}
+
+.award-box-item-num {
+    font-weight: bold;
+}
+
+.award-btn {
+    width: 250rpx;
+    height: 70rpx;
+    color: #0b6ed6;
+    margin-top: 20rpx;
+    border-radius: 35px;
+    border: 1px solid #0b6ed6;
+}
+
+.share-award-box {
+    width: 680rpx;
+    border-radius: 5px;
+    background: #ffffff;
+    margin-top: 20rpx;
+}
+
+.share-award-row {
+    width: 100%;
+    height: 100rpx;
+}
+
+.share-award-row view {
+    width: 50%;
+    height: 100%;
+}
+
+.share-award-row view:nth-of-type(1) {
+    border-right: 1px solid #f1f1f1;
+}
+
+.share-award-box .share-award-row:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.share-award-box .share-award-row:nth-of-type(n+2) {
+    border-top: 1px solid #f1f1f1;
+}
+
+.invite-btn {
+    width: 680rpx;
+    height: 90rpx;
+    color: #ffffff;
+    background: #0b6ed6;
+    margin-top: 150rpx;
+    margin-bottom: 100rpx;
+    border-radius: 35px;
+}
+
+.user-btn {
+    background: #3a9504;
+}
+
+.share-item-box {
+    width: 50%;
+    height: 250rpx;
+}
+
+.share-item-box:after {
+    border: 0;
+}
+
+.share-img {
+    width: 100rpx;
+    height: 110rpx;
+}
+
+.share-font {
+    height: 40rpx;
+}
+
+.share-w-img {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.share-box {
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.close-btn {
+    width: 100%;
+    height: 100rpx;
+    border-top: 1px solid #f7f7f7;
+}

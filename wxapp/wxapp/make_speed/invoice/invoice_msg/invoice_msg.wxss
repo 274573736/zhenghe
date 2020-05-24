@@ -1,0 +1,59 @@
+.full {
+    padding: 20rpx 20rpx 0 20rpx;
+}
+
+.box {
+    width: 710rpx;
+    border-radius: 5px;
+    background: #ffffff;
+    margin-bottom: 20rpx;
+}
+
+.item {
+    padding: 30rpx 20rpx;
+}
+
+.box .item:nth-of-type(n+2) {
+    border-top: 1px solid #f3f3f3;
+}
+
+.select-img {
+    width: 26rpx;
+    height: 26rpx;
+    margin: 0 20rpx 0 50rpx;
+}
+
+.money {
+    color: #097bf1;
+}
+
+.yuan {
+    margin-left: 10rpx;
+}
+
+.placeholder {
+    color: #cbcbcb;
+}
+
+input {
+    text-align: right;
+}
+
+.input-text {
+    width: 470rpx;
+}
+
+.confirm-btn {
+    font-size: 30rpx;
+    font-weight: bold;
+    width: 710rpx;
+    height: 90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    color: #ffffff;
+    letter-spacing: 4px;
+    background: #097bf1;
+    border-radius: 35px;
+    position: fixed;
+    bottom: 40rpx;
+}

@@ -1,0 +1,86 @@
+page {
+    background: #ffffff;
+}
+
+.top {
+    width: 100%;
+    font-weight: bold;
+    padding: 40rpx 30rpx;
+    background: #ffffff;
+}
+
+.reward-x-img {
+    width: 20rpx;
+    height: 11rpx;
+}
+
+.img-box {
+    min-width: 20rpx;
+    height: 20rpx;
+    margin-right: 20rpx;
+}
+
+.reward-select-img {
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.item {
+    color: #808080;
+    width: 100%;
+    padding: 30rpx 40rpx;
+    background: #ffffff;
+}
+
+.line-box {
+    width: 100%;
+    padding-left: 40rpx;
+    background: #ffffff;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background: #f7f7f7;
+}
+
+.gray-box {
+    width: 100%;
+    height: 20rpx;
+    background: #f7f7f7;
+}
+
+.section {
+    padding: 40rpx 40rpx;
+}
+
+.textarea {
+    width: 100%;
+    height: 200rpx;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 10rpx;
+}
+
+.bottom-box {
+    width: 100%;
+    padding: 0 40rpx;
+    position: fixed;
+    letf: 0;
+    right: 0;
+    bottom: 80rpx;
+}
+
+.btn {
+    font-size: 30rpx;
+    width: 100%;
+    height: 80rpx;
+    color: #ffffff;
+    font-weight: bold;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+    border-radius: 35px;
+}
+
+.btn-hover {
+    background: #a1dafb;
+}

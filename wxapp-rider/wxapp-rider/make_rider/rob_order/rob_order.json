@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "m-rob": "../../component/rob-order/index",
+        "m-confirm": "../../component/confirm-order/index",
+        "m-no-hint": "../../component/no_hint/index",
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "navigationBarTitleText": "等待订单"
+}

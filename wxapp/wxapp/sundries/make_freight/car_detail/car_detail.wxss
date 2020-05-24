@@ -1,0 +1,9 @@
+@import "../../../utils/wxParse/wxParse.wxss";
+
+page {
+    background: #ffffff;
+}
+
+.content {
+    padding: 20rpx;
+}

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "m-address": "/component/make_freight/address/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

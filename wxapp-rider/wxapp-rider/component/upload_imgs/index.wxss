@@ -1,0 +1,64 @@
+.upload-box-big {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.upload-box {
+    width: 100rpx;
+    height: 100rpx;
+    background: #ededed;
+    position: relative;
+    margin: 20rpx 20rpx 0 0;
+}
+
+.heng {
+    width: 38rpx;
+    height: 2rpx;
+    background: #9a9a9a;
+}
+
+.shu {
+    width: 2rpx;
+    height: 38rpx;
+    background: #9a9a9a;
+    position: absolute;
+    right: 50rpx;
+}
+
+.bog-box {
+    width: 100%;
+    background: #ffffff;
+    padding: 30rpx 0 40rpx 30rpx;
+}
+
+.box {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 20rpx 20rpx 0 0;
+    position: relative;
+}
+
+.store-img {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.del-icon {
+    width: 30rpx;
+    height: 30rpx;
+    padding: 10rpx;
+    position: absolute;
+    right: -20rpx;
+    top: -20rpx;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

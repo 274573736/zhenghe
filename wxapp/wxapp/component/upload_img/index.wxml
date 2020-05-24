@@ -1,0 +1,12 @@
+<view class="photo-box">
+    <view class="rows photo-box-white">
+        <view catch:tap="preImg" class="column upload-img-box" data-idx="{{index}}" wx:for="{{img_temp}}" wx:key="index">
+            <image class="full" src="{{item}}"></image>
+            <image catch:tap="delImg" class="del-img" data-idx="{{index}}" src="/image/img-del.png"></image>
+        </view>
+        <view catch:tap="photoFrom" class="column photo-small-box">
+            <image class="photo-img" src="/image/photo.png"></image>
+            <view class="">上传照片</view>
+        </view>
+    </view>
+</view>

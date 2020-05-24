@@ -1,0 +1,32 @@
+<view class="column">
+    <view class="top">
+        <view class="">账户余额（元）</view>
+        <view class="top-money">{{list.money}}</view>
+        <view class="betweens">
+            <view class="">
+                <view class="">可用余额(元)</view>
+                <view class="">{{list.valid_money}}</view>
+            </view>
+            <view class="">
+                <view class="">保证金(元)</view>
+                <view class="">{{list.bond_money}}</view>
+            </view>
+            <view class="">
+                <view class="">冻结金额(元)</view>
+                <view class="">{{list.invalid_money}}</view>
+            </view>
+        </view>
+        <view class="center top-bottom">
+            <view bind:tap="payDetail" class="center btn">收支明细</view>
+            <view bind:tap="accountDescription" class="center btn btn-right">账户说明</view>
+        </view>
+    </view>
+    <view class="w-f bottom">
+        <view bind:tap="withdrawDepoit" class="center bottom-btn bottom-btn1" hoverClass="btn-hover">余额提现</view>
+        <view bind:tap="recharge" class="center bottom-btn bottom-btn2" hoverClass="red-hover" wx:if="{{is_cash==1}}">充值账户</view>
+        <view bind:tap="recharge" class="center bottom-btn bottom-btn2" hoverClass="red-hover" wx:if="{{is_cash==0}}">缴纳保证金</view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

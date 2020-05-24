@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "order-list": "../../component/order-list/index",
+        "m-rob-order": "../../component/confirm-order/index",
+        "m-refresh-location": "../../component/refresh_location/index",
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "首页"
+}

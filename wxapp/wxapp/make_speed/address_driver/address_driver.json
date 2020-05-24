@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "地址",
+    "usingComponents": {
+        "m-map": "/component/map_driver/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

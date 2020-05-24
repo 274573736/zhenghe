@@ -1,0 +1,148 @@
+page {
+    background: #ffffff;
+}
+
+.top-head {
+    width: 100%;
+    height: 200rpx;
+    padding: 0 40rpx;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.head-img {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.auth-btn:after {
+    border: 0;
+}
+
+.circle-head {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background: #eeeeee;
+}
+
+.login-font {
+    font-size: 40rpx;
+    margin-left: 30rpx;
+}
+
+.info-img {
+    width: 40rpx;
+    height: 36rpx;
+    margin-left: 20rpx;
+}
+
+.user-name {
+    font-size: 24rpx;
+    margin-top: 20rpx;
+}
+
+.top-box {
+    width: 100%;
+    height: 150rpx;
+    padding: 40rpx;
+}
+
+.uid {
+    margin-left: 20px;
+}
+
+.top-box-item {
+    width: 50%;
+}
+
+.top-box-item:nth-of-type(even) {
+    border-left: 1px solid #e1e1e1;
+}
+
+.top-num {
+    color: #097bf1;
+}
+
+.top-font {
+    font-weight: bold;
+}
+
+.list-item {
+    width: 100%;
+    padding: 40rpx;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.list-item-btn {
+    width: 100%;
+    margin: 0;
+    padding: 40rpx;
+    font-size: 30rpx;
+    border-radius: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.footer {
+    width: 100%;
+    padding: 0 40rpx;
+    position: fixed;
+    bottom: 40rpx;
+}
+
+.log-out-btn {
+    width: 100%;
+    height: 90rpx;
+    color: #ffffff;
+    background: #097bf1;
+    border-radius: 35px;
+}
+
+.login-box {
+    width: 500rpx;
+    height: 600rpx;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 40rpx 30rpx;
+}
+
+.login-title-font {
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.login-des-font {
+    font-size: 24rpx;
+    color: #cccccc;
+    margin-top: 20rpx;
+}
+
+.logo-img {
+    width: 400rpx;
+    height: 400rpx;
+    margin-bottom: 40rpx;
+}
+
+.login-no-btn {
+    font-size: 24rpx;
+    padding: 10rpx 20rpx;
+    border-radius: 35px;
+    border: 1px solid #097bf1;
+}
+
+.login-yes-btn {
+    font-size: 24rpx;
+    color: #ffffff;
+    padding: 10rpx 20rpx;
+    border-radius: 35px;
+    background: #097bf1;
+}
+
+.footer-title {
+    padding: 30rpx 0;
+    font-size: 26rpx;
+    color: #A1A5A8;
+}

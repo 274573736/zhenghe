@@ -1,0 +1,44 @@
+page {
+    background: #ffffff;
+}
+
+.circle-icon {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    border: 10rpx solid #212330;
+    margin: 0 50rpx;
+}
+
+.font-des {
+    margin: 50rpx 0 200rpx 0;
+}
+
+.font-btn {
+    padding: 50rpx;
+}
+
+.photo-img {
+    width: 100%;
+    height: 500rpx;
+}
+
+.circle-yes {
+    border-radius: 50%;
+}
+
+.yes-icon {
+    width: 30rpx;
+    height: 50rpx;
+    border-right: 8rpx solid #212330;
+    border-bottom: 8rpx solid #212330;
+    transform: rotate(40deg);
+}
+
+.photo-font {
+    margin-top: 200rpx;
+}
+
+.center-r {
+    align-items: center;
+}

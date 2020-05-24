@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "m-accept": "/component/accept_picker/index",
+        "m-auth": "/component/auth/index"
+    },
+    "navigationBarTitleText": "个人中心"
+}

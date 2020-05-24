@@ -1,0 +1,88 @@
+<view>
+    <view class="center car-big-box">
+        <view class="car-box column">
+            <scroll-view class="scroll-view center" scrollIntoView="NAV{{status}}" scrollWithAnimation="true" scrollX="true">
+                <view bind:tap="swiperCar" class="scroll-item" data-id="{{index}}" data-index="{{index}}" id="NAV{{index}}" wx:for="{{list}}" wx:key="id">
+                    <view class="scroll-font {{swiper_idx==index?'carbg-active':''}}">{{item.title}}</view>
+                </view>
+            </scroll-view>
+            <image catch:tap="bindArrows" class="lunbo-left-img" data-id="0" hidden="{{swiper_idx==0?true:false}}" src="/image/lunbo_r.png"></image>
+            <view style="width:100%;height:3rpx;background:#f5f5f5"></view>
+            <swiper bindchange="swiperTap" class="swiper-car center" current="{{swiper_idx}}" duration="500">
+                <swiper-item bindtap="jump_detail" data-idx="{{index}}" wx:for="{{list}}" wx:key="id">
+                    <view class="rows around" style="margin-top:40rpx">
+                        <view style="margin-left:50rpx;">
+                            <image class="full_image" src="{{item.image}}"></image>
+                        </view>
+                        <view class="columns" style="margin-right:20rpx;">
+                            <view class="rows ">
+                                <view class="car_right_font">载重：</view>
+                                <view class="right_font_param">{{item.load}}吨</view>
+                            </view>
+                            <view class="rows " style="margin-top:20rpx;">
+                                <view class="car_right_font">长*宽*高：</view>
+                                <view class="right_font_param">{{item.size.length}}*{{item.size.width}}*{{item.size.height}}米
+                                    </view>
+                            </view>
+                        </view>
+                    </view>
+                </swiper-item>
+            </swiper>
+            <image catch:tap="bindArrows" class="lunbo-right-img" data-id="1" hidden="{{swiper_idx<verify.arrLength(list)-1?false:true}}" src="/image/lunbo_r.png"></image>
+        </view>
+    </view>
+    <view style="width:100%;">
+        <m-address bind:updateTime="updateTime" fahuo="{{fahuo}}" shouhuo="{{shouhuo}}" type="1"></m-address>
+    </view>
+    <view class="item-box">
+        <view class="address-item betweens" wx:if="{{load_bearing==1}}">
+            <view class="rows">
+                <image class="address-img-1" src="/image/car_type.png"></image>
+                <view class="">承载类型</view>
+            </view>
+            <view class="rows">
+                <view bind:tap="volumeBtn" class="volume-btn {{volume_car==0?'volume-btn-s':''}}" data-idx="0">拼车</view>
+                <view bind:tap="volumeBtn" class="volume-btn {{volume_car==1?'volume-btn-s':''}}" data-idx="1">整车</view>
+            </view>
+        </view>
+        <view class="address-item betweens" wx:if="{{freight_weight==1}}">
+            <view class="rows">
+                <image class="address-img-2" src="/image/car_weight.png"></image>
+                <view class="">重量/kg</view>
+            </view>
+            <view class="rows">
+                <view bind:tap="weightBtn" class="weight-btn center reduce-weight" data-idx="0">-</view>
+                <input bindinput="inputWeight" class="weight-input" type="number" value="{{weight}}"></input>
+                <view bind:tap="weightBtn" class="weight-btn center add-weight" data-idx="1">+</view>
+            </view>
+        </view>
+        <view class="address-item betweens" wx:if="{{freight_cube==1}}">
+            <view class="rows">
+                <image class="address-img-2" src="/image/weight.png"></image>
+                <view class="">体积/m³</view>
+            </view>
+            <view class="rows">
+                <input bindinput="inputVolume" class="" cursorSpacing="50" maxlength="10" placeholder="请输入体积" style="text-align: right;padding-right: 20rpx" type="digit"></input>
+                <text class="">m³</text>
+            </view>
+        </view>
+    </view>
+    <view class="space-box-200"></view>
+    <view-cover class="footer-freight column">
+        <view-cover class="price-predict-font" wx:if="{{!fahuo||!shouhuo}}">起步价
+                <text class="price-predict-money">￥{{list[swiper_idx].starting_price}}</text>
+        </view-cover>
+        <block wx:else>
+            <view class="price-predict-font" wx:if="{{price>0&&is_price==0}}">计价中</view>
+            <view-cover class="price-predict-font" wx:else>预计
+                <text class="price-predict-money">￥{{price}}</text>
+            </view-cover>
+        </block>
+        <view-cover class="confirm-btn rows">
+            <button class="confirm-btn-left-yellow center" loading="true" wx:if="{{price>0&&is_price==0}}">下一步</button>
+            <button bind:tap="confirm" class="confirm-btn-left-yellow center" wx:else>下一步</button>
+            <view-cover catch:tap="callTel" class="confirm-btn-right-yellow center">一键呼叫</view-cover>
+        </view-cover>
+    </view-cover>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

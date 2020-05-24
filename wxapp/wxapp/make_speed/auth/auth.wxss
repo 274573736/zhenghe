@@ -1,0 +1,28 @@
+page {
+    background: #ffffff;
+}
+
+.logo-img {
+    width: 100%;
+    height: 440rpx;
+}
+
+.auth-bnt {
+    color: #ffffff;
+    font-size: 36rpx;
+    width: 680rpx;
+    height: 100rpx;
+    background: #097bf1;
+    border-radius: 35px;
+    margin-top: 100rpx;
+}
+
+.auth-bnt:after {
+    border: 0;
+}
+
+.bnt-img {
+    width: 63rpx;
+    height: 51rpx;
+    margin-right: 20rpx;
+}

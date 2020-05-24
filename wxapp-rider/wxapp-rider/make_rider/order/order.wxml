@@ -1,0 +1,22 @@
+<view class="{{verify.isArray(underwayOrder)==false?'full':''}} column">
+    <view class="around top">
+        <view bind:tap="topTap" class="center top-item {{index==idx?'top-active':''}}" data-idx="{{index}}" wx:for="{{top_array}}" wx:key="index">{{item}}</view>
+    </view>
+    <view class="betweens top-search">
+        <view class="">{{year}}年{{month}}月</view>
+        <image bind:tap="bindTime" class="date-img" src="{{img_url}}date.png"></image>
+    </view>
+    <view class="order-box" wx:if="{{verify.isArray(underwayOrder)==true}}">
+        <order-list bind:orderDetail="orderDetail" img_url="{{img_url}}" underwayOrder="{{underwayOrder}}"></order-list>
+    </view>
+    <view class="column no-order-box" wx:else>
+        <m-hint img_url="{{img_url}}">
+            <view class="no-font" slot="after">暂时没有新的订单~</view>
+        </m-hint>
+    </view>
+</view>
+<m-time-screen bind:confirmTime="confirmTime" time_picker="{{time_picker}}"></m-time-screen>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

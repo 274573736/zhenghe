@@ -1,0 +1,12 @@
+<cover-view class="standard-box" hidden="{{hidden}}">
+    <cover-view class="betweens standrad-top">
+        <cover-view class=""></cover-view>
+        <cover-view class="">加小费</cover-view>
+        <cover-view bind:tap="confirm" class="confirm">确定</cover-view>
+    </cover-view>
+    <cover-view class="rows standard-select-box">
+        <cover-view class="center select-item" wx:for="{{tip}}" wx:key="index">
+            <cover-view bind:tap="selected" class="center select-item-box {{index==idx?' item-active':''}}" data-idx="{{index}}">{{index>0?item+'元':item}}</cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>

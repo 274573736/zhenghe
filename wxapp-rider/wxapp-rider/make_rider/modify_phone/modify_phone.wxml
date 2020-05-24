@@ -1,0 +1,20 @@
+<view class="full">
+    <form bindsubmit="form" class="w-f">
+        <view class="rows item">
+            <view class="item-left">新手机号</view>
+            <input bindinput="phoneInput" name="phone" placeholder="请输入新的手机号码" type="number"></input>
+        </view>
+        <view class="betweens item">
+            <view class="item-left">短信验证</view>
+            <input name="code" placeholder="请输入短信验证码" type="number"></input>
+            <view bind:tap="code" class="center btn">发送短信</view>
+        </view>
+        <view class="des">注：短信验证码将发送至原来绑定的手机上</view>
+        <button class="center form-btn" formType="submit" hoverClass="btn-hover">
+            确认修改
+        </button>
+    </form>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

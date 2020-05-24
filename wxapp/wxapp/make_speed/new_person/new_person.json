@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "新人红包",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

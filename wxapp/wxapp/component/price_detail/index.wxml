@@ -1,0 +1,68 @@
+<view class="w-f price-detaol-box" hidden="{{hidden}}">
+    <view class="betweens item-top">
+        <text class=""></text>
+        <text class="">价格明细</text>
+        <text bind:tap="close" class="top-close">关闭</text>
+    </view>
+    <scroll-view class="item-contents" scrollY="true">
+        <view class="w-f betweens item-content" wx:if="{{price_detail.small_price>0}}">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">小费</text>
+            </view>
+            <text class="item-right">{{price_detail.small_price}}元</text>
+        </view>
+        <view class="w-f betweens item-content" wx:if="{{price_detail.night_price>0}}">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">夜间费</text>
+            </view>
+            <text class="item-right">{{price_detail.night_price}}元</text>
+        </view>
+        <view class="w-f betweens item-content" wx:if="{{price_detail.change_price>0}}">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">溢价</text>
+            </view>
+            <text class="item-right">{{price_detail.change_price}}元</text>
+        </view>
+        <view class="w-f betweens item-content" wx:if="{{price_detail.coupon_money!=0}}">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">优惠券</text>
+            </view>
+            <text class="item-right">{{price_detail.coupon_money}}元</text>
+        </view>
+        <view class="w-f betweens item-content" wx:if="{{price_detail.discount_price>0}}">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">会员折扣</text>
+            </view>
+            <text class="item-right">{{price_detail.discount_price}}元</text>
+        </view>
+        <view class="w-f betweens item-content" wx:if="{{price_detail.distance_price>0}}">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">里程费</text>
+            </view>
+            <text class="item-right">{{price_detail.distance_price}}元</text>
+        </view>
+        <view class="w-f betweens item-content" wx:if="{{price_detail.distance>0}}">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">订单距离</text>
+            </view>
+            <text class="item-right">{{price_detail.distance}}公里</text>
+        </view>
+        <view class="w-f betweens item-content">
+            <view class="rows item-left-box">
+                <image class="icon-img" src="{{img_url}}price_detail.png"></image>
+                <text class="item-left">订单金额</text>
+            </view>
+            <text class="item-right">{{price_detail.pay_price}}元</text>
+        </view>
+    </scroll-view>
+    <view class="w-f center footer">
+        <view bind:tap="priceDescription" class="center btn">价格说明</view>
+    </view>
+</view>

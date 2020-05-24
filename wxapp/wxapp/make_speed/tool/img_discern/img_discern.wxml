@@ -1,0 +1,18 @@
+<view class="full center-c" wx:if="{{!temp_img}}">
+    <camera binderror="cameraError" devicePosition="back" flash="off" style="width: 100%; height: 500rpx;" wx:if="{{is_auth==1}}"></camera>
+    <view class="font-des">请将名片放入以上取景框内拍摄</view>
+    <view class="center-r">
+        <view catch:tap="cancleBtn" class="font-btn">取消</view>
+        <view catch:tap="photoBtn" class="circle-icon"></view>
+        <view catch:tap="imgBtn" class="font-btn">相册</view>
+    </view>
+</view>
+<view class="full center-c" wx:else>
+    <image class="photo-img" src="{{temp_img}}"></image>
+    <view class="center-r photo-font">
+        <view catch:tap="rephotograph" class="font-btn">重拍</view>
+        <view catch:tap="confirmPhoto" class="circle-icon center">
+            <view class="yes-icon"></view>
+        </view>
+    </view>
+</view>

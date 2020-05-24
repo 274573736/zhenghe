@@ -1,0 +1,89 @@
+.pay-box {
+    color: #000000;
+    background: #ffffff;
+}
+
+.pay-top {
+    width: 100%;
+    height: 90rpx;
+    position: relative;
+}
+
+.top-close {
+    position: absolute;
+    right: 36rpx;
+    color: #66d6f9;
+}
+
+.top-item-box {
+    width: 100%;
+    padding-left: 18rpx;
+}
+
+.top-item {
+    width: 714rpx;
+    height: 100rpx;
+}
+
+.top-item-box .top-item:nth-child(n+2) {
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #eeeeee;
+}
+
+.icon-img {
+    height: 25rpx;
+    width: 14rpx;
+}
+
+.top-item-right {
+    margin-right: 20rpx;
+}
+
+.money-box {
+    width: 100%;
+    height: 300rpx;
+    background: #ffffff;
+}
+
+.money-num {
+    font-size: 80rpx;
+}
+
+.align-items {
+    display: flex;
+    align-items: baseline;
+}
+
+.betweens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.z-index {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    background: rgba(0,0,0,0.3);
+    z-index: 10;
+}

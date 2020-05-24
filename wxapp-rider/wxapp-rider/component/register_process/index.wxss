@@ -1,0 +1,46 @@
+.top {
+    width: 100%;
+    height: 160rpx;
+    padding-bottom: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #999999;
+    background: #ffffff;
+    position: relative;
+}
+
+.proccess-img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.top-font1 {
+    position: absolute;
+    top: 112rpx;
+    left: 24rpx;
+}
+
+.top-font2 {
+    position: absolute;
+    top: 112rpx;
+    left: 310rpx;
+}
+
+.top-font3 {
+    position: absolute;
+    top: 112rpx;
+    left: 612rpx;
+}
+
+.line-img {
+    width: 260rpx;
+    height: 2rpx;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

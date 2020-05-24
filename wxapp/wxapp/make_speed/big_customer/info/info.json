@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "大客户中心",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

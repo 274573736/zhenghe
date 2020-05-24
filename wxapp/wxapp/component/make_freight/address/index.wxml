@@ -1,0 +1,37 @@
+<view class="item-box">
+    <view bind:tap="getAddress" class="address-item betweens" data-id="0">
+        <view class="rows">
+            <image class="address-img" src="/image/fa_add.png"></image>
+            <view class="address-font-box" wx:if="{{fahuo.person_tel}}">
+                <view class="no-rows">{{fahuo.title}}</view>
+                <view class="address-des no-rows">{{fahuo.address}}</view>
+            </view>
+            <view class="" wx:else>请选择发货地址</view>
+        </view>
+        <image class="address_r" src="/image/a_r.png" wx:if="{{type==1}}"></image>
+    </view>
+    <view bind:tap="getAddress" class="address-item betweens" data-id="1">
+        <view class="rows">
+            <image class="address-img" src="/image/shou_add.png"></image>
+            <view class="address-font-box" wx:if="{{shouhuo.title}}">
+                <view class="no-rows">{{shouhuo.title}}</view>
+                <view class="address-des no-rows" wx:if="{{shouhuo.person_tel}}">{{shouhuo.address}}</view>
+                <view class="red-tel" wx:else>电话号码未填</view>
+            </view>
+            <view class="" wx:else>请选择收货地址</view>
+        </view>
+        <image class="address_r" src="/image/a_r.png" wx:if="{{type==1}}"></image>
+    </view>
+    <view bind:tap="sTime" class="address-item betweens" wx:if="{{type==1}}">
+        <view class="rows">
+            <image class="address-img" src="/image/time.png"></image>
+            <view class="">请选择发货时间</view>
+        </view>
+        <view class="rows">
+            <view class="item-right-font" wx:if="{{isImmediately==1}}">{{day}}{{hour}}时{{minute}}分</view>
+            <view class="item-right-font" wx:else>立即取货</view>
+            <image class="address_r" src="/image/a_r.png"></image>
+        </view>
+    </view>
+</view>
+<m-time bind:sTime="sTime" days="{{xTime.days}}" hidden="{{time_bg}}" hours="{{xTime.hours}}" minutes="{{xTime.minutes}}" order_type="5"></m-time>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "个人中心",
+    "usingComponents": {
+        "m-auth": "/component/auth/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

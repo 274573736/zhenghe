@@ -1,0 +1,45 @@
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+swiper.square-dot .wx-swiper-dot {
+    background-color: #fff;
+    opacity: 0.4;
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 20rpx;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+swiper.square-dot .wx-swiper-dot.wx-swiper-dot-active {
+    opacity: 1;
+    width: 30rpx;
+}
+
+.card-swiper {
+    height: 200rpx;
+}
+
+.card-swiper swiper-item {
+    width: 610rpx!important;
+    box-sizing: border-box;
+    padding: 10rpx 0rpx 0rpx;
+    overflow: initial;
+}
+
+.card-swiper swiper-item .swiper-item {
+    width: 100%;
+    display: block;
+    height: 100%;
+    border-radius: 10rpx;
+    transform: scale(0.9);
+    transition: all 0.2s ease-in 0s;
+    overflow: hidden;
+}
+
+.card-swiper swiper-item.cur .swiper-item {
+    transform: none;
+    transition: all 0.2s ease-in 0s;
+}

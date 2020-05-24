@@ -1,0 +1,44 @@
+page {
+    background: #ffffff;
+}
+
+.top {
+    width: 100%;
+    height: 120rpx;
+    background: #f6f6f6;
+}
+
+.add-btn {
+    width: 150rpx;
+    height: 60rpx;
+    border-radius: 5px;
+    border: 1px solid #212330;
+    margin-left: 40rpx;
+}
+
+.item {
+    width: 100%;
+    padding: 20rpx 40rpx;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.head-img {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.f-28 {
+    font-size: 28rpx;
+}
+
+.des {
+    color: #808088;
+    font-size: 20rpx;
+}
+
+.right-img {
+    width: 15rpx;
+    height: 26rpx;
+}

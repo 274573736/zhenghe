@@ -1,0 +1,99 @@
+<view class="w-f column">
+    <view class="view-box"></view>
+    <m-address></m-address>
+    <view class="rows">
+        <view class="goods-title-box center">物品类型</view>
+        <scroll-view class="scroll-view" scrollX="true">
+            <form bindsubmit="selectGoods" data-id="{{item.id}}" data-idx="{{index}}" reportSubmit="true" wx:for="{{goods_list}}" wx:key="id">
+                <button class="scroll-item" formType="submit">
+                    <image class="scroll-item-img" src="{{index==goods_idx?item.iconed:item.icon}}"></image>
+                    <view class="scroll-font {{index==goods_idx?'active-font':''}}">{{item.name}}</view>
+                </button>
+            </form>
+        </scroll-view>
+    </view>
+    <view class="w-f column">
+        <view class="goods-property">
+            <view catch:tap="sTime" class="goods-property-item betweens">
+                <view class="goods-property-left rows">
+                    <image class="goods-property-img" src="/image/time.png"></image>
+                    <view>取件时间</view>
+                </view>
+                <view class="goods-property-right rows">
+                    <view class="" wx:if="{{isImmediately==0}}">{{hour}}</view>
+                    <view class="" wx:else>{{day}}{{hour}}时{{minute}}分</view>
+                    <image class="property-r-img" src="/image/property-r.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="goods-property">
+            <view class="goods-property-item betweens">
+                <view class="goods-property-left rows">
+                    <image class="goods-property-img" src="/image/weight.png"></image>
+                    <view>物品重量(kg)</view>
+                </view>
+                <view class="goods-property-right rows">
+                    <view catch:tap="weight" class="weight-btn reduce-weight" data-id="0">-</view>
+                    <input bindinput="sWeight" class="weight-input" type="text" value="{{weight}}"></input>
+                    <view catch:tap="weight" class="weight-btn add-weight" data-id="1">+</view>
+                </view>
+            </view>
+            <view catch:tap="sCoupon" class="goods-property-item betweens">
+                <view class="goods-property-left rows">
+                    <image class="goods-property-img" src="/image/coupon.png"></image>
+                    <view>优惠券</view>
+                </view>
+                <view class="goods-property-right rows">
+                    <view class="" wx:if="{{!price_detail.coupon_money}}">未使用优惠券</view>
+                    <view class="coupon-font" wx:else>-￥{{price_detail.coupon_money}}元</view>
+                    <image class="property-r-img" src="/image/property-r.png"></image>
+                </view>
+            </view>
+            <view catch:tap="sPay" class="goods-property-item betweens">
+                <view class="goods-property-left rows">
+                    <image class="goods-property-img" src="/image/money.png"></image>
+                    <view>付款方式</view>
+                </view>
+                <view class="goods-property-right rows">
+                    <view class="" wx:if="{{pay_method==1}}">余额支付</view>
+                    <view class="" wx:else>微信支付</view>
+                    <image class="property-r-img" src="/image/property-r.png"></image>
+                </view>
+            </view>
+            <view catch:tap="sTip" class="goods-property-item betweens">
+                <view class="goods-property-left rows">
+                    <image class="goods-property-img" src="/image/tip.png"></image>
+                    <view>小费</view>
+                </view>
+                <view class="goods-property-right rows">
+                    <view class="coupon-font" wx:if="{{tip_money>0}}">{{tip_money}}元</view>
+                    <view class="" wx:else>快速接单</view>
+                    <image class="property-r-img" src="/image/property-r.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="goods-property">
+        <view catch:tap="sRemark" class="goods-property-item betweens">
+            <view class="goods-property-left rows">
+                <image class="goods-property-img" src="/image/remark.png"></image>
+                <view>备注信息</view>
+            </view>
+            <view class="goods-property-right rows">
+                <view class="" wx:if="{{remark==''}}">说点什么吧</view>
+                <view class="no-rows" wx:else>{{remark}}</view>
+                <image class="property-r-img" src="/image/property-r.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="footer center" wx:if="{{actual_payment>-1}}">
+        <m-footer-btn actual_payment="{{actual_payment}}" bind:confirm="confirm"></m-footer-btn>
+    </view>
+    <view class="box-space" wx:if="{{actual_payment>-1}}"></view>
+    <view class="box-space" wx:else></view>
+    <m-time bind:sTime="sTime" days="{{xTime.days}}" hidden="{{time_bg}}" hours="{{xTime.hours}}" minutes="{{xTime.minutes}}" order_type="0"></m-time>
+    <m-weight bind:sWeight="sWeight" hidden="{{weight_bg}}"></m-weight>
+    <m-tip bind:sTip="sTip" hidden="{{tip_bg}}"></m-tip>
+    <m-remark bind:sRemark="sRemark" hidden="{{remark_bg}}" remark="{{remark}}"></m-remark>
+    <m-pay bind:sPay="sPay" hidden="{{pay_bg}}" money="{{actual_payment}}" my_money="{{my_money}}" pay_method="{{pay_method}}"></m-pay>
+</view>

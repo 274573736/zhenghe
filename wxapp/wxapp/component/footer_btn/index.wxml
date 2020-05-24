@@ -1,0 +1,19 @@
+<form action="" class="w-f">
+    <view class="confirm-btn rows">
+        <view class="{{order_type==5?'confirm-btn-left-yellow':'confirm-btn-left'}} rows">
+            <view class="rows price-des">费用</view>
+            <view catch:tap="topPrice" class="rows">
+                <text>{{actual_payment}}元</text>
+                <image class="price-question" src="/image/price_question.png"></image>
+            </view>
+        </view>
+        <form bindsubmit="toOrder" reportSubmit="true" wx:if="{{type==0}}">
+            <button class="confirm-btn-right center" formType="submit">立刻下单</button>
+        </form>
+        <button catch:tap="toPay" class="{{order_type==5?'confirm-btn-right-yellow':'confirm-btn-right'}} center" wx:if="{{type==1&&!loading}}">{{pay_method==3?'立即下单':'立即付款'}}</button>
+        <button class="{{order_type==5?'confirm-btn-right-yellow':'confirm-btn-right'}} center" loading="true" wx:if="{{type==1&&loading}}">{{pay_method==3?'立即下单':'立即付款'}}</button>
+    </view>
+</form>
+<view class="w-f" wx:if="{{!is_login}}">
+    <m-auth bind:authBtn="authBtn" is_login="{{is_login}}"></m-auth>
+</view>

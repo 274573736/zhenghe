@@ -1,0 +1,29 @@
+<view class="betweens date-box">
+    <text></text>
+    <image bind:tap="bindTime" class="date-img" src="{{img_url}}date.png"></image>
+</view>
+<view class="item-box" wx:if="{{verify.isArray(list)==true}}">
+    <view class="w-f item" wx:for="{{list}}" wx:key="index">
+        <view class="betweens item-top">
+            <text>{{item.title}}</text>
+            <text></text>
+        </view>
+        <view class="betweens item-center">
+            <text>{{item.status}}</text>
+            <text class="font-color">{{item.amount}}元</text>
+        </view>
+        <view class="betweens item-bottom">
+            <text>{{item.add_time}}</text>
+        </view>
+    </view>
+</view>
+<view class="column no-order-box" wx:else>
+    <m-no-hint img_url="{{img_url}}">
+        <view class="no-font" slot="after">暂无记录~</view>
+    </m-no-hint>
+</view>
+<m-time-screen bind:confirmTime="confirmTime" time_picker="{{time_picker}}"></m-time-screen>
+<view class="w-f">
+    <m-accept bind:bindCall="bindCall" count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

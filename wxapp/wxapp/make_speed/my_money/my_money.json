@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我的钱包",
+    "usingComponents": {
+        "m-time": "/component/time_screen/index",
+        "m-no-hint": "/component/no_hint/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

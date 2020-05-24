@@ -1,0 +1,45 @@
+<m-tab bind:Getidx="Getidx" bind:scrollSole="scrollSole" idx="{{idx}}" top_item="{{top_item}}" top_p="{{top_p}}">
+    <view class="row big-box" slot="after0">
+        <view bind:tap="goodsDetail" class="item" data-id="{{item.id}}" wx:for="{{goods_list}}" wx:key="index">
+            <view class="goods-img">
+                <image class="full" src="{{item.img}}"></image>
+            </view>
+            <view class="goods-des">
+                <view class="goods-des-font">{{item.title}}</view>
+                <view class="goods-price">{{item.price}}</view>
+            </view>
+        </view>
+        <view class="center no-more" wx:if="{{idx==0&&verify.isArray(goods_list)&&!isData}}">没有更多商品了~</view>
+    </view>
+    <view class="center full" slot="after{{idx}}" wx:if="{{idx==0&&!verify.isArray(goods_list)||idx==1&&!verify.isArray(goods_small_list)}}">
+        <m-hint img_url="{{img_url}}">
+            <text class="no-font" slot="after">亲，暂无数据哟~</text>
+        </m-hint>
+    </view>
+    <view class="row big-box" slot="after1">
+        <view bind:tap="myBuy" class="betweens list-box" data-id="{{item.equip_id}}" data-status="{{item.status}}" wx:for="{{goods_small_list}}" wx:key="index">
+            <view class="row">
+                <view class="small-goods-img">
+                    <image class="full" src="{{item.img}}"></image>
+                </view>
+                <view class="">
+                    <view class="small-goods-name">{{item.title}}</view>
+                    <view class="small-goods-des small-goods-property">
+                        <text class="">状态:{{item.remark}}</text>
+                    </view>
+                    <view class="small-goods-des">数量*{{item.num}}</view>
+                </view>
+            </view>
+            <view class="center small-goods-btn btn-no-use" wx:if="{{item.status==1}}">
+                    {{item.remark}}
+                </view>
+            <view class="center small-goods-btn" wx:if="{{item.status==0||item.status==2}}">
+                    {{item.remark}}
+                </view>
+        </view>
+    </view>
+</m-tab>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

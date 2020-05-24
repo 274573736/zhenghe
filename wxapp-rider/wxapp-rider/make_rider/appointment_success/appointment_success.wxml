@@ -1,0 +1,31 @@
+<view class="column" style="background: url('{{img_url}}appintment.jpg') no-repeat center;background-size:100% 100%;width: 100%;height: 100%;">
+    <view class="column top-box">
+        <view class="w-f center top-top">
+            {{train.name}}
+        </view>
+        <view class="top-center">
+            <view class="row top-item">
+                <view class="app-img">
+                    <image class="full" src="{{img_url}}appointment_map.png"></image>
+                </view>
+                <view class="top-center-right">
+                    <view class="font-title">地址</view>
+                    <view class="">{{train.address}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="top-center">
+            <view class="row top-item">
+                <view class="app-img">
+                    <image class="full" src="{{img_url}}appointment_tel.png"></image>
+                </view>
+                <view class="top-center-right">
+                    <view class="font-title">电话</view>
+                    <view bind:tap="callRel" class="">{{train.phone}}</view>
+                </view>
+            </view>
+        </view>
+        <view bind:tap="confirm" class="center btn" hoverClass="btn-hover">提交成功</view>
+        <view class="appointment-time">预约时间：{{train.time}} {{time}}</view>
+    </view>
+</view>

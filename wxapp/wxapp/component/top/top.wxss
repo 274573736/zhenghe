@@ -1,0 +1,48 @@
+.top {
+    width: 100%;
+    height: 100rpx;
+    padding: 0 30rpx;
+    background: #ffffff;
+}
+
+.info-img {
+    width: 28rpx;
+    height: 34rpx;
+    padding: 10rpx;
+}
+
+.city-img {
+    width: 13rpx;
+    height: 7rpx;
+    margin-left: 10rpx;
+}
+
+.app-img {
+    width: 34rpx;
+    height: 34rpx;
+    padding: 10rpx;
+}
+
+.button:after {
+    border: 0;
+}
+
+.button {
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+}
+
+.betweens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

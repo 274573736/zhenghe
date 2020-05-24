@@ -1,0 +1,37 @@
+<cover-view catchtouchmove="true" class="full column box" hidden="{{order_status_box_close}}">
+    <cover-view bind:tap="orderStatusBoxClose" class="u-index" hidden="{{order_status_box_close}}"></cover-view>
+    <cover-view class="order-status-box" hidden="{{order_status_box_close}}">
+        <cover-view class="w-f betweens order-status-top">
+            <cover-view class="order-status-top-left"></cover-view>
+            <cover-view class="order-status-top-font">订单状态</cover-view>
+            <cover-view bind:tap="orderStatusBoxClose" class="order-status-close">关闭</cover-view>
+        </cover-view>
+        <cover-view class="w-f betweens order-status-item" wx:if="{{order_status>=5||order_status==0&&charg_type==2}}">
+            <cover-view class="rows order-status-item-left">
+                <cover-image class="status-img" src="/image/a-yes.png"></cover-image>
+                <cover-view class="">已完成</cover-view>
+            </cover-view>
+            <cover-view class="order-status-item-right">{{riders.goto_time}}</cover-view>
+        </cover-view>
+        <cover-view class="w-f" wx:if="{{order_status>=5||order_status==0&&charg_type==2}}">
+            <cover-image class="line-img" src="{{img_url}}line.png"></cover-image>
+        </cover-view>
+        <cover-view class="w-f betweens order-status-item" wx:if="{{order_status>=3||order_status==0&&charg_type==2}}">
+            <cover-view class="rows order-status-item-left">
+                <cover-image class="status-img" src="/image/a-yes.png"></cover-image>
+                <cover-view class="">进行中</cover-view>
+            </cover-view>
+            <cover-view class="order-status-item-right">{{riders.accept_time}}</cover-view>
+        </cover-view>
+        <cover-view class="w-f" wx:if="{{order_status>=3||order_status==0&&charg_type==2}}">
+            <cover-image class="line-img" src="{{img_url}}line.png"></cover-image>
+        </cover-view>
+        <cover-view class="w-f betweens order-status-item" wx:if="{{order_status>=0}}">
+            <cover-view class="rows order-status-item-left">
+                <cover-image class="status-img" src="/image/a-yes.png"></cover-image>
+                <cover-view class="">下单成功</cover-view>
+            </cover-view>
+            <cover-view class="order-status-item-right">{{add_time}}</cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>

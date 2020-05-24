@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "order-list": "../../component/order-list/index",
+        "m-hint": "../../component/no_hint/index",
+        "m-accept": "../../component/accept_picker/index",
+        "m-time-screen": "../../component/time_screen/index"
+    },
+    "navigationBarTitleText": "我的订单"
+}

@@ -1,0 +1,15 @@
+<view class="top rows">
+    <view catch:tap="staffAdd" class="add-btn center">
+        新增店员
+    </view>
+</view>
+<view catch:tap="staffInfo" class="betweens item" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id">
+    <view class="row">
+        <image class="head-img" src="{{item.avatar}}"></image>
+        <view class="">
+            <view class="font-size">{{item.username}}</view>
+            <view class="des">电话号码:{{item.mobile}}</view>
+        </view>
+    </view>
+    <image class="right-img" src="/image/staff-r.png"></image>
+</view>

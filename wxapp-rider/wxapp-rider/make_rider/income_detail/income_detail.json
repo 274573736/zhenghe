@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "m-accept": "../../component/accept_picker/index",
+        "m-no-hint": "../../component/no_hint/index",
+        "m-time-screen": "../../component/time_screen/index"
+    },
+    "navigationBarTitleText": "交易明细"
+}

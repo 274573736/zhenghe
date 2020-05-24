@@ -1,0 +1,70 @@
+<view class="top-head betweens">
+    <button catch:tap="goLogin" class="rows auth-btn" hoverClass="none" wx:if="{{!auth}}">
+        <view class="head-img">
+            <open-data class="head-img" type="userAvatarUrl"></open-data>
+        </view>
+        <view class="login-font">点击授权登录</view>
+    </button>
+    <view class="" wx:if="{{auth}}">
+        <view class="rows">
+            <open-data type="userNickName"></open-data>
+            <image class="info-img" src="{{info.userinfo.icon}}"></image>
+        </view>
+        <view class="user-name">
+            <text class="">{{info.userinfo.name}}</text>
+            <text class="uid">uid:{{uid}}</text>
+        </view>
+    </view>
+    <view class="head-img" wx:if="{{auth}}">
+        <open-data class="head-img" type="userAvatarUrl"></open-data>
+    </view>
+</view>
+<view class="w-f" wx:if="{{!is_login}}">
+    <m-auth bind:authBtn="authBtn" bind:uidBtn="uidBtn" is_login="{{is_login}}"></m-auth>
+</view>
+<view class="top-box row">
+    <view catch:tap="myCoupon" class="top-box-item center-c">
+        <view class="top-num">{{info.coupontotal}}</view>
+        <view class="top-font">优惠券</view>
+    </view>
+    <view catch:tap="myMoney" class="top-box-item center-c">
+        <view class="top-num">{{info.user_valid}}</view>
+        <view class="top-font">我的钱包</view>
+    </view>
+</view>
+<view class="view-box"></view>
+<view catch:tap="myOrder" class="list-item betweens">
+    <view class="">全部订单</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</view>
+<view catch:tap="gralCity" class="list-item betweens">
+    <view class="">积分商城</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</view>
+<view catch:tap="oftenQuestion" class="list-item betweens">
+    <view class="">疑问帮助</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</view>
+<view catch:tap="inviteActive" class="list-item betweens">
+    <view class="">邀请好友</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</view>
+<view catch:tap="distributorBtn" class="list-item betweens" wx:if="{{distributor_switch==1}}">
+    <view class="">{{distribution_name}}</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</view>
+<view catch:tap="toBusiness" class="list-item betweens" wx:if="{{is_business>-2}}">
+    <view class="">大客户</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</view>
+<view catch:tap="ToRider" class="list-item betweens">
+    <view class="">申请入驻</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</view>
+<button bindcontact="handleContact" class="list-item-btn betweens" openType="contact">
+    <view class="">在线客服</view>
+    <image class="property-r-img" src="/image/property-r.png"></image>
+</button>
+<view class="center footer-title" wx:if="{{speed_copyright}}">
+    {{speed_copyright}}
+</view>

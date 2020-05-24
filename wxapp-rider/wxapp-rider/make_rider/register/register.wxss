@@ -1,0 +1,92 @@
+.page {
+    background-color: #eeeeee;
+    padding-bottom: 50rpx;
+}
+
+.msg-box {
+    width: 100%;
+    margin-top: 20rpx;
+    padding-left: 30rpx;
+    background: #ffffff;
+}
+
+.msg-item {
+    flex-grow: 1;
+    height: 100rpx;
+}
+
+.business-box {
+    border-top: 1px solid #eeeeee;
+}
+
+.business-title {
+    margin-top: 20rpx;
+}
+
+.business-item {
+    margin: 20rpx 0;
+    margin-right: 40rpx;
+}
+
+.msg-left {
+    width: 200rpx;
+}
+
+.sex-right {
+    margin-left: 40rpx;
+}
+
+.msg-right {
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.sex-img {
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 8rpx;
+}
+
+.msg-item:nth-of-type(n+2) {
+    border-top: 1px solid #eeeeee;
+}
+
+.idcard-box {
+    width: 100%;
+    background: #ffffff;
+    margin-top: 20rpx;
+    padding: 40rpx 30rpx;
+    flex-wrap: wrap;
+}
+
+.idcard-img {
+    width: 325rpx;
+    height: 212rpx;
+    margin-top: 5rpx;
+    margin-bottom: 10rpx;
+}
+
+.font-des {
+    color: #999999;
+}
+
+.bottom {
+    width: 100%;
+    margin: 50rpx 0;
+}
+
+.btn-confirm {
+    width: 500rpx;
+    height: 80rpx;
+    border-radius: 35px;
+    color: #ffffff;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+}
+
+.btn-confirm:after {
+    border: 0;
+}
+
+.btn-hover {
+    background: #a1dafb;
+}

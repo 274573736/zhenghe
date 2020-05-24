@@ -1,0 +1,11 @@
+<cover-view catchtouchmove="true" class="center jump-bg">
+    <cover-view class="login-box column">
+        <cover-view class="login-title-font">您还未登录</cover-view>
+        <cover-view class="login-des-font">请先登录再进行操作</cover-view>
+        <cover-image class="logo-img" src="{{logo}}"></cover-image>
+        <cover-view class="betweens w-f">
+            <cover-view catch:tap="noLogin" class="login-no-btn">暂不登录</cover-view>
+            <button bindgetuserinfo="userMessage" class="login-yes-btn" hoverClass="none" openType="getUserInfo">立即登录</button>
+        </cover-view>
+    </cover-view>
+</cover-view>

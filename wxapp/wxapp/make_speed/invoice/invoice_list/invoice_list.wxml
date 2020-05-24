@@ -1,0 +1,27 @@
+<view class="full">
+    <view class="box" hidden="{{false}}" wx:for="{{list}}" wx:key="id">
+        <view class="betweens top">
+            <view class="rows">
+                <view class="left">申请时间：</view>
+                <view class="time">{{item.add_time}}</view>
+            </view>
+            <view class="status">{{item.status_text}}</view>
+        </view>
+        <view class="bottom">
+            <view class="rows">
+                <view class="left">发票类型：</view>
+                <view class="">电子发票</view>
+            </view>
+            <view class="rows bottom-b">
+                <view class="left">发票金额：</view>
+                <view class="">{{item.amount}}元</view>
+            </view>
+        </view>
+    </view>
+    <view class="container" wx:if="{{verify.isArray(list)==false}}">
+        <m-hint img_url="{{img_url}}">
+            <text class="no-hint-font" slot="after">暂无记录哟~</text>
+        </m-hint>
+    </view>
+</view>
+<wxs module="verify" src="../../../modules/verify.wxs" />

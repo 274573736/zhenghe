@@ -1,0 +1,13 @@
+<view class="top">
+    手册说明
+</view>
+<view bind:tap="handbookDetail" class="betweens item" data-id="{{item.id}}" wx:for="{{list}}" wx:key="index">
+    <view class="rows">
+        <image class="icon-img" src="{{item.icon}}"></image>
+        <view class="">{{item.title}}</view>
+    </view>
+    <image class="icon-r" src="{{img_url}}handbook_r.png"></image>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

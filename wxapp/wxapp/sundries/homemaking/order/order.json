@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "发布服务",
+    "usingComponents": {
+        "m-footer-btn": "/component/footer_btn/index",
+        "m-time": "/component/getTime/index",
+        "m-pay": "/component/pay/index",
+        "m-remark": "/component/remark/index",
+        "m-upload-img": "/component/upload_img/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

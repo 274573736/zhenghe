@@ -1,0 +1,97 @@
+<view class="top column">
+    <view class="title">价格明细</view>
+    <view class="w-f rows">
+        <view class="line"></view>
+        <view class="title_two" wx:if="{{price_detail.order_type==0}}">帮送</view>
+        <view class="title_two" wx:if="{{price_detail.order_type==1}}">帮买</view>
+        <view class="title_two" wx:if="{{price_detail.order_type==2}}">万能服务</view>
+        <view class="title_two" wx:if="{{price_detail.order_type==3}}">代驾</view>
+        <view class="title_two" wx:if="{{price_detail.order_type==5}}">{{price_detail.title?price_detail.title:'货运'}}</view>
+        <view class="line"></view>
+    </view>
+    <view class="small-box">
+        <view class="betweens title_three" wx:if="{{price_detail.order_type==5}}">
+            <view class="">起步价</view>
+            <view class="">{{price_detail.starting_km}}公里以内{{price_detail.starting_price}}元</view>
+        </view>
+        <view class="betweens title_three title-top">
+            <view class="">里程费</view>
+            <view class="">{{price_detail.distance_price?price_detail.distance_price:price_detail.starting_price}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.weight&&price_detail.weight>0}}">
+            <view class="">重量</view>
+            <view class="">{{price_detail.weight}}公斤</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.volume&&price_detail.volume>0}}">
+            <view class="">体积</view>
+            <view class="">{{price_detail.volume}}立方米</view>
+        </view>
+        <view class="betweens price_des">
+            <view class="">里程</view>
+            <view class="" wx:if="{{price_detail.distance>0}}">{{price_detail.distance}}公里</view>
+            <view class="" wx:else>起步公里范围内</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.starting_km*1<price_detail.distance*1&&price_detail.order_type==5}}">
+            <view class="">超里程费</view>
+            <view class="">{{verify.toFixed(price_detail.distance_price-price_detail.starting_price,2)}}元</view>
+        </view>
+        <view class="betweens title_three title-top" wx:if="{{price_detail.night_price*1+price_detail.change_price*1+price_detail.tip_money*1+price_detail.carry*1+price_detail.weight_fee*1+price_detail.carload_fee*1+price_detail.cube_price*1>0}}">
+            <view class="">其他</view>
+            <view class="">{{verify.toFixed(price_detail.night_price*1+price_detail.change_price*1+price_detail.tip_money*1+price_detail.floor_price*1+price_detail.carry*1+price_detail.weight_fee*1+price_detail.carload_fee*1+price_detail.cube_price*1,2)}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.order_type==5&&price_detail.carload_fee>0}}">
+            <view class="">整车费用</view>
+            <view class="">{{price_detail.carload_fee}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.order_type==5&&price_detail.weight_fee>0}}">
+            <view class="">重量费</view>
+            <view class="">{{price_detail.weight_fee}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.order_type==5&&price_detail.cube_price>0}}">
+            <view class="">体积费</view>
+            <view class="">{{price_detail.cube_price}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.carry>0}}">
+            <view class="">装卸费</view>
+            <view class="">{{price_detail.carry}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.floor_price>0}}">
+            <view class="">楼层费</view>
+            <view class="">{{price_detail.floor_price}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.night_price>0}}">
+            <view class="">夜间费</view>
+            <view class="">{{price_detail.night_price}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.change_price&&price_detail.change_price!=0}}">
+            <view class="">溢价</view>
+            <view class="">{{price_detail.change_price}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.tip_money>0}}">
+            <view class="">小费</view>
+            <view class="">{{price_detail.tip_money}}元</view>
+        </view>
+        <view class="betweens title_three title-top" wx:if="{{price_detail.coupon_money*1+price_detail.discount_price*1>0}}">
+            <view class="">优惠</view>
+            <view class="">{{price_detail.coupon_money*1+price_detail.discount_price*1}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.coupon_money>0}}">
+            <view class="">优惠券</view>
+            <view class="">-{{price_detail.coupon_money}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{price_detail.discount_price>0}}">
+            <view class="">会员折扣</view>
+            <view class="">-{{price_detail.discount_price}}元</view>
+        </view>
+        <view class="betweens price_des" wx:if="{{gy_discount*1>0}}">
+            <view class="">公益金捐赠</view>
+            <view class="">{{verify.toFixed(gy_discount*price_detail.actual_payment,3)}}元</view>
+        </view>
+    </view>
+    <view class="w-f">
+        <view class="">应付总额<text class="total_price">{{price_detail.actual_payment}}</text>元</view>
+        <view class="total_price_des">*费用计算应四舍五入取小数点后两位</view>
+    </view>
+    <view bind:tap="priceDescription" class="center price-btn">查看计价规则</view>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

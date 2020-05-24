@@ -1,0 +1,63 @@
+.confirm-btn {
+    width: 670rpx;
+    height: 100rpx;
+    color: #ffffff;
+}
+
+.confirm-btn-left {
+    width: 420rpx;
+    height: 100rpx;
+    background: #212330;
+    border-radius: 35px 0 0 35px;
+}
+
+.confirm-btn-left-yellow {
+    width: 420rpx;
+    height: 100rpx;
+    background: #f16623;
+    border-radius: 35px 0 0 35px;
+}
+
+.price-des {
+    margin: 0 50rpx;
+}
+
+.confirm-btn-right {
+    width: 250rpx;
+    height: 100rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    background: #097bf1;
+    border-radius: 0 35px 35px 0;
+}
+
+.confirm-btn-right-yellow {
+    width: 250rpx;
+    height: 100rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    background: #fe9f03;
+    border-radius: 0 35px 35px 0;
+}
+
+.confirm-btn-right:after {
+    border: 0;
+}
+
+.price-question {
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 10rpx;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

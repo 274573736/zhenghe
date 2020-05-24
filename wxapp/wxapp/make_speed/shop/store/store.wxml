@@ -1,0 +1,65 @@
+<view class="top betweens">
+    <view class="">
+        <view class="column">
+            <view class="rows">
+                <image class="integral-img" src="/image/integral.png"></image>
+                <view class="top-font">我的积分</view>
+            </view>
+            <view class="top-num">{{info.user_gral}}</view>
+        </view>
+    </view>
+    <view class="column">
+        <view class="head-img">
+            <open-data class="head-img" type="userAvatarUrl"></open-data>
+        </view>
+        <open-data class="nickname" type="userNickName"></open-data>
+    </view>
+    <view class="">
+        <view class="column">
+            <view class="row">
+                <image class="member-img" src="/image/member.png"></image>
+                <view class="top-font">会员等级</view>
+            </view>
+            <view class="top-num">{{info.userinfo.name}}</view>
+        </view>
+    </view>
+</view>
+<view class="view-box"></view>
+<view class="view-box"></view>
+<view class="city-goods-list row" wx:if="{{idx==0}}">
+    <view catch:tap="goodsDetail" class="city-goods" data-id="{{item.id}}" wx:for="{{list}}" wx:key="index">
+        <view class="city-coupon-title">{{item.money}}元优惠券</view>
+        <view class="city-coupon-gral">{{item.gral}}积分</view>
+        <view class="city-coupon">
+            <view class="coupon-left rows">
+                <view class="coupon-title">优惠券</view>
+                <view class="coupon-des">
+                    <view class="">
+                        <text class="">￥</text>
+                        <text class="coupon-money">{{item.money}}</text>
+                    </view>
+                    <view class="">满{{item.satisfy_money}}元可用</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="w-f" wx:else>
+    <view catch:tap="goodsDetail" class="rows coupon-box" wx:for="{{[1]}}">
+        <view class="coupon-left rows">
+            <view class="coupon-title">优惠券</view>
+            <view class="coupon-des">
+                <view class="">
+                    <text class="">￥</text>
+                    <text class="coupon-money">{{item.money}}</text>
+                </view>
+                <view class="">满{{item.satisfy_money}}元可用</view>
+            </view>
+        </view>
+        <view class="coupon-right">
+            <view class="coupon-right-status">兑换成功</view>
+            <view class="coupon-right-des">您使用了200码科速送积分成功兑换20 元优惠券一张。</view>
+            <view class="coupon-right-time">有效期2019.04.04至2020.04.01</view>
+        </view>
+    </view>
+</view>

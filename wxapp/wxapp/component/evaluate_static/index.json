@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "m-driver": "../driver/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

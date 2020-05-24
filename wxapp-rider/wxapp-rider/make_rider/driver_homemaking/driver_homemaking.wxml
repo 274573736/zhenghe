@@ -1,0 +1,30 @@
+<view class="{{unfold?'w-f':'full'}} flex-c">
+    <view class="w-f">
+        <m-register-top img_url="{{img_url}}" register_status="1" wx:if="{{is_register==1}}"></m-register-top>
+    </view>
+    <view class="mian column">
+        <view class="item-box item-box-1">
+            <view class="betweens item">
+                <view class="item-left">服务类型</view>
+                <view catch:tap="unfoldBtn" class="item-right-btn" wx:if="{{!unfold}}">展开</view>
+                <view catch:tap="unfoldBtn" class="item-right-btn" wx:else>收起</view>
+            </view>
+            <scroll-view class="rows car-box-1" scrollY="true">
+                <view catch:tap="selectCar" class="btn-default {{car_arr[item.id]?'btn-select':''}}" data-id="{{item.id}}" wx:for="{{car_list}}" wx:key="id">
+                        {{item.title}}
+                    </view>
+            </scroll-view>
+        </view>
+        <view class="item-box">
+            <view class="betweens item">
+                <view class="item-left">上传图片（选填：其他辅助证件如证书等）</view>
+            </view>
+            <view class="rows car-box">
+                <m-upload-imgs bind:uploadImgs="uploadImgs" img_temp_arr="{{goods_imgs_arr}}" imgs_string="{{goods_imgs}}" order_id="0" type="0"></m-upload-imgs>
+            </view>
+        </view>
+    </view>
+    <view class="footer column">
+        <view catch:tap="applyBtn" class="form-btn center">提交</view>
+    </view>
+</view>

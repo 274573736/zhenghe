@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "加载中",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

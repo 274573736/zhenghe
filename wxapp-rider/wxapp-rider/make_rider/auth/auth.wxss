@@ -1,0 +1,26 @@
+.top-font1 {
+    font-size: 50rpx;
+    font-weight: bold;
+    color: #ffffff;
+    position: fixed;
+    bottom: 300rpx;
+}
+
+.top-font2 {
+    width: 500rpx;
+    height: 80rpx;
+    color: #ffffff;
+    border-radius: 35px;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+    position: fixed;
+    bottom: 100rpx;
+    box-shadow: 0 0 5px #586c94;
+}
+
+.top-font2:after {
+    border: 0;
+}
+
+.btn-hover {
+    background: #a1dafb;
+}

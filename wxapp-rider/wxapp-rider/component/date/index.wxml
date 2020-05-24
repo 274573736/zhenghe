@@ -1,0 +1,18 @@
+<view class="bottom-date" hidden="{{hidden}}">
+    <view class="anjian betweens">
+        <view bindtap="closeBtn" class="anjian-quxiao">取消</view>
+        <view bindtap="confirmBtn" class="anjian-queding">确定</view>
+    </view>
+    <picker-view bindchange="pickerTime" indicatorStyle="height: 50px;" style="width: 100%;height: 200px;" value="0">
+        <picker-view-column>
+            <view class="center" style="line-height: 50px" wx:for="{{years}}" wx:key="days">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="center" style="line-height: 50px" wx:for="{{months}}" wx:key="hours">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view class="center" style="line-height: 50px" wx:for="{{hours}}" wx:key="minutes">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>
+<cover-view bindtap="closeBtn" class="z-index" hidden="{{hidden}}"></cover-view>

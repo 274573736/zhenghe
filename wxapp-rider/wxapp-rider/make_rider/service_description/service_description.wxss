@@ -1,0 +1,7 @@
+page {
+    background: #ffffff;
+}
+
+.protocol-box {
+    padding: 20rpx;
+}

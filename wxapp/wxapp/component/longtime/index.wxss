@@ -1,0 +1,46 @@
+.bottom-date {
+    width: 100%;
+    background: #FFFFFF;
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.betweens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.anjian {
+    font-size: 32rpx;
+    width: 100%;
+    height: 100rpx;
+    padding: 0 20rpx;
+    background: #dadada;
+}
+
+.anjian-queding {
+    color: #097bf1;
+}
+
+.z-index {
+    background-color: #000;
+    background: rgba(0,0,0,0.3);
+    flex: 1;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

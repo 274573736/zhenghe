@@ -1,0 +1,102 @@
+<view class="order-item" wx:for="{{underwayOrder}}" wx:key="id">
+    <view bind:tap="orderDetail" class="w-f" data-idx="{{index}}">
+        <view class="top-line">
+            <view class="order-item-top">
+                <view class="w-f betweens">
+                    <view class="order-item-top-left rows">距离你{{item.status==3?item.rider_distance:verify.toFixed(item.distance,1)}}公里 <text class="" wx:if="{{item.weight>0&&item.order_type!=5}}"> /{{item.weight}}公斤</text>
+                        <text style="color: #ff0000;"> [{{item.order_type==5?item.car_name:item.order_type==6?item.goodsname:item_type[item.order_type]}}] </text>
+                        <view class="appointment-sign" wx:if="{{verify.isAppointment(item.__get_time)}}">预</view>
+                        <view class="appointment-sign" wx:if="{{item.payment==3}}">现</view>
+                    </view>
+                    <view class="status-font">￥{{item.total_price}}</view>
+                </view>
+                <view class="" style="font-size: 26rpx;margin-top: 10rpx;color: #333333">订单号：{{item.order_code}}</view>
+                <view class="rows" style="margin-top: 10rpx;font-size: 26rpx;" wx:if="{{verify.isAppointment(item.__get_time)}}">
+                    <view class="">预约时间：{{item.__get_time}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="row address-box" wx:if="{{item.order_type==1}}">
+            <view class="font-icon center">买</view>
+            <view class="">
+                <view class="row" wx:if="{{item.begin_address==''}}">
+                    <view class="address-title">就近购买</view>
+                </view>
+                <view class="row" wx:else>
+                    <view class="address-des">{{item.begin_address}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="row address-box" wx:if="{{item.begin_username||item.begin_phone}}">
+            <view class="">
+                <view class="font-icon center" wx:if="{{item.order_type==3}}">起</view>
+                <view class="font-icon center" wx:elif="{{item.order_type==6}}">服</view>
+                <view class="font-icon center" wx:else>取</view>
+                <view class="distance-two" wx:if="{{item.distance>0}}">
+                    <view>{{verify.toFixed(item.distance,1)}}</view>
+                    <view style="line-height: 16rpx">km</view>
+                </view>
+            </view>
+            <view class="">
+                <view class="address-title-box row">
+                    <view class="address-top-box">
+                        <text class="address-title">{{item.begin_username}}</text>
+                        <text class="address-phone">{{verify.phoneVerify(item.begin_phone)}}</text>
+                    </view>
+                    <view class="icon-box">
+                        <image catch:tap="phone" class="phone-icon" data-phone="{{item.begin_phone}}" src="/image/phone.png"></image>
+                    </view>
+                </view>
+                <view class="row">
+                    <view class="address-des">{{item.begin_address}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="row address-box" wx:if="{{item.end_address!=''}}">
+            <view class="font-icon-shou center" wx:if="{{item.order_type==3}}">止</view>
+            <view class="font-icon-shou center" wx:else>收</view>
+            <view class="">
+                <view class="address-title-box row" wx:if="{{item.end_username||item.end_phone}}">
+                    <view class="address-top-box">
+                        <text class="address-title">{{item.end_username}}</text>
+                        <text class="address-phone">{{item.extension_number&&item.extension_number!=0?verify.phoneVerify(item.end_phone)+','+item.extension_number:verify.phoneVerify(item.end_phone)}}</text>
+                    </view>
+                    <view class="icon-box">
+                        <image catch:tap="phone" class="phone-icon" data-phone="{{item.extension_number&&item.extension_number!=0?item.end_phone+','+item.extension_number:item.end_phone}}" src="/image/phone.png"></image>
+                    </view>
+                </view>
+                <view class="row" wx:if="{{item.end_address}}">
+                    <view class="address-des">{{item.end_address}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="w-f" style="height: {{fold_arr[item.order_id]?'auto':0}};overflow: hidden;">
+        <view class="upload-imgs-box" wx:if="{{item.status==3}}">
+            <m-upload-imgs bind:uploadImgs="uploadImgs" order_id="{{item.order_id}}" type="{{item.status}}"></m-upload-imgs>
+        </view>
+        <view class="upload-imgs-box" wx:if="{{item.status==4}}">
+            <m-upload-imgs bind:uploadImgs="uploadImgs" order_id="{{item.order_id}}" type="{{item.status}}"></m-upload-imgs>
+        </view>
+        <view class="view-input" wx:if="{{item.status==3}}">
+            <input bindinput="goodsCode" class="input" confirmType="done" cursorSpacing="50" placeholder="输入取件码" type="number" wx:if="{{item.order_type==0&&getcode_switch>0}}"></input>
+        </view>
+        <view class="view-input" wx:if="{{item.status==4}}">
+            <input bindinput="goodsCode" class="input" confirmType="done" cursorSpacing="50" placeholder="输入完成码" type="number" wx:if="{{item.order_type<3&&endcode_switch>0}}"></input>
+        </view>
+        <view class="btn-box rows" wx:if="{{item.status==3}}">
+            <view catch:tap="cancelOrder" class="btn close-btn" data-id="{{item.order_id}}" data-idx="{{index}}">取消接单</view>
+            <view catch:tap="orderDetail" class="btn detail-btn" data-idx="{{index}}">订单详情</view>
+            <view catch:tap="confirmGoods" class="btn confirm-btn" data-id="{{item.order_id}}" data-idx="0" data-index="{{index}}" data-type="{{item.order_type}}">{{item.order_type==0?'确认取件':item.order_type==1?'确认购买':item.order_type==2?'确认服务':item.order_type==3?'确认驾驶':item.order_type==5?'确认取货':item.order_type==6?'确认服务':'确认取件'}}</view>
+        </view>
+        <view class="btn-box rows" wx:if="{{item.status==4}}">
+            <view catch:tap="getGoodsCode" class="btn close-btn" data-id="{{item.order_id}}" wx:if="{{item.order_type<3&&endcode_switch>0}}">补发完成码</view>
+            <view catch:tap="orderDetail" class="btn-w detail-btn" data-idx="{{index}}">订单详情</view>
+            <view catch:tap="confirmGoods" class="btn-w confirm-btn" data-id="{{item.order_id}}" data-idx="1" data-index="{{index}}" data-type="{{item.order_type}}">确认完成</view>
+        </view>
+    </view>
+    <view catch:tap="foldBtn" class="w-f center fold-box" data-id="{{item.order_id}}">
+        <image class="{{fold_arr[item.order_id]?'fold-select-icon':'fold-icon'}}" src="/image/status_btn.png"></image>
+    </view>
+</view>
+<wxs module="verify" src="../verify.wxs" />

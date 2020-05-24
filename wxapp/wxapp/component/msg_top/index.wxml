@@ -1,0 +1,13 @@
+<view class="top center">
+    <view class="betweens top-box">
+        <view class="rows">
+            <image class="laba-img" src="/image/laba.png"></image>
+            <text class="top-title">系统通知</text>
+            <swiper autoplay="true" class="swiper column" indicatorDots="{{indicatorDots}}">
+                <swiper-item catch:tap="toDetail" class="column" data-id="{{item.id}}" wx:for="{{list}}" wx:key="id">
+                    <view class="no-rows">{{item.title}}</view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>

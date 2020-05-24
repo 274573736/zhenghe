@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "list-html": "/component/wx-index-list/wx-index-list",
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "navigationBarTitleText": "城市选择"
+}

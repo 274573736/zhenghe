@@ -1,0 +1,109 @@
+page {
+    background: #ffffff;
+}
+
+.box {
+    width: 100%;
+    padding: 0 40rpx;
+}
+
+.box-row {
+    width: 100%;
+    height: 100rpx;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.right-big-box {
+    width: 150rpx;
+    height: 60rpx;
+    border-left: 1px solid #ebebeb;
+}
+
+.right-box {
+    width: 120rpx;
+    height: 50rpx;
+    color: #ffffff;
+    background: #212330;
+    border-radius: 5px;
+}
+
+.address-r-img {
+    width: 15rpx;
+    height: 26rpx;
+}
+
+.address-map-img {
+    width: 40rpx;
+    height: 39rpx;
+    margin-right: 30rpx;
+}
+
+.address-des-img {
+    width: 40rpx;
+    height: 36rpx;
+    margin-right: 30rpx;
+}
+
+.address-person-img {
+    width: 41rpx;
+    height: 43rpx;
+    margin-right: 30rpx;
+}
+
+.address-tel-img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+}
+
+.row-left {
+    flex: 1;
+}
+
+input {
+    flex: 1;
+}
+
+.footer-box {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+}
+
+.address-eye-img {
+    width: 40rpx;
+    height: 24rpx;
+}
+
+.address-eye-font {
+    color: #787b83;
+    font-size: 24rpx;
+    margin-left: 20rpx;
+}
+
+.footer-title {
+    color: #212330;
+    margin: 0 0 20rpx 0;
+}
+
+.footer-btn {
+    width: 670rpx;
+    height: 80rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    font-weight: bold;
+    background: #097bf1;
+    border-radius: 35px;
+    position: fixed;
+    bottom: 40rpx;
+}
+
+.footer-btn:after {
+    border: 0;
+}
+
+.textarea {
+    font-size: 30rpx;
+    width: 100%;
+}

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "请选择服务类目",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

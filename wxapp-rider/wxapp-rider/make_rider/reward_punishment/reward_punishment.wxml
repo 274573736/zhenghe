@@ -1,0 +1,30 @@
+<view class="w-f column {{verify.isArray(list)==true?'':'full'}}">
+    <view class="betweens top">
+        <view bind:tap="tapSwitch" class="center top-item {{index==idx?'top_active':''}}" data-idx="{{index}}" wx:for="{{['奖励','惩罚']}}" wx:key="index">{{item}}</view>
+    </view>
+    <view class="betweens top-line">
+        <view class="{{idx==0?'top-line-active':''}}"></view>
+        <view class="{{idx==1?'top-line-active':''}}"></view>
+    </view>
+    <view class="center-c no-order-box" wx:if="{{!verify.isArray(reward_list)&&idx==0||!verify.isArray(punishment_list)&&idx==1}}">
+        <m-hint img_url="{{img_url}}">
+            <view class="no-font" slot="after">暂无记录~</view>
+        </m-hint>
+    </view>
+    <view class="w-f content-box" wx:else>
+        <view class="content" wx:if="{{idx==0}}" wx:for="{{reward_list}}" wx:key="id">
+            <view class="content-title">{{item.title}}</view>
+            <view class="content-time">{{item.add_time}}</view>
+            <view class="">{{item.reason}}</view>
+        </view>
+        <view class="content" wx:if="{{idx==1}}" wx:for="{{punishment_list}}" wx:key="id">
+            <view class="content-title">{{item.title}}</view>
+            <view class="content-time">{{item.add_time}}</view>
+            <view class="">{{item.reason}}</view>
+        </view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

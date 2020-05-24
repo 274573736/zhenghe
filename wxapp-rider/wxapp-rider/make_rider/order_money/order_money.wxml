@@ -1,0 +1,50 @@
+<view class="box-space"></view>
+<view bind:tap="orderDetail" class="order-item" data-idx="{{index}}">
+    <view class="betweens order-item-top">
+        <view class="order-item-top-left">￥{{item.total_price}}/{{verify.floor(item.distance,1)}}公里<text wx:if="{{verify.floor(item.weight)>0}}">/{{item.weight}}kg</text>
+        </view>
+        <view class="status-font" wx:if="{{item.status==0}}">待付款</view>
+        <view class="status-font" wx:if="{{item.status==1}}">已取消</view>
+        <view class="status-font" wx:if="{{item.status==2}}">待抢单</view>
+        <view class="status-font" style="color: #ff0000;" wx:if="{{item.status==3}}">待取件</view>
+        <view class="status-font" wx:if="{{item.status==4}}">待送达</view>
+        <view class="status-font" wx:if="{{item.status==5}}">待评价</view>
+        <view class="status-font" wx:if="{{item.status==6}}">已完成</view>
+    </view>
+    <view class="row address-item" wx:if="{{item.begin_address!=''}}">
+        <image class="address-img" src="{{img_url}}fa.png"></image>
+        <view class="">
+            <view class="no-rows">{{item.begin_address}}</view>
+            <view class="address-item-msg">{{verify.nameVerify(item.begin_username)}} {{verify.phoneVerify(item.begin_phone)}}</view>
+        </view>
+    </view>
+    <view class="row address-item">
+        <image class="address-img" src="{{img_url}}shou.png"></image>
+        <view class="">
+            <view class="no-rows">{{item.end_address}}</view>
+            <view class="address-item-msg">{{verify.nameVerify(item.end_username)}} {{item.extension_number&&item.extension_number!=0?verify.phoneVerify(item.end_phone)+','+item.extension_number:verify.phoneVerify(item.end_phone)}}</view>
+        </view>
+    </view>
+    <view class="betweens order-item-bottom">
+        <text>{{item.order_code}}</text>
+        <text>{{item.add_time}}</text>
+    </view>
+</view>
+<view class="payed-box">已经支付 ￥<text class="payed-money">10.00</text>元</view>
+<view class="extral-box">
+    <view class="center-r">
+        <text class="">额外费用：</text>
+        <input class="extral-input" placeholder="如有额外费用产生" type="text"></input> 元
+    </view>
+    <view class="extral-des">请与客户沟通后再进行填写，防止引起投诉</view>
+</view>
+<view class="w-f.upload-imgs-box">
+    <view class="">上传相关票据</view>
+    <view class="">
+        <m-upload-imgs bind:uploadImgs="uploadImgs" order_id="{{item.order_id}}" type="{{item.status}}"></m-upload-imgs>
+    </view>
+</view>
+<view class="center login-box">
+    <view bind:tap="logout" class="center login-btn" hoverClass="btn-hover">确认发送</view>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

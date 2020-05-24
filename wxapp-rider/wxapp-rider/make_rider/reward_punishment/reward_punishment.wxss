@@ -1,0 +1,50 @@
+.top {
+    width: 100%;
+    padding: 0 120rpx;
+    background: #ffffff;
+}
+
+.top-line {
+    width: 100%;
+    padding: 0 120rpx;
+    height: 2px;
+    background: #ffffff;
+}
+
+.top-item {
+    width: 130rpx;
+    height: 100rpx;
+}
+
+.top_active {
+    color: #00baf5;
+}
+
+.top-line-active {
+    background: #00baf5;
+    width: 130rpx;
+    height: 2px;
+}
+
+.content-box {
+    width: 100%;
+    padding: 0 40rpx;
+}
+
+.content {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10rpx 10rpx 20rpx 20rpx;
+    margin-top: 20rpx;
+    color: #999999;
+}
+
+.content-title {
+    font-size: 32rpx;
+    color: #000000;
+}
+
+.content-time {
+    margin: 25rpx 0 15rpx 0;
+}

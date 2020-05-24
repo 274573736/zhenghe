@@ -1,0 +1,147 @@
+<view class="footer column-c" hidden="{{type==0?false:true}}">
+    <view class="address-item-top rows">
+        <view class="circle">发</view>
+        <view catch:tap="toAddress" class="rows flex-y" data-id="0">
+            <view class="flex-y">
+                <view class="address-title" wx:if="{{!fahuo.title}}">当前位置</view>
+                <view class="" wx:else>
+                    <view class="address-title no-rows">{{fahuo.title}}</view>
+                    <view class="address-des">
+                        <text class="m-r-2" wx:if="{{fahuo.person_address}}">{{fahuo.person_address}}</text>
+                        <text class="">{{fahuo.person_tel}}</text>
+                        <view class="tip" wx:if="{{!fahuo.person_tel}}">电话号码未填</view>
+                    </view>
+                </view>
+            </view>
+            <view class="line-c line-margin"></view>
+            <view catch:tap="oftenAddress" class="often-btn center" data-id="0">常用</view>
+        </view>
+    </view>
+    <view class="address-space"></view>
+    <view class="space-box">
+        <view class="space-line"></view>
+    </view>
+    <view class="address-space"></view>
+    <view catch:tap="toAddress" class="address-item-bottom rows" data-id="1">
+        <view class="circle black">收</view>
+        <view class="rows flex-y">
+            <view class="flex-y">
+                <view class="address-title" wx:if="{{!shouhuo.title}}">送达地点</view>
+                <view class="" wx:else>
+                    <view class="address-title no-rows">{{shouhuo.title}}</view>
+                    <view class="address-des">
+                        <text class="m-r-2" wx:if="{{shouhuo.person_address}}">{{shouhuo.person_address}}</text>
+                        <text class="">{{shouhuo.person_tel}}</text>
+                        <view class="tip" wx:if="{{!shouhuo.person_tel}}">电话号码未填</view>
+                    </view>
+                </view>
+            </view>
+            <view class="line-c line-margin"></view>
+            <view catch:tap="oftenAddress" class="often-btn center" data-id="1">常用</view>
+        </view>
+    </view>
+</view>
+<view class="footer-buy column-c" hidden="{{type==1?false:true}}">
+    <scroll-view class="scroll-view" scrollX="true">
+        <view catch:tap="sGoods" class="scroll-item" data-idx="{{index}}" wx:for="{{goods_list}}" wx:key="id">
+            <image class="scroll-item-img" src="{{index==goods_idx?item.iconed:item.icon}}"></image>
+            <view class="scroll-font {{index==goods_idx?'active-goods-font':''}}">{{item.name}}</view>
+        </view>
+    </scroll-view>
+    <view class="textarea-box">
+        <view class="rows input-box">
+            <image class="tearea-img" src="/image/textarea.png"></image>
+            <input bindfocus="buyInput" bindinput="buyRemark" class="" placeholder="请详细描述您需要购买的物品信息" type="text" value="{{buy_remark}}"></input>
+        </view>
+    </view>
+</view>
+<view class="footer-all column-c" hidden="{{type==2?false:true}}">
+    <scroll-view class="scroll-view" scrollX="true">
+        <view catch:tap="sGoodsAll" class="scroll-item" data-idx="{{index}}" wx:for="{{all_goods_list}}" wx:key="id">
+            <image class="scroll-item-img" src="{{index==all_goods_idx?item.iconed:item.icon}}"></image>
+            <view class="scroll-font {{index==all_goods_idx?'active-goods-font':''}}">{{item.name}}</view>
+        </view>
+    </scroll-view>
+    <view class="textarea-box">
+        <view class="rows input-box">
+            <image class="tearea-img" src="/image/textarea.png"></image>
+            <input bindfocus="allInput" bindinput="allRemark" class="" placeholder="请详细描述您的服务需求" type="text" value="{{all_remark}}"></input>
+        </view>
+    </view>
+</view>
+<view class="footer column-c" hidden="{{type==3?false:true}}">
+    <view class="address-item-top rows">
+        <view class="circle">起</view>
+        <view catch:tap="toAddressCar" class="rows flex-y" data-id="0">
+            <view class="flex-y">
+                <view class="address-title" wx:if="{{!fahuo.title}}">当前位置</view>
+                <view class="" wx:else>
+                    <view class="address-title no-rows">{{fahuo.title}}</view>
+                    <view class="address-des">
+                        <text class="m-r-2" wx:if="{{fahuo.person_address}}">{{fahuo.person_address}}</text>
+                        <text class="">{{fahuo.person_tel}}</text>
+                        <view class="tip" wx:if="{{!fahuo.person_tel}}">电话号码未填</view>
+                    </view>
+                </view>
+            </view>
+            <view class="line-c line-margin"></view>
+            <view catch:tap="oftenAddress" class="often-btn center" data-id="0">常用</view>
+        </view>
+    </view>
+    <view class="address-space"></view>
+    <view class="space-box">
+        <view class="space-line"></view>
+    </view>
+    <view class="address-space"></view>
+    <view catch:tap="toAddressCar" class="address-item-bottom rows" data-id="1">
+        <view class="circle black">止</view>
+        <view class="rows flex-y">
+            <view class="flex-y">
+                <view class="address-title" wx:if="{{!shouhuo.title}}">送达地点</view>
+                <view class="" wx:else>
+                    <view class="address-title no-rows">{{shouhuo.title}}</view>
+                    <view class="address-des">
+                        <view class="no-rows">{{shouhuo.address}}</view>
+                        <text class=""></text>
+                    </view>
+                </view>
+            </view>
+            <view class="line-c line-margin"></view>
+            <view catch:tap="oftenAddress" class="often-btn center" data-id="1">常用</view>
+        </view>
+    </view>
+</view>
+<view class="footer column-c" hidden="{{type==5?false:true}}">
+    <view class="address-item-top rows">
+        <view class="circle">终</view>
+        <view catch:tap="toAddressCar" class="rows flex-y" data-id="0">
+            <view class="flex-y">
+                <view class="address-title" wx:if="{{!fahuo.title}}">当前位置</view>
+                <view class="" wx:else>
+                    <view class="address-title no-rows">{{fahuo.title}}</view>
+                    <view class="address-des">
+                        <text class="m-r-2" wx:if="{{fahuo.person_address}}">{{fahuo.person_address}}</text>
+                        <text class="">{{fahuo.person_tel}}</text>
+                        <view class="tip" wx:if="{{!fahuo.person_tel}}">电话号码未填</view>
+                    </view>
+                </view>
+            </view>
+            <view class="line-c line-margin"></view>
+            <view catch:tap="oftenAddress" class="often-btn center" data-id="0">常用</view>
+        </view>
+    </view>
+    <view class="address-space"></view>
+    <view class="space-box">
+        <view class="space-line"></view>
+    </view>
+    <view class="address-space"></view>
+    <view catch:tap="homemakingBtn" class="address-item-bottom rows">
+        <view class="circle black">服</view>
+        <view class="rows flex-y">
+            <view class="flex-y">
+                <view class="address-title">您需要什么服务？</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="view-box-4" hidden="{{type!=4?false:true}}"></view>

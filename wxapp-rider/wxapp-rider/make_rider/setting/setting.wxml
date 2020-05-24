@@ -1,0 +1,24 @@
+<view class="space-box"></view>
+<view class="top">
+    <view bind:tap="modifyPhone" class="betweens item item1">
+        <text>修改手机号</text>
+        <image class="icon-img" src="{{img_url}}right-1.png"></image>
+    </view>
+    <view bind:tap="orderSetting" class="betweens item item1">
+        <text>接单设置</text>
+        <image class="icon-img" src="{{img_url}}right-1.png"></image>
+    </view>
+    <view class="betweens item">
+        <text>关于</text>
+        <view class="rows">
+            <text class="item-font">v2.0</text>
+            <image class="icon-img" src="{{img_url}}right-1.png"></image>
+        </view>
+    </view>
+</view>
+<view class="center login-box">
+    <view bind:tap="logout" class="center login-btn" hoverClass="btn-hover">退出登录</view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

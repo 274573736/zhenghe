@@ -1,0 +1,30 @@
+<view class="rows play-big-box">
+    <image catch:tap="sVoice" class="lu-img" src="/image/lu.png" wx:if="{{lu_btn==1&&!play_show}}"></image>
+    <image catch:tap="sVoice" class="voice-img-audio" src="/image/voice.png" wx:if="{{lu_btn!=1}}"></image>
+    <view class="play-box betweens" wx:if="{{play_show}}">
+        <view class="rows">
+            <image catch:tap="playMusic" class="play-img" src="/image/play.png" wx:if="{{play}}"></image>
+            <image catch:tap="pauseMusic" class="play-img" src="/image/pause.png" wx:else></image>
+            <text class="" wx:if="{{duration>0}}">{{duration}}s</text>
+        </view>
+        <image catch:tap="clearMusic" class="play-close-img" src="/image/close.png"></image>
+    </view>
+</view>
+<view class="flex-c {{showAnimation?'active':''}}" hidden="{{voice_bg}}">
+    <view class="bottom-date {{showAnimation?'active':''}}">
+        <view class="anjian betweens">
+            <view class="anjian-quxiao"></view>
+            <view class="anjian-quxiao">语音留言</view>
+            <image bindtap="closeBtn" class="close-img" src="/image/close_w.png"></image>
+        </view>
+        <view class="box column">
+            <image class="line-img" src="/image/audio.png" wx:if="{{start_Y==0}}"></image>
+            <image class="line-img" src="/image/audio.gif" wx:else></image>
+            <view class="font-des" wx:if="{{start_Y==0}}">长按开始录音</view>
+            <view class="font-des" wx:else>录音中，手指上滑取消</view>
+            <view class="voice-box center">
+                <image catch:longpress="longTatch" catch:touchend="end" catch:touchmove="move" class="voice-img" src="/image/voice_w.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

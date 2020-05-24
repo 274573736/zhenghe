@@ -1,0 +1,3 @@
+<view class="protocol-box">
+    <rich-text nodes="{{protocol}}" space="nbsp"></rich-text>
+</view>

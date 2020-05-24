@@ -1,0 +1,156 @@
+page {
+    background: #ffffff;
+}
+
+.photo-box {
+    width: 100%;
+    padding: 0 20rpx;
+}
+
+.goods-title {
+    font-size: 28rpx;
+}
+
+.photo-box-white {
+    width: 100%;
+    padding: 20rpx 0 40rpx 0;
+    background: #ffffff;
+    flex-wrap: wrap;
+}
+
+.photo-small-box {
+    width: 150rpx;
+    height: 150rpx;
+    font-size: 24rpx;
+    border-radius: 5px;
+    border: 1px solid #dfdfdf;
+    margin-left: 22rpx;
+    margin-top: 20rpx;
+}
+
+.upload-img-box {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 5px;
+    margin-left: 22rpx;
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.del-img {
+    width: 32rpx;
+    height: 32rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10rpx;
+}
+
+.photo-margin {
+    margin-left: 50rpx;
+}
+
+.photo-img {
+    width: 50rpx;
+    height: 45rpx;
+    margin-bottom: 20rpx;
+    margin-top: 30rpx;
+}
+
+.scroll-view {
+    width: 710rpx;
+    padding: 20rpx;
+    background: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+}
+
+.scroll-item {
+    width: 160rpx;
+    display: inline-block;
+    text-align: center;
+}
+
+.scroll-item:nth-of-type(n+1) {
+}
+
+.scroll-item-img {
+    width: 80rpx;
+    height: 70rpx;
+}
+
+.scroll-font {
+    font-size: 24rpx;
+    color: #54575e;
+}
+
+.textarea-box {
+    width: 100%;
+    height: 300rpx;
+    background: #ffffff;
+    padding: 20rpx;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    margin-top: 30rpx;
+}
+
+.textarea-title {
+    font-size: 28rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+
+.textarea {
+    width: 100%;
+    height: 170rpx;
+    font-size: 24rpx;
+    color: #808080;
+}
+
+.property-box {
+    width: 710rpx;
+    background: #ffffff;
+    margin-top: 20rpx;
+    padding-left: 20rpx;
+}
+
+.confirm-btn {
+    width: 670rpx;
+    height: 90rpx;
+    background: #212330;
+    border-radius: 35px;
+    font-size: 30rpx;
+    line-height: 90rpx;
+    color: #ffffff;
+    position: fixed;
+    bottom: 50rpx;
+    left: 40rpx;
+}
+
+.confirm-btn:after {
+    border: none;
+}
+
+.font-active {
+    color: #097bf1;
+}
+
+.view-box {
+    background: #ffffff;
+}
+
+.slider-font {
+    font-weight: bold;
+}
+
+.slider-money {
+    color: #097bf1;
+}
+
+.slider-font-des {
+    font-size: 24rpx;
+    color: #808088;
+    margin-top: 40rpx;
+}

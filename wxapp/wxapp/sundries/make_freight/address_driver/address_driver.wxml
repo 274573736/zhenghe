@@ -1,0 +1,37 @@
+<view class="full column">
+    <view class="shou-title" wx:if="{{address_type==1}}">请补充收货地址信息</view>
+    <m-map address_type="{{address_type}}" bind:examineAddress="examineAddress" class="map" location="{{address.location}}" order_type="5" wx:if="{{address_type==0}}"></m-map>
+    <view class="footer">
+        <form bindsubmit="confirm" class="w-f" reportSubmit="true">
+            <view bind:tap="searchAddress" class="item betweens">
+                <view class="rows">
+                    <image class="address-img" src="/image/address.png"></image>
+                    <view class="" style="width:580rpx;" wx:if="{{address.title||address.address}}">
+                        <view class="">{{address.title}}</view>
+                        <view class="address-des">{{address.address}}</view>
+                    </view>
+                    <view class="" wx:else>{{address_type==0?'在地图上选择位置':'点击搜索地址'}}</view>
+                </view>
+                <image class="a-r" src="/image/a_r.png"></image>
+            </view>
+            <view class="item rows" wx:if="{{is_all==1}}">
+                <image class="des-img" src="/image/address_des.png"></image>
+                <input class="" confirmType="done" cursorSpacing="50" name="des" placeholder="详细地址(选填)" type="text" value="{{des}}"></input>
+                <view class="right-big-box center">
+                    <view catch:tap="oftenAddress" class="right-box center">常用</view>
+                </view>
+            </view>
+            <view class="item rows" wx:if="{{is_all==1}}">
+                <image class="person-img" src="/image/person.png"></image>
+                <input class="" confirmType="done" cursorSpacing="50" name="name" placeholder="联系人姓名(选填)" type="text" value="{{name}}"></input>
+            </view>
+            <view class="item rows" wx:if="{{is_all==1}}">
+                <image class="tel-img" src="/image/tels.png"></image>
+                <input class="" confirmType="done" cursorSpacing="50" name="phone" placeholder="联系电话{{address_type==1?'(填写发货电话后可不填)':''}}" type="number" value="{{phone}}"></input>
+                <button bindgetphonenumber="getPhoneNumber" class="speed-pone center" data-phone="0" openType="getPhoneNumber" wx:if="{{is_phone==1&&have_phone==0}}">快速填写</button>
+                <button catch:tap="getPhoneNumber" class="speed-pone center" data-phone="{{have_phone}}" wx:if="{{is_phone==1&&have_phone!=0}}">快速填写</button>
+            </view>
+            <button class="confirm-btn center {{address_type==1?'confirm-btn-position':''}}" formType="submit">确定</button>
+        </form>
+    </view>
+</view>

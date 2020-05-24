@@ -1,0 +1,71 @@
+<view class="w-f top">
+    <view class="rows top-box">
+        <view bind:tap="topActive" class="center {{top_id==index?'top-active':''}}" data-idx="{{index}}" wx:for="{{['推荐骑手','推荐用户']}}" wx:key="index">{{item}}</view>
+    </view>
+    <view class="top-line rows">
+        <view class="center">
+            <view class="top-item-line" wx:if="{{top_id==0}}"></view>
+        </view>
+        <view class="center">
+            <view class="top-item-line" wx:if="{{top_id==1}}"></view>
+        </view>
+    </view>
+</view>
+<view class="column " style="background:url({{img_url}}{{top_id==0?'rider_share_bg.png':'user_share_bg.png'}}) no-repeat center;width: 100%;padding-top: 460rpx;background-size: 100% 100%;">
+    <view bind:tap="copy" class="code-box" wx:if="{{top_id==0}}">
+        <view class="code-box-font1">您的邀请码</view>
+        <view class="code-box-font2">{{list[top_id].invite_code}}</view>
+    </view>
+    <view class="award-box">
+        <view class="rows">
+            <view class="column award-box-item">
+                <view class="award-box-item-top">
+                    <image class="share1-img" src="{{img_url}}share1.png"></image>
+                    <text>成功邀请</text>
+                </view>
+                <view class="">
+                    <text class="award-box-item-num">{{list[top_id].exits_total}}</text> 人</view>
+            </view>
+            <view class="column award-box-item">
+                <view class="award-box-item-top">
+                    <image class="share2-img" src="{{img_url}}share2.png"></image>
+                    <text>累计奖励</text>
+                </view>
+                <view class="">
+                    <text class="award-box-item-num">{{list[top_id].exits_reward}}</text> 元</view>
+            </view>
+        </view>
+        <view class="w-f center">
+            <view bind:tap="shareRule" class="center award-btn">奖励规则</view>
+        </view>
+    </view>
+    <view class="share-award-box">
+        <view class="rows share-award-row">
+            <view class="center">操作</view>
+            <view class="center">获得奖励</view>
+        </view>
+        <view class="rows share-award-row" wx:for="{{list[top_id].reward_total}}" wx:key="index">
+            <view class="center">邀请完成{{index}}单</view>
+            <view class="center">获得{{item}}元</view>
+        </view>
+    </view>
+    <view bind:tap="shareBtn" class="center invite-btn {{top_id==0?'':'user-btn'}}">立即邀请</view>
+</view>
+<view class="z-index" hidden="{{share_bg}}">
+    <view class="w-f share-box">
+        <view class="w-f {{top_id==0?'rows':'center'}}">
+            <button class="center-c share-item-box" openType="share" style="margin:0;padding:0;background: #ffffff;font-size:30rpx;display: {{top_id==0?'':'none'}};">
+                <image class="share-w-img" src="{{img_url}}poster-w.png"></image>
+                <view class="share-font">微信好友</view>
+            </button>
+            <view bind:tap="posterBtn" class="center-c share-item-box">
+                <image class="share-img" src="{{img_url}}poster-x.png"></image>
+                <view class="share-font">生成海报</view>
+            </view>
+        </view>
+        <view bind:tap="closeShare" class="center close-btn">关闭</view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

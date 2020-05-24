@@ -1,0 +1,12 @@
+<view bind:tap="selectTrain" class="item-box betweens" data-idx="{{index}}" wx:for="{{train_list}}" wx:key="id">
+    <view class="item-right">
+        <view class="font-title">{{item.name}}</view>
+        <view class="">{{item.address}}</view>
+    </view>
+    <image class="s-img" src="{{img_url}}{{idx==0?'t-y':'t-n'}}.png"></image>
+</view>
+<view class="full no-hint" wx:if="{{!hint}}">
+    <m-no-hint img_url="{{img_url}}">
+        <text class="font" slot="after">该城市暂未开放</text>
+    </m-no-hint>
+</view>

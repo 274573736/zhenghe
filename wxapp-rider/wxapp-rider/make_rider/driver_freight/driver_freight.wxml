@@ -1,0 +1,44 @@
+<view class="w-f">
+    <m-register-top img_url="{{img_url}}" register_status="1" wx:if="{{is_register==1}}"></m-register-top>
+</view>
+<view class="mian">
+    <view class="photo-box">
+        <view class="w-f betweens">
+            <view class="photo-title">上传行驶证</view>
+            <view class="photo-title">上传车身正面照</view>
+        </view>
+        <view class="betweens">
+            <view catch:tap="carPhoto" class="photo center-c" data-id="0">
+                <view class="column" wx:if="{{!just_photo}}">
+                    <image class="photo-img" src="/image/photo.png"></image>
+                    <view class="photo-des">行驶证</view>
+                </view>
+                <image class="full" src="{{just_photo}}" wx:else></image>
+            </view>
+            <view catch:tap="carPhoto" class="photo center-c" data-id="1">
+                <view class="column" wx:if="{{!lose_photo}}">
+                    <image class="photo-img" src="/image/photo.png"></image>
+                    <view class="photo-des">车身正面照</view>
+                </view>
+                <image class="full" src="{{lose_photo}}" wx:else></image>
+            </view>
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="betweens item">
+            <view class="item-left">绑定车辆</view>
+        </view>
+        <view class="rows car-box">
+            <view catch:tap="selectCar" class="btn-default {{car_arr[item.id]?'btn-select':''}}" data-id="{{item.id}}" wx:for="{{car_list}}" wx:key="id">
+                    {{item.title}}
+                </view>
+        </view>
+        <view class="betweens item">
+            <view class="item-left">车牌号码</view>
+            <input bindinput="carNum" class="item-right" placeholder="输入车牌号码" type="text" value="{{car_num}}"></input>
+        </view>
+    </view>
+</view>
+<view class="footer column">
+    <view catch:tap="confirm" class="form-btn center">提交</view>
+</view>

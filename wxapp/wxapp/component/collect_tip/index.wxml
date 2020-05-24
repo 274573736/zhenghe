@@ -1,0 +1,14 @@
+<cover-view class="tip-big-box" style="top:{{top}}rpx" wx:if="{{is_tip_collect&&is_map}}">
+    <cover-image class="tip-cc-index" src="/image/tip_cc_p.png"></cover-image>
+    <cover-view catch:tap="closeTip" class="tip-box row">
+        <cover-view class="tip-font">点击“添加到我的小程序”，微信首页下拉即可使用</cover-view>
+        <cover-image class="tip-cc-icon" src="/image/tip_cc.png"></cover-image>
+    </cover-view>
+</cover-view>
+<view class="tip-big-box" style="top:{{top}}rpx" wx:if="{{is_tip_collect&&!is_map}}">
+    <image class="tip-cc-index" src="/image/tip_cc_p.png"></image>
+    <view catch:tap="closeTip" class="tip-box row">
+        <view class="tip-font">点击“添加到我的小程序”，微信首页下拉即可使用</view>
+        <image class="tip-cc-icon" src="/image/tip_cc.png"></image>
+    </view>
+</view>

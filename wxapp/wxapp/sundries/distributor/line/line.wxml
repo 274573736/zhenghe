@@ -1,0 +1,73 @@
+<view class="w-f" wx:if="{{d_tier==1}}">
+    <view class="top">
+        <image class="line-icon" src="../../image/line.png"></image>
+        <text class="line-font">表示{{distribution_name}}的下线</text>
+    </view>
+    <view class="w-f box-body" wx:if="{{verify.isArray(order_list)}}">
+        <view class="order-item" wx:for="{{order_list}}">
+            <view class="top-space"></view>
+            <view class="item-content rows">
+                <image class="head-img" src="{{item.avatar}}"></image>
+                <view class="">
+                    <view class="betweens" style="width: 500rpx">
+                        <view class="">用户：{{item.nick_name}}</view>
+                        <view class="">
+                            <image class="line-icon" src="../../image/line.png"></image>
+                        </view>
+                    </view>
+                    <view class="date-font">注册时间：{{item.create_time}}</view>
+                </view>
+            </view>
+            <view class="item-footer betweens">
+                <view class="">
+                    <text class="order-code">订单总数：</text>
+                    <text class="red">{{item.count}}</text>
+                </view>
+                <view class="">
+                    <text class="order-code">累计消费：</text>
+                    <text class="red">￥ {{item.total_price}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <m-no-hint>
+            <text class="no-hint-font" slot="after">你还没有下线哟，赶快邀请好友加入吧！</text>
+        </m-no-hint>
+    </view>
+</view>
+<m-tab bind:Getidx="Getidx" bind:scrollSole="scrollSole" top_item="{{top_item}}" top_p="{{top_p}}" wx:else>
+    <view class="w-f box-body" slot="after{{idx}}" wx:if="{{verify.isArray(order_list)}}">
+        <view class="order-item" wx:for="{{order_list}}">
+            <view class="top-space"></view>
+            <view class="item-content rows">
+                <image class="head-img" src="{{item.avatar}}"></image>
+                <view class="">
+                    <view class="betweens" style="width: 500rpx">
+                        <view class="">用户：{{item.nick_name}}</view>
+                        <view class="">
+                            <image class="line-icon" src="../../image/line.png"></image>
+                        </view>
+                    </view>
+                    <view class="date-font">注册时间：{{item.create_time}}</view>
+                </view>
+            </view>
+            <view class="item-footer betweens">
+                <view class="">
+                    <text class="order-code">订单总数：</text>
+                    <text class="red">{{item.count}}</text>
+                </view>
+                <view class="">
+                    <text class="order-code">累计消费：</text>
+                    <text class="red">￥ {{item.total_price}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view slot="after{{idx}}" wx:else>
+        <m-no-hint>
+            <text class="no-hint-font" slot="after">你还没有下线哟，赶快邀请好友加入吧！</text>
+        </m-no-hint>
+    </view>
+</m-tab>
+<wxs module="verify" src="../../../modules/verify.wxs" />

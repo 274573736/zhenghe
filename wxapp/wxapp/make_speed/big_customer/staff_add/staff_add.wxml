@@ -1,0 +1,46 @@
+<form class="full">
+    <view class="item betweens">
+        <view class="">
+            <text class="sign">*</text>
+            <text class="">姓名</text>
+        </view>
+        <input bindinput="Name" class="" name="name" placeholder="请输入姓名" type="text" value="{{name}}"></input>
+    </view>
+    <view class="item betweens">
+        <view class="">
+            <text class="sign">*</text>
+            <text class="">电话</text>
+        </view>
+        <input bindinput="Tel" class="" placeholder="请输入电话" type="number" value="{{tel}}"></input>
+    </view>
+    <view class="item betweens">
+        <view class="">
+            <text class="sign">*</text>
+            <text class="">Uid <text class="blue">(uid在个人中心查看)</text>
+            </text>
+        </view>
+        <input bindinput="Uid" class="" name="uid" placeholder="请输入Uid" type="number" value="{{uid}}"></input>
+    </view>
+    <view catch:tap="Sex" class="item betweens">
+        <view class="">
+            <text class="">性别</text>
+        </view>
+        <input class="" disabled="true" name="sex" type="text" value="{{sex[0]==0?'男':'女'}}"></input>
+    </view>
+    <view class="item betweens">
+        <view class="">
+            家庭住址
+        </view>
+    </view>
+    <view class="textarea-box">
+        <textarea bindinput="Address" class="" placeholder="请输入家庭住址" value="{{address}}"></textarea>
+    </view>
+    <view class="footer row" wx:if="{{id>0}}">
+        <button catch:tap="delStaff" class="btn btn-del center">删除</button>
+        <button catch:tap="saveStaff" class="btn btn-edit center">修改</button>
+    </view>
+    <button catch:tap="addStaff" class="btn center footer" wx:else>
+        添加店员
+    </button>
+</form>
+<m-sex bind:sSex="sSex" hidden="{{sex_bg}}" sex="{{sex}}"></m-sex>

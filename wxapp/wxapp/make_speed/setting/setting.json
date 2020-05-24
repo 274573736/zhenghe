@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "疑问和帮助",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

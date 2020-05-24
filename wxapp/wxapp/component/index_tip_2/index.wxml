@@ -1,0 +1,8 @@
+<cover-view class="box column">
+    <cover-image bind:tap="getRed" class="index-img" data-id="" src="/image/index_tip_2.png"></cover-image>
+    <cover-image bind:tap="closeIndex" class="plane-img" src="/image/plane_2.png"></cover-image>
+    <cover-view class="font-des">种类选项栏可右滑进行选择</cover-view>
+    <cover-view class="btn-box center">
+        <cover-view catch:tap="confirm" class="btn">我知道了</cover-view>
+    </cover-view>
+</cover-view>

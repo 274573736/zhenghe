@@ -1,0 +1,24 @@
+page {
+}
+
+.textarea-box {
+    padding: 20rpx;
+}
+
+.textarea {
+    width: 710rpx;
+    height: 250rpx;
+    font-size: 26rpx;
+    background: #ffffff;
+    padding: 10rpx;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 710rpx;
+    height: 100rpx;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #097bf1;
+    margin-top: 50rpx;
+}

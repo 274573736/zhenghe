@@ -1,0 +1,17 @@
+{
+    "usingComponents": {
+        "m-order_detail": "/component/order_detail/index",
+        "m-evaluate": "/component/evaluate/index",
+        "m-driver": "/component/driver/index",
+        "m-again": "/component/again_order/index",
+        "m-order-map": "/component/order_map/index",
+        "m-evaluate-static": "/component/evaluate_static/index",
+        "m-cancel-tip": "/component/cancel_tip/index",
+        "m-order-status": "/component/order_status/index",
+        "m-tip-pay": "/component/pay_map/index",
+        "m-order-pay": "/component/old_pay/index",
+        "m-tip": "/component/tip_map/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    },
+    "navigationBarTitleText": "订单详情"
+}

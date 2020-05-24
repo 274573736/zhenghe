@@ -1,0 +1,61 @@
+<form bindsubmit="whithdrawMoney" class="full" reportSubmit="true">
+    <view class="top-space"></view>
+    <view class="box">
+        <view class="">
+            <text class="">提现金额
+</text>
+        </view>
+        <view class="rows input-box">
+            <text class="money-text">￥</text>
+            <input class="money" name="money" placeholder="请填写金额" placeholderClass="placeholder-money" type="digit" value="{{money}}"></input>
+        </view>
+        <view class="betweens whithdraw-font-box">
+            <view class="">账号可提现余额￥{{my_money}}</view>
+            <view bind:tap="allWhithdraw" class="whithdraw-font">全部提现</view>
+        </view>
+        <view class="rows">
+            <view class="">提现方式</view>
+            <view bind:tap="payTap" class="rows" data-type="{{item.type}}" wx:for="{{whithdraw_list}}" wx:key="{{index}}">
+                <image class="yes-icon" src="../../image/{{whithdraw_type==item.type?'yes':'no'}}.png"></image>
+                <view class="">{{item.title}}</view>
+            </view>
+        </view>
+        <view class="w-f">
+            <view class="group" wx:if="{{whithdraw_type!=1}}">
+                <view class="rows group-title">
+                    <view class="">姓名
+                        <text class="red"> *</text>
+                    </view>
+                </view>
+                <input class="input" confirmType="done" cursorSpacing="50" name="name" placeholder="请输入姓名" type="text"></input>
+            </view>
+            <view class="group" wx:if="{{whithdraw_type==2}}">
+                <view class="rows group-title">
+                    <view class="">支付宝账号
+                        <text class="red"> *</text>
+                    </view>
+                </view>
+                <input class="input" confirmType="done" cursorSpacing="50" name="ali_account" placeholder="请输入支付宝账号" type="text"></input>
+            </view>
+            <view class="group" wx:if="{{whithdraw_type==3}}">
+                <view class="rows group-title">
+                    <view class="">开户行
+                        <text class="red"> *</text>
+                    </view>
+                </view>
+                <input class="input" confirmType="done" cursorSpacing="50" name="bank" placeholder="请输入开户行" type="text"></input>
+            </view>
+            <view class="group" wx:if="{{whithdraw_type==3}}">
+                <view class="rows group-title">
+                    <view class="">银行卡号
+                        <text class="red"> *</text>
+                    </view>
+                </view>
+                <input class="input" confirmType="done" cursorSpacing="50" name="bank_account" placeholder="请输入银行卡号" type="text"></input>
+            </view>
+        </view>
+    </view>
+    <view class="footer column">
+        <button class="footer-btn center" formType="submit">立即提现</button>
+    </view>
+</form>

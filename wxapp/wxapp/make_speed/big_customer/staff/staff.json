@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "店员列表",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

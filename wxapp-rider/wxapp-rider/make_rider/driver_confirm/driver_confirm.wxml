@@ -1,0 +1,44 @@
+<view class="w-f">
+    <m-register-top img_url="{{img_url}}" register_status="1" wx:if="{{is_register==1}}"></m-register-top>
+</view>
+<view class="mian">
+    <view class="photo-box">
+        <view class="photo-title">驾驶证照片</view>
+        <view class="betweens">
+            <view catch:tap="carPhoto" class="photo center-c" data-id="0">
+                <view class="column" wx:if="{{!just_photo}}">
+                    <image class="photo-img" src="/image/photo.png"></image>
+                    <view class="photo-des">上传驾驶证正本</view>
+                </view>
+                <image class="full" src="{{just_photo}}" wx:else></image>
+            </view>
+            <view catch:tap="carPhoto" class="photo center-c" data-id="1">
+                <view class="column" wx:if="{{!lose_photo}}">
+                    <image class="photo-img" src="/image/photo.png"></image>
+                    <view class="photo-des">上传驾驶证副本</view>
+                </view>
+                <image class="full" src="{{lose_photo}}" wx:else></image>
+            </view>
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="betweens item">
+            <view class="item-left">驾驶证副页档案编号</view>
+            <input bindinput="carNum" class="item-right" placeholder="输入档案编号" type="text" value="{{car_num}}"></input>
+        </view>
+        <view class="betweens item">
+            <view class="item-left">准驾车型</view>
+            <input bindinput="carType" class="item-right" placeholder="输入准驾车型" type="text" value="{{car_type}}"></input>
+        </view>
+        <view class="betweens item">
+            <view class="item-left">初领驾驶证日期</view>
+            <view catch:tap="getDate" class="item-right">
+                {{date}}
+            </view>
+        </view>
+    </view>
+</view>
+<view class="footer column">
+    <view catch:tap="confirm" class="form-btn center">提交</view>
+</view>
+<m-date bind:confirmDate="confirmDate" hidden="{{time_bg}}"></m-date>

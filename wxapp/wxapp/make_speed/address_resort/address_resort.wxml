@@ -1,0 +1,21 @@
+<view class="big-box" wx:if="{{verify.isArray(list)}}">
+    <view catch:tap="sAddress" class="box" data-idx="{{index}}" wx:for="{{list}}" wx:key="index">
+        <view class="row">
+            <text class="name">{{item.person_name}}</text>
+            <text class="tel">{{item.person_tel}}</text>
+        </view>
+        <view class="address-name">{{item.title}}</view>
+        <view class="address-des">{{item.address}}</view>
+        <view class="footer betweens">
+            <view class="rows"></view>
+            <view catch:tap="dAddress" class="rows" data-idx="{{index}}">
+                <image class="del-img" src="/image/del.png"></image>
+                <text class="">删除</text>
+            </view>
+        </view>
+    </view>
+</view>
+<m-no-hint wx:else>
+    <text class="no-hint-font" slot="after">暂无常用地址~</text>
+</m-no-hint>
+<wxs module="verify" src="../../modules/verify.wxs" />

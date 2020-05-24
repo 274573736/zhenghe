@@ -1,0 +1,26 @@
+<view class="gray-box"></view>
+<view class="betweens top">
+    <view class="">请选择一个惩罚</view>
+    <image class="reward-x-img" src="{{img_url}}reward_x.png"></image>
+</view>
+<blcok wx:for="{{list}}" wx:key="id">
+    <view class="line-box">
+        <view class="line"></view>
+    </view>
+    <view bind:tap="selectTap" class="rows item" data-id="{{item.id}}" data-idx="{{index}}">
+        <view class="center img-box">
+            <image class="reward-select-img" src="{{img_url}}{{arr[index]==1?'reward_selected':'reward_select'}}.png"></image>
+        </view>
+        <view class="">{{item.reason}}</view>
+    </view>
+</blcok>
+<view class="gray-box"></view>
+<view class="section">
+    <textarea bindinput="input" class="textarea" placeholder="请描述处罚申诉内容（不少于20字）"></textarea>
+</view>
+<view class="bottom-box">
+    <view bind:tap="confirm" class="center btn" hoverClass="btn-hover">提交申请</view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

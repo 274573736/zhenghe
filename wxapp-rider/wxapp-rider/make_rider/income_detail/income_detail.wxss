@@ -1,0 +1,54 @@
+.date-box {
+    height: 100rpx;
+    width: 100%;
+}
+
+.date-img {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 20rpx;
+}
+
+.item-box {
+    background: #ffffff;
+    padding: 0 40rpx;
+}
+
+.item {
+    height: 200rpx;
+    padding-top: 25rpx;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.item-top {
+    font-weight: bold;
+}
+
+.font-money {
+    font-size: 40rpx;
+    color: #e74b94;
+}
+
+.font-color {
+    font-size: 40rpx;
+    color: #218eff;
+}
+
+.item-center {
+    margin-top: 10rpx;
+}
+
+.item-bottom {
+    margin-top: 15rpx;
+}
+
+.no-order-box {
+    width: 100%;
+    padding-top: 200rpx;
+}
+
+.no-font {
+    margin-top: 50rpx;
+    color: #999999;
+    font-size: 24rpx;
+}

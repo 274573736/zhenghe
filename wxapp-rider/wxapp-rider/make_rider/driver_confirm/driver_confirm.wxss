@@ -1,0 +1,133 @@
+.mian {
+    padding: 20rpx;
+}
+
+.top {
+    width: 100%;
+    padding: 20rpx 70rpx 60rpx 70rpx;
+    background: #ffffff;
+    position: relative;
+}
+
+.circle-title {
+    color: #ffffff;
+    font-size: 24rpx;
+    width: 30rpx;
+    height: 30rpx;
+    text-align: center;
+    line-height: 30rpx;
+    border-radius: 50%;
+    background: #212330;
+}
+
+.line-r {
+    border-top: 1px dashed #212330;
+    width: 150rpx;
+    margin: 0 1px;
+}
+
+.line-active {
+    border-top: 1px dashed #e4e4e4;
+}
+
+.circle-active {
+    background: #e4e4e4;
+}
+
+.top-1 {
+    font-size: 24rpx;
+    font-weight: bold;
+    position: absolute;
+    top: 60rpx;
+    left: 32rpx;
+}
+
+.top-2 {
+    font-size: 24rpx;
+    font-weight: bold;
+    position: absolute;
+    top: 60rpx;
+    left: 194rpx;
+}
+
+.top-3 {
+    font-size: 24rpx;
+    font-weight: bold;
+    position: absolute;
+    top: 60rpx;
+    left: 374rpx;
+}
+
+.top-4 {
+    font-size: 24rpx;
+    font-weight: bold;
+    position: absolute;
+    top: 60rpx;
+    left: 552rpx;
+}
+
+.photo-box {
+    width: 710rpx;
+    height: 320rpx;
+    padding: 20rpx;
+    background: #ffffff;
+    margin-top: 20rpx;
+}
+
+.photo-title {
+    font-weight: bold;
+    margin: 20rpx 0 40rpx 0;
+}
+
+.photo-img {
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.photo {
+    width: 300rpx;
+    height: 180rpx;
+    color: #cccccc;
+    background: #ffffff;
+    border: 1px dashed #cccccc;
+    border-radius: 5px;
+}
+
+.photo-des {
+    font-size: 26rpx;
+    margin-top: 20rpx;
+}
+
+.item-box {
+    width: 100%;
+    padding-left: 20rpx;
+    background: #ffffff;
+    margin-top: 20rpx;
+}
+
+.item-left {
+    font-weight: bold;
+}
+
+.item-right {
+    color: #808088;
+    text-align: right;
+}
+
+.item {
+    padding: 30rpx 20rpx 30rpx 0;
+}
+
+.item:nth-of-type(n+2) {
+    border-top: 1px solid #cccccc;
+}
+
+.form-btn {
+    width: 670rpx;
+    height: 80rpx;
+    color: #ffffff;
+    border-radius: 35px;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+    position: fixed;
+    bottom: 80rpx;
+}

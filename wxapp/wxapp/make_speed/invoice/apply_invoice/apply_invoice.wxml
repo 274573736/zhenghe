@@ -1,0 +1,25 @@
+<view class="full">
+    <view class="top-box column">
+        <view class="rows">
+            <view class="line"></view>
+            <view class="line-font">可开发票总额</view>
+            <view class="line"></view>
+        </view>
+        <view class="top-money-box">
+            <text class="f-24">￥</text>
+            <text class="f-money">{{money}}</text>
+        </view>
+        <view class="top-des"></view>
+    </view>
+    <view class="bottom-box">
+        <view class="bottom-box-title">温馨提醒</view>
+        <view class="bottom-box-des">
+            <view class="">1、尊敬的客户您好，电子普通发票功能已上线，如您急需报销，建议您选择电子发票，申请出票后会发送到您的邮箱，随时下载</view>
+            <view class="">2、根据国家税务总局公告2015第84号规定，增值税电子普通发票的法律效力、基本用途、基本使用规定等与税务机关监制的增值税普通发票相同。如需纸质报销，可将电子文档进行打印</view>
+        </view>
+        <view class="center-r">
+            <view catch:tap="applyInvoice" class="btn">申请开票</view>
+            <view catch:tap="invoiceList" class="btn">开票记录</view>
+        </view>
+    </view>
+</view>

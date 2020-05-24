@@ -1,0 +1,115 @@
+<view bind:tap="showDetail" class="full" wx:if="{{showcheck==1}}">
+    <view class="searchWrap flex-center">
+        <view class="searchBox flex-center">
+            <icon size="20" type="search"></icon>
+            <input class="inputBox" confirmType="search" placeholder="搜你想要的"></input>
+        </view>
+    </view>
+    <view>
+        <image class="bannerImgs" src="{{img_url}}/sc1.jpg"></image>
+        <view class="jxBox">
+            <view class="jxTitle">今日编辑精选</view>
+            <view class="jxList flex-center-spa">
+                <view bindtap="goDetails" class="jxItem">
+                    <image class="jxImgs" src="{{img_url}}/sc2.jpg"></image>
+                    <view class="jxName">冬日加厚韩式女外套</view>
+                </view>
+                <view bindtap="goDetails" class="jxItem">
+                    <image class="jxImgs" src="{{img_url}}/sc3.jpg"></image>
+                    <view class="jxName">复古彩色润唇口红</view>
+                </view>
+                <view bindtap="goDetails" class="jxItem">
+                    <image class="jxImgs" src="{{img_url}}/sc4.jpg"></image>
+                    <view class="jxName">加绒韩式牛仔女外套</view>
+                </view>
+                <view bindtap="goDetails" class="jxItem">
+                    <image class="jxImgs" src="{{img_url}}/sc5.jpg"></image>
+                    <view class="jxName">自然润肤粉底</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="w-f" wx:else>
+    <m-collect-tip is_tip_collect="{{is_tip_collect}}" wx:if="{{is_tip_collect}}"></m-collect-tip>
+    <view class="w-f">
+        <m-top></m-top>
+    </view>
+    <view class="w-f column">
+        <m-msg-top></m-msg-top>
+        <m-address driver="1"></m-address>
+        <view class="w-f column">
+            <view class="price-box column">
+                <view class="red-des-font" wx:if="{{type==2}}">* 最终的支付价格将由实际行驶的路程计算得出</view>
+                <view class="white-space" wx:else></view>
+                <view class="column" wx:if="{{actual_payment>-1}}">
+                    <view class="row price-2">
+                        <text>预计</text>
+                        <text class="price-2-num">{{actual_payment}}</text>
+                        <text>元</text>
+                        <image catch:tap="topPrice" class="price-question" src="/image/price_question_b.png"></image>
+                    </view>
+                    <text class="distance">大约 <text class="red">{{distance}}</text> 公里</text>
+                </view>
+                <view class="price-2" wx:else>计算价格中…</view>
+                <view class="" wx:if="{{coupon_money>0}}">优惠券已自动抵扣{{coupon_money}}元</view>
+            </view>
+            <view class="property-box">
+                <view catch:tap="sTime" class="property-item betweens">
+                    <view class="">时间</view>
+                    <view class="rows">
+                        <view class="" wx:if="{{isImmediately==0}}">{{hour}}</view>
+                        <view class="" wx:else>{{day}}{{hour}}时{{minute}}分</view>
+                        <image class="property-r-img" src="/image/property-r.png"></image>
+                    </view>
+                </view>
+                <view catch:tap="sCoupon" class="property-item betweens">
+                    <view class="">优惠券</view>
+                    <view class="rows">
+                        <view class="" wx:if="{{!price_detail.coupon_money}}">未使用优惠券</view>
+                        <view class="coupon-font" wx:else>-￥{{price_detail.coupon_money}}元</view>
+                        <image class="property-r-img" src="/image/property-r.png"></image>
+                    </view>
+                </view>
+                <view catch:tap="sPay" class="property-item betweens" wx:if="{{type!=2}}">
+                    <view class="">付款方式</view>
+                    <view class="rows">
+                        <view class="" wx:if="{{pay_method==1}}">余额支付</view>
+                        <view class="" wx:else>微信支付</view>
+                        <image class="property-r-img" src="/image/property-r.png"></image>
+                    </view>
+                </view>
+                <view catch:tap="sTip" class="property-item betweens">
+                    <view class="">小费</view>
+                    <view class="rows">
+                        <view class="coupon-font" wx:if="{{tip_money>0}}">{{tip_money}}元</view>
+                        <view class="" wx:else>快速接单</view>
+                        <image class="property-r-img" src="/image/property-r.png"></image>
+                    </view>
+                </view>
+                <view catch:tap="sRemark" class="property-item betweens">
+                    <view class="">备注</view>
+                    <view class="rows">
+                        <view class="" wx:if="{{remark==''}}">说点什么吧</view>
+                        <view class="no-rows" wx:else>{{remark}}</view>
+                        <image class="property-r-img" src="/image/property-r.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <form class="footer column">
+            <button catch:tap="confirm" class="confirm-btn center" wx:if="{{!loading}}">呼叫师傅</button>
+            <button class="confirm-btn center" loading="true" wx:else>呼叫师傅</button>
+        </form>
+    </view>
+    <view class="full" wx:if="{{red_bag}}">
+        <m-index-bag bind:closeIndexImg="closeIndexImg" new_person="{{new_person}}"></m-index-bag>
+    </view>
+</view>
+<m-time bind:sTime="sTime" days="{{xTime.days}}" hidden="{{time_bg}}" hours="{{xTime.hours}}" minutes="{{xTime.minutes}}" order_type="3"></m-time>
+<m-tip bind:sTip="sTip" hidden="{{tip_bg}}"></m-tip>
+<m-remark bind:sRemark="sRemark" hidden="{{remark_bg}}" remark="{{remark}}"></m-remark>
+<m-pay bind:sPay="sPay" hidden="{{pay_bg}}" money="{{actual_payment}}" my_money="{{my_money}}" pay_method="{{pay_method}}"></m-pay>
+<view class="w-f" wx:if="{{!is_login}}">
+    <m-auth bind:authBtn="authBtn" is_login="{{is_login}}"></m-auth>
+</view>

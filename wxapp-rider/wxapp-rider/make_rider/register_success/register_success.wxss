@@ -1,0 +1,43 @@
+page {
+    background: #ffffff;
+}
+
+.register-img {
+    width: 194rpx;
+    height: 194rpx;
+    margin-top: 80rpx;
+}
+
+.font1 {
+    margin-top: 80rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+}
+
+.font2 {
+    margin-top: 40rpx;
+    color: #999999;
+}
+
+.btn1 {
+    width: 500rpx;
+    height: 80rpx;
+    border-radius: 35px;
+    margin-top: 60rpx;
+    color: #ffffff;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+}
+
+.btn2 {
+    width: 500rpx;
+    height: 80rpx;
+    border-radius: 35px;
+    margin-top: 50rpx;
+    border: 1px solid #eeeeee;
+    color: #999999;
+    font-weight: bold;
+}
+
+.btn-hover {
+    background: #a1dafb;
+}

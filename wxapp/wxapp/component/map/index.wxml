@@ -1,0 +1,10 @@
+<view class="maps-wrap">
+    <map showLocation bindregionchange="regionchange" class="maps" controls="{{controls}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{scale}}">
+        <cover-image catch:tap="tabCity" class="city-img" src="/image/city_tab.png"></cover-image>
+        <cover-image catch:tap="location" class="location-img" src="/image/location.png"></cover-image>
+        <cover-image catch:tap="telBtn" class="tel-img" src="/image/map_tel.png"></cover-image>
+        <cover-image catch:tap="InfoBtn" class="info-img" data-path="{{info_icon.pindex_icon_url}}" src="{{info_icon.pindex_icon}}" wx:if="{{info_icon.pindex_icon&&info_icon.pindex_icon_url!='service'}}"></cover-image>
+        <button bindcontact="handleContact" class="btn-info-img" openType="contact" style="background:url({{info_icon.pindex_icon}}) no-repeat center;background-size: 100% 100%;" wx:if="{{info_icon.pindex_icon&&info_icon.pindex_icon_url=='service'}}"></button>
+        <cover-image class="speed_label" src="/image/speed_start.png"></cover-image>
+    </map>
+</view>

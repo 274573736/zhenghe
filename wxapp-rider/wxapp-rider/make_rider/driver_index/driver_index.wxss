@@ -1,0 +1,88 @@
+.main {
+    width: 100%;
+    padding: 20rpx;
+}
+
+.box-1 {
+    width: 100%;
+    padding: 30rpx 20rpx;
+    background: #ffffff;
+}
+
+.box-1-title {
+    font-weight: bold;
+    padding-bottom: 30rpx;
+}
+
+.box-1-des {
+    color: #808088;
+    font-size: 24rpx;
+    margin-bottom: 10rpx;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #cccccc;
+    margin-top: 30rpx;
+}
+
+.box-1-2-title {
+    font-size: 28rpx;
+    color: #00baf5;
+    padding: 30rpx 0;
+}
+
+.circle-icon {
+    width: 10rpx;
+    height: 10rpx;
+    background: #808088;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.flow-box {
+    width: 100%;
+    height: 140rpx;
+}
+
+.circle-title {
+    color: #ffffff;
+    font-size: 24rpx;
+    width: 30rpx;
+    height: 30rpx;
+    text-align: center;
+    line-height: 30rpx;
+    border-radius: 50%;
+    background: #212330;
+}
+
+.line-c {
+    flex: 1;
+    border-right: 1px dashed #212330;
+    margin: 1px 0;
+}
+
+.flow-box-right {
+    width: 600rpx;
+    margin-left: 20rpx;
+}
+
+.flow-des {
+    color: #808088;
+    font-size: 24rpx;
+}
+
+.footer {
+    width: 100%;
+    padding: 40rpx 20rpx;
+}
+
+.step-btn {
+    width: 710rpx;
+    height: 80rpx;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 35px;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+}

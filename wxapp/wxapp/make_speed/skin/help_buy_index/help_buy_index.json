@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "帮我买",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

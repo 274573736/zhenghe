@@ -1,0 +1,92 @@
+<form bindsubmit="confirm" class="full" reportSubmit="true">
+    <view class="top">
+        <textarea class="" id="" name="remark" placeholder="请详细描述您的服务需求"></textarea>
+        <view class="voice-box center">
+            <m-voice catch:voiceUrl="voiceUrl" lu_btn="1"></m-voice>
+        </view>
+    </view>
+    <view class="item-row betweens">
+        <view class="item-left rows">
+            <image class="time-img" src="/image/all_tel.png" style="width: 30rpx;height: 34rpx;"></image>
+            <text class="item-font">电话号码<text class="red">*</text>
+            </text>
+        </view>
+        <view class="rows">
+            <input class="tel-input" name="tel" placeholder="请输入手机号码" type="number" value="{{tel}}"></input>
+            <view class="tel-input-line"></view>
+            <input class="small-tel-input" name="extension_number" placeholder="分机号" type="number"></input>
+        </view>
+    </view>
+    <view catch:tap="sTime" class="item-row betweens">
+        <view class="item-left rows">
+            <image class="time-img" src="/image/all_time.png"></image>
+            <text class="item-font">服务时间</text>
+        </view>
+        <view class="goods-property-right rows">
+            <view class="" wx:if="{{isImmediately==0}}">{{hour}}</view>
+            <view class="" wx:else>{{day}}{{hour}}时{{minute}}分</view>
+            <image class="property-r-img" src="/image/staff-r.png"></image>
+        </view>
+    </view>
+    <view class="item-row betweens">
+        <view class="item-left rows">
+            <image class="time-img" src="/image/all_info.png" style="width: 30rpx;height: 34rpx;"></image>
+            <text class="item-font">姓名（选填）</text>
+        </view>
+        <input name="name" placeholder="请输入姓名" type="text" value="{{name}}"></input>
+    </view>
+    <view catch:tap="toAddress" class="betweens address-box">
+        <view class="rows">
+            <image class="time-img" src="/image/address_key.png" style="width: 27rpx;height: 31rpx;"></image>
+            <view class="" wx:if="{{shouhuo.title}}">
+                <view class="">
+                    <text class="address-title">{{shouhuo.title}}</text>
+                </view>
+                <view class="address-des">{{shouhuo.address}}</view>
+            </view>
+            <view class="item-font" wx:else>送达地址(选填)</view>
+        </view>
+        <view catch:tap="delAddress" class="del-font" wx:if="{{shouhuo.title}}">删除</view>
+        <view catch:tap="oftenAddress" class="often-btn" wx:if="{{!shouhuo.title}}">常用</view>
+    </view>
+    <view class="w-f" style="min-height:464rpx">
+        <view catch:tap="moneyProtocol" class="betweens protocol-box m-2">
+            <view class="item-font">协议扣款</view>
+            <image class="yes-img" src="/image/a-yes.png" wx:if="{{money_protocol}}"></image>
+            <image class="yes-img" src="/image/a-no.png" wx:else></image>
+        </view>
+        <view class="betweens protocol-box">
+            <view class="item-font">预计金额</view>
+            <view class="">
+                <text class="money-font">￥</text>
+                <text class="money">{{price}}</text>
+            </view>
+        </view>
+        <view class="discern-row center-r">
+            <view catch:tap="fontDiscern" class="center-r discern-box">
+                <image class="discern-icon" src="/image/font_discern.png"></image>
+                <view class="">文本识别</view>
+            </view>
+            <view class="line-c"></view>
+            <view catch:tap="imgDiscern" class="center-r discern-box">
+                <image class="discern-icon" src="/image/er_discern.png"></image>
+                <view class="">名片识别</view>
+            </view>
+        </view>
+    </view>
+    <view class="row footer">
+        <view catch:tap="toProtocol" class="center-r footer-right" data-id="0">
+            <image class="gou-img" src="/image/gou.png" wx:if="{{protocol}}"></image>
+            <image class="quan-img" src="/image/quan.png"></image>
+            <view class="protocol-font">
+                已阅读
+                <text catch:tap="toProtocol" class="protocol" data-id="1">《合作协议》</text>、
+                <text catch:tap="toProtocol" class="protocol" data-id="2">《扣款协议》</text>
+                并 同意协议所有内容条约
+            </view>
+        </view>
+        <button class="center btn" formType="submit" wx:if="{{!loading}}">立刻下单</button>
+        <button class="center btn" loading="true" wx:else>立刻下单</button>
+    </view>
+</form>
+<m-time bind:sTime="sTime" days="{{xTime.days}}" hidden="{{time_bg}}" hours="{{xTime.hours}}" minutes="{{xTime.minutes}}" order_type="2"></m-time>

@@ -1,0 +1,82 @@
+.top {
+    width: 100%;
+    padding: 20rpx 0 20rpx 40rpx;
+}
+
+.head-img {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+
+.item {
+    width: 100%;
+    height: 100rpx;
+    border-bottom: 1px solid #e9e9e9;
+    background: #ffffff;
+    padding: 0 40rpx;
+}
+
+.sign {
+    color: red;
+    margin-right: 10rpx;
+}
+
+input {
+    text-align: right;
+}
+
+.blue {
+    font-size: 24rpx;
+    color: #087bf0;
+}
+
+.textarea-box {
+    width: 100%;
+    height: 200prx;
+    padding: 20rpx 40rpx;
+    background: #ffffff;
+}
+
+textarea {
+    width: 670rpx;
+    height: 200rpx;
+    box-sizing: border-box;
+    padding: 20rpx;
+    border: 1px solid #e9e9e9;
+}
+
+.footer {
+    width: 100%;
+    height: 100rpx;
+    background: #087bf0;
+    color: #ffffff;
+    font-size: 36rpx;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+}
+
+.btn-del {
+    width: 50%;
+    height: 100%;
+    background: #59a4f0;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.btn-edit {
+    width: 50%;
+    height: 100%;
+    background: #087bf0;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn:after {
+    border: 0;
+}

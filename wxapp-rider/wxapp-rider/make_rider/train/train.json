@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "m-register-top": "../../component/register_process/index",
+        "m-date": "../../component/date/index"
+    },
+    "navigationBarTitleText": "预约站点"
+}

@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "确认订单",
+    "usingComponents": {
+        "m-address": "/component/make_freight/address/index",
+        "m-pay": "/component/pay/index",
+        "m-remark": "/component/remark/index",
+        "m-footer-btn": "/component/footer_btn/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

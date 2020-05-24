@@ -1,0 +1,18 @@
+<view class="w-f content" wx:if="{{verify.isArray(list)}}">
+    <view class="content-item" wx:for="{{list}}" wx:key="id">
+        <view class="font1">{{item.title}}</view>
+        <view class="font2">{{item.add_time}}</view>
+        <rich-text class="font2" nodes="{{item.content}}" space="nbsp"></rich-text>
+    </view>
+</view>
+<view class="w-f column" wx:else>
+    <view class="" style="margin-top:350rpx">
+        <m-hint img_url="{{img_url}}">
+            <view class="no-font" slot="after" style=" margin-top: 50rpx;color: #999999;font-size: 24rpx;">暂无消息通知~</view>
+        </m-hint>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

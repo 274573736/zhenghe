@@ -1,0 +1,65 @@
+.view-top {
+    width: 100%;
+    height: 20rpx;
+}
+
+.top {
+    width: 100%;
+    height: 100rpx;
+    padding: 0 40rpx;
+    background: #ffffff;
+}
+
+.top-font {
+    margin-right: 30rpx;
+}
+
+.balance-box {
+    width: 100%;
+    height: 100rpx;
+    color: #999999;
+    padding: 0 40rpx;
+}
+
+.wechat-box {
+    width: 100%;
+    height: 150rpx;
+    padding: 0 40rpx;
+    background: #ffffff;
+}
+
+.left-font {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.wechat-img {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 30rpx;
+}
+
+.selected-img {
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.btn-box {
+    position: fixed;
+    bottom: 80rpx;
+    left: 0;
+    right: 0;
+    padding: 0 40rpx;
+}
+
+.btn {
+    width: 100%;
+    height: 80rpx;
+    color: #ffffff;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+    border-radius: 35px;
+}
+
+.btn-hover {
+    background: #a1dafb;
+}

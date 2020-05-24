@@ -1,0 +1,54 @@
+.top-box {
+    background: #ffffff;
+}
+
+.s-img {
+    width: 33rpx;
+    height: 33rpx;
+    margin-left: 10rpx;
+}
+
+.qustion-box {
+    padding: 0 40rpx;
+    margin-top: 40rpx;
+}
+
+.question-img {
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.btn-box {
+    border: 1px solid #999999;
+    color: #999999;
+    width: 170rpx;
+    height: 70rpx;
+    border-radius: 5px;
+}
+
+.btn-box1 {
+    background: #00baf5;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-box2 {
+    margin-right: 20rpx;
+}
+
+.right-img {
+    width: 9rpx;
+    height: 19rpx;
+}
+
+.car {
+    margin-right: 20rpx;
+}
+
+.item-row {
+    padding: 20rpx 40rpx;
+}
+
+.item-row:nth-of-type(n+2) {
+    border-top: 1px solid #eeeeee;
+}

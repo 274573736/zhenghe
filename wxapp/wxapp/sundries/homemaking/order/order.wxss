@@ -1,0 +1,324 @@
+page {
+    background: #f6f6f9;
+}
+
+.padd-20 {
+    padding: 0 20rpx;
+}
+
+.view-box {
+    background: #f6f6f9;
+}
+
+.process-img {
+    width: 66rpx;
+    height: 66rpx;
+    margin: 0 10rpx;
+}
+
+.top-box {
+    width: 100%;
+    padding: 30rpx 0 60rpx 0;
+}
+
+.top-line {
+    width: 110rpx;
+    height: 10rpx;
+    background: #097bf1;
+}
+
+.circle-icon {
+    width: 18rpx;
+    height: 18rpx;
+    background: #097bf1;
+    border-radius: 50%;
+    margin: 0 10rpx;
+}
+
+.top-font-box {
+    position: relative;
+}
+
+.top-font-1 {
+    position: absolute;
+    top: 20rpx;
+    left: 10rpx;
+}
+
+.top-font-2 {
+    position: absolute;
+    top: 20rpx;
+    left: 204rpx;
+}
+
+.top-font-3 {
+    color: #999999;
+    position: absolute;
+    top: 20rpx;
+    left: 372rpx;
+}
+
+.top-font-4 {
+    color: #999999;
+    position: absolute;
+    top: 20rpx;
+    left: 518rpx;
+}
+
+.top-font-5 {
+    color: #999999;
+    position: absolute;
+    top: 20rpx;
+    left: 650rpx;
+}
+
+.photo-box {
+    margin-bottom: 20rpx;
+    width: 710rpx;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px #ededf0;
+}
+
+.address-des-input {
+    width: 100%;
+}
+
+.homemaking-title {
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-right: 20rpx;
+}
+
+.homemaking-title-icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.homemaking-font {
+    color: #097bf1;
+    font-size: 34rpx;
+}
+
+.homemaking-des {
+    font-size: 28rpx;
+    color: #333333;
+    margin-top: 30rpx;
+}
+
+.address-box {
+    width: 710rpx;
+    background: #ffffff;
+    padding: 20rpx 0;
+}
+
+.address-img {
+    width: 33rpx;
+    height: 45rpx;
+    padding-right: 20rpx;
+}
+
+.address-title {
+    font-weight: bold;
+}
+
+.address-tel {
+    color: #808080;
+    font-size: 24rpx;
+    margin-left: 20rpx;
+}
+
+.address-des {
+    color: #808080;
+    font-size: 24rpx;
+    width: 620rpx;
+}
+
+.address-btn {
+    width: 80rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #ffffff;
+    background: #212330;
+    border-radius: 3px;
+}
+
+.address-right {
+    padding: 0 20rpx 0 40rpx;
+    border-left: 1px solid #d2d2d2;
+}
+
+.item-row {
+    width: 100%;
+    padding: 30rpx 20rpx;
+    background: #ffffff;
+}
+
+.time-img {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.line-box {
+    width: 100%;
+    padding-left: 20rpx;
+    background: #ffffff;
+}
+
+.line {
+    border-top: 1px solid #e9e9e9;
+}
+
+.item-font {
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+
+.item-half {
+    width: 335rpx;
+}
+
+.item-half:nth-of-type(1) {
+    border-right: 1px solid #e9e9e9;
+}
+
+.info-img {
+    width: 30rpx;
+    height: 34rpx;
+}
+
+.info-img-box {
+    width: 30rpx;
+    height: 34rpx;
+}
+
+.box-two {
+    margin: 0 20rpx;
+}
+
+input {
+    width: 280rpx;
+}
+
+.bargain-img {
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.slider {
+    margin: 20rpx 0 30rpx 0;
+}
+
+.slider-box {
+    width: 710rpx;
+    background: #ffffff;
+    padding: 20rpx 20rpx 40rpx 20rpx;
+}
+
+.select-btn {
+    width: 100rpx;
+    height: 40rpx;
+    color: #097bf1;
+    font-size: 24rpx;
+    font-weight: bold;
+    border: 1px solid #097bf1;
+    border-radius: 35px;
+}
+
+.slider-font {
+    font-weight: bold;
+}
+
+.slider-money {
+    color: #097bf1;
+}
+
+.slider-font-des {
+    font-size: 24rpx;
+    color: #808088;
+    margin-top: 40rpx;
+}
+
+.msg-icon {
+    width: 29rpx;
+    height: 34rpx;
+    margin-right: 10rpx;
+}
+
+.footer-des {
+    color: #ff1f0e;
+    font-size: 28rpx;
+    padding: 20rpx 40rpx;
+    background: #fdfbec;
+}
+
+.footer {
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-btn-box {
+    margin: 30rpx;
+}
+
+.box-space {
+    width: 100%;
+    height: 284rpx;
+}
+
+.index-box {
+    width: 670rpx;
+    background: #ffffff;
+    border-radius: 3px;
+    z-index: 1000;
+    position: relative;
+}
+
+.index-title {
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: bold;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.index-input {
+    width: 590rpx;
+    height: 80rpx;
+    background: #dddddd;
+    border-radius: 3px;
+    margin: 60rpx 0;
+}
+
+.index-input>view {
+    width: 150rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.index-footer {
+    width: 100%;
+    height: 100rpx;
+    border-top: 1px solid #e0e0e0;
+}
+
+.cancel-input {
+    width: 50%;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.confirm-input {
+    width: 50%;
+    height: 100rpx;
+    color: #ffffff;
+    background: #097bf1;
+    text-align: center;
+    line-height: 100rpx;
+}

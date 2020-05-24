@@ -1,0 +1,64 @@
+<view class="full flex-c">
+    <view class="top">
+        {{name}}
+    </view>
+    <view class="info-box">
+        <view class="flex-c info">
+            <view class="between">
+                <view class="row">
+                    <view class="head-img head-position">
+                        <open-data class="head-img" type="userAvatarUrl"></open-data>
+                    </view>
+                    <view catch:tap="recharge" class="">
+                        <view class="">账户余额</view>
+                        <view class="money">{{valid}}</view>
+                    </view>
+                </view>
+                <form class="service-form">
+                    <view class="rows">
+                        <view animation="{{animation}}" class="service-num-animation">+1</view>
+                        <view class="service-num">{{form_id}}</view>
+                        <button catch:tap="formId" class="service-btn" hoverClass="service-btn-active">服务通知</button>
+                    </view>
+                </form>
+            </view>
+            <view class="betweens info-footer">
+                <view catch:tap="myMoney" class="column">
+                    <view class="title">本月支出</view>
+                    <view class="">{{month_money}}</view>
+                </view>
+                <view class="column">
+                    <view class="title">总订单量</view>
+                    <view class="">{{count_order}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="main">
+        <view catch:tap="staff" class="betweens big-staff-box">
+            <view class="center-c">
+                <image class="staff-img" src="/image/staff.png"></image>
+                <view class="">店员管理</view>
+            </view>
+            <view catch:tap="order" class="center-c">
+                <image class="order-img" src="/image/staff_order.png"></image>
+                <view class="">历史订单</view>
+            </view>
+        </view>
+        <view class="betweens item">
+            <view class="">联系电话</view>
+            <view class="">{{tel}}</view>
+        </view>
+        <view class="betweens item">
+            <view class="">商铺地址</view>
+            <view class="address no-rows">{{address}}</view>
+        </view>
+    </view>
+    <form class="center footer">
+        <button catch:tap="orderBtn" class="btn2 center">
+            <view class="btn1 center">
+                <view class="center btn">下单</view>
+            </view>
+        </button>
+    </form>
+</view>

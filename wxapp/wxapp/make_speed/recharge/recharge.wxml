@@ -1,0 +1,33 @@
+<view class="top betweens">
+    <view class="">当前余额</view>
+    <view class="top-money">￥{{money}}</view>
+</view>
+<view class="color-box"></view>
+<view class="input-box betweens">
+    <view class="">￥</view>
+    <input bindinput="bindInput" class="money-input" placeholder="请输入充值金额" placeholderClass="money-input" type="number"></input>
+</view>
+<view class="item-box row">
+    <view bind:tap="selected" class="item center-c {{index==idx?'item-active':''}}" data-idx="{{index}}" wx:for="{{list.list}}" wx:key="index">
+        <view class="">充{{item}}元</view>
+        <view class="item-coupons {{index==idx?'item-active':''}}" wx:if="{{list.discount>0}}">送{{verify.toFixed(item*list.discount)}}元</view>
+    </view>
+</view>
+<view class="pay-des">选择支付方式</view>
+<view class="method-box betweens">
+    <view class="rows">
+        <image class="s-img" src="/image/wechat_pay.png"></image>
+        <text class="pay-font">微信支付</text>
+    </view>
+    <image class="s-img" src="/image/re_y.png"></image>
+</view>
+<checkbox-group bindchange="checkboxChange" class="center">
+    <checkbox checked="" class="check" color="#097bf1" style="transform:scale(.7)" value="1"></checkbox>
+    我已阅读并同意<text bind:tap="coopration" class="cooperation">《充值协议》</text>
+</checkbox-group>
+<view class="w-f column">
+    <view bind:tap="confirm" class="recharge-btn center">
+        立即充值
+    </view>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

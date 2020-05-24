@@ -1,0 +1,45 @@
+.refresh-img {
+    width: 28rpx;
+    height: 30rpx;
+}
+
+.bottom-box {
+    width: 700rpx;
+    padding: 20rpx 0;
+    background: #fff;
+    margin-top: 50rpx;
+    border-radius: 5px;
+}
+
+.map-dian {
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 20rpx 0 40rpx;
+}
+
+.refresh-red-img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.refresh-font {
+    margin: 0 10rpx 0 20rpx;
+    color: red;
+}
+
+.address-font {
+    width: 400rpx;
+}
+
+.betweens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

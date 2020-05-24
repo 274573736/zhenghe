@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "m-date": "/component/time/index",
+        "m-register-top": "/component/register_process/index"
+    },
+    "navigationBarTitleText": "注册代驾司机"
+}

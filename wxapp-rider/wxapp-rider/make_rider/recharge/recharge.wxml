@@ -1,0 +1,29 @@
+<view class="view-top"></view>
+<view class="rows top">
+    <text class="top-font">充值金额:</text>
+    <input bindinput="rechargeNum" disabled="{{is_cash==0?true:false}}" name="recharge_num" placeholder="请输入金额" type="number" value="{{recharge_money}}"></input>
+</view>
+<view class="rows balance-box" wx:if="{{is_cash==0}}">
+    需要缴够保证金：{{cash}}元
+</view>
+<view class="rows balance-box" wx:else>
+    账户可用余额：{{money}}元
+</view>
+<view class="betweens wechat-box">
+    <view class="rows left">
+        <image class="wechat-img" src="{{img_url}}wechat.png"></image>
+        <view class="">
+            <view class="">微信支付</view>
+            <view class="left-font">快捷支付</view>
+        </view>
+    </view>
+    <image class="selected-img" src="{{img_url}}selected.png"></image>
+</view>
+<view class="w-f center btn-box">
+    <view bind:tap="confirm" class="center btn" hoverClass="btn-hover">
+        确认充值
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

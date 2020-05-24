@@ -1,0 +1,110 @@
+<view class="w-f" wx:if="{{order_status==0||order_status==2||order_status==3||order_status==4}}">
+    <m-order-map bind:refreshData="refreshData" first_post_data="{{firstPostData}}" img_url="{{img_url}}" latitude="{{latitude}}" longitude="{{longitude}}" map_height="{{map_height}}" markers="{{markers}}" order="{{order}}" pick_code="{{order.pick_code}}" polyline="{{polyline}}" socket_open="{{socket_open}}"></m-order-map>
+</view>
+<view class="again-box" wx:if="{{order_status==1}}">
+    <m-again bind:againOrder="againOrder" img_url="{{img_url}}"></m-again>
+</view>
+<view class="column top" wx:if="{{order_status==0||order_status==2||order_status==3}}">
+    <view class="column w-f" wx:if="{{order_status==0}}">
+        <view bind:tap="orderStatusBox" class="rows top-font">
+            <view class="">待付款</view>
+            <image class="r-img" src="{{img_url}}r.png"></image>
+        </view>
+        <view class="price-box column" wx:if="{{order.charg_type==2}}">
+            <view class="column">
+                <view class="row price-2">
+                    <text>当前费用</text>
+                    <text class="price-2-num">{{verify.toFixed(order.pay_price,1)}}</text>
+                    <text>元</text>
+                    <image catch:tap="toPriceDetail" class="price-question" src="/image/price_question_b.png"></image>
+                </view>
+                <text class="distance">已行驶 <text class="">{{verify.toFixed(order.distance,1)}}</text> 公里</text>
+            </view>
+            <view bind:tap="selectPay" class="confirm-pay-btn">确认支付</view>
+        </view>
+        <view class="w-f around" wx:else>
+            <view bind:tap="againOrder" class="center btn">再来一单</view>
+            <view bind:tap="closeOrder" class="center btn">取消</view>
+            <view bind:tap="selectPay" class="center btn btn-active">立即支付</view>
+        </view>
+    </view>
+    <view class="column w-f" wx:if="{{order_status==2}}">
+        <view bind:tap="orderStatusBox" class="rows top-font">
+            <view class="" wx:if="{{order_type==0}}">等待送货员接单</view>
+            <view class="" wx:if="{{order_type==1}}">等待帮买员接单</view>
+            <view class="" wx:if="{{order_type==2}}">等待跑腿员接单</view>
+            <view class="" wx:if="{{order_type==3}}">等待代驾员接单</view>
+            <view class="" wx:if="{{order_type==5||order_type==6}}">等待师傅接单</view>
+            <image class="r-img" src="{{img_url}}r.png"></image>
+        </view>
+        <view class="w-f around">
+            <view bind:tap="closeOrder" class="center btn btn-active">取消订单</view>
+            <view bind:tap="reminder" class="center btn">催单</view>
+            <view bind:tap="selectTip" class="center btn">加小费</view>
+        </view>
+        <view class="car-price-des" wx:if="{{order_type==3&&order.charg_type==2}}">* 最终的价格由实际行驶的路程计算得出</view>
+    </view>
+    <view class="column w-f" wx:if="{{order_status==3}}">
+        <view bind:tap="orderStatusBox" class="rows top-font-time-des">
+            <view class="" wx:if="{{order_type==0}}">等待送货员到达取件点</view>
+            <view class="" wx:if="{{order_type==1}}">等待帮买员到达购买点</view>
+            <view class="" wx:if="{{order_type==2}}">等待跑腿员到达服务点</view>
+            <view class="" wx:if="{{order_type==3}}">等待代驾员到达代驾点</view>
+            <view class="" wx:if="{{order_type==5}}">等待师傅到取货点</view>
+            <view class="" wx:if="{{order_type==6}}">等待师傅到达服务点</view>
+            <image class="r-img" src="{{img_url}}r.png"></image>
+        </view>
+        <view class="time-font-des" wx:if="{{order.riders.expect_time&&order.riders.expect_time!=0&&order_type!=1&&order_type!=3}}">预计到达：<text class="time-font">{{order.riders.expect_time}}</text>
+        </view>
+        <view bind:tap="closeOrder" class="center bg-close-btn">取消订单</view>
+    </view>
+</view>
+<view class="column w-f top" style="background: #fff;" wx:if="{{order_status==4}}">
+    <view bind:tap="orderStatusBox" class="rows  top-font-time-des">
+        <view class="" wx:if="{{order_type==0}}">送货员正在送件中</view>
+        <view class="" wx:if="{{order_type==1}}">帮买员正在送件中</view>
+        <view class="" wx:if="{{order_type==2}}">跑腿员正在服务中</view>
+        <view class="" wx:if="{{order_type==3}}">代驾员正在驾驶中</view>
+        <view class="" wx:if="{{order_type==5}}">师傅正在送货中</view>
+        <view class="" wx:if="{{order_type==6}}">师傅正在服务中</view>
+        <image class="r-img" src="{{img_url}}r.png"></image>
+    </view>
+    <view class="" wx:if="{{order.riders.expect_timed&&order.riders.expect_timed!=0&&order_type!=3}}">预计送达：<text class="time-font">{{order.riders.expect_timed}}</text>
+    </view>
+    <view class="price-box column" wx:if="{{order_type==3&&order.charg_type==2}}">
+        <view class="column" wx:if="{{driver_real_price>0&&driver_real_distance>0}}">
+            <view class="row price-2">
+                <text>当前费用</text>
+                <text class="price-2-num">{{driver_real_price}}</text>
+                <text>元</text>
+            </view>
+        </view>
+        <view class="column" wx:else>
+            <view class="row price-2">
+                <text>预计</text>
+                <text class="price-2-num">{{verify.toFixed(order.pay_price,1)}}</text>
+                <text>元</text>
+            </view>
+            <text class="distance">里程 <text class="">{{verify.toFixed(order.distance,1)}}</text> 公里</text>
+        </view>
+    </view>
+</view>
+<cover-view bind:tap="pay_bg" catchtouchmove="true" class="u-index" hidden="{{pay_tip_bg}}" style="bottom:590rpx"></cover-view>
+<cover-view catchtouchmove="true" class="m u-index-item" hidden="{{pay_tip_bg}}" style="height:590rpx">
+    <m-tip-pay bind:closeBJ="pay_bg" bind:payMethod="payMethod" business_id="{{order.business_id}}" class="m u-index-item" hidden="{{pay_tip_bg}}" img_url="{{img_url}}" is_money="{{false}}" my_money="{{my_money}}" order_id="{{order.order_id}}" order_type="{{order_type}}" pay_price="{{tip_money}}"></m-tip-pay>
+</cover-view>
+<cover-view bind:tap="pay_bg" catchtouchmove="true" class="u-index" hidden="{{pay_order_bg}}" style="bottom:590rpx"></cover-view>
+<cover-view catchtouchmove="true" class="m u-index-item" hidden="{{pay_order_bg}}" style="height:590rpx">
+    <m-order-pay bind:closeBJ="pay_bg" bind:payMethod="payMethod" catchtouchmove="true" charg_type="{{order.charg_type}}" class="m u-index-item" hidden="{{pay_order_bg}}" img_url="{{img_url}}" is_money="{{false}}" my_money="{{my_money}}" order_id="{{order.order_id}}" order_type="{{order_type}}" pay_price="{{order.pay_price}}"></m-order-pay>
+</cover-view>
+<cover-view bind:tap="tip_bg" catchtouchmove="true" class="u-index" hidden="{{tip_bg}}" style="bottom:400rpx"></cover-view>
+<cover-view catchtouchmove="true" class="m u-index-item" hidden="{{tip_bg}}" style="height:400rpx">
+    <m-tip bind:tipSelected="tipSelected" catchtouchmove="true" hidden="{{tip_bg}}" img_url="{{img_url}}"></m-tip>
+</cover-view>
+<m-driver img_url="{{img_url}}" riders="{{order.riders}}" wx:if="{{order_status==3||order_status==4||order_status==0&&order.charg_type==2}}"></m-driver>
+<m-evaluate bind:againOrder="againOrder" bind:evalutete="evalutete" bind:orderStatusBox="orderStatusBox" evaluete_data="{{evaluete_data}}" img_url="{{img_url}}" order_type="{{order_type}}" riders="{{order.riders}}" wx:if="{{order_status==5}}"></m-evaluate>
+<m-evaluate-static bind:againOrder="againOrder" bind:orderStatusBox="orderStatusBox" evaluete_data="{{evaluete_data}}" evaluete_value="{{evaluete_value}}" img_url="{{img_url}}" order_type="{{order_type}}" riders="{{order.riders}}" star_num="{{star_num}}" wx:if="{{order_status==6}}"></m-evaluate-static>
+<m-order-status add_time="{{order.add_time}}" charg_type="{{order.charg_type}}" img_url="{{img_url}}" order_status="{{order_status}}" order_status_box_close="{{order_status_box_close}}" riders="{{order.riders}}"></m-order-status>
+<m-order_detail business_id="{{business_id}}" img_url="{{img_url}}" order="{{order}}"></m-order_detail>
+<m-cancel-tip bind:closeOrderClose="closeOrderClose" bind:confirmClose="confirmClose" close_order="{{close_order}}" img_url="{{img_url}}"></m-cancel-tip>
+<wxs module="verify" src="../../modules/verify.wxs" />

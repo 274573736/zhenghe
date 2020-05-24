@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "m-no-hint": "../../component/no_hint/index"
+    },
+    "navigationBarTitleText": "培训站点"
+}

@@ -1,0 +1,8 @@
+<form bindsubmit="confirm" class="full column" reportSubmit="true">
+    <view class="w-f textarea-box">
+        <textarea class="textarea" name="content" placeholder="{{placeholder}}"></textarea>
+    </view>
+    <view class="w-f column">
+        <button class="btn center" formType="submit">智能识别</button>
+    </view>
+</form>

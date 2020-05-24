@@ -1,0 +1,27 @@
+<view class="top center">
+    <view class="coupon-left rows">
+        <view class="coupon-title">优惠券</view>
+        <view class="coupon-des">
+            <view class="">
+                <text class="">￥</text>
+                <text class="coupon-money">{{list.money}}</text>
+            </view>
+            <view class="">满{{list.satisfy_money}}元可用</view>
+        </view>
+    </view>
+</view>
+<view class="view-box"></view>
+<view class="top-box">
+    <view class="coupon-name">{{list.money}}元优惠券</view>
+    <view class="coupon-price">{{list.gral}}积分</view>
+</view>
+<view class="center-box">
+    <view class="coupon-name">商品详情</view>
+    <view class="goods_des">兑换之日起{{list.day}}内有效</view>
+    <view class="goods_des">优惠金额：{{list.satisfy_money}}元订单以上使用</view>
+    <view class="coupon-name rule">规则说明</view>
+    <view class="goods_des">{{list.description}}</view>
+</view>
+<view class="footer">
+    <view catch:tap="conversionBtn" class="footer-btn center" data-id="{{list.id}}">立即兑换</view>
+</view>

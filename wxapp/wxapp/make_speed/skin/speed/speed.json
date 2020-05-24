@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "跑腿",
+    "usingComponents": {
+        "m-address": "/component/address/index",
+        "m-footer-btn": "/component/footer_btn/index",
+        "m-time": "/component/getTime/index",
+        "m-weight": "/component/weight/index",
+        "m-tip": "/component/tip/index",
+        "m-remark": "/component/remark/index",
+        "m-pay": "/component/pay/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

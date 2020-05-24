@@ -1,0 +1,35 @@
+<m-tab bind:Getidx="Getidx" bind:scrollSole="scrollSole" top_item="{{top_item}}" top_p="{{top_p}}">
+    <view class="w-f box-body" slot="after{{idx}}" wx:if="{{verify.isArray(order_list)}}">
+        <view class="order-item" wx:for="{{order_list}}">
+            <view class="top-space"></view>
+            <view class="item-top betweens">
+                <view class="order-code">订单号：{{item.order_number}}</view>
+                <view class="order-status" wx:if="{{item.status==0}}">待付款</view>
+                <view class="order-status" wx:if="{{item.status==1}}">待分佣</view>
+                <view class="order-status" wx:if="{{item.status==2}}">已分佣</view>
+                <view class="order-status" wx:if="{{item.status==3}}">已取消</view>
+            </view>
+            <view class="item-content row">
+                <image class="head-img" src="{{item.avatar}}"></image>
+                <view class="">
+                    <view class="">用户：{{item.nick_name}}</view>
+                    <view class="">推广等级：{{item.level}}级{{distribution_name}}</view>
+                    <view class="">下单时间：{{item.create_time}}</view>
+                </view>
+            </view>
+            <view class="item-footer betweens">
+                <view class=""></view>
+                <view class="">
+                    <text class="order-code">佣金：</text>
+                    <text class="red">￥ {{item.commission}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view slot="after{{idx}}" wx:else>
+        <m-no-hint>
+            <text class="no-hint-font" slot="after">暂无此类订单~</text>
+        </m-no-hint>
+    </view>
+</m-tab>
+<wxs module="verify" src="../../../modules/verify.wxs" />

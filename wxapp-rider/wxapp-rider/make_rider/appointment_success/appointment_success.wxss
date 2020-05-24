@@ -1,0 +1,71 @@
+.top-box {
+    width: 650rpx;
+    height: 640rpx;
+    margin-top: 300rpx;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #666666;
+    position: relative;
+}
+
+.top-top {
+    width: 100%;
+    height: 100rpx;
+    font-weight: bold;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.top-center {
+    width: 100%;
+    padding-left: 90rpx;
+}
+
+.top-item {
+    margin-top: 30rpx;
+}
+
+.app-img {
+    width: 46rpx;
+    height: 46rpx;
+}
+
+.font-title {
+    color: #00baf5;
+}
+
+.top-center-right {
+    margin-left: 20rpx;
+    width: 430rpx;
+    margin-right: 70rpx;
+    color: #999999;
+}
+
+.btn {
+    width: 500rpx;
+    height: 80rpx;
+    border-radius: 35px;
+    color: #ffffff;
+    margin-top: 100rpx;
+    background: linear-gradient(to left,#1c89d6,#36caea);
+}
+
+.top-bottom-box {
+    width: 650rpx;
+}
+
+.top-bottom {
+    color: #ffffff;
+    font-size: 24rpx;
+    margin-top: 30rpx;
+    margin-left: 80rpx;
+}
+
+.appointment-time {
+    color: #999999;
+    position: absolute;
+    bottom: 30rpx;
+}
+
+.btn-hover {
+    background: #a1dafb;
+}

@@ -1,0 +1,57 @@
+<view class="top-white"></view>
+<view class="item-box">
+    <view class="rows item-top">
+        <image class="item-img" src="{{img_url}}black-dian.png"></image>
+        <text>今日/Today</text>
+    </view>
+    <view class="around item-center">
+        <view class="center-c item">
+            <view class="data-font">{{order_total_num}}</view>
+            <view class="no-row">今日完成单(份)</view>
+        </view>
+        <view class="center-c item">
+            <view class="data-font">{{order_total_price>0?verify.toFixed(order_total_price,2):0}}</view>
+            <view class="no-row">今日总收入(元)</view>
+        </view>
+    </view>
+</view>
+<view class="item-box">
+    <view class="rows item-top">
+        <image class="item-img" src="{{img_url}}black-dian.png"></image>
+        <text>收入/Income</text>
+    </view>
+    <view class="around item-center">
+        <view class="center-c item">
+            <view class="data-font">{{verify.toFixed(list.total_income,2)}}</view>
+            <view class="no-row">总收入(元)</view>
+        </view>
+        <view class="center-c item">
+            <view class="data-font">{{verify.toFixed(list.month_income,2)}}</view>
+            <view class="no-row">本月总收入(元)</view>
+        </view>
+        <view class="center-c item">
+            <view class="data-font">{{verify.toFixed(list.yester_income,2)}}</view>
+            <view class="no-row">昨日总收入(元)</view>
+        </view>
+    </view>
+</view>
+<view class="item-box">
+    <view class="rows item-top">
+        <image class="item-img" src="{{img_url}}black-dian.png"></image>
+        <text>里程/Kilometre</text>
+    </view>
+    <view class="around item-center">
+        <view class="center-c item">
+            <view class="data-font">{{list.cur_distance}}</view>
+            <view class="no-row">本周里程(千米)</view>
+        </view>
+        <view class="center-c item">
+            <view class="data-font">{{list.per_distance}}</view>
+            <view class="no-row">上周里程(千米)</view>
+        </view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

@@ -1,0 +1,69 @@
+<image class="activity-back-img" src="/image/activity_back.png"></image>
+<view class="activity-big-box column">
+    <view class="activity-box column">
+        <view class="w-f column">
+            <view class="rows">
+                <image class="a-img" src="/image/a_1.png"></image>
+                <view class="title">邀请好处多</view>
+                <image class="a-img" src="/image/a_2.png"></image>
+            </view>
+            <view class="box-center betweens">
+                <view class="column">
+                    <view class="circle-title center">领</view>
+                    <view class="box-center-num box-center-num-1">立减{{list.first}}元</view>
+                    <view class="box-center-des">好友完成首单 领取{{list.first}}元券(满{{list.first_full}}立减)</view>
+                </view>
+                <view class="column">
+                    <view class="circle-title center">奖</view>
+                    <view class="box-center-num box-center-num-2">{{list.person_price}}元优惠券</view>
+                    <view class="box-center-des">邀请好友达到{{list.person_num}}人 领取{{list.person_price}}元券(满{{list.person_full}}立减)</view>
+                </view>
+                <view class="column">
+                    <view class="circle-title center">励</view>
+                    <view class="box-center-num box-center-num-3">{{list.share}}元</view>
+                    <view class="box-center-des">分享好友 领取{{list.share}}元券(满{{list.share_full}}立减)</view>
+                </view>
+            </view>
+        </view>
+        <view class="column">
+            <view catch:tap="inviteBtn" class="invite-btn center" wx:if="{{auth}}">立即邀请</view>
+            <button catch:tap="goLogin" class="invite-btn center" wx:else>立即邀请</button>
+            <view class="invite-btn-des">你已经邀请{{list.exist_total}}人</view>
+        </view>
+    </view>
+</view>
+<view class="footer-box">
+    <view class="footer column">
+        <view class="rows footer-top">
+            <image class="a-img" src="/image/a_3.png"></image>
+            <view class="footer-title">发放规则</view>
+            <image class="a-img" src="/image/a_4.png"></image>
+        </view>
+        <view class="footer-content">
+            <rich-text nodes="{{list.agreement}}" space="nbsp"></rich-text>
+        </view>
+    </view>
+</view>
+<button bind:tap="hidePoster" class="full center poster-box" wx:if="{{sharePoster}}">
+    <cover-view class="">
+        <canvas canvasId="poster" class="poster" style="width:{{widthPx}}px;height:{{heightPx}}px;"></canvas>
+        <cover-view class="rows share-font-box">
+            <cover-view class="share-line"></cover-view>
+            <cover-view class="share-font">分享到</cover-view>
+            <cover-view class="share-line"></cover-view>
+        </cover-view>
+        <cover-view class="center-r btn-box">
+            <button catch:tap="saveImg" class="column btn">
+                <cover-image class="save-img" src="/image/save-img.png"></cover-image>
+                <cover-view>保存图片</cover-view>
+            </button>
+            <button class="column btn" openType="share" style="margin-left: 100rpx;">
+                <cover-image class="save-img" src="/image/send_h.png"></cover-image>
+                <cover-view>微信好友</cover-view>
+            </button>
+        </cover-view>
+    </cover-view>
+</button>
+<view class="w-f" wx:if="{{!is_login}}">
+    <m-auth bind:authBtn="authBtn" bind:uidBtn="uidBtn" is_login="{{is_login}}"></m-auth>
+</view>

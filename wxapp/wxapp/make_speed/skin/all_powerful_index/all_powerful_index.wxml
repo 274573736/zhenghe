@@ -1,0 +1,21 @@
+<view class="w-f">
+    <view class="view-box"></view>
+    <view class="photo-box">
+        <view class="goods-title">选择服务类型</view>
+        <scroll-view class="scroll-view" scrollX="true">
+            <view catch:tap="sGoods" class="scroll-item" data-idx="{{index}}" wx:for="{{goods_list}}" wx:key="id">
+                <image class="scroll-item-img" src="{{index==goods_idx?item.iconed:item.icon}}"></image>
+                <view class="scroll-font {{index==goods_idx?'font-active':''}}">{{item.name}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="photo-box">
+        <view class="textarea-box">
+            <textarea autoFocus="true" bindinput="textarea" class="textarea" placeholder="请详细描述您的服务需求" value="{{remark}}"></textarea>
+            <m-voice catch:voiceUrl="voiceUrl"></m-voice>
+        </view>
+    </view>
+</view>
+<form action="" bindsubmit="confirm" reportSubmit="true">
+    <button class="confirm-btn" formType="submit">确定</button>
+</form>

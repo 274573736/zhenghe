@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "万能跑腿",
+    "usingComponents": {
+        "m-index-bag": "/component/index_img/index",
+        "m-top": "/component/top/top",
+        "m-footer-btn": "/component/footer_btn/index",
+        "m-voice": "/component/voice/index",
+        "m-time": "/component/getTime/index",
+        "m-pay": "/component/pay/index",
+        "m-upload-img": "/component/upload_img/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

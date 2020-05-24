@@ -1,0 +1,51 @@
+<form bindsubmit="confirm" class="full">
+    <view class="box">
+        <view class="item betweens">
+            <view class="item-left">发票类型</view>
+            <view class="item-right">电子发票</view>
+        </view>
+        <view class="item betweens">
+            <view class="item-left">发票抬头</view>
+            <input class="" name="title" placeholder="请准确的填写抬头名称" placeholderClass="placeholder" type="text"></input>
+        </view>
+    </view>
+    <view class="box">
+        <view class="item betweens">
+            <view class="item-left">抬头类型</view>
+            <view class="item-right rows">
+                <view catch:tap="select" class="rows" data-idx="{{index}}" wx:for="{{list}}" wx:key="index">
+                    <image class="select-img" src="/image/{{index==idx?'a-yes':'a-no'}}.png"></image>
+                    <view class="">{{item}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="item betweens" hidden="{{!account_show}}">
+            <view class="item-left">税号</view>
+            <input class="" name="account" placeholder="请填写纳税人识别号" placeholderClass="placeholder" type="text"></input>
+        </view>
+        <view class="item betweens">
+            <view class="item-left">发票内容</view>
+            <input class="" name="content" placeholder="请填写发票内容" placeholderClass="placeholder" type="text" value="{{content}}"></input>
+        </view>
+        <view class="item betweens">
+            <view class="item-left">总金额</view>
+            <view class="item-right rows">
+                <input class="money" name="amount" placeholder="请填写发票金额" placeholderClass="placeholder" type="text" value="{{money}}"></input>
+                <view class="yuan">元</view>
+            </view>
+        </view>
+    </view>
+    <view class="box">
+        <view class="item betweens">
+            <view class="item-left">手机号</view>
+            <input class="" name="phone" placeholder="请填写正确的手机号码" placeholderClass="placeholder" type="number"></input>
+        </view>
+        <view class="item betweens">
+            <view class="item-left">电子邮箱</view>
+            <input class="" name="email" placeholder="用于向您发送电子发票" placeholderClass="placeholder" type="text"></input>
+        </view>
+    </view>
+    <view class="w-f center">
+        <button class="confirm-btn" formType="submit">提交</button>
+    </view>
+</form>

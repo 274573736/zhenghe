@@ -1,0 +1,13 @@
+<view class="list-search">
+    <view class="list-search-box">
+        <icon size="15" type="search"></icon>
+        <input bindinput="input" placeholder="输入您要搜索的城市"></input>
+    </view>
+    <button catchtap="searchMt" class="search-button">搜索</button>
+</view>
+<view class="wrapper">
+    <list-html binddetail="bindtap" data="{{city}}" search="{{value}}"></list-html>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

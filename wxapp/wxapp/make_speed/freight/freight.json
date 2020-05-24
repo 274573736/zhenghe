@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "m-index-bag": "/component/index_img/index",
+        "m-top": "/component/top/top",
+        "m-freight": "/component/freight_box/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

@@ -1,0 +1,8 @@
+<view class="full back column">
+    <view class="input input-one rows">
+        <input bindinput="phone" class="" maxlength="11" placeholder="手机号" type="number"></input>
+        <view bind:tap="sendCode" class="get-code-btn center">获取短信</view>
+    </view>
+    <input bindinput="code" class="input input-two" maxlength="6" placeholder="验证码" type="number"></input>
+    <view bind:tap="confirm" class="get-red-btn center">立即领取</view>
+</view>

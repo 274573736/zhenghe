@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "order-list": "../../component/order-list/index",
+        "m-no-hint": "../../component/no_hint/index",
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "navigationBarTitleText": "接单记录"
+}

@@ -1,0 +1,28 @@
+<cover-view class="pay-box" hidden="{{hidden}}">
+    <cover-view class="pay-top center">
+        <cover-view class="pay-top-title">选择支付方式</cover-view>
+        <cover-view bind:tap="closeBJ" class="top-close">关闭</cover-view>
+    </cover-view>
+    <cover-view class="line"></cover-view>
+    <cover-view class="center money-box" hidden="{{is_money}}">
+        <cover-view class="align-items">
+            <cover-view class="money-num">{{pay_price}}</cover-view>
+            <cover-view class="money-font">元</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="top-item-box">
+        <cover-view bind:tap="payWay" class="betweens top-item" id="1">
+            <cover-view class="top-item-left">账户余额 （余额{{my_money}}）</cover-view>
+            <cover-view class="rows" wx:if="{{my_money<pay_price}}">
+                <cover-view class="top-item-right">余额不足</cover-view>
+                <cover-image class="icon-img" src="{{img_url}}city_r.png"></cover-image>
+            </cover-view>
+            <cover-image class="icon-img" src="{{img_url}}city_r.png" wx:else></cover-image>
+        </cover-view>
+        <cover-view class="line"></cover-view>
+        <cover-view bind:tap="payWay" class="betweens top-item" id="2">
+            <cover-view class="top-item-left">微信支付</cover-view>
+            <cover-image class="icon-img" src="{{img_url}}city_r.png"></cover-image>
+        </cover-view>
+    </cover-view>
+</cover-view>

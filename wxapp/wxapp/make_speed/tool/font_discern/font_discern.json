@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "文本识别",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

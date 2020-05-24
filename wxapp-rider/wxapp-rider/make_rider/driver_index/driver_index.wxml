@@ -1,0 +1,36 @@
+<view class="main">
+    <view class="box-1">
+        <view class="box-1-title">基本要求</view>
+        <view class="box-1-des">1、年龄：25-50周岁</view>
+        <view class="box-1-des">2、驾龄：5年及5年以上驾龄</view>
+        <view class="box-1-des">3、准驾车型：C1及C1以上</view>
+        <view class="box-1-des">4、信息全部通过</view>
+        <view class="box-1-des">5、是否审核通过以本代驾平台审核标准为准</view>
+        <view class="line"></view>
+        <view class="box-1-2-title">注意：代驾属于服务行业，如有以下情况可能会影响您的审核</view>
+        <view class="box-1-des rows">
+            <view class="circle-icon"></view>
+            有明显的纹身、疤痕、太挤
+        </view>
+        <view class="box-1-des rows">
+            <view class="circle-icon"></view>
+            不注意个人卫生、身体有较重狐臭
+        </view>
+    </view>
+    <view class="box-1">
+        <view class="box-1-title">报名流程</view>
+        <view class="flow-box row" wx:for="{{flow}}" wx:key="index">
+            <view class="column h-w">
+                <view class="circle-title">{{index+1}}</view>
+                <view class="line-c" wx:if="{{index<4}}"></view>
+            </view>
+            <view class="flow-box-right">
+                <view class="flow-title">{{item.title}}</view>
+                <view class="flow-des">{{item.des}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="footer">
+    <view catch:tap="confirm" class="step-btn center">下一步</view>
+</view>

@@ -1,0 +1,50 @@
+<view class="item-view">
+    <view class="top-first">
+        订单信息
+    </view>
+</view>
+<m-address fahuo="{{fahuo}}" shouhuo="{{shouhuo}}"></m-address>
+<view class="item-view">
+    <view class="item betweens">
+        <view class="item-left">预约时间</view>
+        <view class="item-right">{{time}}</view>
+    </view>
+    <view class="item betweens">
+        <view class="item-left">电话号码</view>
+        <view class="item-right">{{fahuo.person_tel}}</view>
+    </view>
+    <view class="item betweens">
+        <view class="">需要装卸服务</view>
+        <switch bindchange="carryBtn" checked="{{is_carry}}" color="#f16623" style="transform:scale(.8)" type="switch"></switch>
+    </view>
+    <view bind:tap="sCoupon" class="item betweens">
+        <view class="item-left">优惠券</view>
+        <view class="item-right rows">
+            <view class="f-r rows" wx:if="{{is_use_coupon}}">
+                <view catch:tap="noUseCoupon" class="no-use">暂不使用</view>-￥{{coupons.coupons_money}}
+            </view>
+            <view class="f-r" wx:if="{{!is_use_coupon}}">未使用优惠券</view>
+            <image class="item-right-img" src="../../image/a_r.png"></image>
+        </view>
+    </view>
+    <view catch:tap="sRemark" class="item betweens">
+        <view class="item-left">备注信息</view>
+        <view class="item-right">
+            <input class="item-right-input no-rows" disabled="true" placeholder="请输入你的服务需求" type="text" value="{{remark}}"></input>
+        </view>
+    </view>
+    <view catch:tap="sPay" class="item betweens">
+        <view class="item-left">支付方式</view>
+        <view class="item-right rows">
+            <view>{{pay_method==1?'余额支付':pay_method==2?'微信支付':pay_method==3?'现金支付':'微信支付'}}</view>
+            <image class="item-right-img" src="../../image/a_r.png"></image>
+        </view>
+    </view>
+</view>
+<view class="box-space"></view>
+<form bindsubmit="confirm" class="footer column center" reportSubmit="true">
+    <m-footer-btn actual_payment="{{real_price}}" bind:confirm="confirm" class="footer-btn" loading="{{loading}}" order_type="5" pay_method="{{pay_method}}" type="1"></m-footer-btn>
+</form>
+<m-pay bind:sPay="sPay" hidden="{{pay_bg}}" money="{{real_price}}" my_money="{{my_money}}" order_type="4" pay_method="{{pay_method}}"></m-pay>
+<m-remark bind:sRemark="sRemark" hidden="{{remark_bg}}" remark="{{remark}}"></m-remark>
+<wxs module="util" src="../../../modules/verify.wxs" />

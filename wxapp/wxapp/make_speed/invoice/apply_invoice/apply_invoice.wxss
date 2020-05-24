@@ -1,0 +1,82 @@
+.full {
+    padding: 0 20rpx;
+    background: #f3f3f3;
+}
+
+.top-box {
+    width: 710rpx;
+    background: #FFFFFF;
+    padding: 50rpx 0 40rpx 0;
+}
+
+.line {
+    width: 130rpx;
+    height: 1px;
+    background: #f3f3f3;
+}
+
+.line-font {
+    font-size: 24rpx;
+    margin: 0 20rpx;
+}
+
+.top-money-box {
+    margin: 30rpx 0;
+}
+
+.f-24 {
+    font-size: 24rpx;
+}
+
+.f-money {
+    font-size: 55rpx;
+    font-weight: bold;
+}
+
+.top-des {
+    font-size: 24rpx;
+    color: #808088;
+}
+
+.circle {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background: #808088;
+    margin-right: 10rpx;
+    margin-top: 10rpx;
+}
+
+.circle-des {
+    width: 620rpx;
+}
+
+.bottom-box {
+    padding: 46rpx 20rpx 0 20rpx;
+}
+
+.bottom-box-title {
+    font-weight: bold;
+    margin-bottom: 30rpx;
+}
+
+.bottom-box-des {
+    font-size: 24rpx;
+    color: #28292c;
+    margin-bottom: 100rpx;
+}
+
+.btn {
+    font-weight: bold;
+    width: 300rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    border: 1px solid #c3c3c3;
+    border-radius: 5px;
+    color: #28292c;
+}
+
+.btn:nth-of-type(1) {
+    margin-right: 30rpx;
+}

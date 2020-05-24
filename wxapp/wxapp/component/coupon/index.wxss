@@ -1,0 +1,31 @@
+.coupon-left {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN8AAABlCAYAAADNqDY/AAAFLUlEQVR4nO3dW6gVVRzH8e+xE+JUg4UVXYjCekgCUQuCooiKwMcgSKKXoOwhrQe1y5mCZKQQqRejJOhBKwq6QvfINLuJiXRDKinTsguVnalG06P2MB467GboaP5n72PfD+yX+c3Devkxs9dae6++CQODx9J79gDFAdzfDxwTNBYpwq/9wC/dHkWNL4HJB3D/FcALQWORDrWdwIn93R5Fg9OAY4Hto7x/WuBYpEPhdWAZsKrM05+hel3rRf3ANcDSUdw7DpgVOxzpoO0Crivz9LHOYFwXBjNadwGnjuK+24EpwWORDtbddcWD3i7f8cBK4OyGvA+YByxsbUTSgXu0KejV185hZwHrgeXA88BXwATgPOAGYEb3hiaNytFNQa+XD6qyzd7/kcaaW6geFP/Qy6+d0uHg+iQr7k+yYkJn0DdhYHBfN0Yk/c98C6wA1gBbgU8tn9QdE8fCdz7pcLIL+B7Ya/mkeHuBx4GHgffKPN0NY2O2UxrLSuDKMk9f7Qyc7ZRi3VFXPLB8UrSnmgLLJ8U6sSmwfFKsgSQr+uoCyyfFuhJ4PMmKSZ2Bi+xSOwrgaaodLl8Dqy2f1B3ucJFa9iPVk2/I8knxdgEPAMvKPP1s+KLlk2INAleUebq2M3C2U4o1v654YPmkaC82BZZPinVKU2D5pFiLkqw4oi6wfFKsy4GXkqw4vTNwkV1qx26qv4xfDWwBnrZ8Une4w0Vq0RCwkerJt9vySfEKYBHwSJmnPw1ftHxSrG3AJWWeft4ZONspxZpXVzywfFK0N5sCyyfFOrMpsHxSrHuSrBhfF1g+KdaFwJokK6Z3Bi6yS+1ZB6yiOrHoQcsndYc7XKQW/QaspTqfb5flk+J9BwwAT5R5umP4ouWTYm0GLijzdFtn4GynFGtuXfHA8knR1jUFlk+KNbUpsHxSrCVJVkysCyyfFOsc4P0kK2Z2HhXmIrvUnq+Bt6jW+RZaPqk73OEitegb4G2qJ+BOyyfF2wTcDLxS5une4YuWT4r1CXBRmafbOwNnO6VYC+qKB5ZPirahKbB8UqzzmwLLJ8VakmTFSXWB5ZNiTQY+SLLi2s4/UnKRXWrPINUv2bcAcy2f1B3ucJFatIHqfL6twA7LJ8VbD8wu83T9yIuWT4r1LnBpmac7OwNnO6VYA3XFA8snRdvYFFg+KdbFTYHlk2Ldl2RF7TFhlk+KdQrVDpcFSVYcNzJwkV1qzxDwIdUpRbNcapDa0w/M2P850vJJ7dgDvE51Rvu3QGn5pHhvADeWebpp5EXLJ8V6DZhZ5umezsDZTinWnXXFA8snRdvaFFg+KdbMpsDySbHuTbJiel1g+aRYk4B3kqxY3LnNzB0uUru2UX0PvNSlBqldJ+//9Fs+qR2/A88Aa6j+vewPyyfFexK4qczTn0ZetHxSrGeBWWWe/mNuxdlOKdaiuuKB5ZOifd8UWD4p1lVNgeWTYi1KsuLyusBFdineXmAF8DCwtszTIbB8Utv+pNrlMtXXTqld44EzgHGu80nt+AFYzt87XH6zfFK8pcCtZZ6WIy9aPinWijJP59QFfueTYi1uCsbCk28H1TTtc8BmIAHOBWYD07o3LGlUiqag1598X1D9u+9s4GWq45bWA8v2X59PtYYi9apZTUEvl+9n4DKazzfbBywB7mptRNKBW5hkxdV1QS8vss+hmiX6N0cAHwFTYocj/SevAQ8BK8s8HYTeLd8QcAKwfZT33wbcEzcc6ZD6Azi5V187tzL64gF8HDUQKcBRQN9fDFFBPw48lE0AAAAASUVORK5CYII=") no-repeat center;
+    width: 223rpx;
+    height: 101rpx;
+    font-size: 24rpx;
+    color: #ffffff;
+    background-size: 100% 100%;
+}
+
+.coupon-title {
+    width: 24rpx;
+    color: #95c5f7;
+    font-size: 20rpx;
+    margin-left: 10rpx;
+}
+
+.coupon-des {
+    font-size: 20rpx;
+    margin-left: 40rpx;
+}
+
+.coupon-money {
+    font-size: 44rpx;
+    font-weight: bold;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

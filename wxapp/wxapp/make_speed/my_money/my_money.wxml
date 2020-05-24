@@ -1,0 +1,43 @@
+<view class="w-f {{verify.isArray(list)==true?'':'full'}} column">
+    <view class="money-top column" wx:if="{{is_business!=1}}">
+        <view class="top_1">账户余额（元）</view>
+        <view class="top_2">{{my_money}}</view>
+        <view catch:tap="recharge" class="top_3 rows">
+            <image class="money_bag" src="/image/money_bag.png"></image>
+            <view class="money-re">充值</view>
+            <image class="money_r" src="/image/money_r.png"></image>
+        </view>
+        <view catch:tap="invoiceBtn" class="top_4 rows" wx:if="{{invoice_switch>0}}">
+            <image class="invoice-img" src="/image/invoice.png"></image>
+            <text class="">发票 </text>
+        </view>
+    </view>
+    <view class="tab around">
+        <view catch:tap="itemTap" class="tab-item center {{index==top_id?' tab-item-active':''}}" data-id="{{index}}" wx:for="{{top_item}}" wx:key="index">{{item}}</view>
+    </view>
+    <view catch:tap="sTime" class="time-tab betweens">
+        <view>{{year}}年 {{month}}月</view>
+        <view>选择</view>
+    </view>
+    <view class="w-f">
+        <view class="list-item betweens" wx:for="{{list}}" wx:key="index">
+            <view class="row">
+                <view class="list-font">{{item.day_time}}</view>
+                <view class="list-line"></view>
+                <view class="">
+                    <view class="list-title">{{item.title}}</view>
+                    <view class="list-font">{{item.hour_time}}</view>
+                </view>
+            </view>
+            <view class="list-money" wx:if="{{top_id>0}}">{{item.amount}}</view>
+            <view class="list-money reduce-money" wx:else>{{item.amount}}</view>
+        </view>
+    </view>
+    <view class="no-box" wx:if="{{!verify.isArray(list)}}">
+        <m-no-hint>
+            <view class="no-hint-font" slot="after">暂无记录~</view>
+        </m-no-hint>
+    </view>
+</view>
+<m-time bind:sTime="sTime" time_picker="{{time_picker}}"></m-time>
+<wxs module="verify" src="../../modules/verify.wxs" />

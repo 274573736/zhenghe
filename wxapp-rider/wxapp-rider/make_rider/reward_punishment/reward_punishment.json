@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "m-hint": "../../component/no_hint/index",
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "navigationBarTitleText": "奖惩记录"
+}

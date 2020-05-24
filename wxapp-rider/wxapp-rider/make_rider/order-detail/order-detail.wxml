@@ -1,0 +1,179 @@
+<view class="top-box between">
+    <view class="">
+        <view class="rows top-first">
+            <image class="order-status-png" src="/image/order_status.png"></image>
+            <view class="order-status" wx:if="{{order.status==1}}">已取消</view>
+            <view class="order-status" wx:if="{{order.status==2}}">待接单</view>
+            <view class="order-status" wx:if="{{order.status==3}}">{{order.order_type==0?'待取件':order.order_type==1?'待购买':order.order_type==2?'待服务':order.order_type==3?'待驾车':order.order_type==5?'待取货':order.order_type==6?'待服务':'待取件'}}</view>
+            <view class="order-status" wx:if="{{order.status==4}}">{{order.order_type==0?'待送达':order.order_type==1?'待送达':order.order_type==2?'待完成':order.order_type==3?'待送达':order.order_type==5?'待送达':order.order_type==6?'待完成':'待送达'}}</view>
+            <view class="order-status" wx:if="{{order.status==5}}">待评价</view>
+            <view class="order-status" wx:if="{{order.status==6}}">已完成</view>
+        </view>
+        <view class="rows">
+            <view class="">{{verify.toFixed(order.distance,1)}}公里<text class="" wx:if="{{order.weight!=0}}">/{{order.weight}}kg</text>
+            </view>
+            <view class="money-box">
+                <text class="">￥</text>
+                <text class="money">{{order.total_price}}</text>
+            </view>
+        </view>
+    </view>
+    <image class="order-car" src="/image/order_car.png"></image>
+</view>
+<view class="main">
+    <view class="item-box">
+        <view class="row address-box" wx:if="{{order.order_type==1}}">
+            <view class="font-icon center">买</view>
+            <view class="" wx:if="{{!order.begin_address}}">
+                <view class="address-title">就近购买</view>
+                <view class="rows btn-row-box">
+                    <view catch:tap="navigation" class="phone-btn center" data-address="{{order.begin_detail}}" data-lat="{{order.begin_lat}}" data-lng="{{order.begin_lng}}" data-name="{{order.begin_address}}">查看地图</view>
+                </view>
+            </view>
+            <view class="" wx:else>
+                <view class="address-title">{{order.begin_address}}</view>
+                <view class="rows btn-row-box">
+                    <view catch:tap="navigation" class="phone-btn center" data-address="{{order.begin_detail}}" data-lat="{{order.begin_lat}}" data-lng="{{order.begin_lng}}" data-name="{{order.begin_address}}">查看地图</view>
+                </view>
+            </view>
+        </view>
+        <view class="row address-box" wx:if="{{(order.begin_address||order.begin_phone)&&order.order_type!=1}}">
+            <view class="font-icon center" wx:if="{{order.order_type==3}}">起</view>
+            <view class="font-icon center" wx:elif="{{order.order_type==6}}">服</view>
+            <view class="font-icon center" wx:else>取</view>
+            <view class="">
+                <view class="address-title-box" wx:if="{{order.begin_username||order.begin_phone}}">
+                    <text class="address-title">{{order.begin_username}}</text>
+                    <text class="address-phone">{{verify.phoneVerify(order.begin_phone)}}</text>
+                </view>
+                <view class="address-des">{{order.begin_address}}{{order.begin_detail?'-'+order.begin_detail:''}}</view>
+                <view class="rows btn-row-box">
+                    <view catch:tap="callPhone" class="phone-btn center" data-phone="{{order.begin_phone}}" wx:if="{{order.status!=2}}">拨打电话</view>
+                    <view catch:tap="navigation" class="phone-btn center {{order.begin_phone&&order.status!=2?'map-btn':''}}" data-address="{{order.begin_detail}}" data-lat="{{order.begin_lat}}" data-lng="{{order.begin_lng}}" data-name="{{order.begin_address}}">查看地图</view>
+                </view>
+            </view>
+        </view>
+        <view class="row address-box" wx:if="{{order.end_address||order.end_phone}}">
+            <view class="font-icon-shou center" wx:if="{{order.order_type==3}}">止</view>
+            <view class="font-icon-shou center" wx:else>收</view>
+            <view class="">
+                <view class="address-title-box" wx:if="{{order.end_username||order.end_phone}}">
+                    <text class="address-title">{{order.end_username}}</text>
+                    <text class="address-phone">{{order.extension_number!=0&&order.extension_number?verify.phoneVerify(order.end_phone)+','+order.extension_number:verify.phoneVerify(order.end_phone)}}</text>
+                </view>
+                <view class="address-des">{{order.end_address}}{{order.end_detail?'-'+order.end_detail:''}}</view>
+                <view class="rows btn-row-box">
+                    <view catch:tap="callPhone" class="phone-btn center" data-phone="{{order.extension_number!=0&&order.extension_number?order.end_phone+','+order.extension_number:order.end_phone}}" wx:if="{{order.end_phone&&order.status>2}}">拨打电话</view>
+                    <view catch:tap="navigation" class="phone-btn center {{order.end_phone&&order.status>2?'map-btn':''}}" data-address="{{order.end_detail}}" data-lat="{{order.end_lat}}" data-lng="{{order.end_lng}}" data-name="{{order.end_address}}" wx:if="{{order.end_address}}">查看地图</view>
+                </view>
+            </view>
+        </view>
+        <view class="tast-box betweens">
+            <view class="">任务</view>
+            <view class="tast-des">{{item_type[order.order_type]}}</view>
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="item-title">订单信息</view>
+        <view class="between item" wx:if="{{(order.order_type==0||order.order_type==1)&&order.weight>0}}">
+            <view class="item-left">物品重量</view>
+            <view class="item-right">{{order.weight}}kg</view>
+        </view>
+        <view class="between item" wx:if="{{order.goods||order.goodsname}}">
+            <view class="item-left">服务名称</view>
+            <view class="item-right">{{order.goods||order.goodsname}}</view>
+        </view>
+        <view class="between item" wx:if="{{order.distance>0}}">
+            <view class="item-left">订单距离</view>
+            <view class="item-right">{{verify.toFixed(order.distance,1)}}公里</view>
+        </view>
+        <view class="between item" wx:if="{{order.order_type==5}}">
+            <view class="item-left">是否整车</view>
+            <view class="item-right">{{order.car_type==1?'整车':'半车'}}</view>
+        </view>
+        <view class="between item" wx:if="{{order.order_type==5}}">
+            <view class="item-left">是否装卸</view>
+            <view class="item-right">{{order.load_switch==1?'是':'否'}}</view>
+        </view>
+        <view class="between item" wx:if="{{order.small_price>0}}">
+            <view class="item-left">小费</view>
+            <view class="item-right">{{order.small_price}}元</view>
+        </view>
+        <view class="between item" wx:if="{{order.order_type==1&&order.budget_price>0}}">
+            <view class="item-left">预估价格</view>
+            <view class="item-right">{{order.budget_price}}元</view>
+        </view>
+        <view class="between item" wx:if="{{order.order_type==1}}">
+            <view class="item-left">是否议价</view>
+            <view class="item-right" wx:if="{{order.is_discuss==0}}">否</view>
+            <view class="item-right" wx:if="{{order.is_discuss==1}}">是</view>
+        </view>
+        <view class="between item" wx:if="{{order.end_floor>0}}">
+            <view class="item-left">楼层数</view>
+            <view class="item-right">无电梯{{order.end_floor}}楼</view>
+        </view>
+        <view class="between item" wx:if="{{order.audio}}">
+            <view class="item-left">语音备注</view>
+            <view class="item-right flex-end">
+                <view catch:tap="playMusic" class="voice-btn center" data-audio="{{order.audio}}" hoverClass="hover-voice">
+                    <text>语音</text>
+                    <image class="voice-img" src="/image/voice.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="between item">
+            <view class="item-left">备注</view>
+            <view class="item-right">{{order.remark}}</view>
+        </view>
+    </view>
+    <view class="item-box" wx:if="{{order.imgs}}">
+        <view class="item-title">客户提供</view>
+        <view class="img-box">
+            <image catch:tap="preGoodsImg" class="goods-img" data-idx="{{index}}" data-imgs="{{order.imgs}}" src="{{item}}" wx:for="{{order.imgs}}" wx:key="index"></image>
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="item-title">订单信息</view>
+        <view class="between item">
+            <view class="item-left">服务类型</view>
+            <view class="item-right">{{item_type[order.order_type]}}</view>
+        </view>
+        <view class="between item">
+            <view class="item-left">订单编号</view>
+            <view class="item-right flex-end">
+                <view class="">{{order.order_code}}</view>
+                <view catch:tap="copyText" class="copy-btn">复制</view>
+            </view>
+        </view>
+        <view class="between item">
+            <view class="item-left">下单时间</view>
+            <view class="item-right">{{order.add_time}}</view>
+        </view>
+        <view class="between item">
+            <view class="item-left">服务时间</view>
+            <view class="item-right">{{order.__get_time}}</view>
+        </view>
+        <view class="between item">
+            <view class="item-left">支付方式</view>
+            <view class="item-right" wx:if="{{order.payment==1}}">余额支付</view>
+            <view class="item-right" wx:if="{{order.payment==2}}">微信支付</view>
+            <view class="item-right" wx:if="{{order.payment==3}}">现金支付</view>
+        </view>
+    </view>
+    <view class="item-box" wx:if="{{order.pick_img}}">
+        <view class="item-title">进行图片</view>
+        <view class="img-box">
+            <image catch:tap="preGoodsImg" class="goods-img" data-idx="{{index}}" data-imgs="{{order.pick_img}}" src="{{item}}" wx:for="{{order.pick_img}}" wx:key="index"></image>
+        </view>
+    </view>
+    <view class="item-box" wx:if="{{order.end_img}}">
+        <view class="item-title">完成图片</view>
+        <view class="img-box">
+            <image catch:tap="preGoodsImg" class="goods-img" data-idx="{{index}}" data-imgs="{{order.end_img}}" src="{{item}}" wx:for="{{order.end_img}}" wx:key="index"></image>
+        </view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

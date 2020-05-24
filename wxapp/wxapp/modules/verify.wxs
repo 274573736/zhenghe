@@ -1,0 +1,86 @@
+var nameVerify = (function(name) {
+    var name_ = '';
+    for (var i = 0; i < name.length; i++) {
+        if (i >= 1) {
+            name_ += '*'
+        }
+    };
+    return (name.substring(0, 1) + name_)
+});
+var subString = (function(name) {
+    if (!name) {
+        return
+    };
+    if (name.length > 6) {
+        return (name.substring(0, 6) + '...')
+    };
+    return (name)
+});
+var toFixed = (function(data, num) {
+    num = undefined === num ? 0 : num;
+    return (parseFloat(data).toFixed(num))
+});
+var phoneVerify = (function(name) {
+    return (name.substring(0, 3) + '****' + name.substring(7, 12))
+});
+var isArray = (function(arr) {
+    if (!arr || arr.length <= 0) {
+        return (false)
+    };
+    return (true)
+});
+var score = (function(num) {
+    if (!num) {
+        return
+    };
+    return (Math.floor(num))
+});
+var nameVerify = (function(name) {
+    var name_ = '';
+    for (var i = 0; i < name.length; i++) {
+        if (i >= 1) {
+            name_ += '*'
+        }
+    };
+    return (name.substring(0, 1) + name_)
+});
+var towFixed = (function(num) {
+    if (!num) {
+        return
+    };
+    num = Number(num);
+    return (num.toFixed(2))
+});
+var arrLength = (function(arr) {
+    if (!arr || arr.length <= 0) {
+        return (0)
+    };
+    return (arr.length)
+});
+var topLength = (function(arr) {
+    if (!arr || arr.length <= 0) {
+        return (0)
+    };
+    var arr_box = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[((nt_0 = (i), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))].status) {
+            arr_box.push(arr[((nt_1 = (i), null == nt_1 ? undefined : 'number' === typeof nt_1 ? nt_1 : "" + nt_1))])
+        }
+    };
+    return (arr_box.length)
+});
+var indexOf = (function(search, key) {
+    return (search.indexOf(key))
+});
+module.exports = ({
+    isArray: isArray,
+    arrLength: arrLength,
+    nameVerify: nameVerify,
+    phoneVerify: phoneVerify,
+    toFixed: toFixed,
+    score: score,
+    towFixed: towFixed,
+    indexOf: indexOf,
+    topLength: topLength,
+    subString: subString,
+});

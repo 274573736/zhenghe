@@ -1,0 +1,15 @@
+<view class="full">
+    <view class="rows item">
+        <view class="shu"></view>
+        <view class="">一键下单</view>
+    </view>
+    <image class="img" src="{{imgs[0]}}"></image>
+    <view class="rows item">
+        <view class="shu"></view>
+        <view class="">更多优惠</view>
+    </view>
+    <image class="img" src="{{imgs[1]}}"></image>
+</view>
+<view catch:tap="confirm" class="footer center">
+    立即开通
+</view>

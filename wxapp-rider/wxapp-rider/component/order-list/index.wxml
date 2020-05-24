@@ -1,0 +1,41 @@
+<view bind:tap="orderDetail" class="order-item" data-idx="{{index}}" wx:for="{{underwayOrder}}" wx:key="id">
+    <image class="status-img" src="{{img_url}}success.png" wx:if="{{item.status>=2}}"></image>
+    <view class="betweens order-item-top">
+        <view class="order-item-top-left">￥{{item.total_price}}/{{verify.floor(item.distance,1)}}公里<text wx:if="{{verify.floor(item.weight)>0}}">/{{item.weight}}kg</text>
+        </view>
+        <view class="status-font" wx:if="{{item.status==0}}">待付款</view>
+        <view class="status-font" wx:if="{{item.status==1}}">已取消</view>
+        <view class="status-font" wx:if="{{item.status==2}}">待抢单</view>
+        <view class="status-font" style="color: #ff0000;" wx:if="{{item.status==3}}">{{item.order_type==0?'待取件':item.order_type==1?'待购买':item.order_type==2?'待服务':item.order_type==3?'待驾车':item.order_type==5?'待取货':item.order_type==6?'待服务':'待取件'}}</view>
+        <view class="status-font" wx:if="{{item.status==4}}">{{item.order_type==0?'待送达':item.order_type==1?'待送达':item.order_type==2?'待完成':item.order_type==3?'待送达':item.order_type==5?'待送达':item.order_type==6?'待完成':'待送达'}}</view>
+        <view class="status-font" wx:if="{{item.status==5}}">待评价</view>
+        <view class="status-font" wx:if="{{item.status==6}}">已完成</view>
+    </view>
+    <view class="row address-item" wx:if="{{item.begin_address!=''}}">
+        <view class="">
+            <view class="font-icon center" wx:if="{{item.order_type==3}}">起</view>
+            <view class="address-title" wx:elif="{{item.order_type==1}}">就近购买</view>
+            <view class="font-icon center" wx:elif="{{item.order_type==6}}">服</view>
+            <view class="font-icon center" wx:else>取</view>
+        </view>
+        <view class="">
+            <view class="no-rows">{{item.begin_address}}</view>
+            <view class="address-item-msg">{{verify.nameVerify(item.begin_username)}} {{verify.phoneVerify(item.begin_phone)}}</view>
+        </view>
+    </view>
+    <view class="row address-item" wx:if="{{item.end_address!=''}}">
+        <view class="">
+            <view class="font-icon-shou center" wx:if="{{item.order_type==3}}">止</view>
+            <view class="font-icon-shou center" wx:else>收</view>
+        </view>
+        <view class="">
+            <view class="no-rows">{{item.end_address}}</view>
+            <view class="address-item-msg">{{verify.nameVerify(item.end_username)}} {{item.extension_number&&item.extension_number!=0?verify.phoneVerify(item.end_phone)+','+item.extension_number:verify.phoneVerify(item.end_phone)}}</view>
+        </view>
+    </view>
+    <view class="betweens order-item-bottom">
+        <text>{{item.order_code}}</text>
+        <text>{{item.add_time}}</text>
+    </view>
+</view>
+<wxs module="verify" src="../verify.wxs" />

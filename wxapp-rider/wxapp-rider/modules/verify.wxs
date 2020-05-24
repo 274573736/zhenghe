@@ -1,0 +1,55 @@
+var isArray = (function(arr) {
+    if (arr.length > 0) {
+        return (true)
+    };
+    return (false)
+});
+var nameVerify = (function(name) {
+    if (!name) {
+        return
+    };
+    var name_ = '';
+    var length = 1;
+    if (name.length > 3) {
+        length = 2
+    };
+    for (var i = 0; i < name.length; i++) {
+        if (i >= length) {
+            name_ += '*'
+        }
+    };
+    return (name.substring(0, length) + name_)
+});
+var phoneVerify = (function(name) {
+    if (!name) {
+        return
+    };
+    return (name.substring(0, 3) + '****' + name.substring(7, 12))
+});
+var isAppointment = (function(name) {
+    if (!name) {
+        return (false)
+    };
+    if (name.substring(0, 1) != '立') {
+        return (true)
+    };
+    return (false)
+});
+var toFixed = (function(data, num) {
+    num = undefined === num ? 0 : num;
+    return (parseFloat(data).toFixed(num))
+});
+var floor = (function(name) {
+    if (!name) {
+        return
+    };
+    return (parseFloat(name))
+});
+module.exports = ({
+    floor: floor,
+    toFixed: toFixed,
+    isArray: isArray,
+    nameVerify: nameVerify,
+    phoneVerify: phoneVerify,
+    isAppointment: isAppointment,
+});

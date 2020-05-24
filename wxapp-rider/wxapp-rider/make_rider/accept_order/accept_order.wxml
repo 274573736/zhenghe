@@ -1,0 +1,13 @@
+<view class="column top-box" wx:if="{{verify.isArray(underwayOrder)==true}}">
+    <order-list bind:orderDetail="orderDetail" img_url="{{img_url}}" underwayOrder="{{underwayOrder}}"></order-list>
+    <view class="center tip-box">-- 仅显示当天记录 --</view>
+</view>
+<view class="column no-order-box" wx:else>
+    <m-no-hint img_url="{{img_url}}">
+        <view class="no-font" slot="after">今天还未开张哦~</view>
+    </m-no-hint>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

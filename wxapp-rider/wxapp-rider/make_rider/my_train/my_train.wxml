@@ -1,0 +1,23 @@
+<view class="full column">
+    <view class="box">
+        <view class="rows item">
+            <view class="item-left">培训站点：</view>
+            <view class="">{{train.name}}</view>
+        </view>
+        <view class="rows item">
+            <view class="item-left">站点地址：</view>
+            <view class="">{{train.address}}</view>
+        </view>
+        <view class="rows item">
+            <view class="item-left">联系电话：</view>
+            <view class="">{{train.phone}}</view>
+        </view>
+        <view class="rows item">
+            <view class="item-left">来电时间：</view>
+            <view class="">上午 {{train.morn}} 下午 {{train.after}}</view>
+        </view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

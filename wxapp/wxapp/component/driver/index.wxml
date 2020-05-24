@@ -1,0 +1,10 @@
+<view class="w-f betweens driver-box">
+    <view class="rows">
+        <image class="head-img" src="{{riders.avatar}}"></image>
+        <view class="">
+            <view class="">{{riders.rider_name}} 师傅</view>
+            <view class="server-num">共服务{{riders.service_total}}次</view>
+        </view>
+    </view>
+    <image bind:tap="tel" class="tel-img" data-tel="{{riders.mobile}}" src="{{img_url}}tel.png"></image>
+</view>

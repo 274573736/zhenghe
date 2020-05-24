@@ -1,0 +1,47 @@
+<view class="{{type!=4?'full':'w-f'}} flex-c">
+    <m-collect-tip is_map="true" is_tip_collect="{{is_tip_collect}}" wx:if="{{is_tip_collect}}"></m-collect-tip>
+    <view class="top rows">
+        <view catch:tap="toInfo" class="logo-box">
+            <view class="avatar-img">
+                <open-data class="avatar-img" type="userAvatarUrl"></open-data>
+            </view>
+        </view>
+        <view class="line-c"></view>
+        <view class="top-rows around" wx:if="{{verify.topLength(top)<=4}}">
+            <view catch:tap="topItem" class="column" data-idx="{{index}}" data-type="{{item.type}}" wx:if="{{item.status}}" wx:for="{{top}}" wx:key="type">
+                <view class="{{idx==index?'font-active':''}}">{{item.title}}</view>
+                <view class="line {{idx==index?'line-active':''}}"></view>
+            </view>
+        </view>
+        <view class="top-rows around" wx:else>
+            <scroll-view class="rows top-rows-scroll" scrollWithAnimation="true" scrollX="true">
+                <view catch:tap="topItem" class="column scroll-top-item" data-idx="{{index}}" data-type="{{item.type}}" wx:if="{{item.status}}" wx:for="{{top}}" wx:key="type">
+                    <view class="{{idx==index?'font-active':''}}">{{item.title}}</view>
+                    <view class="line {{idx==index?'line-active':''}}"></view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <swiper autoplay="true" bindchange="cardFreightSwiper" circular="true" class="card-swiper square-dot column" duration="500" hidden="{{type==4?false:true}}" indicatorDots="true" interval="5000" nextMargin="70rpx" previousMargin="70rpx">
+        <swiper-item bindtap="jump" class="{{cardFreightCur==index?'cur':''}}" data-app_url="{{item.app_url}}" data-appid="{{item.appid}}" data-type="{{item.type}}" data-url="{{item.url}}" wx:for="{{top_swiper}}">
+            <view class="swiper-item">
+                <image class="full" mode="aspectFill" src="{{item.image}}"></image>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="map" hidden="{{type!=4?false:true}}">
+        <view class="w-f" hidden="{{type!=4&&type!=-1?false:true}}">
+            <m-map bind:examineAddress="examineAddress" type="{{type}}"></m-map>
+        </view>
+    </view>
+    <view class="w-f" hidden="{{type==4?false:true}}">
+        <m-freight order_type="{{type}}"></m-freight>
+    </view>
+    <view class="w-f">
+        <m-skin-footer fahuo="{{fahuo}}" shouhuo="{{shouhuo}}" type="{{type}}"></m-skin-footer>
+    </view>
+</view>
+<view class="full" wx:if="{{red_bag}}">
+    <m-index-bag bind:closeIndexImg="closeIndexImg" new_person="{{new_person}}"></m-index-bag>
+</view>
+<wxs module="verify" src="../../../modules/verify.wxs" />

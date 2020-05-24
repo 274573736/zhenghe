@@ -1,0 +1,64 @@
+<m-tab bind:Getidx="Getidx" bind:scrollSole="scrollSole" top_item="{{top_item}}" top_p="{{top_p}}">
+    <view class="w-f box-body" slot="after{{idx}}" wx:if="{{verify.isArray(order_list)}}">
+        <blcok wx:for="{{order_list}}" wx:key="id">
+            <view catch:tap="toOrderDetail" class="box" data-id="{{item.id}}" data-status="{{item.status}}" data-type="{{item.type}}">
+                <view class="view-box"></view>
+                <view class="betweens box-top">
+                    <view class="rows">
+                        <text class="">订单编号</text>
+                        <text class="order-num">{{item.order_code}}</text>
+                    </view>
+                    <view class="rows">
+                        <text class="order-status" wx:if="{{item.status==0}}">待付款</text>
+                        <text class="" wx:if="{{item.status==1}}">已取消</text>
+                        <text class="order-status" wx:if="{{item.status==2}}">待接单</text>
+                        <text class="order-status" wx:if="{{item.status==3}}">{{item.type==1?'待购买':item.type==2?'待服务':item.type==3?'待驾驶':item.type==5?'待取货':item.type==6?'待服务':'待取件'}}</text>
+                        <text class="order-status" wx:if="{{item.status==4}}">待完成</text>
+                        <text class="order-status" wx:if="{{item.status==5}}">待评价</text>
+                        <text class="" wx:if="{{item.status==6}}">已完成</text>
+                        <image class="property-r-img" src="/image/property-r.png"></image>
+                    </view>
+                </view>
+                <view class="between box-center" wx:if="{{item.type==0||item.type==1&&item.begin_address!=''||item.type==3||item.type==5}}">
+                    <view class="address-left">
+                        <view class="box-address-title no-rows">{{item.begin_address}}</view>
+                        <view class="box-person-name no-rows">{{item.begin_detail!=''?item.begin_detail:'电话联系'}}</view>
+                        <view class="box-person-tel no-rows">{{item.begin_phone}}</view>
+                    </view>
+                    <view class="line-blue"></view>
+                    <view class="adddress-right">
+                        <view class="box-address-title no-rows">{{item.end_address!=''?item.end_address:'无'}}</view>
+                        <view class="box-person-name no-rows">{{item.end_detail!=''?item.end_detail:'电话联系'}}</view>
+                        <view class="box-person-tel no-rows">{{item.end_phone}}</view>
+                    </view>
+                </view>
+                <view class="between box-center" wx:else>
+                    <view class="adddress-right" wx:if="{{!item.begin_address}}">
+                        <view class="rows title-box">
+                            <view class="box-person-name no-rows">{{item.end_address}}</view>
+                            <view class="box2-person-tel">{{item.end_phone}}</view>
+                        </view>
+                        <view class="box-address-title no-rows">{{item.end_detail}}</view>
+                    </view>
+                    <view class="adddress-right" wx:else>
+                        <view class="rows title-box">
+                            <view class="box-person-name no-rows">{{item.begin_address}}</view>
+                            <view class="box2-person-tel">{{item.begin_phone}}</view>
+                        </view>
+                        <view class="box-address-title no-rows">{{item.begin_detail}}</view>
+                    </view>
+                </view>
+                <view class="rows box-footer">
+                    <text class="order-type">{{item.order_type}}</text>
+                    <text class="order-time">{{item.add_time}}</text>
+                </view>
+            </view>
+        </blcok>
+    </view>
+    <view slot="after{{idx}}" wx:else>
+        <m-no-hint>
+            <text class="no-hint-font" slot="after">暂无此类订单~</text>
+        </m-no-hint>
+    </view>
+</m-tab>
+<wxs module="verify" src="../../modules/verify.wxs" />

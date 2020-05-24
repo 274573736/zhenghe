@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "首页",
+    "usingComponents": {
+        "m-top": "/component/top/top",
+        "m-address": "/component/address/index",
+        "m-footer-btn": "/component/footer_btn/index",
+        "m-index-bag": "/component/index_img/index",
+        "m-index-tip-1": "/component/index_tip_1/index",
+        "m-index-tip-2": "/component/index_tip_2/index",
+        "m-time": "/component/getTime/index",
+        "m-weight": "/component/weight/index",
+        "m-tip": "/component/tip/index",
+        "m-remark": "/component/remark/index",
+        "m-pay": "/component/pay/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

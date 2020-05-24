@@ -1,0 +1,43 @@
+.tip-big-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 120rpx;
+    z-index: 1000;
+}
+
+.tip-cc-index {
+    width: 100rpx;
+    height: 108rpx;
+    margin-right: 96rpx;
+}
+
+.tip-box {
+    width: 360rpx;
+    padding: 20rpx 20rpx;
+    margin-right: 40rpx;
+    background: rgba(0,0,0,0.4);
+    border-radius: 5px;
+}
+
+.tip-font {
+    color: #ffffff;
+    text-align: justify;
+    line-height: normal;
+    white-space: normal;
+    font-size: 24rpx;
+    width: 300rpx;
+}
+
+.tip-cc-icon {
+    width: 32rpx;
+    height: 32rpx;
+    padding-left: 20rpx;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,91 @@
+<view class="z-index column big-box" hidden="{{new_order_status}}">
+    <view bind:tap="acceptOrder" class="tips-top rows {{new_order_num>1?'height':''}} {{is_tips_transform?'tips-top-transform':''}} {{is_tips_transform_back?'tips-top-transform-back':''}}">
+        <image class="tips-img" src="{{img_url}}tips.png"></image>
+        <view class="tips-font">订单提醒：又有新的订单向您飞来~ <text class="" style="color: #ff0000;"></text>
+        </view>
+    </view>
+    <view bind:tap="bindCall" class="accept-item center-c">
+        <view class="accept-money-box">￥<text class="accept-money">{{new_order.total_price}}</text>
+            <text class="yuyue" wx:if="{{verify.isAppointment(new_order.get_time)}}">(预约)</text>
+        </view>
+        <view class="premium-font" wx:if="{{new_order.change_price>0}}">溢价{{new_order.change_price}}元</view>
+        <view class="accept-item-box">
+            <view class="row accept-item-box-item">
+                <view class="" wx:if="{{new_order.begin_address!=''}}">
+                    <view class="font-icon center" wx:if="{{new_order.order_type==3}}">起</view>
+                    <view class="address-title" wx:elif="{{new_order.order_type==1}}">就近购买</view>
+                    <view class="font-icon center" wx:elif="{{new_order.order_type==6}}">服</view>
+                    <view class="font-icon center" wx:else>取</view>
+                </view>
+                <view class="accept-item-box-item-right">
+                    <view class="w-f">{{new_order.begin_address}}</view>
+                </view>
+            </view>
+            <view class="distance-two" wx:if="{{new_order.distance>0}}">
+                <view>{{verify.toFixed(new_order.distance,1)}}km</view>
+            </view>
+            <view class="row accept-item-box-item1">
+                <view class="" wx:if="{{new_order.end_address!=''}}">
+                    <view class="font-icon-shou center" wx:if="{{new_order.order_type==3}}">止</view>
+                    <view class="font-icon-shou center" wx:else>收</view>
+                </view>
+                <view class="accept-item-box-item-right">
+                    <view class="w-f">{{new_order.end_address}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="no-appointment-time"></view>
+    </view>
+    <view class="accept-item-bottom">
+        <view class="rows">
+            <image class="p-img" src="{{img_url}}p.png"></image>
+            <view class="p-detail">距离你{{new_order.differ_distance>0?new_order.differ_distance:0}}公里<text class="" wx:if="{{new_order.weight>0}}"> /{{new_order.weight}}公斤</text>
+                <text class="" wx:if="{{new_order.distance>0}}"> /{{verify.toFixed(new_order.distance,1)}}公里</text>
+            </view>
+        </view>
+        <view class="rows">
+            <image class="p-img" src="{{img_url}}p.png"></image>
+            <view class="p-detail">订单类型：{{new_order.get_time}}</view>
+        </view>
+        <view class="rows">
+            <image class="p-img" src="{{img_url}}p.png"></image>
+            <view class="p-detail" wx:if="{{new_order.order_type==0}}">服务类型：<text style="color: #ff0000;">[帮送]</text> {{new_order.goods}}</view>
+            <view class="p-detail" wx:if="{{new_order.order_type==1}}">服务类型：<text style="color: #ff0000;">[帮买]</text> {{new_order.goods}}</view>
+            <view class="p-detail" wx:if="{{new_order.order_type==2}}">服务类型：<text style="color: #ff0000;">[万能服务]</text> {{new_order.goods}}</view>
+            <view class="p-detail" wx:if="{{new_order.order_type==3}}">服务类型：<text style="color: #ff0000;">[代驾]</text>
+            </view>
+            <view class="p-detail" wx:if="{{new_order.order_type==5}}">服务类型：<text style="color: #ff0000;">[{{new_order.car_name}}]</text>
+            </view>
+            <view class="p-detail" wx:if="{{new_order.order_type==6}}">服务类型：<text style="color: #ff0000;">[技能] {{new_order.goods}}</text>
+            </view>
+        </view>
+        <view class="rows remark-box" wx:if="{{new_order.remark!=''||new_order.audio!=''}}">
+            <image class="p-img" src="{{img_url}}p.png"></image>
+            <view class="p-detail" style="width: 450rpx;">备注：<text style="color: #ff0000;">{{new_order.remark}}</text>
+            </view>
+            <view catch:tap="playMusic" class="voice-btn center" hoverClass="hover-voice" wx:if="{{new_order.audio!=''}}">
+                <text>语音</text>
+                <image class="voice-img" src="/image/voice.png"></image>
+            </view>
+        </view>
+        <view class="rows" wx:if="{{new_order.small_price>0}}">
+            <image class="p-img" src="{{img_url}}p.png"></image>
+            <view class="p-detail">小费：<text style="color: #ff0000;">{{new_order.small_price}}元</text>
+            </view>
+        </view>
+        <view class="w-f center">
+            <form bindsubmit="acceptBtn" id="{{new_order.order_id}}" reportSubmit="true">
+                <button class="center accept-btn" formType="submit" hoverClass="btn-hover">
+                    立即抢单
+                </button>
+            </form>
+            <view class="center accept-second">
+                {{count_time}}s
+            </view>
+        </view>
+    </view>
+    <form action="" bindsubmit="cancelAccept" reportSubmit="true">
+        <button class="close-img" formType="submit" style="padding: 0;background: url({{img_url}}close.png) no-repeat center;width:80rpx;height:80rpx;background-size:74rpx 74rpx;"></button>
+    </form>
+</view>
+<wxs module="verify" src="../verify.wxs" />

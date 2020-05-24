@@ -1,0 +1,34 @@
+page {
+    background: #ffffff;
+}
+
+.top {
+    padding: 20rpx 0 20rpx 40rpx;
+    background: #f7f7f7;
+}
+
+.icon-img {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 30rpx;
+}
+
+.item {
+    padding: 30rpx 40rpx 30rpx 50rpx;
+}
+
+.icon-r {
+    width: 11rpx;
+    height: 20rpx;
+}
+
+.line-box {
+    width: 100%;
+    padding: 0 20rpx;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #f7f7f7;
+}

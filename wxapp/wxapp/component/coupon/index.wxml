@@ -1,0 +1,10 @@
+<view class="coupon-left rows">
+    <view class="coupon-title">抵用券</view>
+    <view class="coupon-des">
+        <view class="">
+            <text class="">￥</text>
+            <text class="coupon-money">20</text>
+        </view>
+        <view class="">满79元可用</view>
+    </view>
+</view>

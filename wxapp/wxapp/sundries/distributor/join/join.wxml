@@ -1,0 +1,38 @@
+<view class="w-f">
+    <image class="top-img" src="{{img}}"></image>
+    <view class="top-font">
+        <view class="">
+           欢迎您成为<text class="top-font-blue"> {{title}} </text>{{distribution_name}}，请填写申请信息。
+       </view>
+    </view>
+    <form bindsubmit="confirm" class="w-f" reportSubmit="true">
+        <view class="content-box">
+            <view class="group">
+                <view class="group-title">
+                    <text>姓名</text>
+                    <text class="red"> *</text>
+                </view>
+                <input class="input" confirmType="done" cursorSpacing="50" name="name" placeholder="请输入姓名" type="text"></input>
+            </view>
+            <view class="group">
+                <view class="group-title">
+                    <text>手机号码</text>
+                    <text class="red"> *</text>
+                </view>
+                <input class="input" maxlength="11" name="phone" placeholder="请输入手机号码" type="number"></input>
+            </view>
+            <view class="group">
+                <view class="group-title">
+                    <text>邀请码</text>
+                    <text class="red"></text>
+                </view>
+                <input class="input" confirmType="done" cursorSpacing="50" name="code" placeholder="请输入邀请码(选填)" type="text"></input>
+            </view>
+            <checkbox-group bindchange="checkboxChange" class="checkbox-group">
+                <checkbox checked="" class="check" color="#097bf1" style="transform:scale(.7)" value="1"></checkbox>
+                我已阅读并同意<text catch:tap="coopration" class="cooperation">《推广协议》</text>
+            </checkbox-group>
+            <button class="btn center" formType="submit">立即申请</button>
+        </view>
+    </form>
+</view>

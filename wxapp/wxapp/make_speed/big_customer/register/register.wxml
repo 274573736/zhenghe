@@ -1,0 +1,74 @@
+<form bindsubmit="confirm">
+    <view class="item rows">
+        <view class="vertical"></view>
+        <view class="vertical-font">基本信息</view>
+    </view>
+    <view class="item">
+        <view class="blue-font">饿了么商家店铺ID</view>
+        <input name="ele_id" placeholder="对接饿了么必填" type="text" value="{{ele_id}}"></input>
+    </view>
+    <view class="item">
+        <view class="blue-font">公司名称</view>
+        <input name="name" placeholder="请输入公司名称" type="text" value="{{name}}"></input>
+    </view>
+    <view class="item">
+        <view class="blue-font">联系电话</view>
+        <input name="tel" placeholder="请输入联系电话" type="number" value="{{tel}}"></input>
+    </view>
+    <view class="item">
+        <view class="blue-font">公司地址</view>
+        <input name="address" placeholder="请输入公司地址" type="text" value="{{address_name}}"></input>
+    </view>
+    <view catch:tap="location" class="item">
+        <view class="blue-font">公司定位</view>
+        <input disabled="true" placeholder="选择公司定位" type="text" value="{{address}}"></input>
+    </view>
+    <view class="main">
+        <view class="item rows">
+            <view class="vertical"></view>
+            <view class="vertical-font">上传证件及店铺实景</view>
+        </view>
+        <view class="line-box">
+            <view class="line"></view>
+        </view>
+        <view class="row">
+            <view class="column">
+                <view catch:tap="photo" class="photo-box center-c m-4" data-idx="0">
+                    <view class="center-c" wx:if="{{!photo_temp[0]}}">
+                        <image class="photo-img" src="/image/photo.png"></image>
+                        <view class="f-2">上传营业执照</view>
+                    </view>
+                    <image class="full" src="{{photo_temp[0]}}" wx:else></image>
+                </view>
+                <view class="f-2">营业执照</view>
+            </view>
+            <view class="column">
+                <view catch:tap="photo" class="photo-box center-c" data-idx="1">
+                    <view class="center-c" wx:if="{{!photo_temp[1]}}">
+                        <image class="photo-img" src="/image/photo.png"></image>
+                        <view class="f-2">上传经营许可证</view>
+                    </view>
+                    <image class="full" src="{{photo_temp[1]}}" wx:else></image>
+                </view>
+                <view class="f-2">经营许可证</view>
+            </view>
+        </view>
+        <view class="bog-box">
+            <view class="f-2">上传店铺实景</view>
+            <view class="row upload-box-big">
+                <view catch:tap="photoFrom" class="upload-box center">
+                    <view class="heng"></view>
+                    <view class="shu"></view>
+                </view>
+                <view class="box" wx:for="{{img_temp}}" wx:key="index">
+                    <image catch:tap="preImg" class="store-img" data-idx="{{index}}" src="{{item}}"></image>
+                    <image catch:tap="delImg" class="del-icon" data-idx="{{index}}" src="/image/del-img.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer rows">
+        <button catch:tap="backStep" class="btn center">上一步</button>
+        <button class="btn center" formType="submit">提交审核</button>
+    </view>
+</form>

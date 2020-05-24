@@ -1,0 +1,226 @@
+.top {
+    width: 100%;
+    padding: 20rpx 20rpx 0 20rpx;
+}
+
+.red {
+    color: #ff0000;
+    margin-left: 10rpx;
+}
+
+textarea {
+    width: 710rpx;
+    height: 120rpx;
+    color: #808080;
+    font-size: 26rpx;
+    background: #ffffff;
+    box-sizing: border-box;
+    padding: 10rpx 20rpx;
+}
+
+.voice-box {
+    width: 100%;
+    background: #ffffff;
+}
+
+.item-row {
+    width: 100%;
+    padding: 30rpx 40rpx;
+    background: #ffffff;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.item-font {
+    font-size: 26rpx;
+    font-weight: bold;
+}
+
+.item-row:nth-of-type(2) {
+    border-top: 1px solid #e9e9e9;
+    margin-top: 20rpx;
+}
+
+.item-left {
+    font-size: 26rpx;
+}
+
+.time-img {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 20rpx;
+}
+
+input {
+    font-size: 28rpx;
+    text-align: right;
+}
+
+.address-box {
+    width: 750rpx;
+    background: #ffffff;
+    padding: 30rpx 40rpx;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.address-img {
+    width: 27rpx;
+    height: 31rpx;
+    padding: 0 20rpx;
+}
+
+.address-title {
+    font-weight: bold;
+}
+
+.address-tel {
+    color: #808080;
+    font-size: 24rpx;
+    margin-left: 20rpx;
+}
+
+.address-des {
+    color: #808080;
+    font-size: 24rpx;
+    width: 500rpx;
+}
+
+.del-font {
+    color: #ff0000;
+    padding: 5rpx 20rpx;
+}
+
+.often-btn {
+    padding: 5rpx 20rpx;
+    background: #212330;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.protocol-box {
+    width: 100%;
+    height: 100rpx;
+    padding: 0 40rpx;
+    background: #ffffff;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.m-2 {
+    margin-top: 20rpx;
+    border-top: 1px solid #e9e9e9;
+}
+
+.yes-img {
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.discern-row {
+    width: 100%;
+    height: 100rpx;
+    background: #ffffff;
+}
+
+.center-r {
+    align-items: center;
+}
+
+.discern-box {
+    width: 300rpx;
+    height: 100%;
+}
+
+.discern-icon {
+    width: 27rpx;
+    height: 27rpx;
+    margin-right: 20rpx;
+}
+
+.line-c {
+    border-right: 1px solid #e9e9e9;
+    height: 40rpx;
+}
+
+.money-font {
+    color: #f29a2e;
+    font-size: 26rpx;
+}
+
+.money {
+    font-size: 46rpx;
+    font-weight: bold;
+    color: #f29a2e;
+}
+
+.footer {
+    width: 100%;
+    height: 100rpx;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-right {
+    width: 450rpx;
+    height: 100%;
+    padding-top: 30rpx;
+    position: relative;
+}
+
+.protocol-font {
+    font-size: 20rpx;
+    font-weight: bold;
+    width: 340rpx;
+}
+
+.protocol {
+    color: #097bf1;
+}
+
+.city-box {
+    width: 100rpx;
+    height: 80rpx;
+    text-align: right;
+}
+
+.quan-img {
+    width: 22rpx;
+    height: 22rpx;
+    padding-right: 20rpx;
+}
+
+.gou-img {
+    width: 19rpx;
+    height: 17rpx;
+    position: absolute;
+    left: 39rpx;
+}
+
+.btn {
+    color: #ffffff;
+    font-size: 36rpx;
+    font-weight: bold;
+    width: 300rpx;
+    height: 100%;
+    background: #097bf1;
+    border-radius: 0;
+}
+
+.btn:after {
+    border: 0;
+}
+
+.tel-input {
+    width: 250rpx;
+}
+
+.small-tel-input {
+    text-align: left;
+    width: 150rpx;
+}
+
+.tel-input-line {
+    width: 1px;
+    height: 30rpx;
+    background: #212330;
+    margin: 0 20rpx;
+}

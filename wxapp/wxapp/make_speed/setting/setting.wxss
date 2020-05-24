@@ -1,0 +1,26 @@
+.box {
+    padding-top: 20rpx;
+}
+
+.item {
+    padding: 0 10rpx 0 26rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+    background: #ffffff;
+}
+
+.item-up {
+    margin-bottom: 20rpx;
+}
+
+.item-bor {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.lgout {
+    height: 100rpx;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    background: #00baf5;
+    color: #ffffff;
+}

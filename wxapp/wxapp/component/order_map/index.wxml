@@ -1,0 +1,21 @@
+<map class="map" controls="{{controls}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="14" style="height: {{map_height}}rpx;">
+    <cover-image catch:tap="location" class="location-img" src="/image/map_flush.png"></cover-image>
+</map>
+<view class="rows cover-mes-item" wx:if="{{order.order_type==0&&(order.status==2||order.status==3)&&pick_code!=0&&pick_code}}">
+    <image class="laba-img" src="{{img_url}}laba.png"></image>
+    <view class="rows">取件码：<view class="pick_code">{{pick_code}}</view>
+        <view class="item-des">(请在送货员上门时提示)</view>
+    </view>
+</view>
+<view class="rows cover-mes-item" wx:if="{{order.order_type==0&&order.status==4&&order.end_code!=0&&order.end_code}}">
+    <image class="laba-img" src="{{img_url}}laba.png"></image>
+    <view class="rows">收货码：<view class="pick_code">{{order.end_code}}</view>
+        <view class="item-des">(请在送货员上门时出示)</view>
+    </view>
+</view>
+<view class="rows cover-mes-item" wx:if="{{(order.order_type==1||order.order_type==2)&&order.status==4&&order.end_code!=0&&order.end_code}}">
+    <image class="laba-img" src="{{img_url}}laba.png"></image>
+    <view class="rows">完成码：<view class="pick_code">{{order.end_code}}</view>
+        <view class="item-des">(请在工作员完成任务时出示)</view>
+    </view>
+</view>

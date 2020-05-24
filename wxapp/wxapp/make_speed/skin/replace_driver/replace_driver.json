@@ -1,0 +1,16 @@
+{
+    "navigationBarTitleText": "帮代驾",
+    "usingComponents": {
+        "m-top": "/component/top/top",
+        "m-index-bag": "/component/index_img/index",
+        "m-address": "/component/address/index",
+        "m-msg-top": "/component/msg_top/index",
+        "m-time": "/component/getTime/index",
+        "m-weight": "/component/weight/index",
+        "m-tip": "/component/tip/index",
+        "m-remark": "/component/remark/index",
+        "m-pay": "/component/pay/index",
+        "m-auth": "/component/auth/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

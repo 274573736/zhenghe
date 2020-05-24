@@ -1,0 +1,4 @@
+<view class="column no-message" hidden="{{hidden}}">
+    <image class="no-message-img" src="{{img_url}}no.png"></image>
+    <slot name="after"></slot>
+</view>

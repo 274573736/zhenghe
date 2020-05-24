@@ -1,0 +1,71 @@
+<form action="" bindsubmit="submit" class="w-f">
+    <view class="w-f top">
+        <view class="betweens top-item">
+            <view class="">可提现金额</view>
+            <view class="top-input">￥{{is_cash?moneys:money}}</view>
+        </view>
+        <view class="betweens top-item">
+            <view class="">申请提现金额</view>
+            <input class="top-input" disabled="{{is_cash?true:false}}" name="money" placeholder="输入提现金额" placeholderClass="input-place" type="digit" value="{{moneys}}"></input>
+        </view>
+        <view class="rows top-all-money">
+            <view catch:tap="withdraw" class="btn-default {{is_cash?'':'btn-select'}}" data-idx="1">余额提现</view>
+            <view catch:tap="withdraw" class="btn-default {{is_cash?'btn-select':''}}" data-idx="0">保证金提现</view>
+        </view>
+    </view>
+    <view class="body">
+        <view class="body-top">提现到</view>
+        <view class="betweens body-item">
+            <view class="rows">
+                <image class="body-icon" src="{{img_url}}withdraw-w.png"></image>
+                <text class="">微信账户</text>
+            </view>
+            <image bind:tap="selected" class="body-select-icon" data-id="2" src="{{img_url}}withdraw-n.png" wx:if="{{pay_method[2]!=1}}"></image>
+            <image class="body-select-icon" src="{{img_url}}withdraw-y.png" wx:else></image>
+        </view>
+        <view class="betweens body-item">
+            <view class="rows">
+                <image class="body-icon" src="{{img_url}}withdraw-z.png"></image>
+                <text class="">支付宝</text>
+            </view>
+            <image bind:tap="selected" class="body-select-icon" data-id="0" src="{{img_url}}withdraw-n.png" wx:if="{{pay_method[0]!=1}}"></image>
+            <image class="body-select-icon" src="{{img_url}}withdraw-y.png" wx:else></image>
+        </view>
+        <view class="rows body-item" wx:if="{{pay_method[0]==1}}">
+            <view class="body-children-item-left">支付宝:</view>
+            <input confirmType="done" cursorSpacing="50" name="alipay" placeholder="请输入支付宝账号" type="text"></input>
+        </view>
+        <view class="betweens body-item">
+            <view class="rows">
+                <image class="body-icon-h" src="{{img_url}}withdraw-h.png"></image>
+                <text class="">银行卡</text>
+            </view>
+            <image bind:tap="selected" class="body-select-icon" data-id="1" src="{{img_url}}withdraw-n.png" wx:if="{{pay_method[1]!=1}}"></image>
+            <image class="body-select-icon" src="{{img_url}}withdraw-y.png" wx:else></image>
+        </view>
+        <view class="w-f" wx:if="{{pay_method[1]==1}}">
+            <view class="rows body-item">
+                <view class="body-children-item-left">开户行:</view>
+                <input confirmType="done" cursorSpacing="50" name="open_blank" placeholder="请输入开户行" type="text"></input>
+            </view>
+            <view class="rows body-item">
+                <view class="body-children-item-left">户名:</view>
+                <input confirmType="done" cursorSpacing="50" name="blank_name" placeholder="请输入户名" type="text"></input>
+            </view>
+            <view class="rows body-item">
+                <view class="body-children-item-left">卡号:</view>
+                <input confirmType="done" cursorSpacing="50" name="blank_num" placeholder="请输入卡号" type="text"></input>
+            </view>
+        </view>
+        <view class="betweens">
+            <text class=""></text>
+            <text class="body-des">所填账号、卡号信息必须是注册认证上的姓名</text>
+        </view>
+    </view>
+    <view class="center">
+        <button class="center btn" formType="submit" hoverClass="btn-hover">提交审核</button>
+    </view>
+</form>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

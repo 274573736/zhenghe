@@ -1,0 +1,29 @@
+<m-tab bind:Getidx="Getidx" bind:scrollSole="scrollSole" top_item="{{top_item}}" top_p="{{top_p}}">
+    <view class="w-f box-body" slot="after{{idx}}" wx:if="{{verify.isArray(order_list)}}">
+        <view class="order" wx:for="{{order_list}}" wx:key="{{index}}">
+            <view class="top-space"></view>
+            <view class="top between">
+                <view class="rows">
+                    <image class="bag_icon" src="../../image/money_bag.png"></image>
+                    <text class="">提现</text>
+                </view>
+                <view class="red">￥{{item.amount}}</view>
+            </view>
+            <view class="order-content">
+                <view class="">订单号：{{item.order_num}}</view>
+                <view class="">申请时间：{{item.create_time}}</view>
+                <view class="">提现金额：{{item.amount}}元</view>
+                <view class="">提现手续费：{{item.server_charge}}</view>
+                <view class="">提现方式：{{item.type==1?'微信':item.type==2?'支付宝':item.type==3?'银行卡':'微信'}}</view>
+                <view class="">审核状态：<text class="order-status">{{item.status==0?'待审核':item.status==1?'待打款':item.status==2?'已打款':'待审核'}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view slot="after{{idx}}" wx:else>
+        <m-no-hint>
+            <text class="no-hint-font" slot="after">暂无此类订单~</text>
+        </m-no-hint>
+    </view>
+</m-tab>
+<wxs module="verify" src="../../../modules/verify.wxs" />

@@ -1,0 +1,92 @@
+<view class="{{verify.isArray(underwayOrder)&&is_cash==1?'':'full'}} column">
+    <view class="column top" style="background: url('{{img_url}}index_icon09.png') no-repeat center;width: 100%;height: 420rpx;background-size: 100% 420rpx;position: relative;">
+        <view class="betweens top-top">
+            <form>
+                <button catch:tap="toInfo" class="info-btn" style="margin: 0;padding: 0;background: url({{img_url}}index1.png) no-repeat center;width:70rpx;height:70rpx;background-size:44rpx 50rpx;"></button>
+            </form>
+            <view bind:tap="orderSwitch" class="center top-top-center start-order" wx:if="{{order_switch==0}}">开始接单</view>
+            <view bind:tap="orderSwitch" class="center top-top-center" wx:if="{{order_switch==1}}">接单中</view>
+            <form>
+                <button catch:tap="toMsg" class="info-btn" style="margin: 0;padding: 0;background: url({{img_url}}index2.png) no-repeat center;width:70rpx;height:70rpx;background-size:54rpx 50rpx;"></button>
+            </form>
+        </view>
+        <view class="top-des">点击“开始接单”,可收听附近订单</view>
+        <view class="rows top-num-box">
+            <view class="column">
+                <view class="">
+                    <text class="top-num-box-font">{{order_total_num}} </text>
+                    <text>单</text>
+                </view>
+                <text class="top-day">今日完成单</text>
+            </view>
+            <view class="today-box"></view>
+            <view class="column">
+                <view class="">
+                    <text class="top-num-box-font">{{order_total_price>0?verify.toFixed(order_total_price,1):0}} </text>
+                    <text>元</text>
+                </view>
+                <text class="top-day">今日总收入</text>
+            </view>
+        </view>
+        <form>
+            <button catch:tap="dataPanel" class="info-btn play" style="margin: 0;padding: 0;background: url({{img_url}}index3.png) no-repeat center;width:70rpx;height:70rpx;background-size:29rpx 50rpx;"></button>
+        </form>
+        <view class="center top-float-big-box">
+            <view class="betweens top-float-box">
+                <form>
+                    <button catch:tap="orderStatus" class="info-btn center-c" style="margin: 0;padding: 0;font-size: 30rpx;background: #ffffff;line-height: normal">
+                        <image class="float-img" src="{{img_url}}index_icon04.png"></image>
+                        <view>待抢订单</view>
+                        <text class="num-sign" wx:if="{{waitcount>0}}">{{waitcount}}</text>
+                    </button>
+                </form>
+                <form>
+                    <button catch:tap="acceptMap" class="info-btn center-c" style="margin: 0;padding: 0;font-size: 30rpx;background: #ffffff;line-height: normal">
+                        <image class="float-img" src="{{img_url}}index_icon05.png"></image>
+                        <view>待抢地图</view>
+                    </button>
+                </form>
+                <form>
+                    <button catch:tap="orderSetting" class="info-btn center-c" style="margin: 0;padding: 0;font-size: 30rpx;background: #ffffff;line-height: normal">
+                        <image class="float-img" src="{{img_url}}index_icon06.png"></image>
+                        <view>接单设置</view>
+                    </button>
+                </form>
+                <form>
+                    <button catch:tap="acceptOrder" class="info-btn center-c" style="margin: 0;padding: 0;font-size: 30rpx;background: #ffffff;line-height: normal">
+                        <image class="float-img" src="{{img_url}}index_icon03.png"></image>
+                        <view>抢单记录</view>
+                    </button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <view class="w-f column bottom-box">
+        <view class="column card-box boxHeight">
+            <view class="w-f betweens card-box-top">
+                <view class="">进行中订单</view>
+                <image bind:tap="orderRefresh" class="refresh-img {{rote?'rote-img':''}}" src="{{img_url}}refresh.png"></image>
+            </view>
+            <view class="order-list" img_url="{{img_url}}" wx:if="{{verify.isArray(underwayOrder)&&is_cash==1}}">
+                <m-rob-order bind:cancelOrder="cancelOrder" bind:orderRefresh="orderRefresh" bind:robOrderSuccess="robOrderSuccess" img_url="{{img_url}}" underwayOrder="{{underwayOrder}}"></m-rob-order>
+            </view>
+            <view class="center-c hint-box" wx:if="{{is_cash==0}}">
+                <image class="cash-img" src="/image/cash.png"></image>
+                <view class="cash-font">你还未缴纳保证金，暂时无法接单</view>
+                <view catch:tap="myMoney" class="btn-cash center">去缴纳</view>
+            </view>
+            <view class="center-c  hint-box" wx:if="{{!verify.isArray(underwayOrder)&&is_cash==1}}">
+                <image class="no-order-img" src="{{img_url}}no-order.png"></image>
+                <text class="" style="text-align: center;color:#999;">您目前没有进行中的订单 
+快去接单吧~</text>
+            </view>
+        </view>
+        <view class="refresh-box">
+            <m-refresh-location img_url="{{img_url}}"></m-refresh-location>
+        </view>
+    </view>
+</view>
+<view class="w-f">
+    <m-accept bind:bindCall="bindCall" bind:closePushOrder="closePushOrder" count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

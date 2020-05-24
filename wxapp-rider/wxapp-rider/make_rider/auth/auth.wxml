@@ -1,0 +1,3 @@
+<view class="column top" style="background: url('{{img}}') no-repeat center;width: 100%;height: 100%;background-size: 100% 100%;">
+    <button catch:tap="goLogin" class="center top-font2" hoverClass="btn-hover">我要登录</button>
+</view>

@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "m-map": "/component/map/index",
+        "m-index-bag": "/component/index_img/index",
+        "m-freight": "/component/freight_box/index",
+        "m-skin-footer": "/component/skin_footer/index",
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

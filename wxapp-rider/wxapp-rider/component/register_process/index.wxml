@@ -1,0 +1,14 @@
+<view class="top">
+    <view class="rows">
+        <image class="proccess-img" src="{{img_url}}{{register_status>=0?'real-y':'real-n'}}.png"></image>
+        <image class="line-img" src="{{img_url}}{{register_status>=1?'real-line-b':'real-line'}}.png"></image>
+        <image class="proccess-img" src="{{img_url}}{{register_status>=1?'real-y':'real-n'}}.png"></image>
+        <image class="line-img" src="{{img_url}}{{register_status>=2?'real-line-b':'real-line'}}.png"></image>
+        <image class="proccess-img" src="{{img_url}}{{register_status>=2?'real-y':'real-n'}}.png"></image>
+    </view>
+    <view class="rows">
+        <view class="top-font1">实名认证</view>
+        <view class="top-font2">申请类型</view>
+        <view class="top-font3">现场培训</view>
+    </view>
+</view>

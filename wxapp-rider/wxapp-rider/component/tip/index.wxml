@@ -1,0 +1,15 @@
+<view class="standard-box" hidden="{{hidden}}">
+    <view class="betweens standrad-top">
+        <text class=""></text>
+        <text class="">加小费</text>
+        <text bind:tap="confirm" class="confirm">确定</text>
+    </view>
+    <view class="rows standard-select-box">
+        <view class="center select-item" wx:for="{{tip}}" wx:key="index">
+            <view bind:tap="selected" class="center select-item-box {{index==idx?' item-active':''}}" data-idx="{{index}}">{{item}}</view>
+        </view>
+    </view>
+    <view class="center standard-bottom">
+        <input bindinput="input" class="other" focus="true" hidden="{{other}}" placeholder="自定义小费" type="number"></input>
+    </view>
+</view>

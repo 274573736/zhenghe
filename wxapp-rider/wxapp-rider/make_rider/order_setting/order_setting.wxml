@@ -1,0 +1,27 @@
+<view class="w-f top-box">
+    <view class="betweens item-row">
+        <view class="">接单类型</view>
+        <view class="rows">
+            <view bind:tap="selectBtn" class="center btn-box btn-box2 {{real_time==1?'btn-box1':''}}" data-id="0">
+                <text>实时单</text>
+                <image class="s-img" src="{{img_url}}{{real_time==1?'s-y':'s-n'}}.png"></image>
+            </view>
+            <view bind:tap="selectBtn" class="center btn-box btn-box2 {{appointment_time==1?'btn-box1':''}}" data-id="1">
+                <text>预约单</text>
+                <image class="s-img" src="{{img_url}}{{appointment_time==1?'s-y':'s-n'}}.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="item-row betweens">
+        <view class="title">小程序内来单实时通知</view>
+        <switch bindchange="bindSocket" checked="{{is_socket}}" class=""></switch>
+    </view>
+    <view class="item-row betweens">
+        <view class="title">实时共享位置打开</view>
+        <switch bindchange="bindAddress" checked="{{is_address}}"></switch>
+    </view>
+</view>
+<m-car bind:cancel="hiddenCar" hidden="{{hidden}}" list="{{car_type}}"></m-car>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

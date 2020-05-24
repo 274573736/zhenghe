@@ -1,0 +1,18 @@
+<view class="w-f">
+    <image bind:tap="imgScale" class="bg_img" src="{{list.img}}"></image>
+</view>
+<view class="box">
+    <view class="first_box">
+        <view class="first_box_1">{{list.title}}</view>
+        <view class="first_box_2">￥{{list.price}}</view>
+    </view>
+    <view class="two_box">
+        <view class="two_box_name">商品详情</view>
+        <rich-text class="two_box_item" nodes="{{list.detail}}" space="nbsp"></rich-text>
+    </view>
+    <view bind:tap="pay" class="btn center btn_click" wx:if="{{order_btn}}">立即支付</view>
+    <view class="btn center btn_click" loading="true" wx:else>支付中</view>
+</view>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

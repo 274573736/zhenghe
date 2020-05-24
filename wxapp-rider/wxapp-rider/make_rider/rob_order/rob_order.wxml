@@ -1,0 +1,22 @@
+<view class="w-f columns">
+    <top class="around top">
+        <blcok wx:for="{{['待抢单','进行中','待完成']}}" wx:key="index">
+            <view bind:tap="topTap" class="center top-item {{index==top_id?'top-item-active':''}}" id="{{index}}">
+                {{item}}
+            </view>
+        </blcok>
+    </top>
+    <view class="w-f column" style="padding-bottom:40rpx;" wx:if="{{verify.isArray(underwayOrder)==true}}">
+        <m-rob bind:robOrderSuccess="robOrderSuccess" img_url="{{img_url}}" underwayOrder="{{underwayOrder}}" wx:if="{{top_id==0}}"></m-rob>
+        <m-confirm bind:cancelOrder="cancelOrder" bind:robOrderSuccess="robOrderSuccess" img_url="{{img_url}}" underwayOrder="{{underwayOrder}}" wx:else></m-confirm>
+    </view>
+    <view class="w-f no-hint" wx:else>
+        <m-no-hint img_url="{{img_url}}">
+            <text class="no-hint-font" slot="after">暂无该订单</text>
+        </m-no-hint>
+    </view>
+    <view class="w-f">
+        <m-accept bind:tap="robOrderSuccess" count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+    </view>
+</view>
+<wxs module="verify" src="../../modules/verify.wxs" />

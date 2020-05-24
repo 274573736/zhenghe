@@ -1,0 +1,29 @@
+<view class="search-box center">
+    <form action="" bindsubmit="submit" class="">
+        <view class="form rows">
+            <view class="conversion">
+                <input class="full" name="code" placeholder="输入兑换码" type="text"></input>
+            </view>
+            <button class="center conversion-btn" formType="submit">兑换</button>
+        </view>
+    </form>
+</view>
+<view catch:tap="useCoupon" class="coupon-box rows" data-idx="{{index}}" wx:for="{{list}}" wx:key="id">
+    <view class="coupon-left rows {{item.status>0?'coupon-used':''}}">
+        <view class="left-circle"></view>
+        <view class="left-des column">
+            <text>￥<text class="coupon-money">{{verify.toFixed(item.money)}}</text>
+            </text>
+        </view>
+    </view>
+    <view class="coupon-center center-c">
+        <view class="coupon-center-name {{item.status>0?'coupons-used-font':''}}">{{item.title}}</view>
+        <view class="coupon-center-des {{item.status>0?'coupons-used-font':''}}">满{{verify.toFixed(item.satisfy_money)}}元使用</view>
+        <view class="coupon-center-time {{item.status>0?'coupons-used-font':''}}" wx:if="{{item.expire_time!=0}}">有效期:{{item.begin_time}}-{{item.expire_time}}</view>
+        <view class="coupon-center-time {{item.status>0?'coupons-used-font':''}}" wx:else>有效期:永久</view>
+    </view>
+</view>
+<m-no-hint wx:if="{{verify.isArray(list)==false}}">
+    <view class="no-hint-font" slot="after">暂无该类优惠券~</view>
+</m-no-hint>
+<wxs module="verify" src="../../modules/verify.wxs" />

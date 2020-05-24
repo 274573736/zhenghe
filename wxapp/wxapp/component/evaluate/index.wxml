@@ -1,0 +1,34 @@
+<view class="column success-box">
+    <view class="w-f rows">
+        <image class="laba-img" src="{{img_url}}laba.png"></image>本次订单您已获得{{evaluete_data.gral}}积分
+    </view>
+    <view bind:tap="orderStatusBox" class="rows success-font">
+        <view class="" wx:if="{{order_type==0}}">货物已安全送达</view>
+        <view class="" wx:if="{{order_type==1}}">帮买物品已安全送达</view>
+        <view class="" wx:if="{{order_type==2}}">跑腿员已完成指定任务</view>
+        <view class="" wx:if="{{order_type==3}}">代驾员和代驾车辆安全已安全抵达目的地</view>
+        <view class="" wx:if="{{order_type==5}}">师傅已将货物安全送达</view>
+        <view class="" wx:if="{{order_type==6}}">师傅已完成服务</view>
+        <image class="r-img" src="{{img_url}}r.png"></image>
+    </view>
+    <view class="success-mes">本次服务{{evaluete_data.distance}}公里，用时{{riders.total_time}}分钟</view>
+    <view class="rows">
+        <view bind:tap="againOrder" class="center success-item">再来一单</view>
+    </view>
+</view>
+<m-driver riders="{{riders}}"></m-driver>
+<view class="column evaluate">
+    <view>请对本次服务进行评价</view>
+    <view class="evaluate-explain">本次评价可获得{{evaluete_data.grow}}成长值</view>
+    <view class="around star-img-box">
+        <blcok wx:for="{{[0,1,2,3,4]}}" wx:key="*this">
+            <image bind:tap="bindStar" class="star-img" data-id="{{item}}" src="{{img_url}}{{star_num>=index?'star_y':'star_n'}}.png"></image>
+        </blcok>
+    </view>
+    <view class="rows evaluate-big-box">
+        <view bind:tap="bindEvaluete" class="center evaluate-box" data-id="{{index}}" wx:for="{{evaluete}}" wx:key="*this">
+            <view class="center evaluate-item {{evaluete_key[index]==1?'active-evaluate-item':''}} ">{{item}}</view>
+        </view>
+    </view>
+    <view bind:tap="evaluateBtn" class="center evaluate-btn">匿名评价</view>
+</view>

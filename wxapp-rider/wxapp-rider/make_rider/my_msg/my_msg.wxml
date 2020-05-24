@@ -1,0 +1,67 @@
+<form bindsubmit="form" class="w-f">
+    <view class="w-f all">
+        <view class="w-f item-box">
+            <view class="betweens item">
+                <view class="item-left">培训地点</view>
+                <view class="rows">
+                    <view class="item-right-font">{{list.train}}</view>
+                    <image class="right-img" src="{{img_url}}right-1.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="w-f item-box">
+            <view class="betweens item">
+                <view class="item-left">身高</view>
+                <view class="">{{list.height}} cm</view>
+            </view>
+            <view class="betweens item">
+                <view class="item-left">体重</view>
+                <view class="">{{list.weight}} kg</view>
+            </view>
+            <view class="betweens item">
+                <view class="item-left">年龄</view>
+                <view class="item-right rows">
+                    <input class="item-right-input" disabled="true" maxlength="3" name="age" type="number" value="{{list.age}}"></input> 岁 </view>
+            </view>
+        </view>
+        <view class="w-f item-box">
+            <view class="betweens item">
+                <view class="item-left">学历</view>
+                <view class="rows">
+                    <view class="item-right-font">{{list.education}}</view>
+                    <image class="right-img" src="{{img_url}}right-1.png"></image>
+                </view>
+            </view>
+            <view class="betweens item">
+                <view class="item-left">职业</view>
+                <view class="rows">
+                    <view class="item-right-font">{{list.occup}}</view>
+                    <image class="right-img" src="{{img_url}}right-1.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="w-f item-box">
+            <view class="betweens item">
+                <view class="item-left">住址</view>
+                <view class="item-right">
+                    <input class="item-right-input" disabled="true" name="address" type="text" value="{{list.address}}"></input>
+                </view>
+            </view>
+            <view class="betweens item">
+                <view class="item-left">紧急联系人电话</view>
+                <view class="item-right">
+                    <input class="item-right-input" disabled="true" maxlength="11" name="phone" type="number" value="{{list.nervous_phone}}"></input>
+                </view>
+            </view>
+            <view class="betweens item">
+                <view class="item-left">紧急联系人</view>
+                <view class="item-right">
+                    <input class="item-right-input" disabled="true" name="username" type="text" value="{{list.nervous_person}}"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+</form>
+<view class="w-f">
+    <m-accept count_time="{{count_time}}" img_url="{{img_url}}" new_order="{{new_order}}" new_order_num="{{new_order_num}}" new_order_status="{{new_order_status}}"></m-accept>
+</view>

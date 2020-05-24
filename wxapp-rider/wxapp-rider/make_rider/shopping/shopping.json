@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "m-tab": "../../component/tab/index",
+        "m-hint": "../../component/no_hint/index",
+        "m-accept": "../../component/accept_picker/index"
+    },
+    "navigationBarTitleText": "装备商城"
+}

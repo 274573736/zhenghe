@@ -1,0 +1,12 @@
+<view class="flex-c {{showAnimation?'active':''}}" hidden="{{hidden}}">
+    <view class="bottom-date {{showAnimation?' active':''}}">
+        <view class="anjian betweens">
+            <view bindtap="closeBtn" class="anjian-quxiao">取消</view>
+            <view class="anjian-quxiao">备注信息</view>
+            <view bindtap="confirmBtn" class="anjian-quxiao">确定</view>
+        </view>
+        <view class="resord">
+            <textarea bindinput="textArea" class="textarea" cursorSpacing="50" maxlength="140" placeholder="请输入您的服务需求" value="{{remark}}"></textarea>
+        </view>
+    </view>
+</view>

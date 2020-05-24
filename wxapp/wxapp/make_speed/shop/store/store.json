@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "积分商城",
+    "usingComponents": {
+        "m-collect-tip": "/component/collect_tip/index"
+    }
+}

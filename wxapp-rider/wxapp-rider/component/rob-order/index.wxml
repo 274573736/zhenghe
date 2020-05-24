@@ -1,0 +1,55 @@
+<blcok wx:for="{{underwayOrder}}" wx:key="id">
+    <view class="order-item">
+        <view class="content-box">
+            <view class="order-item-top">
+                <view class="w-f betweens">
+                    <view class="order-item-top-left rows">距离你{{item.rider_distance}}公里 <text class="" wx:if="{{item.weight>0&&item.order_type!=5}}"> /{{item.weight}}公斤</text>
+                        <text style="color: #ff0000;"> [{{item.order_type==5?item.car_name:item.order_type==6?item.goodsname:item_type[item.order_type]}}] </text>
+                        <view class="appointment-sign" wx:if="{{verify.isAppointment(item.__get_time)}}">预</view>
+                        <view class="appointment-sign" wx:if="{{item.payment==3}}">现</view>
+                    </view>
+                    <view class="status-font">￥{{item.total_price}}</view>
+                </view>
+                <view class="" style="font-size: 26rpx;margin-top: 10rpx;color: #333333">订单号：{{item.order_code}}</view>
+                <view class="rows" style="margin-top: 10rpx;font-size: 26rpx;" wx:if="{{verify.isAppointment(item.__get_time)}}">
+                    <view class="">预约时间：{{item.__get_time}}</view>
+                </view>
+            </view>
+            <view class="row address-item" wx:if="{{item.begin_address!=''}}">
+                <view class="font-icon center" wx:if="{{item.order_type==3}}">起</view>
+                <view class="address-title" wx:elif="{{item.order_type==1}}">就近购买</view>
+                <view class="font-icon center" wx:elif="{{item.order_type==6}}">服</view>
+                <view class="font-icon center" wx:else>取</view>
+                <view class="">
+                    <view class="">{{item.begin_address}}</view>
+                    <view class="address-item-msg">{{item.begin_username}} {{verify.phoneVerify(item.begin_phone)}}</view>
+                </view>
+            </view>
+            <view class="distance-two" wx:if="{{item.distance>0}}">
+                <view>{{verify.toFixed(item.distance,1)}}</view>
+                <view style="line-height: 16rpx">km</view>
+            </view>
+            <view class="row address-item" wx:if="{{item.end_address!=''}}">
+                <view class="font-icon-shou center" wx:if="{{item.order_type==3}}">止</view>
+                <view class="font-icon-shou center" wx:else>收</view>
+                <view class="">
+                    <view class="">{{item.end_address}}</view>
+                    <view class="address-item-msg">{{item.end_username}} {{item.extension_number&&item.extension_number!=0?verify.phoneVerify(item.end_phone)+','+item.extension_number:verify.phoneVerify(item.end_phone)}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="rows order-item-bottom">
+            <view catch:tap="orderDetail" class="center white-btn" data-idx="{{index}}">
+                订单详情
+            </view>
+            <view catch:tap="robOrder" class="center rab-btn" data-id="{{item.order_id}}" hoverClass="btn-hover" wx:if="{{auth}}">
+                立即抢单
+            </view>
+            <view catch:tap="goLogin" class="center rab-btn" hoverClass="btn-hover" wx:else>立即抢单</view>
+        </view>
+    </view>
+</blcok>
+<view class="w-f" wx:if="{{!is_login}}">
+    <m-auth bind:authBtn="authBtn" is_login="{{is_login}}"></m-auth>
+</view>
+<wxs module="verify" src="../verify.wxs" />
