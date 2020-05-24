@@ -1,0 +1,238 @@
+<form id="buy-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="setting/price/buy">
+
+    <div class="form-group">
+        <label class="col-sm-1 control-label">起步</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="{$result['buy_min_distance'] ?? ''}" name="price[buy_min_distance]" placeholder="输入最低路程">
+                <div class="input-group-addon">公里</div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="{$result['buy_min_weight'] ?? ''}" name="price[buy_min_weight]" placeholder="输入最低公斤">
+                <div class="input-group-addon">公斤</div>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="{$result['buy_initial_price'] ?? ''}" name="price[buy_initial_price]" placeholder="起步价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>几公里重量以内,起步价</span>
+    </div>
+
+    <hr>
+    {notempty name="$result['buy_distance']"}
+    {foreach name="$result['buy_distance']" item="dv" key="dk" }
+    <div class="form-group bmaddgroup">
+        <label class="col-sm-1 control-label">续程</label>
+        <div class="col-sm-2" style="">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="{$dk ?? ''}" name="price[buy_distance][]" placeholder="公里数">
+                <div class="input-group-addon">公里以后</div>
+            </div>
+        </div>
+
+        <label class="control-label col-sm-1">每公里加收</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="{$dv ?? ''}" name="price[buy_distance_price][]" placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block" style="margin-top: 1px;">
+                <button type="button"  class="btn btnHight btn-success bmadd"><i class="fa fa-plus "></i></button>
+                <button type="button"  class="btn btnHight btn-danger bmdel" ><i class="fa fa-times"></i></button>
+               <i class="fa fa-info-circle mr-xs"></i>此续程范围超出部分到下个续程间,每公里加收费用
+        </span>
+    </div>
+    {/foreach}
+    {else /}
+    <div class="form-group bmaddgroup">
+        <label class="col-sm-1 control-label">续程</label>
+        <div class="col-sm-2" style="">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="" name="price[buy_distance][]" placeholder="公里数">
+                <div class="input-group-addon">公里以后</div>
+            </div>
+        </div>
+
+        <label class="control-label col-sm-1">每公里加收</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="" name="price[buy_distance_price][]" placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block" style="margin-top: 1px;">
+                <button type="button"  class="btn btnHight btn-success bmadd"><i class="fa fa-plus "></i></button>
+                <button type="button"  class="btn btnHight btn-danger bmdel" ><i class="fa fa-times"></i></button>
+               <i class="fa fa-info-circle mr-xs"></i>此续程范围超出部分到下个续程间,每公里加收费用
+        </span>
+    </div>
+    {/notempty}
+    <hr>
+
+    {notempty name="$result['buy_weight']"}
+    {foreach name="$result['buy_weight']" item="wv" key="wk" }
+    <div class="form-group bmweight">
+        <label class="col-sm-1 control-label">续重</label>
+        <div class="col-sm-2" style="">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="price[buy_weight][]" value="{$wk ?? ''}" placeholder="公斤数">
+                <div class="input-group-addon">公斤以后</div>
+            </div>
+        </div>
+
+        <label class="control-label col-sm-1">每公斤加收</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="price[buy_weight_price][]" value="{$wv ?? ''}" placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block" style="margin-top: 1px;">
+                <button type="button"  class="btn btnHight btn-success mwadd"><i class="fa fa-plus "></i></button>
+                <button type="button"  class="btn btnHight btn-danger mwdel" ><i class="fa fa-times"></i></button>
+               <i class="fa fa-info-circle mr-xs"></i>此续重范围超出部分到下个续重间,每公斤加收费用
+        </span>
+    </div>
+    {/foreach}
+    {else /}
+    <div class="form-group bmweight">
+        <label class="col-sm-1 control-label">续重</label>
+        <div class="col-sm-2" style="">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="price[buy_weight][]" value="" placeholder="公斤数">
+                <div class="input-group-addon">公斤以后</div>
+            </div>
+        </div>
+
+        <label class="control-label col-sm-1">每公斤加收</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="price[buy_weight_price][]" value="" placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block" style="margin-top: 1px;">
+                <button type="button"  class="btn btnHight btn-success mwadd"><i class="fa fa-plus "></i></button>
+                <button type="button"  class="btn btnHight btn-danger mwdel" ><i class="fa fa-times"></i></button>
+               <i class="fa fa-info-circle mr-xs"></i>此续重范围超出部分到下个续重间,每公斤加收费用
+        </span>
+    </div>
+    {/notempty}
+
+    <hr>
+
+    <div class="form-group">
+        <label class="col-sm-1 control-label">价格调度</label>
+        <div class="col-sm-5" style="">
+            <input type="number" data-rule="" class="form-control" name="price[buy_change_price]" value="{$result['buy_change_price'] ?? ''}" placeholder="价格调整额度">
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>根据需供情况,自由动态调整价格(-或+)</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-1 control-label">无电梯楼层费用</label>
+        <div class="col-sm-2" style="">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="price[buy_floor_price][0]" value="{$result['buy_floor_price'][0] ?? ''}" >
+                <div class="input-group-addon">层以后</div>
+            </div>
+        </div>
+
+        <label class="control-label col-sm-1">每层楼加收</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="price[buy_floor_price][1]" value="{$result['buy_floor_price'][1] ?? ''}" placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>每层加收费用</span>
+    </div>
+
+<!--    <div class="form-group">-->
+<!--        <label class="col-sm-1 control-label">夜间费</label>-->
+<!--        <div class="col-sm-5" style="">-->
+<!--            <input type="number" data-rule="" class="form-control" name="price[buy_night_price]" value="result['buy_night_price'] ?? ''}" placeholder="夜间费额度">-->
+<!--        </div>-->
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>夜间加收设定额度的补贴费</span>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--        <label class="col-sm-1 control-label">夜间时间段</label>-->
+<!--        <div class="col-sm-5" style="">-->
+<!--            <div class="col-lg-5" style='padding-left: 0'>-->
+<!--                <input type="text" data-rule="" class="form-control" name="price[buy_night_time][0]" value="result['buy_night_time'][0] ?? ''}">-->
+<!--            </div>-->
+<!--            <span style='font-weight:bold;float:left;line-height:31px'>~</span>-->
+<!--            <div class="col-lg-5">-->
+<!--                <input type="text" data-rule="" class="form-control" name="price[buy_night_time][1]" value="esult['buy_night_time'][1] ?? ''}">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>设置夜间时间段范围(晚上至次日早晨时间【例: 22~6】)</span>-->
+<!--    </div>-->
+
+    {if isset($result['buy_night_price']) && is_array($result['buy_night_price'])}
+    {foreach $result['buy_night_price'] as $k=>$v}
+    <div class="form-group addNightPrice">
+        <label class="col-sm-1 control-label">夜间费</label>
+        <div class="col-sm-5" style="display: flex;flex-direction: row">
+            <div class="col-lg-4" style='padding-left: 0'>
+                <input type="text" data-rule="require"  data-date-use-strict="true" placeholder="开始"
+                       data-date-format="HH:mm"	class="form-control datetimepicker" name="night[start][]" value="{$v['start']}">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>~</span>
+            <div class="col-lg-4">
+                <input type="text" data-rule="require" data-date-use-strict="true" placeholder="结束"
+                       data-date-format="HH:mm" class="form-control datetimepicker" name="night[end][]" value="{$v['end']}">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>￥</span>
+            <div class="col-lg-4">
+                <input type="number" placeholder="价格" style="width: 142px;" data-rule="require"  class="form-control " name="night[price][]" value="{$v['price']}">
+            </div>
+        </div>
+        <span class="help-block">
+                    <button type="button"  class="btn btnHight btn-success addPrice"><i class="fa fa-plus "></i></button>
+                    <button type="button"  class="btn btnHight btn-danger delPrice" ><i class="fa fa-times"></i></button>
+                    <i class="fa fa-info-circle mr-xs"></i>设置夜间时间段范围(晚上至次日早晨时间【例: 22~6】)
+        </span>
+    </div>
+    {/foreach}
+    {else /}
+    <div class="form-group addNightPrice">
+        <label class="col-sm-1 control-label">夜间费</label>
+        <div class="col-sm-5" style="display: flex;flex-direction: row">
+            <div class="col-lg-4" style='padding-left: 0'>
+                <input type="text" data-rule="require"  data-date-use-strict="true" placeholder="开始"
+                       data-date-format="HH:mm"	class="form-control datetimepicker" name="night[start][]" value="">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>~</span>
+            <div class="col-lg-4">
+                <input type="text" data-rule="require" data-date-use-strict="true" placeholder="结束"
+                       data-date-format="HH:mm" class="form-control datetimepicker" name="night[end][]" value="">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>￥</span>
+            <div class="col-lg-4">
+                <input type="number" placeholder="价格" style="width: 142px;" data-rule="require"  class="form-control " name="night[price][]" value="">
+            </div>
+        </div>
+        <span class="help-block">
+                    <button type="button"  class="btn btnHight btn-success addPrice"><i class="fa fa-plus "></i></button>
+                    <button type="button"  class="btn btnHight btn-danger delPrice" ><i class="fa fa-times"></i></button>
+                    <i class="fa fa-info-circle mr-xs"></i>设置夜间时间段范围(晚上至次日早晨时间【例: 22~6】)
+        </span>
+    </div>
+    {/if}
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

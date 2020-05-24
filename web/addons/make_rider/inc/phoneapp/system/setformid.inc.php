@@ -1,0 +1,2 @@
+<?php
+ defined("\x49\116\x5f\111\x41") or exit("\x41\x63\x63\145\163\163\40\104\145\156\x69\x65\x64"); use Mclass\GetRedis; goto pxAab; pxAab: global $_W; goto LBfMA; zVA89: $re = @$redis->incrBy("\x6e\157\x74\x69\146\x79" . $GLOBALS["\x75\156\151\141\x63\151\x64"] . $_W["\x6f\160\x65\156\151\144"], 1); goto kV4gG; LBfMA: $redis = @GetRedis::instance(); goto zVA89; CfK8t: $this->result(0, '', "\61"); goto spPWe; spPWe: ZSL2s: goto voJwH; kV4gG: if (!$re) { goto ZSL2s; } goto CfK8t; voJwH: $this->result(0, '', 2);

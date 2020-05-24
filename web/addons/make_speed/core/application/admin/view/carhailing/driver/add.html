@@ -1,0 +1,111 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Rider_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-rider_id" data-rule="required" data-source="person.rider/index" class="form-control selectpage" data-field="real_name" name="row[rider_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Vehicle_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-vehicle_id" data-rule="required" data-source="carhailing.vehicle_list/index" class="form-control selectpage"  data-field="plate_no" name="row[vehicle_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card_num" data-rule="required" class="form-control" name="row[card_num]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">负责线路:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-line_id"  data-multiple="true" data-maxcount="10" data-rule="required" data-source="carhailing.line/index" class="form-control selectpage"  data-field="name" name="row[line_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Driver_exp_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-driver_exp_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[driver_exp_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Driver_years')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-driver_years" data-rule="required" class="form-control" step="0.1" name="row[driver_years]" type="number" value="0.0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Centage')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-centage" data-rule="required" class="form-control" name="row[centage]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Work_status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="workStatusList" item="vo"}
+            <label for="row[work_status]-{$key}"><input id="row[work_status]-{$key}" name="row[work_status]" type="radio" value="{$key}" {in name="key" value="1"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-remark" data-rule="required" class="form-control" name="row[remark]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bank_account')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bank_account" data-rule="required" class="form-control" name="row[bank_account]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Bank_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bank_name" class="form-control" name="row[bank_name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="statusList" item="vo"}
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="0"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-card_img" data-rule="required" class="form-control" name="row[card_img]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-drivering_license_image" class="btn btn-danger plupload" data-input-id="c-card_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-card_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-drivering_license_image" class="btn btn-primary fachoose" data-input-id="c-card_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-card_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-card_img"></ul>
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

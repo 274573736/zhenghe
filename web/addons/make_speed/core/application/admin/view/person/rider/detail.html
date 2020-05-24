@@ -1,0 +1,200 @@
+<style>
+.invite_table thead th{text-align: center}
+.invite_table tbody td{text-align: center}
+</style>
+
+<div class="panel panel-default panel-intro" style="-webkit-box-shadow:none;box-shadow: none">
+    <div class="panel-heading">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#order" data-toggle="tab">基本概况</a></li>
+            <li><a href="#address" data-toggle="tab">配送信息</a></li>
+            <li><a href="#rider" data-toggle="tab">认证情况</a></li>
+            <li><a href="#recommend" data-toggle="tab">已邀请骑手</a></li>
+            <li><a href="#userrecommend" data-toggle="tab">已邀请用户</a></li>
+        </ul>
+    </div>
+</div>
+<style>
+    .form-horizontal{margin-top: 18px}
+</style>
+<div class="panel-body">
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="order">
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Avatar')}:</label>
+                    <div class="col-sm-5">
+                        <img src="/addons/make_speed/core/public/assets/img/avatar.png" alt='' style="width:60px;height:60px"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Nick_name')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.nick_name}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">{:__('Mobile')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{$row.mobile}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Real_name')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.real_name}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">{:__('Sex')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{:__('Sex '.$row.sex)}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('User_grade')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.user_grade}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">{:__('Bond_money')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">￥{$row.bond_money}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Valid_money')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">￥{$row.valid_money}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">{:__('Invalid_money')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">￥{$row.invalid_money}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Add_time')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{:date('Y-m-d',$row.add_time)}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">{:__('Grade')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$gradeList[$row.user_grade]}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-pane fade in" id="address">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">配送评分:</label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static">{$row.score}</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">服务次数:</label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static">{$row.service_total}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">接单地点:</label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static">{$row.jaddress}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-pane fade in" id="rider">
+            <div class="form-horizontal">
+                {empty name="$row.status"}
+                暂未认证
+                {else /}
+                <span class="test-success">已认证</span>
+                {/empty}
+                <hr>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="recommend">
+            <div class="form-horizontal">
+                <table class="table table-striped table-bordered table-hover table-nowrap invite_table" width="100%">
+                    <thead>
+                    <tr>
+                        <th>推荐骑手</th>
+                        <th>已结算奖励</th>
+                        <th>未结算奖励</th>
+                        <th>注册时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {empty name="$recommend"}
+                    <tr>
+                        <td>无</td><td>无</td><td>无</td><td>无</td></tr>
+                    {else /}
+                    {foreach name="$recommend" item="v"}
+                    <tr>
+                        <td>{$v.nick_name}</td>
+                        <td>{$v.total}</td>
+                        <td>{$v.wait}
+                        <td>{:date('Y-m-d H:i', $v.add_time)}</td>
+                    </tr>
+                    {/foreach}
+                    <thead>
+                    <tr>
+                        <th>合计:</th>
+                        <th>{$total}</th>
+                        <th>{$wait}</th>
+                        <th><button class="btn btn-success btn-xs" id="settle-btn" style="width:28%">结算</button></th>
+                    </tr>
+                    </thead>
+                    {/empty}
+                    </tbody>
+                </table>
+                <input type="hidden" name="riderid" value="{$riderid}">
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="userrecommend">
+            <div class="form-horizontal">
+                <table class="table table-striped table-bordered table-hover table-nowrap invite_table" width="100%">
+                    <thead>
+                    <tr>
+                        <th>推荐用户</th>
+                        <th>已结算奖励</th>
+                        <th>未结算奖励</th>
+                        <th>注册时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {empty name="$userrecommend"}
+                    <tr>
+                        <td>无</td><td>无</td><td>无</td><td>无</td></tr>
+                    {else /}
+                    {foreach name="$userrecommend" item="v"}
+                    <tr>
+                        <td>{$v.nick_name}</td>
+                        <td>{$v.total}</td>
+                        <td>{$v.wait}
+                        <td>{:date('Y-m-d H:i', $v.add_time)}</td>
+                    </tr>
+                    {/foreach}
+                    <thead>
+                    <tr>
+                        <th>合计:</th>
+                        <th>{$utotal}</th>
+                        <th>{$uwait}</th>
+                        <th><button class="btn btn-success btn-xs" id="usettle-btn" style="width:28%">结算</button></th>
+                    </tr>
+                    </thead>
+                    {/empty}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

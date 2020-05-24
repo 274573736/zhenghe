@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da42f8ac-cfd2-4732-974f-ba4c6fe44076" name="Default" comment="" />
+    <ignored path="make_speed.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/wokerman/composer.json</pharConfigPath>
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="make_speed" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>订单更新</find>
+      <find>sendTouid</find>
+      <find>city</find>
+      <find>验证码</find>
+      <find>is_id_number</find>
+      <find>config(</find>
+      <find>get</find>
+      <find>str_re</find>
+      <find>update_eleme_location</find>
+      <find>goto</find>
+      <find>$GLOBALS['CURRENT_R</find>
+      <find>rider_wages</find>
+      <find>user_gral</find>
+      <find>user_grow</find>
+      <find>其他配置</find>
+      <find>sms</find>
+      <find>putenv</find>
+      <find>user_recharge_coupon</find>
+      <find>set_exception_handler</find>
+      <find>payre</find>
+      <find>pay(</find>
+      <find>起始</find>
+      <find>value.</find>
+      <find>riderGotoOrder</find>
+      <find>未查询到进</find>
+      <find>addorder</find>
+      <find>IS_c</find>
+      <find>cancel</find>
+      <find>rider</find>
+      <find>dump</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>InnoDB</replace>
+      <replace>技师</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\apis</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\admin\controller\busines</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\thinkphp\library\think\exception</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\model</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\admin</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\public\assets</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\public</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\inc\wxapp\distribution</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\inc\wxapp\rider\order</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\inc\wxapp\rider</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\public\assets\js\backend</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\inc\wxapp</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\extend</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\admin\view</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\inc</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\thinkphp</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\public\assets\js</dir>
+      <dir>F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/manifest.xml" />
+        <option value="$PROJECT_DIR$/inc/wxapp/business/businessinfo.inc.php" />
+        <option value="$PROJECT_DIR$/cron/resetCancelCount.php" />
+        <option value="$PROJECT_DIR$/core/application/api/library/ExceptionHandle.php" />
+        <option value="$PROJECT_DIR$/core/application/api/exception/ExceptionHandle.php" />
+        <option value="$PROJECT_DIR$/core/application/admin/view/order/order/detail.html" />
+        <option value="$PROJECT_DIR$/core/application/common/controller/App.php" />
+        <option value="$PROJECT_DIR$/core/application/apis/controller/v3/Token.php" />
+        <option value="$PROJECT_DIR$/core/application/apis/controller/v3/User.php" />
+        <option value="$PROJECT_DIR$/core/application/api/exception/MissException.php" />
+        <option value="$PROJECT_DIR$/core/application/api/exception/OrderException.php" />
+        <option value="$PROJECT_DIR$/core/application/api/exception/ParamException.php" />
+        <option value="$PROJECT_DIR$/core/application/api/exception/TokenException.php" />
+        <option value="$PROJECT_DIR$/core/application/api/config.php" />
+        <option value="$PROJECT_DIR$/core/application/api/model/BaseModel.php" />
+        <option value="$PROJECT_DIR$/core/application/api/controller/v1/Token.php" />
+        <option value="$PROJECT_DIR$/core/application/api/model/Setting.php" />
+        <option value="$PROJECT_DIR$/core/application/api/validate/BaseValidate.php" />
+        <option value="$PROJECT_DIR$/core/application/api/validate/Mobile.php" />
+        <option value="$PROJECT_DIR$/core/application/api/controller/v1/User.php" />
+        <option value="$PROJECT_DIR$/core/application/api/exception/ExceptionHandler.php" />
+        <option value="$PROJECT_DIR$/core/application/api/exception/BaseException.php" />
+        <option value="$PROJECT_DIR$/core/application/route.php" />
+        <option value="$PROJECT_DIR$/core/application/api/common.php" />
+        <option value="$PROJECT_DIR$/core/application/api/controller/v1/Common.php" />
+        <option value="$PROJECT_DIR$/core/application/api/controller/v1/WqBase.php" />
+        <option value="$PROJECT_DIR$/core/application/admin/view/common/menu.html" />
+        <option value="$PROJECT_DIR$/core/application/admin/view/general/config/order.html" />
+        <option value="$PROJECT_DIR$/core/application/admin/view/general/config/other.html" />
+        <option value="$PROJECT_DIR$/core/application/admin/view/general/config/index.html" />
+        <option value="$PROJECT_DIR$/core/application/admin/controller/general/Config.php" />
+        <option value="$PROJECT_DIR$/core/application/admin/view/general/config/app.html" />
+        <option value="$PROJECT_DIR$/extend/lib/getui/tolist.php" />
+        <option value="$PROJECT_DIR$/init.php" />
+        <option value="$PROJECT_DIR$/extend/common.func.php" />
+        <option value="$PROJECT_DIR$/function/Getui.php" />
+        <option value="$PROJECT_DIR$/core/application/admin/model/Business.php" />
+        <option value="$PROJECT_DIR$/core/application/admin/controller/busines/Orderlist.php" />
+        <option value="$PROJECT_DIR$/core/public/assets/js/backend/busines/orderlist.js" />
+        <option value="$PROJECT_DIR$/core/application/admin/controller/freight/Order.php" />
+        <option value="$PROJECT_DIR$/core/application/admin/model/freight/Order.php" />
+        <option value="$PROJECT_DIR$/core/public/assets/js/backend/freight/order.js" />
+        <option value="$PROJECT_DIR$/core/application/admin/controller/person/Rider.php" />
+        <option value="$PROJECT_DIR$/core/public/assets/js/backend/person/rider.js" />
+        <option value="$PROJECT_DIR$/inc/wxapp/business/addbusorder.inc.php" />
+        <option value="$PROJECT_DIR$/function/SendTpl.php" />
+        <option value="$PROJECT_DIR$/mclass/ScopePersonnel.php" />
+        <option value="$PROJECT_DIR$/wxapp.php" />
+        <option value="$PROJECT_DIR$/inc/wxapp/ttt.inc.php" />
+        <option value="$PROJECT_DIR$/install.sql" />
+        <option value="$PROJECT_DIR$/upgrade.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/wokerman/vendor/workerman/gateway-worker" />
+      <path value="$PROJECT_DIR$/wokerman/vendor/workerman/workerman" />
+      <path value="$PROJECT_DIR$/wokerman/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-10" />
+    <option name="width" value="1936" />
+    <option name="height" value="1006" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="make_speed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="make_speed" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/extend/lib" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\extend\lib" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\api\validate" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\api" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\api\exception" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\mclass" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\api\controller" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\api\exception" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\public\assets\js\backend\distribution" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\admin\view\distribution" />
+      <recent name="F:\software\phpstudy\PHPTutorial\WWW\速送上传版本\make_speed\core\application\admin\controller\distribution" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="init.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/init.php">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.init.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\nsc10\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da42f8ac-cfd2-4732-974f-ba4c6fe44076" name="Default" comment="" />
+      <created>1570692820080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570692820080</updated>
+      <workItem from="1572336271370" duration="317000" />
+      <workItem from="1572336619241" duration="1841000" />
+      <workItem from="1572338529879" duration="80000" />
+      <workItem from="1572338627320" duration="24000" />
+      <workItem from="1572338695966" duration="61562000" />
+      <workItem from="1573007492823" duration="49368000" />
+      <workItem from="1573183795116" duration="4474000" />
+      <workItem from="1573193302174" duration="22242000" />
+      <workItem from="1573433468161" duration="36778000" />
+      <workItem from="1573539072059" duration="19385000" />
+      <workItem from="1573711525027" duration="52406000" />
+      <workItem from="1574042575871" duration="84784000" />
+      <workItem from="1574300262747" duration="50631000" />
+      <workItem from="1574643465356" duration="2059000" />
+      <workItem from="1574647787316" duration="6613000" />
+      <workItem from="1574662138104" duration="21158000" />
+      <workItem from="1574732524548" duration="9154000" />
+      <workItem from="1574748638048" duration="40823000" />
+      <workItem from="1574904748393" duration="21018000" />
+      <workItem from="1574991474736" duration="14865000" />
+      <workItem from="1575249300955" duration="47405000" />
+      <workItem from="1575421893610" duration="36265000" />
+      <workItem from="1575600212684" duration="17727000" />
+      <workItem from="1575854314966" duration="28984000" />
+      <workItem from="1575942079850" duration="86395000" />
+      <workItem from="1576200196388" duration="17016000" />
+      <workItem from="1576289382732" duration="16942000" />
+      <workItem from="1576458915344" duration="58499000" />
+      <workItem from="1576718671804" duration="48428000" />
+      <workItem from="1577064584215" duration="23446000" />
+      <workItem from="1577151639837" duration="20782000" />
+      <workItem from="1577323467894" duration="46410000" />
+      <workItem from="1577497540492" duration="18597000" />
+      <workItem from="1577584761696" duration="19520000" />
+      <workItem from="1577669987670" duration="14332000" />
+      <workItem from="1577755984947" duration="18489000" />
+      <workItem from="1577928467269" duration="20387000" />
+      <workItem from="1578015014622" duration="16720000" />
+      <workItem from="1578102813377" duration="14584000" />
+      <workItem from="1578274346380" duration="16542000" />
+      <workItem from="1578360259645" duration="8596000" />
+      <workItem from="1578471698187" duration="2388000" />
+      <workItem from="1578533812392" duration="40903000" />
+      <workItem from="1578967641687" duration="1813000" />
+      <workItem from="1578982245858" duration="107000" />
+      <workItem from="1578982968397" duration="18934000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1159793000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-10" y="0" width="1936" height="1006" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989059" visible="true" weight="0.24733475" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5010941" side_tool="true" weight="0.168" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32875144" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32875144" />
+      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.32646048" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.32932165" />
+      <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.32932165" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989059" visible="true" weight="0.23933902" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5010941" side_tool="true" weight="0.168" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32875144" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32875144" />
+      <window_info anchor="bottom" id="File Transfer" order="10" weight="0.32646048" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.32932165" />
+      <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.32932165" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointLogExpression">
+      <expression>
+        <expression-string>}
+
+function userCancelOrder($order){
+    global $_W;
+    load()-&gt;func('logging');
+    $tpl_id  = pdo_getcolumn('make_speed_setting',['uniacid'=&gt;$GLOBALS['uniacid'],'key'=&gt;'cancel_template_id'],'value');
+    if(!$order &amp;&amp; !$tpl_id){
+        logging_run(date('Y-m-d H:i').'[sendTemplate Rider] Error:取消模板未配置', 'trace', 'makespeedlog');
+    }
+    $data = [
+        'open_id' =&gt; $_W['openid'],
+        'tpl_id'  =&gt; $tpl_id,
+        'page'    =&gt; 'make_speed/order_pay/order_pay?status=2&amp;order_id='.$order['id'].'&amp;order_type='.$order['type'],
+        'data'    =&gt; [
+            'character_string2' =&gt; [ 'value' =&gt; $order['order_code']  ],
+            'amount9'           =&gt; [ 'value' =&gt; $order['total_price'] ],
+            'phrase11'          =&gt; [ 'value' =&gt; '已取消' ],
+            'time12'            =&gt; [ 'value' =&gt; date(&quot;Y-m-d H:i:s&quot;,time() ) ],
+            'thing5'            =&gt; [ 'value' =&gt; '订单取消成功' ],
+        ]
+    ];</expression-string>
+        <language-id>PHP</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/core/application/admin/view/common/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="273" column="35" lean-forward="true" selection-start-line="273" selection-start-column="35" selection-end-line="273" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/api/controller/v1/Token.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="18" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wxapp/rider/order/acceptorder.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-693" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wxapp/rider/order/rider_update_order.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="45" column="80" selection-start-line="45" selection-start-column="77" selection-end-line="45" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/controller/order/Buyorder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#46#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/common/controller/Backend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/thinkphp/library/think/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="199" column="56" lean-forward="true" selection-start-line="199" selection-start-column="56" selection-end-line="199" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/thinkphp/library/think/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="55" column="76" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wxapp/user/getsharecoupon.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/thinkphp/library/think/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-870">
+          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/thinkphp/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Gateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="497" column="54" lean-forward="true" selection-start-line="497" selection-start-column="54" selection-end-line="497" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wxapp/business/settingbusiness.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="25" selection-start-line="25" selection-end-line="26" selection-end-column="174" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/controller/general/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/view/general/config/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3465">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/lib/getui/.idea/misc.xml" />
+    <entry file="file://$PROJECT_DIR$/extend/lib/getui/index.php" />
+    <entry file="file://$PROJECT_DIR$/extend/lib/getui/igetui/IGt.APNPayload.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/lib/getui/tolist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/test.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/view/general/config/other.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/view/general/config/order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1324">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/thinkphp/library/think/Exception.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/apis/exception/BaseException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/view/general/config/app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="119" selection-start-line="36" selection-start-column="107" selection-end-line="36" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/model/Rider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/lib/getui/IGt.Push.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-852">
+          <caret line="303" column="20" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/model/Business.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/controller/busines/Business.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/public/assets/js/backend/person/rider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+          <folding>
+            <element signature="e#54#60#0" expanded="true" />
+            <element signature="e#60#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/public/assets/js/backend/busines/orderlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="64" column="48" lean-forward="true" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/controller/freight/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="57" column="69" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/model/freight/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="52" selection-start-line="52" selection-end-line="54" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/model/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="70" selection-start-line="70" selection-end-line="72" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/public/assets/js/backend/freight/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="69" column="6" lean-forward="true" selection-start-line="69" selection-start-column="6" selection-end-line="75" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/controller/person/Rider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="67" column="42" lean-forward="true" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/application/admin/controller/busines/Orderlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="80" column="35" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wxapp/business/addbusorder.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="145" column="27" selection-start-line="145" selection-start-column="27" selection-end-line="145" selection-end-column="27" />
+          <folding>
+            <element signature="e#53#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/DesignateDriver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/common.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="354" column="13" selection-start-line="354" selection-start-column="13" selection-end-line="354" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wxapp/ttt.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#6#32#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mclass/ScopePersonnel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wokerman/Applications/make_speed/Events.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="220" column="17" selection-start-line="220" selection-start-column="12" selection-end-line="220" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/Getui.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="56" column="2" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" selection-start-line="23" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/wechat/SendTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/SendTpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="83" column="29" lean-forward="true" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wxapp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479">
+          <caret line="1441" column="50" lean-forward="true" selection-start-line="1441" selection-start-column="50" selection-end-line="1441" selection-end-column="50" />
+          <folding>
+            <element signature="e#172#198#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="538" column="63" selection-start-line="538" selection-start-column="63" selection-end-line="538" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upgrade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="60" lean-forward="true" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

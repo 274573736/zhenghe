@@ -1,0 +1,123 @@
+<form id="order-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/order">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">取件码开关:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[getcode_switch]', ['0'=>'开', '1'=>'关'], !empty($result['getcode_switch']) ? $result['getcode_switch'] : 0)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>骑手取件/服务时,是否需要取件/服务码</span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">收货码开关:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[endcode_switch]', ['0'=>'开', '1'=>'关'], !empty($result['endcode_switch']) ? $result['endcode_switch'] : 0)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>骑手完成服务时,是否需要完成码确认</span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">取件照片开关:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[take_photo]', ['0'=>'开', '1'=>'关'], !empty($result['take_photo']) ? $result['take_photo'] : 0)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>骑手取件时,是否需要拍照上传照片</span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">收件照片开关:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[receive_photo]', ['0'=>'开', '1'=>'关'], !empty($result['receive_photo']) ? $result['receive_photo'] : 0)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>骑手收件时,是否需要拍照上传照片</span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">万能服务上传图片开关:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[unservice_img_switch]', ['1'=>'开', '0'=>'关'], !empty($result['unservice_img_switch']) ? $result['unservice_img_switch'] : 0)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>万能服务用户端下单时,是否开启拍照上传功能</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">听单骑手范围限制：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" name="row[rider_distance]" value="{$result['rider_distance'] ?? ''}">
+                <div class="input-group-addon">公里以内</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>设置多少公里范围内的骑手能够听单</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">骑手接单数：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[rider_order_number]" value="{$result['rider_order_number'] ?? ''}">
+                <div class="input-group-addon">单</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>限制骑手能同时接多少单</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">每日骑手取消订单数：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[rider_cancel_order]" value="{$result['rider_cancel_order'] ?? ''}">
+                <div class="input-group-addon">单</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>设置骑手一天能够取消的订单数，超出则无法接单</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">骑手订单佣金比例：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[rider_wages]" value="{$result['rider_wages'] ?? ''}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>设置骑手完成订单可获得相应比例的金额</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户获得积分比例：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[user_gral]" value="{$result['user_gral'] ?? ''}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>用户完成订单后可获得订单总额的百分比数量积分</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户获得成长值比例：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[user_grow]" value="{$result['user_grow'] ?? ''}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>用户完成订单后可获得订单总额的百分比的成长值</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">订单过期时间：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[order_expire]" value="{$result['order_expire'] ?? 30}">
+                <div class="input-group-addon">分钟</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>下单后多久未付款或无人接单订单则自动取消并退款，系统默认30分钟</span>
+    </div>
+
+    <hr>
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>

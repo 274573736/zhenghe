@@ -1,0 +1,30 @@
+---------------------------------------------------------------
+[04-27 17:06:19] 0.0.0.0 GET /addons/make_speed/core/public/index.php/admin/order/driveorder/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A5%7D&_=1587975935568
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orderRider.goto_time' in 'where clause'
+[D:\www_gongye\addons\make_speed\core\thinkphp\library\think\db\Connection.php:390]
+
+---------------------------------------------------------------
+[04-27 17:06:19] 0.0.0.0 GET /addons/make_speed/core/public/index.php/admin/order/driveorder/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A5%7D&_=1587975935569
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orderRider.goto_time' in 'where clause'
+[D:\www_gongye\addons\make_speed\core\thinkphp\library\think\db\Connection.php:390]
+
+---------------------------------------------------------------
+[04-27 17:06:22] 0.0.0.0 GET /addons/make_speed/core/public/index.php/admin/order/driveorder/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A5%7D&_=1587975935573
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orderRider.goto_time' in 'where clause'
+[D:\www_gongye\addons\make_speed\core\thinkphp\library\think\db\Connection.php:390]
+
+---------------------------------------------------------------
+[04-27 17:06:22] 0.0.0.0 GET /addons/make_speed/core/public/index.php/admin/order/driveorder/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A5%7D&_=1587975935572
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orderRider.goto_time' in 'where clause'
+[D:\www_gongye\addons\make_speed\core\thinkphp\library\think\db\Connection.php:390]
+
+---------------------------------------------------------------
+[04-27 17:06:39] 0.0.0.0 GET /addons/make_speed/core/public/index.php/admin/order/driveorder/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A5%7D&_=1587975935588
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orderRider.goto_time' in 'where clause'
+[D:\www_gongye\addons\make_speed\core\thinkphp\library\think\db\Connection.php:390]
+
+---------------------------------------------------------------
+[04-27 17:06:39] 0.0.0.0 GET /addons/make_speed/core/public/index.php/admin/order/driveorder/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%22status%22%3A5%7D&_=1587975935589
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'orderRider.goto_time' in 'where clause'
+[D:\www_gongye\addons\make_speed\core\thinkphp\library\think\db\Connection.php:390]
+

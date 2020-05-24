@@ -1,0 +1,25 @@
+
+
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+
+            <form id="form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/sms">
+                {foreach $programMenu as $k=>$v}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{$k}：</label>
+                    <div class="col-sm-3">
+                        <span class="form-control" style="border-color: #ffffff;">{$v}</span>
+                    </div>
+                </div>
+                {/foreach}
+            </form>
+        </div>
+    </div>
+</div>
+

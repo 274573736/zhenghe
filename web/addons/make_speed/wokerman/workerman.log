@@ -1,0 +1,18 @@
+2019-12-10 20:02:50 pid:17528 Workerman[start.php] stop 
+2019-12-10 20:02:50 pid:17528 Workerman[start.php] not run
+2019-12-10 20:02:50 pid:17530 Workerman[start.php] start in DAEMON mode
+2019-12-10 23:23:54 pid:17532 Workerman[start.php] stopping ...
+2019-12-10 23:25:41 pid:2476 Workerman[start.php] stop 
+2019-12-10 23:25:41 pid:2476 Workerman[start.php] not run
+2019-12-10 23:25:41 pid:2478 Workerman[start.php] start in DAEMON mode
+2019-12-10 23:51:09 pid:2480 Workerman[start.php] stopping ...
+2019-12-23 01:30:01 pid:25575 Workerman[start.php] stop 
+2019-12-23 01:30:01 pid:25575 Workerman[start.php] not run
+2019-12-23 01:30:01 pid:25579 Workerman[start.php] start in DAEMON mode
+2019-12-24 22:02:56 pid:25582 Workerman[start.php] stopping ...
+2019-12-30 01:30:01 pid:4570 Workerman[start.php] stop 
+2019-12-30 01:30:01 pid:4570 Workerman[start.php] not run
+2019-12-30 01:30:01 pid:4573 Workerman[start.php] start in DAEMON mode
+2020-01-06 01:30:01 pid:24013 Workerman[start.php] stop 
+2020-01-06 01:30:01 pid:24013 Workerman[start.php] not run
+2020-01-06 01:30:01 pid:24020 Workerman[start.php] start in DAEMON mode

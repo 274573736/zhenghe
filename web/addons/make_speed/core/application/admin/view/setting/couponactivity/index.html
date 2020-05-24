@@ -1,0 +1,68 @@
+<style>
+    /*.n-right .msg-wrap{right:10px;}*/
+    .wauto{width:100%}
+    .wat{width:auto}
+    .box-success{box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);}
+    /*.n-default .n-left, .n-default .n-right{margin-left:8px;}*/
+    .heading-span{font-size:14px;font-weight: bold;}
+</style>
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#user" data-toggle="tab">优惠券活动设置</a></li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="user">
+                <div class="box box-success">
+                    <form id="reg-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="couponactivity/newperson">
+                        <div class="panel-heading"><span class="heading-span">新人优惠券活动</span></div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label" style>可获得优惠券：</label>
+                                <div class="col-sm-3">
+                                    <select  id="c-coupons" data-rule="required" class="form-control" name="coupons">
+                                        <option value="0" {in name="$newcoupon['coupon_id']" value="0"}selected{/in}>关闭活动</option>
+                                        {foreach name="coupons" item="vo"}
+                                        <option value="{$key}" {in name="key" value="$newcoupon.coupon_id"}selected{/in}>{$vo.title}/{$vo.money}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-1">活动背景图:</label>
+                                <div class="col-sm-3">
+                                    <div class="input-group">
+                                        <input id="c-newpersonbg" data-rule="" class="form-control" size="50" name="newpersonbg" type="text" value="{$newcoupon['coupon_bg'] ?? ''}">
+                                        <div class="input-group-addon no-border no-padding">
+                                            <span><button type="button" id="plupload-newpersonbg" class="btn btn-danger plupload" data-input-id="c-newpersonbg" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-newpersonbg"><i class="fa fa-upload"></i> 上传</button></span>
+                                            <span><button type="button" id="fachoose-newpersonbg" class="btn btn-primary fachoose" data-input-id="c-newpersonbg" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> 选择</button></span>
+                                        </div>
+                                        <span class="msg-box n-right" for="c-newpersonbg"></span>
+                                    </div>
+                                    <ul class="row list-inline plupload-preview" id="p-newpersonbg"></ul>
+                                </div>
+                                <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 379*625</span>
+
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="form-group layer-footer">
+                                <label class="control-label col-sm-1"></label>
+                                <div class="col-sm-1">
+                                    <button type="submit" class="btn btn-success btn-embossed wauto">{:__('OK')}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

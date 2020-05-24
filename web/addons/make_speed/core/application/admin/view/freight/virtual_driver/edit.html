@@ -1,0 +1,129 @@
+<style>
+    #container {width:650px; height: 400px; }
+    .amap-logo{
+        opacity:0;
+    }
+    .amap-copyright{
+        opacity:0;
+    }
+</style>
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">点击地图选择地址:</label>
+        <div id="container" class="map col-xs-12 col-sm-8"></div>
+    </div>
+    <div class="form-group" style="margin-right:10px">
+        <div class="col-xs-6">
+            <label class="control-label col-xs-8 col-sm-4">{:__('Latitude')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-latitude" data-rule="required" class="form-control" step="0.000001" name="row[lat]" type="number" data-msg="null" value="{$row.lat}">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <label class="control-label col-xs-12 col-sm-4">{:__('Longitude')}:</label>
+            <div class="col-xs-12 col-sm-8">
+                <input id="c-longitude" data-rule="required" class="form-control" step="0.000001" name="row[lng]" type="number" data-msg="null" value="{$row.lng}">
+            </div>
+        </div>
+    </div>
+    <!--<div class="form-group">-->
+    <!--<label class="control-label col-xs-12 col-sm-2">{:__('Latitude')}:</label>-->
+    <!--<div class="col-xs-12 col-sm-8">-->
+    <!--<input id="c-latitude" data-rule="required" class="form-control" step="0.000001" name="row[latitude]" type="number" value="{$row.lat}">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<label class="control-label col-xs-12 col-sm-2">{:__('Longitude')}:</label>-->
+    <!--<div class="col-xs-12 col-sm-8">-->
+    <!--<input id="c-longitude" data-rule="required" class="form-control" step="0.000001" name="row[longitude]" type="number" value="{$row.lng}">-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">地址:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address" data-rule="required" class="form-control" name="row[address]" type="text" value="{$row.address}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Is_show')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <select  id="c-is_show" data-rule="required" class="form-control selectpicker" name="row[is_show]">
+                {foreach name="isShowList" item="vo"}
+                <option value="{$key}" {in name="key" value="$row.is_show"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+<script src="__CDN__/assets/libs/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key={$tencentKey}"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#container").bind("DOMNodeInserted",function(e){
+            var tempCount = 0;
+            $("#container .smnoprint").siblings().each(function(){
+                tempCount++;
+                if(tempCount==2||tempCount==3){
+                    $(this).remove();
+                }
+            });
+        });
+
+        var maker,geocoder;
+        var center = new qq.maps.LatLng({$row->lat},{$row->lng});
+        map = new qq.maps.Map(document.getElementById('container'),{
+            center:center,
+            zoom: 13
+        });
+
+        var eLatLng = new qq.maps.LatLng({$row->lat}, {$row->lng});
+        addMarker(eLatLng);
+
+        //添加监听事件
+        qq.maps.event.addListener(map, 'click', function(event) {
+            addMarker(event.latLng);
+            codeAddress(event.latLng);
+        });
+
+        //添加标记
+        function addMarker(location) {
+            if(maker){
+                maker.setMap(null);
+            }
+            var marker = new qq.maps.Marker({
+                position: location,
+                map: map
+            });
+            maker = marker;
+        }
+
+        geocoder = new qq.maps.Geocoder();
+
+        //设置服务请求成功的回调函数
+        geocoder.setComplete(function(result) {
+            $("#c-address").val(result.detail.address);;
+        });
+
+        geocoder.setError(function() {
+            alert("出错了，请输入正确的地址！！！");
+        });
+
+
+        function codeAddress(point) {
+            var latLng = new qq.maps.LatLng(point.lat, point.lng);
+            $("#c-latitude").val(latLng.lat);
+            $("#c-longitude").val(latLng.lng);
+            geocoder.getAddress(latLng);
+        }
+    });
+</script>

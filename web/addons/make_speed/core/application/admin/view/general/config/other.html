@@ -1,0 +1,82 @@
+<form id="other-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/other">
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否启用发票申请:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[invoice_switch]', ['0'=>'不启用', '1'=>'启用'], !empty($result['invoice_switch']) ? $result['invoice_switch'] : '0')}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>小程序用户端申请开发票功能, 关闭则不显示此功能</span>
+    </div>
+
+
+    <!--<div class="form-group">-->
+        <!--<label class="col-sm-2 control-label">骑手提现到微信在线转账功能：</label>-->
+        <!--<div class="col-sm-2">-->
+            <!--<select  id="c-wechat_withdraw" data-rule="required" class="form-control selectpicker" style="display: inline-block !important;" name="row[wechat_withdraw]">-->
+                <!--<option value="0" {notempty name="$result['wechat_withdraw']"}{eq name="$result['wechat_withdraw']" value="0"}selected{/eq}{/notempty}>关</option>-->
+                <!--<option value="1" {notempty name="$result['wechat_withdraw']"}{eq name="$result['wechat_withdraw']" value="1"}selected{/eq}{/notempty}>开</option>-->
+            <!--</select>-->
+        <!--</div>-->
+
+        <!--<span class="help-block"><i class="fa fa-info-circle mr-xs"></i>是否启用骑手提现到微信在线转账功能</span>-->
+    <!--</div>-->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">骑手端开通提现方式:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:Form::selectpickers("row[wechat_withdraw][]", [2=>'微信钱包',0=>'支付宝',1=>'银行卡'],isset($result['wechat_withdraw']) ? explode(',',$result['wechat_withdraw']) : [0,1,2],['data-rule'=>'require'] )}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>
+            默认全开
+        </span>
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">设定骑手保证金：</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[rider_bondmoney]" value="{$result['rider_bondmoney'] ?? ''}">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>设置骑手保证金金额</span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否启用保证金必须充值:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[rider_bondmoney_switch]', ['0'=>'不启用', '1'=>'启用'], !empty($result['rider_bondmoney_switch']) ? $result['rider_bondmoney_switch'] : '0')}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>启用后，骑手必须充值够保证金后才能接单（注：开启时需确保骑手没有进行中的订单）</span>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户充值优惠：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" name="row[user_recharge_coupon]" value="{$result['user_recharge_coupon'] ?? ''}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>设置用户充值余额赠送百分比</span>
+    </div>
+
+
+
+
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>
+            

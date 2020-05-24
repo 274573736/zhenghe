@@ -1,0 +1,267 @@
+<div class="panel panel-default panel-intro" style="-webkit-box-shadow:none;box-shadow: none">
+    <div class="panel-heading">
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#order" data-toggle="tab">基本信息</a></li>
+        <li><a href="#address" data-toggle="tab">订单地址</a></li>
+        <li><a href="#rider" data-toggle="tab">配送骑手</a></li>
+    </ul>
+    </div>
+</div>
+<style>
+    .form-horizontal{margin-top: 18px}
+</style>
+<div class="panel-body">
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="order">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Order_code')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.order_code}</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('User_id')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{$row.username}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Goods_id')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.goodsname} kg</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('Coupon_id')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">
+                            {if !empty($row.coupons_name)}
+                            {$row.coupons_name}<span class='text-warning'>【-￥{$row.coupons_money}】</span>
+                            {else}
+                            暂无使用
+                            {/if}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Weight_price')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.weight_price}</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('Get_time')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{$row.oget_time}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Distance')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.distance} 公里</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('Distance_price')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{$row.distance_price}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Total_price')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.total_price} 元</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('Pay_price')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{$row.pay_price}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Small_price')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.small_price}</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('Status')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{:__('Status '.$row.status)}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('取件码')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.pick_code}</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('收件码')}:</label>
+                    <div class="col-sm-5">
+                        <p class="form-control-static">{$row.end_code}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Add_time')}:</label>
+                    <div class="col-sm-3">
+                        <p class="form-control-static">{$row.add_time|datetime}</p>
+                    </div>
+
+                    <!--<label class="col-sm-2 control-label">{:__('Update_time')}:</label>-->
+                    <!--<div class="col-sm-5">-->
+                        <!--<p class="form-control-static">{$row.update_time|datetime}</p>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">{:__('Description')}:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <p class="form-control-static">{$row.description}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-pane fade in" id="address">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Begin_username')}:</label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static">{$row.begin_username}</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('Begin_phone')}:</label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static">{$row.begin_phone}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('Begin_address')}:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{$row.begin_address} {$row.begin_detail}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('End_username')}:</label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static">{$row.end_username}</p>
+                    </div>
+
+                    <label class="col-sm-2 control-label">{:__('End_phone')}:</label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static">{$row.end_phone}</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{:__('End_address')}:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{$row.end_address} {$row.end_detail}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tab-pane fade in" id="rider">
+            <div class="form-horizontal">
+                {empty name="row.rider_mobile"}
+                    暂无
+                    <hr>
+                {else /}
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">配送骑手:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.rider_name ?? ''}</p>
+                        </div>
+                        <label class="col-sm-2 control-label">联系电话:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.rider_mobile ?? ''}</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">服务得分:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.score ?: '暂无评分'}</p>
+                        </div>
+
+                        <label class="col-sm-2 control-label">评价标签:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.tag ?? ''}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">骑手行程:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.rider_distance ?: '暂无'}</p>
+                        </div>
+
+                        <label class="col-sm-2 control-label">行程用时:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.time ?: '暂无'}</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">接单时间:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.accept_time ?: '暂无'}</p>
+                        </div>
+
+                        <label class="col-sm-2 control-label">揽件时间:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.get_time ?: '暂无'}</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">送达时间:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.goto_time ?: '暂无'}</p>
+                        </div>
+
+                        <label class="col-sm-2 control-label">完成(评价)时间:</label>
+                        <div class="col-sm-3">
+                            <p class="form-control-static">{$row.complete_time ?: '暂无'}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">取件拍照:</label>
+                        <div class="col-sm-5">
+                            {empty name="$row.pick_img"}
+                            无
+                            {else /}
+                            {volist name="$row.pick_img" id="vo"}
+                            <img src="{$vo}" alt="" style="width:60px;height:60px">
+                            {/volist}
+                            {/empty}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">送达拍照:</label>
+                        <div class="col-sm-5">
+                            {empty name="$row.end_img"}
+                            无
+                            {else /}
+                            {volist name="$row.end_img" id="vq"}
+                            <img src="{$vq}" alt="" style="width:60px;height:60px">
+                            {/volist}
+                            {/empty}
+                        </div>
+                    </div>
+                {/empty}
+
+            </div>
+        </div>
+    </div>
+</div>

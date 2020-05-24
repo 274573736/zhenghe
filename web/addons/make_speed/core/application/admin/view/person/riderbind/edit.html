@@ -1,0 +1,95 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Real_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-real_name" data-rule="required" class="form-control form-control" name="row[real_name]" type="text" value="{$row.real_name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card_code" data-rule="required" class="form-control form-control" name="row[card_code]" type="text" value="{$row.card_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card1_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-card1_img" data-rule="required" class="form-control form-control" size="50" name="row[card1_img]" type="text" value="{$row.card1_img}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-card1_img" class="btn btn-danger plupload" data-input-id="c-card1_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-card1_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-card1_img" class="btn btn-primary fachoose" data-input-id="c-card1_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-card1_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-card1_img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card2_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-card2_img" data-rule="required" class="form-control form-control" size="50" name="row[card2_img]" type="text" value="{$row.card2_img}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-card2_img" class="btn btn-danger plupload" data-input-id="c-card2_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-card2_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-card2_img" class="btn btn-primary fachoose" data-input-id="c-card2_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-card2_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-card2_img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card3_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-card3_img" data-rule="required" class="form-control form-control" size="50" name="row[card3_img]" type="text" value="{$row.card3_img}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-card3_img" class="btn btn-danger plupload" data-input-id="c-card3_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-card3_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-card3_img" class="btn btn-primary fachoose" data-input-id="c-card3_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-card3_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-card3_img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card4_img')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-card4_img" data-rule="required" class="form-control form-control" size="50" name="row[card4_img]" type="text" value="{$row.card4_img}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-card4_img" class="btn btn-danger plupload" data-input-id="c-card4_img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-card4_img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-card4_img" class="btn btn-primary fachoose" data-input-id="c-card4_img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-card4_img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-card4_img"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-status" data-rule="required" class="form-control selectpicker" name="row[status]">
+                {foreach name="statusList" item="vo"}
+                <option value="{$key}" {in name="key" value="$row.status"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group remark {if $row->status != 1}hide{/if}">
+        <label class="control-label col-xs-12 col-sm-2">拒绝原因:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-remark"  class="form-control form-control " name="row[remark]" type="text" value="{$row.remark}">
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,2 @@
+<?php
+ use Server\app\Token; goto snpav; snpav: global $_W, $_GPC; goto Niq6X; Niq6X: $rider_id = Token::getCurrentRid(); goto NjPXJ; NjPXJ: return $this->result(0, '', array("\x72\151\x64\145\x72\x5f\151\x64" => intval($rider_id)));

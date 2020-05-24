@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="https://www.ymzy100.com/" versionCode="0.6">
+	<application setting="false">
+		<name><![CDATA[码科速送骑手端]]></name>
+		<identifie><![CDATA[make_rider]]></identifie>
+		<version><![CDATA[2.7.0]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[码科速送骑手]]></ability>
+		<description><![CDATA[码科速送抢单平台骑手端]]></description>
+		<author><![CDATA[易码资源源码网]]></author>
+		<url><![CDATA[https://www.ymzy100.com/]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+		<supports>
+			<item type="wxapp" />
+		</supports>
+	</platform>
+	<bindings>
+	    <cover>
+	        
+		</cover>
+		<rule>
+		    
+		</rule>
+		<menu>
+			
+		</menu>
+	</bindings>
+	<install><![CDATA[]]></install>
+	<uninstall><![CDATA[]]></uninstall>
+	<upgrade><![CDATA[wazyb_upgrade.php]]></upgrade>
+</manifest>

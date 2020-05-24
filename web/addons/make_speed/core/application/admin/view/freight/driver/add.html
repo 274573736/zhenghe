@@ -1,0 +1,168 @@
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
+
+    .symbol{
+        position: absolute;
+        right: -2px;
+        top: 10px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Load')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group no-border no-padding">
+                <input id="c-load" data-rule="required" class="form-control" size="50" name="row[load]" type="number">
+                <span class="input-group-addon">吨</span>
+                <span class="msg-box n-right" for="c-load_capacity"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">车身:</label>
+        <div class="col-xs-8">
+            <div class="row row-between">
+                <div class="col-xs-3">
+                    <input type="text" data-rule="required" data-msg="请输入长度" class="form-control" name="size[length]" value="" placeholder="长"  data-index="5">
+                    <span class="symbol">*</span>
+                </div>
+
+                <div class="col-xs-3">
+                    <input type="text" data-rule="required" data-msg="请输入宽度" class="form-control" name="size[width]" value="" placeholder="宽"  data-index="5">
+                    <span class="symbol">*</span>
+                </div>
+
+                <div class="col-xs-3">
+                    <input type="text" data-rule="required" data-msg="请输入高度" class="form-control" name="size[height]" value="" placeholder="高"  data-index="5">
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">车辆图片:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" data-rule="required" class="form-control" size="50" name="row[image]" type="text" >
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload cropper" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 ">车辆详情介绍:</label>
+        <div class="col-sm-8">
+            <textarea id="c-user_agm" data-rule="required" placeholder="这里可以填写车辆收费标准和车辆图片" class="form-control editor form-control" rows="5" name="row[car_detail]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-2 col-sm-2">{:__('Starting_km')}:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input  id="c-starting_km" data-rule="required" data-target="#starting_km" class="form-control" step="0.01" data-msg="请输入起步公里" name="row[starting_km]" type="number">
+                <span class="input-group-addon">km</span>
+
+            </div>
+            <span id="starting_km"></span>
+        </div>
+        <label class="control-label col-xs-2 col-sm-2">{:__('Starting_price')}:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input id="c-starting_price" data-rule="required" data-target="#start_pr" class="form-control" step="0.01" name="row[starting_price]" data-msg="请输入起步价格" type="number">
+                <span class="input-group-addon" >元</span>
+            </div>
+            <span id="start_pr"></span>
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <span style="color: red;">*第一个阶段费，需输入前面的起步里程数,后续添加的随意</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group xucPerKm" >
+        <label class="control-label col-xs-2 col-sm-2">阶段费:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input id="c-xuc"  data-rule="required" data-target="#xuc" class="form-control " step="0.01" name="xuc[]" data-msg="请输入续程" type="number">
+
+                <span class="input-group-addon" >公里以后</span>
+            </div>
+            <span id="xuc"></span>
+        </div>
+        <label class="control-label col-xs-2 col-sm-2">每公里:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input  id="c-per_km" data-rule="required" data-target="#per_km" class="form-control" step="0.01" data-msg="请输入价格" name="per_km[]" type="number">
+                <span class="input-group-addon">元</span>
+            </div>
+            <span id="per_km"></span>
+        </div>
+        <div class="input-group">
+            <div class="input-group-addon no-border no-padding">
+                <span><button type="button" id="add_input" class="btn btn-success "><i class="fa fa-plus "></i></button></span>
+                <span><button type="button" id="" class="btn btn-danger del_input" ><i class="fa fa-times"></i></button></span>
+            </div>
+            <span class="msg-box n-right" ></span>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">状态:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label>
+                    <input  name="row[status]" type="radio" value="0" />隐藏
+                </label>
+                <label>
+                    <input  name="row[status]" type="radio" value="1" checked/>显示
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">排序:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sort" data-rule="required" class="form-control" name="row[sort]" type="number" data-tip="数值越大排序越靠前">
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

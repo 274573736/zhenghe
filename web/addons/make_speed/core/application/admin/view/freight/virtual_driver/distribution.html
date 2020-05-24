@@ -1,0 +1,122 @@
+<style>
+    #container {width:100%; height:700px; }
+    .amap-logo{
+        opacity:0;
+    }
+    .amap-copyright{
+        opacity:0;
+    }
+</style>
+
+<div>
+    <div id="container" class="map col-xs-12 col-sm-8"></div>
+</div>
+
+<script src="__CDN__/assets/libs/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key={$tencentKey}"></script>
+<script type="text/javascript">
+    $(function(){
+        var data = {:json_encode($drivers)};
+        $("#container").css('height',$(window).height() * 0.9)
+        $("#container").bind("DOMNodeInserted",function(e){
+            var tempCount = 0;
+            $("#container .smnoprint").siblings().each(function(){
+                tempCount++;
+                if(tempCount==2||tempCount==3){
+                    $(this).remove();
+                }
+            });
+        });
+
+        var map = new qq.maps.Map(document.getElementById('container'),{
+            zoom: 13
+        });
+        citylocation = new qq.maps.CityService({
+            complete : function(result){
+                map.setCenter(result.detail.latLng);
+            }
+        });
+        citylocation.searchLocalCity();
+
+        //实例化常用类
+        var Map = qq.maps.Map;
+        var Marker = qq.maps.Marker;
+        var LatLng = qq.maps.LatLng;
+        var Event = qq.maps.event;
+
+        var MarkerImage = qq.maps.MarkerImage;
+        var MarkerShape = qq.maps.MarkerShape;
+        var MarkerAnimation = qq.maps.MarkerAnimation;
+        var Point = qq.maps.Point;
+        var Size = qq.maps.Size;
+        var ALIGN = qq.maps.ALIGN;
+
+        var MVCArray = qq.maps.MVCArray;
+        var MarkerCluster = qq.maps.MarkerCluster;
+        var Cluster = qq.maps.Cluster;
+        var MarkerDecoration = qq.maps.MarkerDecoration;
+
+        var markers = new MVCArray();
+
+
+        var myOverlay=function(opts){
+            qq.maps.Overlay.call(this, opts);
+        };
+        //继承Overlay基类
+        myOverlay.prototype = new qq.maps.Overlay();
+        //实现构造方法
+        myOverlay.prototype.construct = function() {
+
+            //创建了覆盖物的容器，这里我用了一个div，并且设置了样式
+            this.dom = document.createElement('div');
+            this.dom.style.cssText =
+                    'background:#fff;color:white;position:absolute;' +
+                    'text-align:center;width:30px;height:30px;'+
+                    'border-radius:50%;border:2px solid #fff';
+
+            //将初始化的html填入到了窗口里，这根据您自己的需要决定是否加这属性
+            this.dom.innerHTML=this.get('inithtml');
+
+            //将dom添加到覆盖物层
+            this.getPanes().overlayLayer.appendChild(this.dom);
+        };
+
+        //自定义的方法，用于设置myOverlay的html
+        myOverlay.prototype.html=function(html){
+            this.dom.innerHTML=html;
+        };
+        //实现绘制覆盖物的方法（覆盖物的位置在此控制）
+        myOverlay.prototype.draw = function() {
+            //获取地理经纬度坐标
+            var position = this.get('position');
+            if (position) {
+                var pixel = this.getProjection().fromLatLngToDivPixel(position);
+                this.dom.style.left = pixel.getX() + 'px';
+                this.dom.style.top = pixel.getY() + 'px';
+            }
+        };
+        //实现析构方法（类生命周期结束时会自动调用，用于释放资源等）
+        myOverlay.prototype.destroy = function() {
+            this.dom.parentNode.removeChild(this.dom);
+        };
+
+
+        //多个点位添加图标
+        for (var n = 0; n < data.length; n++) {
+            (function(i){
+                var latLng = new LatLng(data[i]['lat'], data[i]['lng']);
+                var marker = new Marker({
+                    'position':latLng,
+                    map:map
+                });
+
+                markers.push(marker);
+            })(n);
+        }
+
+
+
+
+
+    });
+</script>

@@ -1,0 +1,159 @@
+<style>
+    /*.n-right .msg-wrap{right:10px;}*/
+    .wauto{width:100%}
+    .wat{width:auto}
+    .box-success{box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);}
+    /*.n-default .n-left, .n-default .n-right{margin-left:8px;}*/
+    .heading-span{font-size:14px;font-weight: bold;}
+</style>
+<link href="__PUBLIC__/assets/plugins/color-picker/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#user" data-toggle="tab">推荐邀请奖励</a></li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="user">
+                <div class="box box-success">
+                    <form id="reg-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="userinvite/saveinvite">
+                        <div class="panel-heading"><span class="heading-span">分享即得</span></div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">分享好友可获得：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="share" value="{$results['users_invite']['share'] ?? ''}">
+                                        <div class="input-group-addon">元优惠券</div>
+                                    </div>
+                                </div>
+                                <label class="col-sm-1 control-label">满减：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="share_full" value="{$results['users_invite']['share_full'] ?? ''}">
+                                        <div class="input-group-addon">可使用</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">优惠券期限天数：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="share_day" value="{$results['users_invite']['share_day'] ?? ''}">
+                                        <div class="input-group-addon">天</div>
+                                    </div>
+                                </div>
+                                <label class="col-sm-1 control-label">奖励次数上限：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="share_limit" value="{$results['users_invite']['share_limit'] ?? ''}">
+                                        <div class="input-group-addon">次</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-heading"><span class="heading-span">邀请奖励</span></div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">每邀请：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="person_num" value="{$results['users_invite']['person_num'] ?? ''}">
+                                        <div class="input-group-addon">人进入</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">可获得奖励：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="person_price" value="{$results['users_invite']['person_price'] ?? ''}">
+                                        <div class="input-group-addon">元优惠券</div>
+                                    </div>
+                                </div>
+                                <label class="col-sm-1 control-label">满减：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="person_full" value="{$results['users_invite']['person_full'] ?? ''}">
+                                        <div class="input-group-addon">可使用</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">优惠券期限天数：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="person_day" value="{$results['users_invite']['person_day'] ?? ''}">
+                                        <div class="input-group-addon">天</div>
+                                    </div>
+                                </div>
+                                <label class="col-sm-1 control-label">奖励次数上限：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="person_limit" value="{$results['users_invite']['person_limit'] ?? ''}">
+                                        <div class="input-group-addon">次</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-heading"><span class="heading-span">推荐好友完成首单</span></div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">每完成首单获得：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="first" value="{$results['users_invite']['first'] ?? ''}">
+                                        <div class="input-group-addon">元优惠券</div>
+                                    </div>
+                                </div>
+                                <label class="col-sm-1 control-label">满减：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="first_full" value="{$results['users_invite']['first_full'] ?? ''}">
+                                        <div class="input-group-addon">可使用</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">优惠券期限天数：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="first_day" value="{$results['users_invite']['first_day'] ?? ''}">
+                                        <div class="input-group-addon">天</div>
+                                    </div>
+                                </div>
+                                <label class="col-sm-1 control-label">获得奖励上限：</label>
+                                <div class="col-sm-2">
+                                    <div class="input-group">
+                                        <input type="text" data-rule="" class="form-control" name="first_limit" value="{$results['users_invite']['first_limit'] ?? ''}">
+                                        <div class="input-group-addon">次</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+                        <div class="form-group layer-footer">
+                            <label class="control-label col-sm-1"></label>
+                            <div class="col-sm-1">
+                                <button type="submit" class="btn btn-success btn-embossed wauto">{:__('OK')}</button>
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

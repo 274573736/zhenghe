@@ -1,0 +1,39 @@
+<div class="form-group">
+    <div>
+        <label class="control-label col-xs-12 col-sm-2">切换城市:</label>
+        <div class="col-xs-12 col-sm-3">
+            <div class="input-group">
+                <input id="c-logo" class="form-control" size="50" data-tip="" name="row[logo]" type="text"  >
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-logo" class="btn btn-danger plupload" data-input-id="c-logo" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-logo"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-logo" class="btn btn-primary fachoose" data-input-id="c-logo" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-logo"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-logo"></ul>
+        </div>
+    </div>
+    <!--present name="$setting['logo']" value="$setting['logo']}" /present?}-->
+    <!--present name="$setting['share']"} value="$setting['share']}" /present}-->
+    <div>
+        <label class="control-label col-xs-12 col-sm-2">分享图:</label>
+        <div class="col-xs-12 col-sm-3">
+            <div class="input-group">
+                <input id="c-share" data-rule="" class="form-control" data-tip="" size="50" name="row[share]" type="text">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-share" class="btn btn-danger plupload" data-input-id="c-share" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-share"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-share" class="btn btn-primary fachoose" data-input-id="c-share" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-share"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-share"></ul>
+        </div>
+    </div>
+</div>
+<div class="form-group layer-footer">
+    <label class="control-label col-xs-12 col-sm-2"></label>
+    <div class="col-xs-12 col-sm-8">
+        <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+        <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+    </div>
+</div>

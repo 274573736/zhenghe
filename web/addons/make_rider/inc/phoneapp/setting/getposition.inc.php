@@ -1,0 +1,2 @@
+<?php
+ goto eZtaE; AMdH9: $riders = array_values($riders); goto qiT1W; J0rWV: $riders = pdo_getall("\155\141\153\145\x5f\163\160\145\x65\x64\x5f\162\151\x64\145\x72\x5f\x69\156\x66\157", array("\x6c\141\x74\x20\76" => 0, "\154\x6e\x67\x20\76" => 0), array("\x6c\141\x74", "\x6c\x6e\x67")); goto AMdH9; eZtaE: defined("\111\116\137\x49\x41") or exit("\101\143\x63\x65\163\x73\40\104\x65\x6e\x69\x65\144"); goto J0rWV; qiT1W: return $this->result(0, "\x73\165\x63\x63\145\163\x73", $riders);

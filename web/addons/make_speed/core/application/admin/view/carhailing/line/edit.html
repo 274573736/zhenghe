@@ -1,0 +1,159 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-number" data-rule="required" class="form-control" name="row[number]" type="text" value="{$row.number|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Starting')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-starting"
+                   data-rule="required"
+                   data-source="city/index"
+                   data-multiple="false"
+                   data-field="name"  class="form-control selectpage"
+                   name="row[starting]" type="text" value="{$row.starting}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Destination')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-destination"
+                   data-rule="required"
+                   data-source="city/index"
+                   data-multiple="false"
+                   data-field="name"  class="form-control selectpage"
+                   name="row[destination]" type="text" value="{$row.destination}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Taking_long')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-taking_long" data-rule="required" class="form-control" name="row[taking_long]" type="number" value="{$row.taking_long|htmlentities}">
+                <div class="input-group-addon">分</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">今日发车:</label>
+        <div class="col-xs-12 col-sm-8">
+            {for start="0" end="24"}
+            {if($i < 10 )}
+            <?php $i = '0'.$i; ?>
+            {/if}
+            <input type="checkbox" name="row[today_departure_time][]" value="{$i.':'.'00'}" <?php $c = $i.':00'; ?> {if( in_array($c,$row.departure_time) ) } checked {/if}/>{$i.':'.'00'}
+            <input type="checkbox" name="row[today_departure_time][]" value="{$i.':'.'30'}" <?php $d = $i.':30'; ?> {if( in_array($d,$row.departure_time) ) } checked {/if}/>{$i.':'.'30'}
+            {/for}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Departure_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {for start="0" end="24"}
+            {if($i < 10 )}
+            <?php $i = '0'.$i; ?>
+            {/if}
+            <input type="checkbox" name="row[departure_time][]" value="{$i.':'.'00'}" <?php $a = $i.':00'; ?> {if( in_array($a,$row.departure_time) ) } checked {/if} />{$i.':'.'00'}
+            <input type="checkbox" name="row[departure_time][]" value="{$i.':'.'30'}" <?php $b = $i.':30'; ?> {if( in_array($b,$row.departure_time) ) } checked {/if} />{$i.':'.'30'}
+            {/for}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Appointment_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-appointment_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[appointment_time]" type="text" value="{:$row.appointment_time?datetime($row.appointment_time):''}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Depart_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-depart_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[depart_time]" type="text" value="{:$row.depart_time?datetime($row.depart_time):''}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" data-rule="required" class="form-control editor" rows="5" name="row[content]" cols="50">{$row.content|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" data-rule="required" class="form-control" size="50" name="row[image]" type="text" value="{$row.image|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Push_money')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-push_money" data-rule="required" class="form-control" name="row[push_money]" type="number" value="{$row.push_money|htmlentities}">
+                <div class="input-group-addon">%</div>
+                <span class="msg-box n-right" for="c-total_car"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Adult_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-adult_price" data-rule="required" class="form-control" step="0.01" name="row[adult_price]" type="number" value="{$row.adult_price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Child_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-child_price" data-rule="required" class="form-control" step="0.01" name="row[child_price]" type="number" value="{$row.child_price|htmlentities}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Open_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-open_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[open_time]" type="text" value="{:$row.open_time?datetime($row.open_time):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Close_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-close_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[close_time]" type="text" value="{:$row.close_time?datetime($row.close_time):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <div class="radio">
+                {foreach name="statusList" item="vo"}
+                <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="$row.status"}checked{/in} /> {$vo}</label>
+                {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,81 @@
+<form id="price-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/settime">
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">帮送-预计取件额外时间：</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" class="form-control" value="{$result['expect_time0'] ?? ''}" name="give_expect_time" placeholder="输入预计时间">
+                <div class="input-group-addon">分钟</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>取件路程行驶时间，加上此处设置的额外时间</span>
+    </div>
+
+    <div  class="form-group">
+        <label class="col-sm-2 control-label">帮送-预计送达额外时间：</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" class="form-control" value="{$result['expect_timed0'] ?? ''}" name="give_expect_timed" placeholder="输入预计时间">
+                <div class="input-group-addon">分钟</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>送件路程行驶时间，加上此处设置的额外时间</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">帮买(就近)-预计送达额外时间：</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" class="form-control" value="{$result['expect_timed1'] ?? ''}" name="buy_expect_timed" placeholder="输入预计时间">
+                <div class="input-group-addon">分钟</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>买/送 路程行驶时间，加上此处设置的额外时间</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">帮买(指定地点)-预计送达额外时间：</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" class="form-control" value="{$result['s_expect_timed1'] ?? ''}" name="buys_expect_timed" placeholder="输入预计时间">
+                <div class="input-group-addon">分钟</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>买/送 路程行驶时间，加上此处设置的额外时间</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">万能服务-预计到达服务地点额外时间：</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" class="form-control" value="{$result['expect_time2'] ?? ''}" name="fuwu_expect_time" placeholder="输入预计时间">
+                <div class="input-group-addon">分钟</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>骑手路程时间，加上此处设置的额外时间</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">代驾-预计到达驾驶地点额外时间：</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" class="form-control" value="{$result['expect_time3'] ?? ''}" name="drive_expect_time" placeholder="输入预计时间">
+                <div class="input-group-addon">分钟</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>骑手路程时间，加上此处设置的额外时间</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">
+        </label>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>

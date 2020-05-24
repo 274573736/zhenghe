@@ -1,0 +1,49 @@
+<form id="app-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/sms">
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">AppID：</label>
+        <div class="col-sm-3">
+            <input type="text"  class="form-control" name="row[uni_appid]" value="{$result['uni_appid'] ?? ''}">
+        </div>
+    </div>
+
+<!--    <div class="form-group">-->
+<!--        <label class="col-sm-2 control-label">AppSecret：</label>-->
+<!--        <div class="col-sm-3">-->
+<!--            <input type="text" data-rule="" class="form-control" name="row[uni_app_secret]" value="{$result['uni_app_secret'] ?? ''}">-->
+<!--        </div>-->
+
+<!--    </div>-->
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">AppKey：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[uni_appkey]" value="{$result['uni_appkey'] ?? ''}">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">MasterSecret：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[uni_master_secrect]" value="{$result['uni_master_secrect'] ?? ''}">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">应用标识：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[uni_identify]" value="{$result['uni_identify'] ?? ''}">
+        </div>
+
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>

@@ -1,0 +1,100 @@
+<style type="text/css">
+    .theme-icon{
+        position: absolute;
+        left: 230px;
+        bottom: 18px;
+        font-size: 88px;
+        color: #1AAD19;
+        display: none;
+    }
+
+    .theme-img{
+        box-shadow:0 2px 10px rgba(0, 0, 0, 0.2);
+        width:320px;
+        height:600px;
+        border: solid 9px #ffffff;
+        border-radius: 12px;
+    }
+
+    .theme-img:hover{
+        border: solid 10px #1AAD19;
+        border-radius: 15px;
+    }
+
+    .theme-img-selected{
+        border-radius: 15px;
+        border: solid 10px #1AAD19;
+    }
+</style>
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">小程序首页主题设置</a></li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane fade in active" id="home">
+                <form id="ssl-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="theme/save">
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">选择主题：</label>
+                        <div class="col-sm-3 theme">
+                            <img src="__PUBLIC__uploads/theme/theme_0.jpg" alt="主题一" data-id="0" class="theme-img {empty name='$theme_index'}theme-img-selected{/empty}">
+                            <i class="fa fa-check-square-o theme-icon" aria-hidden="true" {empty name='$theme_index'}style="display:block"{/empty}></i>
+                        </div>
+
+                        <div class="col-sm-3 theme">
+                            <img src="__PUBLIC__uploads/theme/theme_1.jpg" alt="主题二" data-id="1" class="theme-img {eq name='$theme_index' value="1"}theme-img-selected{/eq}">
+                            <i class="fa fa-check-square-o theme-icon" aria-hidden="true" {eq name='$theme_index' value="1"}style="display:block"{/eq}></i>
+                        </div>
+
+                        <div class="col-sm-3 theme">
+                            <img src="__PUBLIC__uploads/theme/theme_2.jpg" alt="主题三" data-id="2" class="theme-img {eq name='$theme_index' value="2"}theme-img-selected{/eq}">
+                            <i class="fa fa-check-square-o theme-icon" aria-hidden="true" {eq name='$theme_index' value="2"}style="display:block"{/eq}></i>
+                        </div>
+
+                    </div>
+
+                    <input type="hidden" name="themeid" value="" />
+
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="__PUBLIC__/assets/libs/jquery/dist/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    $(function(){
+
+        $('.theme img').click(function(e){
+
+            var id = $(this).attr('data-id');
+
+            $('.theme img').removeClass('theme-img-selected');
+
+            $('.theme i').css('display','none');
+            $(this).next().css('display','block');
+            $(this).addClass('theme-img-selected');
+
+            $("input[name=themeid]").val(id);
+
+        })
+
+    })
+</script>

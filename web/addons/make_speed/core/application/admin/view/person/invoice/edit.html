@@ -1,0 +1,81 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$user['nick_name'] ?? ''}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
+                {foreach name="typeList" item="vo"}
+                <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-type_name" data-rule="required" class="form-control form-control" name="row[type_name]" type="text" value="{$row.type_name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-content" data-rule="required" class="form-control form-control" name="row[content]" type="text" value="{$row.content}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.amount}</p>
+        </div>
+    </div>
+
+    <!--<div class="form-group">-->
+        <!--<label class="control-label col-xs-12 col-sm-2">{:__('Tax_number')}:</label>-->
+        <!--<div class="col-xs-12 col-sm-8">-->
+            <!--<input id="c-tax_number" data-rule="required" class="form-control form-control" name="row[tax_number]" type="text" value="{$row.tax_number}">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!---->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Mobile')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-mobile" data-rule="required" class="form-control form-control" name="row[mobile]" type="text" value="{$row.mobile}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Email')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-email" data-rule="required" class="form-control form-control" name="row[email]" type="text" value="{$row.email}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Add_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{:date('Y-m-d H:i', $row.add_time)}</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-status" data-rule="required" class="form-control selectpicker" name="row[status]">
+                {foreach name="statusList" item="vo"}
+                <option value="{$key}" {in name="key" value="$row.status"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

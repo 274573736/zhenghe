@@ -1,0 +1,226 @@
+<!--form-horizontal-->
+<style>
+    .hit-font{
+        color: #737373;
+        font-size: 12px;
+        margin-left:50px;
+    }
+
+</style>
+<form id="other-form" class="" role="form" data-toggle="validator" method="POST" action="general/config/saveConfig">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">骑手端</h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>授权页背景图:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 750*1334</span>
+                            </div>
+                        </div>
+                        {:Form::image('row[rider_auth_bg]',isset($result['rider_auth_bg']) ? $result['rider_auth_bg'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>分享图片:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高):  210*168</span>
+                            </div>
+                        </div>
+                        {:Form::image('row[rider_share_img]',isset($result['rider_share_img']) ? $result['rider_share_img'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>邀请分享海报背景图:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 750*1125</span>
+                            </div>
+                        </div>
+                        {:Form::image('row[rider_poster]',isset($result['rider_poster']) ? $result['rider_poster'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="left" >登陆注册背景图:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font right"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 750*440</span>
+                            </div>
+
+                        </div>
+                        {:Form::image('row[rider_logo]',isset($result['rider_logo']) ? $result['rider_logo'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="left" >接单首页背景图:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font right"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 750*420</span>
+                            </div>
+
+                        </div>
+                        {:Form::image('row[rider_index_bg]',isset($result['rider_index_bg']) ? $result['rider_index_bg'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="left" >待抢订单图标:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font right"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 80*80</span>
+                            </div>
+
+                        </div>
+                        {:Form::image('row[to_robbed_icon]',isset($result['to_robbed_icon']) ? $result['to_robbed_icon'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="left" >待抢地图图标:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font right"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 80*80</span>
+                            </div>
+
+                        </div>
+                        {:Form::image('row[robbed_map_icon]',isset($result['robbed_map_icon']) ? $result['robbed_map_icon'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="left" >接单设置图标:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font right"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 80*80</span>
+                            </div>
+
+                        </div>
+                        {:Form::image('row[receiving_order_icon]',isset($result['receiving_order_icon']) ? $result['receiving_order_icon'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="left" >抢单记录图标:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font right"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 80*80</span>
+                            </div>
+
+                        </div>
+                        {:Form::image('row[order_record_icon]',isset($result['order_record_icon']) ? $result['order_record_icon'] : '')}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">用户端</h3>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>授权页背景图:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 300*300</span>
+                            </div>
+                        </div>
+                        {:Form::image('row[user_auth_bg]',isset($result['user_auth_bg']) ? $result['user_auth_bg'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>分享图片:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font">
+                                    <i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高):  210*168
+                                </span>
+                            </div>
+                        </div>
+                        {:Form::image('row[user_share_img]',isset($result['user_share_img']) ? $result['user_share_img'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>邀请分享海报背景图:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font">
+                                    <i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高):  750*1125
+                                </span>
+                            </div>
+                        </div>
+                        {:Form::image('row[user_poster]',isset($result['user_poster']) ? $result['user_poster'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>首页地图骑手小图标:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 25*25</span>
+                            </div>
+                        </div>
+                        {:Form::image('row[rider_map_icon]',isset($result['rider_map_icon']) ? $result['rider_map_icon'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label>首页地图司机小图标:</label>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="hit-font"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 25*25</span>
+                            </div>
+                        </div>
+                        {:Form::image('row[driver_map_icon]',isset($result['driver_map_icon']) ? $result['driver_map_icon'] : '')}
+                    </div>
+                    <div class="form-group">
+                        <label>小程序首页添加图标:</label>
+                        <div class="input-group">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <input  data-rule="" placeholder="小程序页面路径输入service则跳转在线客服" class="form-control " size="60" name="row[pindex_icon][pindex_icon_url]" type="text" value="{$pindex_icon['pindex_icon_url'] ?? ''}">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input id="c-pindex_icon" data-rule="" class="form-control"  name="row[pindex_icon][pindex_icon]" type="text" value="{$pindex_icon['pindex_icon'] ?? ''}">
+                                </div>
+                                <div class="input-group-addon no-border no-padding">
+                                    <span><button type="button" id="plupload-pindex_icon" class="btn btn-success plupload" data-input-id="c-pindex_icon" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-pindex_icon"><i class="fa fa-upload"></i> 上传</button></span>
+                                    <span><button type="button" id="fachoose-pindex_icon" class="btn btn-info fachoose" data-input-id="c-pindex_icon" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                </div>
+                                <span class="msg-box n-right" for="c-pindex_icon"></span>
+                            </div>
+                            <ul class="row list-inline plupload-preview" id="p-pindex_icon"></ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>

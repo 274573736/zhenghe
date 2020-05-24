@@ -1,0 +1,42 @@
+<div class="panel panel-default panel-intro" style="-webkit-box-shadow:none;box-shadow: none">
+    <div class="panel-heading">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#order" data-toggle="tab">下线</a></li>
+
+        </ul>
+    </div>
+</div>
+<style>
+    .form-horizontal{margin-top: 18px}
+</style>
+<div class="panel-body">
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="order">
+            <div class="form-horizontal">
+                {foreach $list as $k=>$v}
+                <div style="display: flex;flex-direction: row;align-items: center;margin-top: 20px">
+                    <div class="col-sm-4">
+                        <label class="col-sm-1 control-label">{$v.id}</label>
+                        <div class="col-sm-2" style="display: flex;flex-direction: row;align-items: center">
+                            <img src="{$v.avatar}" alt="" style="width:30px;height:30px">
+                            <span class="form-control-static"  >{$v.nick_name}</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="col-sm-1 control-label">层级: </label>
+                        <div class="col-sm-1">
+                            <p class="form-control-static" >{$v.level}级</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-sm-2 control-label">注册时间: </label>
+                        <div class="col-sm-4">
+                            <p class="form-control-static" >{$v.add_time|datetime}</p>
+                        </div>
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+</div>

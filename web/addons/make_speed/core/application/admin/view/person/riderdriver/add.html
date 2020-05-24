@@ -1,0 +1,47 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_img1')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card_img1" data-rule="required" class="form-control form-control" name="row[card_img1]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_img2')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card_img2" data-rule="required" class="form-control form-control" name="row[card_img2]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card_num" data-rule="required" class="form-control form-control" name="row[card_num]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card_type" data-rule="required" class="form-control form-control" name="row[card_type]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card_time" data-rule="required" class="form-control datetimepicker form-control" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[card_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" data-rule="required" class="form-control form-control" name="row[status]" type="number" value="0">
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

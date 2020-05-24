@@ -1,0 +1,10 @@
+---------------------------------------------------------------
+[10-10 19:56:36] 223.80.238.95 GET /addons/make_speed/core/public/index.php/admin/cloud/orderlist/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1570708596906
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order.clouds_id' in 'on clause'
+[/www/wwwroot/wushanw.com/addons/make_speed/core/thinkphp/library/think/db/Connection.php:390]
+
+---------------------------------------------------------------
+[10-10 20:21:00] 125.75.238.18 GET /addons/make_speed/core/public/index.php/admin/cloud/orderlist/index?sort=id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1570710059135
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'order.clouds_id' in 'on clause'
+[/www/wwwroot/wushanw.com/addons/make_speed/core/thinkphp/library/think/db/Connection.php:390]
+

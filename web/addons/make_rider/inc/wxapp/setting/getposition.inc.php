@@ -1,0 +1,2 @@
+<?php
+ goto abBXc; abBXc: defined("\x49\x4e\137\x49\x41") or exit("\101\143\143\x65\163\x73\x20\104\x65\156\x69\x65\x64"); goto VC1wO; smU9a: $riders = array_values($riders); goto GdBjg; VC1wO: $riders = pdo_getall("\x6d\141\x6b\x65\x5f\x73\x70\145\145\144\137\x72\x69\144\x65\162\137\151\156\146\x6f", array("\x6c\x61\164\x20\x3e" => 0, "\154\x6e\147\x20\x3e" => 0), array("\x6c\x61\164", "\154\x6e\x67")); goto smU9a; GdBjg: return $this->result(0, "\x73\x75\143\143\145\163\163", $riders);

@@ -1,0 +1,56 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Grade')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-grade" data-rule="required" class="form-control form-control" name="row[grade]" type="text" value="{$row.grade}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control form-control" name="row[name]" type="text" value="{$row.name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Grow')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-grow" data-rule="required" class="form-control form-control" name="row[grow]" type="text" value="{$row.grow}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Discount')}:</label>
+        <div class="col-sm-8">
+            <div class="input-group">
+                <input id="c-discount" data-rule="required" class="form-control form-control" name="row[discount]" type="text" value="{$row.discount*100}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>例80%(原价10元只需付8元)</span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Icon')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-icon" class="form-control form-control" size="50" name="row[icon]" type="text" value="{$row.icon}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-icon" class="btn btn-danger plupload" data-input-id="c-icon" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-icon"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-icon" class="btn btn-primary fachoose" data-input-id="c-icon" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-icon"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-icon"></ul>
+        </div>
+        <span class="help-block"><a href="https://www.iconfont.cn/search/index?q=vip&page=1" target="view_window"><i class="fa fa-hand-pointer-o mr-xs"></i>搜索图标</a></span>
+
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,2 @@
+<?php
+ defined("\111\x4e\137\111\x41") or exit("\x41\x63\143\x65\163\x73\40\104\x65\156\151\145\144"); use Validate\app\Register; use Server\app\Register as RegisterServer; goto n2RLV; BE6CY: $service = new RegisterServer(); goto M4uwC; n2RLV: (new Register())->goCheck(); goto BE6CY; M4uwC: $service->check($this->request->param());

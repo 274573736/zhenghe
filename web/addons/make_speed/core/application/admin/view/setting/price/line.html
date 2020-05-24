@@ -1,0 +1,23 @@
+<form id="price-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="setting/price/line">
+
+    <div class="form-group">
+        <label class="col-sm-1 control-label">服务起步价</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="number" data-rule="" class="form-control" value="{$result['line_initial_price'] ?? ''}" name="price[line_initial_price]" placeholder="起步价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>万能服务服务起步价格</span>
+    </div>
+
+    <hr>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>

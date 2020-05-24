@@ -1,0 +1,25 @@
+---------------------------------------------------------------
+[01-13 14:33:12] 223.80.239.62 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/rr.663y32.cn/addons/make_speed/core/runtime/temp/f16834031e7f63f53b21ec1e2ea3074d.php:371]
+
+---------------------------------------------------------------
+[01-13 14:34:33] 223.80.239.62 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/rr.663y32.cn/addons/make_speed/core/runtime/temp/f16834031e7f63f53b21ec1e2ea3074d.php:371]
+
+---------------------------------------------------------------
+[01-13 14:47:22] 223.80.239.62 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/rr.663y32.cn/addons/make_speed/core/runtime/temp/f16834031e7f63f53b21ec1e2ea3074d.php:371]
+
+---------------------------------------------------------------
+[01-13 14:47:29] 223.80.239.62 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/rr.663y32.cn/addons/make_speed/core/runtime/temp/f16834031e7f63f53b21ec1e2ea3074d.php:371]
+
+---------------------------------------------------------------
+[01-13 14:47:34] 223.80.239.62 GET /addons/make_speed/core/public/
+[ error ] [8]未定义变量: port
+[/www/wwwroot/rr.663y32.cn/addons/make_speed/core/runtime/temp/f16834031e7f63f53b21ec1e2ea3074d.php:371]
+

@@ -1,0 +1,112 @@
+<div class="panel panel-default panel-intro" style="-webkit-box-shadow:none;box-shadow: none">
+    <div class="panel-heading">
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#person" data-toggle="tab">客户店员</a></li>
+        <li class=""><a href="#eleme" data-toggle="tab">饿了么授权信息</a></li>
+    </ul>
+    </div>
+</div>
+<style>
+    .form-horizontal{margin-top: 18px}
+</style>
+<div class="panel-body">
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="person">
+            <div class="form-horizontal">
+                {empty name="$person"}
+                    此大客户暂无添加店员
+                {else /}
+
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">uid</label>
+                    <div class="col-sm-2">
+                        <p class="form-control-static" style="float:left">姓名</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <p class="form-control-static" style="float:left">性别</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="form-control-static" style="float:left">联系电话</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static" style="float:left">联系住址</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static" style="float:left">加入时间</p>
+                    </div>
+                </div>
+
+                {foreach name="$person" item="vo"}
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">{$vo.user_id}</label>
+                    <div class="col-sm-2">
+                        <p class="form-control-static" style="float:left">{$vo.username}</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <p class="form-control-static" style="float:left">{$vo.sex}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="form-control-static" style="float:left">{$vo.mobile}</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static" style="float:left">{$vo.home_address}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p class="form-control-static" style="float:left">{:date('Y-m-d H:i', $vo.add_time)}</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-xs btn-danger del-personnel" data-name="{$vo.username}" data-personid="{$vo.id}">删除</button>
+                    </div>
+                </div>
+                {/foreach}
+                {/empty}
+            </div>
+        </div>
+
+        <div class="tab-pane" id="eleme">
+            <div class="form-horizontal">
+                {notempty name="$result.shop_id"}
+
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">授权状态:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        {if condition="empty($result['token_expire'])"}
+                        <p class="form-control-static text-danger" style="word-break: break-all;">未完成授权</p>
+                        {elseif condition="$result['token_expire'] <= time()"}
+                        <p class="form-control-static text-gray" style="word-break: break-all;">授权过期</p>
+                        {else /}
+                        <p class="form-control-static text-success" style="word-break: break-all;">已授权完成</p>
+                        {/if}
+                    </div>
+                </div>
+                {notempty name="$result.token_expire"}
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">授权到期时间:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <p class="form-control-static" style="word-break: break-all;">{:date('Y-m-d H:i', $result['token_expire'])}</p>
+                    </div>
+                </div>
+                {/notempty}
+
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">饿了么授权URL:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <p class="form-control-static text-info" style="word-break: break-all;">{$result.ele_auth_url ?? ''}</p>
+                    </div>
+
+                    <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>需要商家复制此链接到浏览器内打开，并登录商家账号授权</span>
+                </div>
+
+
+                {else /}
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">饿了么授权URL:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <p class="form-control-static" style="word-break: break-all;">此大客户未对接饿了么店铺ID</p>
+                    </div>
+                </div>
+                {/notempty}
+            </div>
+        </div>
+    </div>
+</div>

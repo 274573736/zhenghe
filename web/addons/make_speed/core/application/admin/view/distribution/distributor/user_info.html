@@ -1,0 +1,25 @@
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户id:</label>
+        <div class="col-sm-3">
+            <p class="form-control-static">{$user.id}</p>
+        </div>
+
+        <label class="col-sm-2 control-label">用户昵称:</label>
+        <div class="col-sm-5">
+            <p class="form-control-static">{$user.nick_name}</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户头像:</label>
+        <div class="col-sm-3">
+            <img src="{$user.avatar}" alt="" style="width:60px;height:60px">
+        </div>
+
+        <label class="col-sm-2 control-label">注册时间:</label>
+        <div class="col-sm-5">
+            <p class="form-control-static">{$user.add_time|datetime}</p>
+        </div>
+    </div>
+</div>

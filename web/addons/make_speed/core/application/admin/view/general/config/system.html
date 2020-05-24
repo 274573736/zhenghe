@@ -1,0 +1,87 @@
+<form id="other-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/savesystem">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">平台开关:</label>
+        <div class="col-xs-12 col-sm-3">
+            {:build_radios('row[system_switch]', ['0'=>'开', '1'=>'关'], !empty($result['system_switch']) ? $result['system_switch'] : '')}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>用于紧急关闭平台下单功能, 默认开启, 选择关闭后平台系统将无法下单</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">系统关闭提示语：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[off_tip]" value="{$result['off_tip'] ?? ''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">自定义端口：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" name="workerman_port" value="{$port ?? 9502}">
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>监听端口,修改后服务器需放行该端口，小程序后台合法域名也需要更改，默认9502</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">自定义域名：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" name="row[socket_domain]" value="{$result['socket_domain'] ?? $Think.server.http_host}">
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>连接socket域名,修改后需要在小程序后台合法域名添加,更改后重启脚本，默认{$Think.server.http_host}</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">显示公益金比例：</label>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" name="row[public_price]" value="{$result['public_price'] ?? 0}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>设置显示公益金比例的金额（3位小数以内），为0或空则不显示</span>
+    </div>
+
+    <div class="form-group">
+        <label for="c-rider_tipbgm" class="control-label col-xs-12 col-sm-2">骑手端订单通知提示音:</label>
+        <div class="col-xs-12 col-sm-3">
+            <div class="input-group">
+                <input id="c-rider_tipbgm" data-rule="" class="form-control" size="50" name="row[rider_tipbgm]" type="text" value="{$result['rider_tipbgm'] ?? ''}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-rider_tipbgm" class="btn btn-success plupload" data-input-id="c-rider_tipbgm" data-mimetype="m4a,aac,mp3,wav" data-multiple="false" data-preview-id="p-rider_tipbgm"><i class="fa fa-upload"></i> 上传</button></span>
+                    <span><button type="button" id="fachoose-rider_tipbgm" class="btn btn-info fachoose" data-input-id="c-rider_tipbgm" data-mimetype="m4a,aac,mp3,wav" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+
+                    {notempty name="$result['rider_tipbgm']"}<span><a href="/addons/make_speed/core/public/{$result['rider_tipbgm']}" target="_blank" class="btn btn-info"><i class="fa fa-volume-down"></i>播放</a></span>{/notempty}
+                </div>
+                <span class="msg-box n-right" for="c-rider_tipbgm"></span>
+            </div>
+
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议音频时长30秒以内(mp3文件格式)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="c-backend_tipbgm" class="control-label col-xs-12 col-sm-2">后台弹窗通知提示音:</label>
+        <div class="col-xs-12 col-sm-3">
+            <div class="input-group">
+                <input id="c-backend_tipbgm" data-rule="" class="form-control" size="50" name="row[backend_tipbgm]" type="text" value="{$result['backend_tipbgm'] ?? ''}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-backend_tipbgm" class="btn btn-success plupload" data-input-id="c-backend_tipbgm" data-mimetype="m4a,aac,mp3,wav" data-multiple="false" data-preview-id="p-backend_tipbgm"><i class="fa fa-upload"></i> 上传</button></span>
+                    <span><button type="button" id="fachoose-backend_tipbgm" class="btn btn-info fachoose" data-input-id="c-backend_tipbgm" data-mimetype="m4a,aac,mp3,wav" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+
+                    {notempty name="$result['backend_tipbgm']"}<span><a href="/addons/make_speed/core/public/{$result['backend_tipbgm']}" target="_blank" class="btn btn-info"><i class="fa fa-volume-down"></i>播放</a></span>{/notempty}
+                </div>
+                <span class="msg-box n-right" for="c-backend_tipbgm"></span>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>新订单支付完成后，后台提示音(mp3文件格式),注:后台提醒页面标签页不能关闭</span>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>

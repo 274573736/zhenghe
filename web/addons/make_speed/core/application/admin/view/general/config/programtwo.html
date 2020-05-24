@@ -1,0 +1,43 @@
+<style>
+    .tplclass{
+        background-color: #eeeeee;
+        opacity: 1;
+        cursor: not-allowed;
+    }
+</style>
+<form id="programtwo-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/programtwo">
+    <!--<div class="form-group">-->
+        <!--<label class="col-sm-2 control-label">生成.name}小程序码：</label>-->
+        <!--<div class="col-sm-6" >-->
+            <!--<div class="input-group ">-->
+                <!--&lt;!&ndash;<input type="text" class="form-control">&ndash;&gt;-->
+                <!--<span ><button type="button" class="btn btn-warning create_code" data-type="v.type}" data-url="make_speed/router/router" id="create_button">点击生成</button></span>-->
+            <!--</div>-->
+            <!--<ul class="row list-inline plupload-preview" id="code">-->
+                <!--<li class="col-xs-3">-->
+                    <!--<a href="__CDN__" data-url="/uploads/20190604/d86095e40fc43150065ecff8467d8b8d.png" target="_blank" class="thumbnail">-->
+                        <!--<img src="/addons/make_speed/core/public/uploads/20190604/d86095e40fc43150065ecff8467d8b8d.png" class="img-responsive">-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div style="margin-top: 40px">
+    </div>
+
+    {foreach $smallProgramImg as $k=>$v}
+    <div class="form-group" >
+        <label class="col-sm-2 control-label">{$v.name}小程序码：</label>
+        <div class="col-sm-6" >
+            <div class="input-group">
+                <button type="button" class="btn btn-warning create_code" data-type="{$v.type}" data-url="make_speed/router/router" >点击生成</button>
+            </div>
+            <div class="col-xs-3 {if !$v['url']} hide {/if}">
+                <a style="bottom: 49px;position: relative;left: 78px;" href="__CDN__{$v.url}" data-url="__CDN__{$v.url}" target="_blank" class="thumbnail">
+                    <img src="__CDN__{$v.url}" class="img-responsive">
+                </a>
+            </div>
+        </div>
+    </div>
+    {/foreach}
+</form>

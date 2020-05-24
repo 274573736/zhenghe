@@ -1,0 +1,173 @@
+<form id="driver-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="setting/price/drive">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">收费模式:</label>
+        <div class="col-xs-12 col-sm-6">
+            <div class="radio">
+                <label id="distance_charge">
+                    <input  name="price[dcharge_type]" type="radio" value="1"  {eq name="$result['dcharge_type']" value="1"} checked {/eq} />按规划路线距离计费
+                </label>
+                <label id="real_time">
+                    <input  name="price[dcharge_type]" type="radio" value="2"  {eq name="$result['dcharge_type']" value="2"} checked {/eq} />实时计费
+                </label>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>默认按路线规划路线计费</span>
+    </div>
+
+    <div class="form-group {if $result['dcharge_type'] == 1} hidden {/if}" id="amap_driver_key">
+        <label class="control-label col-xs-12 col-sm-2">高德地图key:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" value="{$result['amap_driver_key'] ?? ''}" name="price[amap_driver_key]" class="form-control"  placeholder="高德地图web服务key" />
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i><a target="_blank" href="https://lbs.amap.com/dev/key/app">点击申请</a>添加key时服务平台请选择Web服务</span>
+
+    </div>
+    <div class="form-group {if $result['dcharge_type'] == 1} hidden {/if}" id="amap_servier_id">
+        <label class="control-label col-xs-12 col-sm-2">serviceID:</label>
+        <div class="col-xs-12 col-sm-6">
+            <spance class="form-control" >{$result['amap_service_id'] ?? ''}</spance>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>无需填写</span>
+    </div>
+
+    <hr>
+    <div class="form-group">
+        <label class="col-sm-1 control-label">起步</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" value="{$result['drive_min_distance'] ?? ''}" name="price[drive_min_distance]" placeholder="输入最小路程">
+                <div class="input-group-addon">公里</div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" value="{$result['drive_initial_price'] ?? ''}" name="price[drive_initial_price]" placeholder="起步价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>几公里重量以内,起步价</span>
+    </div>
+
+
+    <hr>
+    {notempty name="$result['drive_distance']"}
+    {foreach name="$result['drive_distance']" item="dv" key="dk" }
+    <div class="form-group addgroup">
+        <label class="col-sm-1 control-label">续程</label>
+        <div class="col-sm-2" style="">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" value="{$dk ?? ''}" name="price[drive_distance][]" placeholder="公里数">
+                <div class="input-group-addon">公里以后</div>
+            </div>
+        </div>
+
+        <label class="control-label col-sm-1">每公里加收</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" value="{$dv ?? ''}" name="price[drive_distance_price][]" placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block" style="margin-top: 1px;">
+                <button type="button"  class="btn btnHight btn-success add"><i class="fa fa-plus "></i></button>
+                <button type="button"  class="btn btnHight btn-danger del" ><i class="fa fa-times"></i></button>
+               <i class="fa fa-info-circle mr-xs"></i>此续程范围超出部分到下个续程间,每公里加收费用
+        </span>
+    </div>
+    {/foreach}
+    {else /}
+    <div class="form-group addgroup">
+        <label class="col-sm-1 control-label">续程</label>
+        <div class="col-sm-2" style="">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" value="" name="price[drive_distance][]" placeholder="公里数">
+                <div class="input-group-addon">公里以后</div>
+            </div>
+        </div>
+
+        <label class="control-label col-sm-1">每公里加收</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="text" data-rule="" class="form-control" name="price[drive_distance_price][]" value="" placeholder="价格">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block" style="margin-top: 1px;">
+                <button type="button"  class="btn btnHight btn-success add"><i class="fa fa-plus "></i></button>
+                <button type="button"  class="btn btnHight btn-danger del" ><i class="fa fa-times"></i></button>
+                <i class="fa fa-info-circle mr-xs"></i>此续程范围超出部分到下个续程间,每公里加收费用
+        </span>
+    </div>
+
+    {/notempty}
+    <hr>
+
+    <div class="form-group">
+        <label class="col-sm-1 control-label">价格调度</label>
+        <div class="col-sm-5" style="">
+            <input type="text" data-rule="" class="form-control" name="price[drive_change_price]" value="{$result['drive_change_price'] ?? ''}" placeholder="价格调整额度">
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>根据需供情况,自由动态调整价格(-或+)</span>
+    </div>
+
+    {if isset($result['drive_night_price']) && is_array($result['drive_night_price'])}
+    {foreach $result['drive_night_price'] as $k=>$v}
+    <div class="form-group addNightPrice">
+        <label class="col-sm-1 control-label">夜间费</label>
+        <div class="col-sm-5" style="display: flex;flex-direction: row">
+            <div class="col-lg-4" style='padding-left: 0'>
+                <input type="text" data-rule="require"  data-date-use-strict="true" placeholder="开始"
+                       data-date-format="HH:mm"	class="form-control datetimepicker" name="night[start][]" value="{$v['start']}">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>~</span>
+            <div class="col-lg-4">
+                <input type="text" data-rule="require" data-date-use-strict="true" placeholder="结束"
+                       data-date-format="HH:mm" class="form-control datetimepicker" name="night[end][]" value="{$v['end']}">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>￥</span>
+            <div class="col-lg-4">
+                <input type="number" placeholder="价格" style="width: 142px;" data-rule="require"  class="form-control " name="night[price][]" value="{$v['price']}">
+            </div>
+        </div>
+        <span class="help-block">
+                    <button type="button"  class="btn btnHight btn-success addPrice"><i class="fa fa-plus "></i></button>
+                    <button type="button"  class="btn btnHight btn-danger delPrice" ><i class="fa fa-times"></i></button>
+                    <i class="fa fa-info-circle mr-xs"></i>设置夜间时间段范围(晚上至次日早晨时间【例: 22~6】)
+        </span>
+    </div>
+    {/foreach}
+    {else /}
+    <div class="form-group addNightPrice">
+        <label class="col-sm-1 control-label">夜间费</label>
+        <div class="col-sm-5" style="display: flex;flex-direction: row">
+            <div class="col-lg-4" style='padding-left: 0'>
+                <input type="text" data-rule="require"  data-date-use-strict="true" placeholder="开始"
+                       data-date-format="HH:mm"	class="form-control datetimepicker" name="night[start][]" value="">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>~</span>
+            <div class="col-lg-4">
+                <input type="text" data-rule="require" data-date-use-strict="true" placeholder="结束"
+                       data-date-format="HH:mm" class="form-control datetimepicker" name="night[end][]" value="">
+            </div>
+            <span style='font-weight:bold;float:left;line-height:31px'>￥</span>
+            <div class="col-lg-4">
+                <input type="number" placeholder="价格" style="width: 142px;" data-rule="require"  class="form-control " name="night[price][]" value="">
+            </div>
+        </div>
+        <span class="help-block">
+                    <button type="button"  class="btn btnHight btn-success addPrice"><i class="fa fa-plus "></i></button>
+                    <button type="button"  class="btn btnHight btn-danger delPrice" ><i class="fa fa-times"></i></button>
+                    <i class="fa fa-info-circle mr-xs"></i>设置夜间时间段范围(晚上至次日早晨时间【例: 22~6】)
+        </span>
+    </div>
+    {/if}
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

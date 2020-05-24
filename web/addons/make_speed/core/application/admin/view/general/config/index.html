@@ -1,0 +1,267 @@
+<style>
+    /*.n-right .msg-wrap{right:10px;}*/
+
+    /*.n-default .n-left, .n-default .n-right{margin-left:8px;}*/
+
+</style>
+<link href="__PUBLIC__/assets/plugins/color-picker/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#program" data-toggle="tab">小程序配置</a></li>
+            <li><a href="#order" data-toggle="tab">订单配置</a></li>
+            <li><a href="#other" data-toggle="tab">其他配置</a></li>
+            <li><a href="#images" data-toggle="tab">小程序图片</a></li>
+            <li><a href="#system" data-toggle="tab">系统设置</a></li>
+            <li><a href="#time" data-toggle="tab">时效设置</a></li>
+            <li><a href="#business" data-toggle="tab">业务类型</a></li>
+            <li><a href="#sms" data-toggle="tab">短信配置</a></li>
+            <li><a href="#app" data-toggle="tab">app推送配置</a></li>
+            <li><a href="#programtwo" data-toggle="tab">小程序二维码</a></li>
+            <li><a href="#rider" data-toggle="tab">骑手端小程序绑定</a></li>
+            <li><a href="#ssl" data-toggle="tab">SSL证书</a></li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane fade in active" id="program">
+                {include file="general/config/miniprogram" /}
+            </div>
+
+            <div class="tab-pane fade " id="programtwo">
+                {include file="general/config/programtwo" /}
+            </div>
+            <div class="tab-pane fade " id="images">
+                {include file="general/config/images" /}
+            </div>
+
+            <div class="tab-pane fade" id="sms">
+                <form id="sms-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/sms">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">AccessKeyId：</label>
+                        <div class="col-sm-3">
+                            <input type="text" data-rule="" class="form-control" name="row[ali_sms_appid]" value="{$result['ali_sms_appid'] ?? ''}">
+                        </div>
+                        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>阿里云用户AccessKey ID</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">AccessKeySecret：</label>
+                        <div class="col-sm-3">
+                            <input type="text" data-rule="" class="form-control" name="row[ali_sms_secret]" value="{$result['ali_sms_secret'] ?? ''}">
+                        </div>
+
+                        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>阿里云用户AccessKey Secret</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">短信签名名称：</label>
+                        <div class="col-sm-3">
+                            <input type="text" data-rule="" class="form-control" name="row[ali_sign_name]" value="{$result['ali_sign_name'] ?? ''}">
+                        </div>
+
+                        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>阿里云短信服务-短信签名名称</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">发送收件码短信模板code：</label>
+                        <div class="col-sm-3">
+                            <input type="text" data-rule="" class="form-control" name="row[ali_goto_temp]" value="{$result['ali_goto_temp'] ?? ''}">
+                        </div>
+
+                        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>发送收件码短信到收件人手机号，需模板变量：${code}(验证码)</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">发送验证码短信模板code：</label>
+                        <div class="col-sm-3">
+                            <input type="text" data-rule="" class="form-control" name="row[ali_temp_code]" value="{$result['ali_temp_code'] ?? ''}">
+                        </div>
+
+                        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>需模板变量：${code}(验证码)</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">配送任务通知给骑手短信模板code：</label>
+                        <div class="col-sm-3">
+                            <input type="text" data-rule="" class="form-control" name="row[ali_temp_task]" value="{$result['ali_temp_task'] ?? ''}">
+                        </div>
+
+                        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>需模板变量：${name}(骑手姓名), ${code}(订单号)</span>
+                    </div>
+
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="other">
+                {include file="general/config/other" /}
+            </div>
+
+            <div class="tab-pane fade" id="rider">
+                <form id="rider-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/riderprogram">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">小程序AppId：</label>
+                        <div class="col-sm-4">
+                            <input type="text" data-rule="" class="form-control" name="rider_program_key" value="{$result['rider_program_key'] ?? ''}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">小程序AppSecret：</label>
+                        <div class="col-sm-4">
+                            <input type="text" data-rule="" class="form-control" name="rider_program_secret" {notempty name="$result['rider_program_secret']"}placeholder="已保存(不可随意修改)"{/notempty} value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="tab-pane fade" id="ssl">
+                <form id="ssl-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/savessl">
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">密钥(KEY)：</label>
+                        <div class="col-sm-3">
+                            <textarea class="form-control" name="ssl_key" style="height:380px;resize: none;" {notempty name="$result['ssl_key']"}placeholder="已保存(不可随意修改)"{/notempty}>{$result['ssl_key'] ? '' : ''}</textarea>
+                        </div>
+
+                        <label class="col-sm-1 control-label">证书(PEM格式)：</label>
+                        <div class="col-sm-3">
+                            <textarea class="form-control" name="ssl_cert" style="height:380px;resize: none;" {notempty name="$result['ssl_cert']"}placeholder="已保存(不可随意修改)"{/notempty}>{$result['ssl_cert'] ? '' : ''}</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="business">
+                <form id="business-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/business">
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-12 col-sm-2">开放业务:</label>
+                        <div class="col-sm-8 col-xs-12">
+                            <dl class="fieldlist" data-name="row[business]">
+                                <dd>
+                                    <ins style="text-align: center;">开关</ins>
+                                    <ins>业务</ins>
+                                    <ins>排序</ins>
+                                    <ins>自定义名称</ins>
+                                </dd>
+                                {volist name="$result['open_business']" id="bu" key="key"}
+                                <dd class="form-inline">
+                                    <input type="checkbox" id="inlineCheckbox{$key}" name="business[{$key}][status]" value="0" {if condition="!empty($bu['status'])"}checked{/if}>
+                                    <input type="hidden" name="business[{$key}][type]" class="form-control" value="{$bu['type'] ?? ''}" size="5">
+                                    <input type="text" style="border:none;padding-left:0;padding-right: 22px;" class="form-control" value="{$btype[$bu['type']] ?? '跑腿'}" size="5">
+                                    <input type="text" name="business[{$key}][sort]" class="form-control" value="{$bu['sort'] ?? ''}" size="5">
+                                    <input type="text" name="business[{$key}][title]" style="margin-left: 15px;" class="form-control" value="{$bu['title'] ?? ''}" size="20">
+                                </dd>
+                                {/volist}
+                                <br/>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-12 col-sm-2">服务端认证业务:</label>
+                        <div class="col-sm-8 col-xs-12">
+                            <dl class="fieldlist" data-name="row[register_business]">
+                                <dd>
+                                    <ins style="text-align: center;">开关</ins>
+                                    <ins>业务</ins>
+                                    <ins>排序</ins>
+                                    <ins>自定义名称</ins>
+                                </dd>
+                                {volist name="$result['register_business']" id="bu" key="key"}
+                                <dd class="form-inline">
+                                    <input type="checkbox" id="inlineCheckbox{$key}" name="register_business[{$key}][status]" value="0" {if condition="!empty($bu['status'])"}checked{/if}>
+                                    <input type="hidden" name="register_business[{$key}][type]" class="form-control" value="{$bu['type'] ?? ''}" size="5">
+                                    <input type="text" style="border:none;padding-left:0;padding-right: 22px;" class="form-control" value="{$register_type[$bu['type']] ?? '跑腿'}" size="5">
+                                    <input type="text" name="register_business[{$key}][sort]" class="form-control" value="{$bu['sort'] ?? ''}" size="5">
+                                    <input type="text" name="register_business[{$key}][title]" style="margin-left: 15px;" class="form-control" value="{$bu['title'] ?? ''}" size="20">
+                                    <input type="hidden" name="register_business[{$key}][cname]" style="margin-left: 15px;" class="form-control" value="{$bu['cname'] ?? ''}" size="20">
+
+                                </dd>
+                                {/volist}
+                                <br/>
+                                <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>开放的排序最大值的为首页</span>
+                            </dl>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="app">
+                {include file="general/config/app" /}
+            </div>
+
+            <div class="tab-pane fade" id="system">
+                {include file="general/config/system" /}
+            </div>
+
+            <div class="tab-pane fade" id="time">
+                {include file="general/config/time" /}
+            </div>
+            <div class="tab-pane fade" id="order">
+<!--                <form id="order-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/order">-->
+                    {include file="general/config/order" /}
+<!--                </form>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="__PUBLIC__/assets/libs/jquery/dist/jquery.min.js" type="text/javascript"></script>
+
+<script src="__PUBLIC__/assets/plugins/color-picker/bootstrap-colorpicker.min.js"></script>
+<script>
+    $(function(){
+
+        $('#mycp').colorpicker({
+            useAlpha: false
+        });
+        $('#rmycp').colorpicker({
+            useAlpha: false
+        });
+
+    })
+</script>

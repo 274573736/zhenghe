@@ -1,0 +1,113 @@
+<form id="base-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="distribution/config/base">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">分销开关:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[d_switch]', ['0'=>'关', '1'=>'开'], isset($result['d_switch']) ? $result['d_switch'] : 0)}
+        </div>
+        <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">自定义名称:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:Form::input('text','row[distribution_name]', isset($result['distribution_name']) ? $result['distribution_name'] : '推广员' )}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>用户端个人中心自定义分销名称</span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">佣金计算:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[d_count_commission_type]', ['1'=>'支付金额', '2'=>'平台抽佣'], isset($result['d_count_commission_type']) ? $result['d_count_commission_type'] : 1)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>默认订单支付金额</span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">分销层级:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[d_tier]', ['1'=>'一级', '2'=>'二级','3'=>'三级'], isset($result['d_tier']) ? $result['d_tier'] : 2)}
+        </div>
+        <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">分销内购:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[d_iap]', ['0'=>'关闭', '1'=>'开启'], isset($result['d_iap']) ? $result['d_iap'] : 0)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>
+            开启分销内购，分销商自己享受一级佣金，上级享受二级佣金，上上级享受三级佣金，默认关闭
+        </span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">成为分销商是否审核:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:build_radios('row[d_audit]', [ '1'=>'需要','0'=>'不需要'], isset($result['d_audit']) ? $result['d_audit'] : 1)}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>
+            默认需要
+        </span>
+    </div>
+
+    <hr>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">提现方式:</label>
+        <div class="col-xs-12 col-sm-2">
+            {:Form::selectpickers("row[d_commission_type][]", [1=>'微信钱包',2=>'支付宝',3=>'银行卡'],explode(',',$result['d_commission_type']),['data-rule'=>'require'] )}
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>
+            默认全开
+        </span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">最低提现金额:</label>
+        <div class="col-xs-12 col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="require" class="form-control" name="row[d_mini_amount]" value="{$result['d_mini_amount'] ?? 1}">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>
+            默认最低一元
+        </span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">提现手续费:</label>
+        <div class="col-xs-12 col-sm-2">
+            <div class="input-group">
+                <input type="number" data-rule="require" class="form-control" name="row[d_commission_charge]" value="{$result['d_commission_charge'] ?? 1}">
+                <div class="input-group-addon">%</div>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>
+            默认1%
+        </span>
+    </div>
+    <hr>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">分销等级升级依据:</label>
+        <div class="col-xs-12 col-sm-10">
+            {:build_radios('row[d_grade]', ['0'=>'分销订单总额(完成的订单)', '1'=>'分销订单总数(完成的订单)','2'=>'分销商下线人数'], isset($result['d_grade']) ? $result['d_grade'] : 0)}
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">申请页图片:</label>
+        <div class="col-xs-12 col-sm-2">
+            <div class="input-group">
+                <input id="c-img" class="form-control form-control" data-rule="required" size="50" name="row[d_img]" type="text" value="{$result.d_img ?? ''}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img" class="btn btn-danger plupload" data-input-id="c-img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img" class="btn btn-primary fachoose" data-input-id="c-img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-img"></ul>
+        </div>
+        <!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小</span>-->
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,2 @@
+<?php
+ namespace Mclass; class GetRedis { private static $instance = NULL; public static $host = "\x31\x32\x37\x2e\x30\x2e\60\x2e\x31"; public static $port = 6379; public function __construct() { } public function __clone() { } public static function instance() { goto dSHWk; dSHWk: if (self::$instance instanceof self) { goto hAguP; } goto MRUQw; ACYtw: $redis->connect(self::$host, self::$port); goto Smb8T; Uh_Qd: hAguP: goto KaMds; Smb8T: self::$instance = $redis; goto Uh_Qd; KaMds: return self::$instance; goto ljQO_; MRUQw: $redis = new \Redis(); goto ACYtw; ljQO_: } }

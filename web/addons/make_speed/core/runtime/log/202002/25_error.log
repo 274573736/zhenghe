@@ -1,0 +1,20 @@
+---------------------------------------------------------------
+[02-25 00:10:42] 110.184.220.201 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+
+---------------------------------------------------------------
+[02-25 00:16:32] 50.98.38.37 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+
+---------------------------------------------------------------
+[02-25 00:16:32] 50.98.38.37 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+
+---------------------------------------------------------------
+[02-25 00:17:56] 110.184.220.201 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+

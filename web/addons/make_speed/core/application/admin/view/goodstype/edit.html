@@ -1,0 +1,63 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Order_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('row[order_type]', $typeList, $row.order_type, ['class'=>'form-control', 'required'=>''])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control form-control" name="row[name]" type="text" value="{$row.name}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">图标:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-icon" class="form-control form-control" size="50" data-rule="required" name="row[icon]" type="text" value="{$row.icon}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-icon" class="btn btn-danger plupload" data-input-id="c-icon" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-icon"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-icon" class="btn btn-primary fachoose" data-input-id="c-icon" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-icon"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-icon"></ul>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小:40*54</span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">选中时图标:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-iconed" class="form-control form-control" size="50" data-rule="required" name="row[iconed]" type="text" value="{$row.iconed}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-iconed" class="btn btn-danger plupload" data-input-id="c-iconed" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-iconed"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-iconed" class="btn btn-primary fachoose" data-input-id="c-iconed" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-iconed"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-iconed"></ul>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小:40*54</span>
+    </div>
+<?php echo base64_decode('5pu05aSa5rqQ56CB6K+36K6/6Zeu6LWE5rqQ6YKm5rqQ56CB572R4oCUd3d3LndhenliLmNvbQ=='); ?>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Weight')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weight" data-rule="required" class="form-control form-control" name="row[weight]" type="number" value="{$row.weight}">
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

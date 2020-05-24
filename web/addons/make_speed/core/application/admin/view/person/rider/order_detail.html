@@ -1,0 +1,188 @@
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#sms" data-toggle="tab">接单历史</a></li>
+            <li><a href="#count" data-toggle="tab">统计</a></li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane fade in active" id="sms">
+                <button class="btn btn-success" type="button">
+                    今日订单 <span class="badge">{$today_orderNum}</span>
+                </button>
+                <button class="btn btn-info" type="button">
+                    今日收入 <span class="badge">{$today_amount}</span>
+                </button>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th style="width: 8%">订单id</th>
+                        <th style="width: 8%">订单类型</th>
+                        <th style="width: 10%">订单状态</th>
+                        <th>接单时间</th>
+                        <th>取件时间</th>
+                        <th>送达时间</th>
+                        <th>起始地址</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {if($list)}
+                    {foreach $list as $v}
+                    <tr>
+                        <th scope="row" style="text-align: left;vertical-align: middle;width: 100px;">{$v.id}</th>
+                        <td style="text-align: left;vertical-align: middle;width: 100px;">
+                        {switch name="$v.type" }
+                            {case value="0"}跑腿{/case}
+                            {case value="1"}帮买{/case}
+                            {case value="2"}万能服务{/case}
+                            {case value="3"}代驾{/case}
+                            {case value="5"}货运{/case}
+                            {case value="6"}家政{/case}
+                        {/switch}
+                        </td>
+                        <td style="text-align: left;vertical-align: middle;width: 100px;">
+                            {switch name="$v.status" }
+                            {case value="3"}待取件{/case}
+                            {case value="4"}待送达{/case}
+                            {case value="5"}已送达{/case}
+                            {case value="6"}已送达{/case}
+                            {default /}其他
+                            {/switch}
+                        </td>
+                        <td style="text-align: left;vertical-align: middle;width: 100px;">{$v.accept_time|datetime}</td>
+                        <td style="text-align: left;vertical-align: middle;width: 100px;">{$v.get_time  ? date("Y-m-d H:i:s",$v.get_time)  : '未取件'}</td>
+                        <td style="text-align: left;vertical-align: middle;width: 100px;">{$v.goto_time ? date("Y-m-d H:i:s",$v.goto_time) : '未送达'}</td>
+                        <td style="text-align: left;vertical-align: middle;width: 100px;">
+                            <span style="color:#3498E2">起</span>
+                            <span>{$v.begin_address ?? '无'}</span>
+                            <br>
+                            <span style="color: #E74C3C">终</span>
+                            <span>{$v.end_address ?? '无'}</span>
+                        </td>
+                    </tr>
+                    {/foreach}
+                    {/if}
+                    </tbody>
+                </table>
+                {$list->render()}
+
+
+            </div>
+            <div class="tab-pane fade" id="count">
+                <div class="box box-danger">
+
+                    <div class="box-body">
+                        <div id="order_count" style="height: 265px; width: 800px;" >
+
+                        </div>
+                        <div id="amountCount" style="height: 265px; width: 800px;margin-top: 30px">
+
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="__CDN__/assets/js/echarts.min.js"></script>
+<script type="text/javascript">
+    orderCount();
+    amountCount();
+
+    function orderCount(){
+        var orderCount = echarts.init(document.getElementById('order_count'));
+
+        var option = {
+            title: {
+                text: '骑手接单统计',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['总订单', '今日订单', '本周订单','本月订单','上月订单']
+            },
+            series: [
+                {
+                    name: '订单统计',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        {value: {$total_orderNum}, name: '总订单'},
+                        {value: {$today_orderNum}, name: '今日订单'},
+                        {value: {$week_orderNum}, name: '本周订单'},
+                        {value: {$month_orderNum}, name: '本月订单'},
+                        {value: {$last_month}, name: '上月订单'}
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        orderCount.setOption(option);
+    }
+
+    function amountCount(){
+        var amountCount = echarts.init(document.getElementById('amountCount'));
+
+        var option = {
+            title: {
+                text: '骑手收入统计',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['总收入', '今日收入', '本周收入','本月收入','上月收入']
+            },
+            series: [
+                {
+                    name: '收入统计',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        {value: {$total_amount}, name: '总收入'},
+                        {value: {$today_amount}, name: '今日收入'},
+                        {value: {$week_amount},  name: '本周收入'},
+                        {value: {$month_amount}, name: '本月收入'},
+                        {value: {$lastMonthAmount},name: '上月收入'}
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        amountCount.setOption(option);
+    }
+
+</script>
+

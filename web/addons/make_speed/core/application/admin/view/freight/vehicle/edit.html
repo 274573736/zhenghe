@@ -1,0 +1,418 @@
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+    }
+
+    .symbol{
+        position: absolute;
+        right: -2px;
+        top: 10px;
+    }
+</style>
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text" value="{$row.title}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Load')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group no-border no-padding">
+                <input id="c-load" data-rule="required" class="form-control" size="50" value="{$row.load}" name="row[load]" type="number">
+                <span class="input-group-addon">吨</span>
+                <span class="msg-box n-right" for="c-load_capacity"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">车身:</label>
+        <div class="col-xs-8">
+            <div class="row row-between">
+                <div class="col-xs-3">
+                    <input type="text" data-rule="required" data-msg="请输入长度" value="{$row.size.length}" class="form-control" name="size[length]" value="" placeholder="长"  data-index="5">
+                    <span class="symbol">*</span>
+                </div>
+
+                <div class="col-xs-3">
+                    <input type="text" data-rule="required" data-msg="请输入宽度" value="{$row.size.width}" class="form-control" name="size[width]" value="" placeholder="宽"  data-index="5">
+                    <span class="symbol">*</span>
+                </div>
+
+                <div class="col-xs-3">
+                    <input type="text" data-rule="required" data-msg="请输入高度" value="{$row.size.height}" class="form-control" name="size[height]" value="" placeholder="高"  data-index="5">
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">车辆图片:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" data-rule="required" class="form-control" size="50" name="row[image]" value="{$row.image}" type="text" >
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-input-id="c-image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2 ">车辆详情介绍:</label>
+        <div class="col-sm-8">
+            <textarea id="c-user_agm"  placeholder="这里可以填写车辆收费标准和车辆图片" class="form-control editor form-control" rows="5" name="row[car_detail]" cols="50">{$row.car_detail}</textarea>
+        </div>
+    </div>
+
+
+<!--    <div class="form-group">-->
+<!--        <label class="control-label col-xs-2 col-sm-2">{:__('Starting_km')}:</label>-->
+<!--        <div class="col-xs-3 col-sm-3">-->
+<!--            <div class="input-group">-->
+<!--                <input  id="c-starting_km" data-rule="required" data-target="#starting_km" value="{$row.starting_km}" class="form-control" step="0.01" data-msg="请输入起步公里" name="row[starting_km]" type="number">-->
+<!--                <span class="input-group-addon">km</span>-->
+
+<!--            </div>-->
+<!--            <span id="starting_km"></span>-->
+<!--        </div>-->
+<!--        <label class="control-label col-xs-2 col-sm-2">{:__('Starting_price')}:</label>-->
+<!--        <div class="col-xs-3 col-sm-3">-->
+<!--            <div class="input-group">-->
+<!--                <input id="c-starting_price" data-rule="required" data-target="#start_pr" value="{$row.starting_price}" class="form-control" step="0.01" name="row[starting_price]" data-msg="请输入起步价格" type="number">-->
+<!--                <span class="input-group-addon" >元</span>-->
+<!--            </div>-->
+<!--            <span id="start_pr"></span>-->
+<!--        </div>-->
+
+<!--    </div>-->
+    <div class="form-group" style="margin-left: 65px;">
+        <label class="col-sm-1 control-label">起步价</label>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input  id="c-starting_km" data-rule="required" data-target="#starting_km" value="{$row.starting_km}"  class="form-control" step="0.01" data-msg="请输入起步公里" name="row[starting_km]" type="number">
+                <div class="input-group-addon">公里</div>
+            </div>
+            <span id="starting_km"></span>
+        </div>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input type="number" style="width: 60px;" data-rule="required" data-target="#start_kg" class="form-control" value="{$row['starting_weight'] ?? ''}" data-msg="请输入起步公斤" name="row[starting_weight]" placeholder="输入起步公斤">
+                <div class="input-group-addon">公斤内</div>
+            </div>
+            <span id="start_kg"></span>
+
+        </div>
+        <div class="col-sm-2">
+            <div class="input-group">
+                <input id="c-starting_price" data-rule="required" data-target="#start_pr" value="{$row.starting_price}" class="form-control" step="0.01" name="row[starting_price]" data-msg="请输入起步价格" type="number">
+                <div class="input-group-addon">元</div>
+            </div>
+            <span id="start_pr"></span>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>几公里重量以内,起步价</span>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <span style="color: red;">*第一个里程费，需输入前面的起步里程数,后续添加的随意,续重和装卸费类似</span>
+            </div>
+        </div>
+    </div>
+    {if $row['xuc']}
+        {foreach $row['xuc'] as $k=>$v}
+        <div class="form-group xucPerKm" >
+        <label class="control-label col-xs-2 col-sm-2">里程费:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input id="c-xuc"  data-rule="required" data-target="#xuc" class="form-control " value="{$k}" step="0.01" name="xuc[]" data-msg="请输入续程" type="number">
+
+                <span class="input-group-addon" >公里以后</span>
+            </div>
+            <span id="xuc"></span>
+        </div>
+        <label class="control-label col-xs-2 col-sm-2">每公里:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input  id="c-per_km" data-rule="required" data-target="#per_km" class="form-control" value="{$v}" step="0.01" data-msg="请输入价格" name="per_km[]" type="number">
+                <span class="input-group-addon">元</span>
+            </div>
+            <span id="per_km"></span>
+        </div>
+        <div class="input-group">
+            <div class="input-group-addon no-border no-padding">
+                <span><button type="button" id="add_input" class="btn btn-success "><i class="fa fa-plus "></i></button></span>
+                <span><button type="button" id="" class="btn btn-danger del_input" ><i class="fa fa-times"></i></button></span>
+            </div>
+            <span class="msg-box n-right" ></span>
+        </div>
+        </div>
+        {/foreach}
+    {/if}
+    <hr>
+
+    {if $row['added_weight']}
+    {foreach $row['added_weight'] as $k=>$v}
+    <div class="form-group weight_group" >
+        <label class="control-label col-xs-2 col-sm-2">续重费:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input  id="added_weight" data-rule="required"  class="form-control " value="{$v.kg ?? ''}" step="0.01" name="added_weight[we_kg][]" data-msg="请输入续重" type="number">
+                <span class="input-group-addon" >公斤以后</span>
+            </div>
+            <span ></span>
+        </div>
+        <label class="control-label col-xs-2 col-sm-2">每&nbsp<input data-rule="required"  id="per_kg"  value="{$v.per_kg ?? ''}"  style="width:50px"  step="0.01"  name="added_weight[per_we_kg][]" type="number">公斤增加:</label>
+        <div class="col-xs-3 col-sm-3">
+            <div class="input-group">
+                <input  id="per_price" data-rule="required" class="form-control" value="{$v.price ?? ''}"  step="0.01" data-msg="请输入价格" name="added_weight[per_we_price][]" type="number">
+                <span class="input-group-addon">元</span>
+            </div>
+            <span></span>
+        </div>
+        <div class="input-group">
+            <div class="input-group-addon no-border no-padding">
+                <span><button type="button"  class="btn btn-success add_weight"><i class="fa fa-plus "></i></button></span>
+                <span><button type="button"  class="btn btn-danger del_weight" ><i class="fa fa-times"></i></button></span>
+            </div>
+            <span class="msg-box n-right" ></span>
+        </div>
+    </div>
+    {/foreach}
+    {else \}
+        <div class="form-group weight_group" >
+            <label class="control-label col-xs-2 col-sm-2">续重费:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="added_weight" data-rule="required"  class="form-control "  step="0.01" name="added_weight[we_kg][]" data-msg="请输入续重" type="number">
+                    <span class="input-group-addon" >公斤以后</span>
+                </div>
+                <span ></span>
+            </div>
+            <label class="control-label col-xs-2 col-sm-2">每&nbsp<input data-rule="required"  id="per_kg"   style="width:50px"  step="0.01"  name="added_weight[per_we_kg][]" type="number">公斤增加:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="per_price" data-rule="required" class="form-control"  step="0.01" data-msg="请输入价格" name="added_weight[per_we_price][]" type="number">
+                    <span class="input-group-addon">元</span>
+                </div>
+                <span></span>
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button"  class="btn btn-success add_weight"><i class="fa fa-plus "></i></button></span>
+                    <span><button type="button"  class="btn btn-danger del_weight" ><i class="fa fa-times"></i></button></span>
+                </div>
+                <span class="msg-box n-right" ></span>
+            </div>
+        </div>
+    {/if}
+    <hr>
+
+    {if $row['load_price'] }
+        {foreach $row['load_price'] as $k=>$v}
+        <div class="form-group load_group" >
+            <label class="control-label col-xs-2 col-sm-2">装卸费:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="load_kg" data-rule="required"  class="form-control" value="{$v.kg}" step="0.01" name="load_price[load_kg][]" data-msg="" type="number">
+                    <span class="input-group-addon" >公斤以后</span>
+                </div>
+                <span ></span>
+            </div>
+            <label class="control-label col-xs-2 col-sm-2">每&nbsp<input data-rule="required"  id="per_load_kg" value="{$v.per_kg}" style="width:50px"  step="0.01"  name="load_price[per_load_kg][]" type="number">公斤增加:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="load_price" data-rule="required" class="form-control" value="{$v.price}" step="0.01" data-msg="请输入价格" name="load_price[per_load_price][]" type="number">
+                    <span class="input-group-addon">元</span>
+                </div>
+                <span></span>
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button"  class="btn btn-success add_load"><i class="fa fa-plus "></i></button></span>
+                    <span><button type="button"  class="btn btn-danger del_load" ><i class="fa fa-times"></i></button></span>
+                </div>
+                <span class="msg-box n-right" ></span>
+            </div>
+        </div>
+        {/foreach}
+    {else /}
+        <div class="form-group load_group" >
+            <label class="control-label col-xs-2 col-sm-2">装卸费:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="load_kg" data-rule="required"  class="form-control"  step="0.01" name="load_price[load_kg][]" data-msg="" type="number">
+                    <span class="input-group-addon" >公斤以后</span>
+                </div>
+                <span ></span>
+            </div>
+            <label class="control-label col-xs-2 col-sm-2">每&nbsp<input data-rule="required"  id="per_load_kg" style="width:50px"  step="0.01"  name="load_price[per_load_kg][]" type="number">公斤增加:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="load_price" data-rule="required" class="form-control"  step="0.01" data-msg="请输入价格" name="load_price[per_load_price][]" type="number">
+                    <span class="input-group-addon">元</span>
+                </div>
+                <span></span>
+            </div>
+            <div class="input-group">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button"  class="btn btn-success add_load"><i class="fa fa-plus "></i></button></span>
+                    <span><button type="button"  class="btn btn-danger del_load" ><i class="fa fa-times"></i></button></span>
+                </div>
+                <span class="msg-box n-right" ></span>
+            </div>
+        </div>
+    {/if}
+
+    <hr>
+    {if $row['cub_price'] }
+    {foreach $row['cub_price'] as $k=>$v}
+        <div class="form-group cub_group" >
+            <label class="control-label col-xs-2 col-sm-2">体积费:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="cub"  class="form-control" value="{$v.start ?? ''}" step="0.01" name="cub[start][]" data-msg="请输入体积费用" type="number">
+                    <span class="input-group-addon" >立方以后</span>
+                </div>
+                <span ></span>
+            </div>
+            <label class="control-label col-xs-2 col-sm-2">每&nbsp<input  value="{$v.per_cub ?? ''}" id="per_cub" style="width:50px"  step="0.01"  name="cub[per_cub][]" type="number">立方增加:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="per_cub_price"  class="form-control" value="{$v.price ?? ''}" step="0.01" data-msg="请输入价格" name="cub[per_cub_price][]" type="number">
+                    <span class="input-group-addon">元</span>
+                </div>
+                <span></span>
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button"  class="btn btn-success add_cub"><i class="fa fa-plus "></i></button></span>
+                    <span><button type="button"  class="btn btn-danger del_cub" ><i class="fa fa-times"></i></button></span>
+                </div>
+                <span class="msg-box n-right" ></span>
+            </div>
+        </div>
+    {/foreach}
+    {else/}
+        <div class="form-group cub_group" >
+            <label class="control-label col-xs-2 col-sm-2">体积费:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="cub"  class="form-control" step="0.01" name="cub[start][]" data-msg="请输入体积费用" type="number">
+                    <span class="input-group-addon" >立方以后</span>
+                </div>
+                <span ></span>
+            </div>
+            <label class="control-label col-xs-2 col-sm-2">每&nbsp<input id="per_cub" style="width:50px"  step="0.01"  name="cub[per_cub][]" type="number">立方增加:</label>
+            <div class="col-xs-3 col-sm-3">
+                <div class="input-group">
+                    <input  id="per_cub_price"  class="form-control"  step="0.01" data-msg="请输入价格" name="cub[per_cub_price][]" type="number">
+                    <span class="input-group-addon">元</span>
+                </div>
+                <span></span>
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button"  class="btn btn-success add_cub"><i class="fa fa-plus "></i></button></span>
+                    <span><button type="button"  class="btn btn-danger del_cub" ><i class="fa fa-times"></i></button></span>
+                </div>
+                <span class="msg-box n-right" ></span>
+            </div>
+        </div>
+    {/if}
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">整车费:</label>
+        <div class="col-xs-6 col-sm-3">
+            <div class="input-group">
+                <input id="c-total_car" data-rule="required" class="form-control" name="row[total_car]" type="number" value="{$row['total_car'] ?? ''}">
+                <span class="input-group-addon">%</span>
+                <span class="msg-box n-right" for="c-total_car"></span>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>默认为拼车价格，整车费为拼车价格基础额外增加的百分比费用。</span>
+
+    </div>
+
+
+    <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">状态:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+                <label>
+                    <input  name="row[status]" type="radio" value="0" {eq name="$row['status']" value="0"} checked {/eq} />隐藏
+                </label>
+                <label>
+                    <input  name="row[status]" type="radio" value="1" {eq name="$row['status']" value="1"} checked {/eq} />显示
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">排序:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sort" data-rule="required" class="form-control" name="row[sort]" value="{$row.sort}" type="number" data-tip="数值越大排序越靠前">
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

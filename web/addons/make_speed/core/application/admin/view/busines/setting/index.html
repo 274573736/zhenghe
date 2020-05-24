@@ -1,0 +1,119 @@
+<style>
+    /*.n-right .msg-wrap{right:10px;}*/
+
+    /*.n-default .n-left, .n-default .n-right{margin-left:8px;}*/
+
+</style>
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#base" data-toggle="tab">基本设置</a></li>
+            <li><a href="#hezuo" data-toggle="tab">合作协议</a></li>
+            <li><a href="#koukuan" data-toggle="tab">扣款协议</a></li>
+            <li><a href="#eleme" data-toggle="tab">饿了么设置</a></li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+
+            <div class="tab-pane fade in active" id="base">
+
+            <form id="program-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="setting/add">
+
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">是否启用大客户快速下单:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        {:build_radios('business_switch', ['0'=>'关', '1'=>'开'], !empty($result['business_switch']) ? $result['business_switch'] : '')}
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">充值最低金额：</label>
+                    <div class="col-sm-3">
+                        <input type="text" data-rule="" class="form-control" name="business_recharge" value="{$result['business_recharge'] ?? ''}">
+                    </div>
+                    <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>大客户每次充值账户的最低金额</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-avatar" class="control-label col-xs-12 col-sm-2">一键下单宣传图:</label>
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="input-group">
+                            <input id="c-business_poster1" data-rule="" class="form-control" size="50" name="business_poster1" type="text" value="{$result['business_poster'][0] ?? ''}">
+                            <div class="input-group-addon no-border no-padding">
+                                <span><button type="button" id="plupload-business_poster1" class="btn btn-success plupload" data-input-id="c-business_poster1" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-business_poster1"><i class="fa fa-upload"></i> 上传</button></span>
+                            </div>
+                            <span class="msg-box n-right" for="c-business_poster1"></span>
+                        </div>
+                        <ul class="row list-inline plupload-preview" id="p-business_poster1"></ul>
+                    </div>
+                    <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 670*400</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="c-avatar" class="control-label col-xs-12 col-sm-2">更多优惠宣传图:</label>
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="input-group">
+                            <input id="c-business_poster2" data-rule="" class="form-control" size="50" name="business_poster2" type="text" value="{$result['business_poster'][1] ?? ''}">
+                            <div class="input-group-addon no-border no-padding">
+                                <span><button type="button" id="plupload-usershare" class="btn btn-success plupload" data-input-id="c-business_poster2" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-business_poster2"><i class="fa fa-upload"></i> 上传</button></span>
+                            </div>
+                            <span class="msg-box n-right" for="c-business_poster2"></span>
+                        </div>
+                        <ul class="row list-inline plupload-preview" id="p-business_poster2"></ul>
+                    </div>
+                    <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 670*400</span>
+                </div>
+
+                <div class="form-group layer-footer">
+                    <label class="control-label col-xs-12 col-sm-2"></label>
+                    <div class="col-xs-12 col-sm-8">
+                        <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                        <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                    </div>
+                </div>
+
+            </form>
+            </div>
+
+            <div class="tab-pane fade in" id="hezuo">
+                <form id="hezuo-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="setting/addtext">
+                    <div class="form-group" style="padding: 20px">
+                        <textarea class="form-control editor" name="business_hezuo">{$result['business_hezuo'] ?? ''}</textarea>
+                    </div>
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade in" id="koukuan">
+                <form id="koukuan-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="setting/addtext">
+                    <div class="form-group" style="padding: 20px">
+                        <textarea class="form-control editor" name="business_kk">{$result['business_kk'] ?? ''}</textarea>
+                    </div>
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade in" id="eleme">
+                {include file="busines/setting/ele" /}
+            </div>
+
+        </div>
+    </div>
+</div>

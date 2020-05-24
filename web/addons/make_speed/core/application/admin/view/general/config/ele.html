@@ -1,0 +1,79 @@
+<form id="price-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="config/eleme">
+
+    <div class="form-group"></div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">是否启用饿了么对接:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('eleme_switch', ['0'=>'关闭', '1'=>'启用'], !empty($result['eleme_switch']) ? $result['eleme_switch'] : '')}
+        </div>
+    </div>
+    <div class="form-group"></div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Key：</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" value="{$result['ele_key'] ?? ''}" name="ele_key" placeholder="请输入Key">
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>饿了么开放平台创建应用所获得的Key</span>
+    </div>
+    <div class="form-group"></div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Secret：</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" value="{$result['ele_secret'] ?? ''}" name="ele_secret" placeholder="请输入Secret">
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>饿了么开放平台创建应用所获得的Secret</span>
+    </div>
+    <div class="form-group"></div>
+
+    <div class="form-group" style="margin-bottom:0;">
+        <label class="col-sm-2 control-label">推送URL：</label>
+        <div class="col-sm-6">
+            <p class="form-control-static  text-info">https://t.xiaomawei.com/addons/make_speed/core/public/index.php/admin/eleme/callback</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label"> </label>
+        <div class="col-sm-6">
+            <p class="form-control-static">
+                <i class="fa fa-info-circle mr-xs"></i>饿了么开放平台 创建应用时，需复制此链接到应用中设置的-推送URL
+            </p>
+        </div>
+    </div>
+    <div class="form-group"></div>
+
+    <div class="form-group"  style="margin-bottom:0;">
+        <label class="col-sm-2 control-label">回调地址URL：</label>
+        <div class="col-sm-6">
+            <p class="form-control-static text-info">https://t.xiaomawei.com/addons/make_speed/core/public/index.php/admin/eleme/callback</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label"> </label>
+        <div class="col-sm-6">
+            <p class="form-control-static">
+                <i class="fa fa-info-circle mr-xs"></i>饿了么开放平台 创建应用时，需复制此链接到应用中设置的-回调地址URL
+            </p>
+        </div>
+    </div>
+    <div class="form-group"></div>
+
+
+    <div class="form-group" style="padding: 20px">
+        <label class="col-sm-2 control-label">商家授权后的回调页面说明内容：</label>
+        <div class="col-sm-6">
+            <textarea class="form-control editor" name="rider_account">{$result['eleme_desc'] ?? ''}</textarea>
+        </div>
+    </div>
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>

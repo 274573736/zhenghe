@@ -1,0 +1,2 @@
+<?php
+ defined("\x49\x4e\137\x49\101") or exit("\101\143\x63\x65\163\163\x20\x44\x65\x6e\x69\x65\x64"); use Mclass\GetRedis; goto nnZHP; xnn1Y: $this->result(0, '', "\x31"); goto lg6UB; TCmkT: $redis = @GetRedis::instance(); goto U_K4W; Hjlxi: if (!$re) { goto Dq_9C; } goto xnn1Y; lg6UB: Dq_9C: goto n8KV4; nnZHP: global $_W; goto TCmkT; U_K4W: $re = @$redis->incrBy("\156\157\164\x69\146\x79" . $GLOBALS["\165\x6e\x69\141\143\151\x64"] . $_W["\157\x70\145\156\151\144"], 1); goto Hjlxi; n8KV4: $this->result(0, '', 2);

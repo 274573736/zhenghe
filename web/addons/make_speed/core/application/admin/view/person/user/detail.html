@@ -1,0 +1,33 @@
+<div class="panel panel-default panel-intro" style="-webkit-box-shadow:none;box-shadow: none">
+    <div class="panel-heading">
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#order" data-toggle="tab">已邀请好友</a></li>
+
+    </ul>
+    </div>
+</div>
+<style>
+    .form-horizontal{margin-top: 18px}
+</style>
+<div class="panel-body">
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="order">
+            <div class="form-horizontal">
+
+                {foreach name="$row" item="vo"}
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">{$key+1}.</label>
+                    <div class="col-sm-4">
+                        <img src="{$vo.avatar}" alt="" style="width:30px;height:30px;float:left">
+                        <p class="form-control-static" style="float:left">{$vo.nick_name}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">注册时间: </label>
+                    <div class="col-sm-4">
+                        <p class="form-control-static" style="float:left">{:date('Y-m-d H:i', $vo.add_time)}</p>
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+    </div>
+</div>

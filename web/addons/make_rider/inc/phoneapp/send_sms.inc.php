@@ -1,0 +1,2 @@
+<?php
+ use Validate\IsMobile; use Server\app\SendSMS; goto Zvv4L; NnAG2: $re = SendSMS::send($mobile); goto RugxR; EdgO4: msg("\xe5\217\x91\xe9\200\201\346\x88\220\xe5\x8a\x9f"); goto pFB73; AO7Zf: $mobile = $this->request->param("\x6d\x6f\142\x69\154\145"); goto NnAG2; RugxR: if (!(true === $re)) { goto CX4JP; } goto EdgO4; Zvv4L: (new IsMobile())->goCheck(); goto AO7Zf; pFB73: CX4JP:

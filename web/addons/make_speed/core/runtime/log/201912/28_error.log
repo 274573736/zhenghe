@@ -1,0 +1,15 @@
+---------------------------------------------------------------
+[12-28 12:14:16] 182.200.62.107 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[12-28 12:14:17] 182.200.62.107 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[12-28 12:15:31] 182.200.62.107 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+

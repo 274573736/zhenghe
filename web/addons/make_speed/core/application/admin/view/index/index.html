@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{$config.language}">
+    <head>
+        <!-- 加载样式及META信息 -->
+        {include file="common/meta" /}
+    </head>
+    <body class="hold-transition skin-green sidebar-mini fixed {if $config.fastadmin.multiplenav}multiplenav{/if}" id="tabs">
+        <div class="wrapper" style="overflow: visible">
+
+            <!-- 头部区域 -->
+            <header id="header" class="main-header">
+                {include file='common/header' /}
+            </header>
+
+            <!-- 左侧菜单栏 -->
+            <aside class="main-sidebar">
+                {include file='common/menu' /}
+                <!--{if empty($mcopyright) &&  empty($_w_copyright)  }-->
+                <!--<div class="container-fluid footer text-center" role="footer" style=" position:absolute;left:10px;bottom:13px;">-->
+                    <!--<div class="copyright">-->
+                        <!--<span style='color:#fff'>Powered by </span><a href="http://www.we7.cc"><b>微擎</b></a>-->
+                        <!--<span style='color:#fff'> v2.0.7</span>-->
+                        <!--<span style='color:#fff'>  &copy; 2014-2019 www.w7.cc</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--{/if}-->
+            </aside>
+
+            <!-- 主体内容区域 -->
+            <div class="content-wrapper tab-content tab-addtabs">
+                {if $fixedmenu}
+                <div role="tabpanel" class="tab-pane {:$referermenu?'':'active'}" id="con_{$fixedmenu.id}">
+                    <iframe src="{$fixedmenu.url}?addtabs=1" width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling-x="no" scrolling-y="auto" allowtransparency="yes"></iframe>
+                </div>
+                {/if}
+                {if $referermenu}
+                <div role="tabpanel" class="tab-pane active" id="con_{$referermenu.id}">
+                    <iframe src="{$referermenu.url}?addtabs=1" width="100%" height="100%" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling-x="no" scrolling-y="auto" allowtransparency="yes"></iframe>
+                </div>
+                {/if}
+            </div>
+
+            {if empty($_w_copyright)  }
+            <footer class="main-footer " >
+                <div class="container-fluid footer text-center" role="footer" >
+                    <div class="copyright">
+                        <span>Powered by </span><a href=" "><b>微擎</b></a>
+                        <span > v2.0.7</span>
+                        <span >  &copy; 2014-2019 www.w7.cc</span>
+                    </div>
+                </div>
+            </footer>
+            {/if}
+
+            <!-- 右侧控制栏 -->
+            <div class="control-sidebar-bg"></div>
+            {include file="common/control" /}
+        </div>
+
+        <!-- 加载JS脚本 -->
+        {include file="common/script" /}
+    </body>
+</html>

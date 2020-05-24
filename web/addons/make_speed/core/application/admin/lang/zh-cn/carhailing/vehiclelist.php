@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'Plate_no'                => '车牌号码',
+    'Drivering_license'       => '行驶证',
+    'Car_type_id'             => '车型',
+    'Vehicle_brand_id'        => '品牌',
+    'Cc'                      => '排量',
+    'Seat_no'                 => '座位数',
+    'Mileage'                 => '行驶里程',
+    'Udid'                    => '车辆识别码',
+    'Engline_no'              => '发动机号码',
+    'Status'                  => '车辆状态',
+    'Status 1'                => '正常',
+    'Status 0'                => '报废',
+    'Drivering_license_exp'   => '行驶证过期时间',
+    'Operate_status'          => '运营状态',
+    'Operate_status 0'        => '空闲中',
+    'Operate_status 1'        => '待出发',
+    'Operate_status 2'        => '行驶中',
+    'Operate_status 3'        => '停运',
+    'Annual_exp'              => '年检到期时间',
+    'Car_insurance_exp'       => '车险到期时间',
+    'Register_time'           => '注册时间',
+    'Online_time'             => '上线时间',
+    'Off_line_time'           => '下线时间',
+    'Drivering_license_image' => '行驶证图片',
+    'Vehicle_images'          => '车辆图片',
+    'Updatetime'              => '修改时间'
+];

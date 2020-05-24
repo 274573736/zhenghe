@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css"  media="all">
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1"></label>
+        <div class="col-xs-12 col-sm-11">
+            <div id="test1" class="demo-transfer"></div>
+        </div>
+    </div>
+
+    <input type="hidden" value="" name="row[rider_id]">
+
+</form>
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+
+<script>
+layui.use(['transfer', 'layer', 'util'], function(){
+
+    var $ = layui.$
+        ,transfer = layui.transfer
+        ,layer = layui.layer
+        ,util = layui.util;
+
+    Layer = layui.layer;
+
+    //模拟数据
+    var data1 = {:json_encode($riderList)};
+
+    var  value1 = {:json_encode($ridered)};
+
+    console.log(value1);
+
+    var id = {$row.id};
+
+    //显示搜索框
+    transfer.render({
+        elem: '#test1'
+        ,id: 'rider-transfer'
+        ,data: data1
+        ,value: value1
+        ,title: ['骑手列表', '已加入骑手']
+        ,showSearch: true
+        ,width:300
+        ,height:480
+        ,text: {
+            none: '暂无骑手'
+            ,searchNone: '暂无相匹配骑手'
+        },
+        parseData: function(res){
+            return {
+                "value": res.id //数据值
+                ,"title": res.real_name+' | '+res.mobile //数据标题
+                ,"disabled": res.status  //是否禁用
+                ,"checked": false //是否选中
+            }
+        },
+        onchange:function(data, index){
+            var datas = {};
+            var getData = transfer.getData('rider-transfer');
+            for(var i in getData) {
+                datas[i] = getData[i]['value'];
+            }
+            var loadi = layer.msg('正在处理, 请稍后', {icon: 16});
+            $.post('busines/business/rider/ids/'+id,{data:datas,type:index},function(ret){
+                if (ret.code === 1) {
+                    Toastr.success(ret.msg);
+                } else {
+                    Toastr.error(ret.msg);
+                }
+                layer.close(loadi);
+            });
+        }
+
+    })
+});
+</script>

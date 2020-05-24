@@ -1,0 +1,112 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
+                {foreach name="typeList" item="vo"}
+                <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" data-rule="required" class="form-control form-control" name="row[title]" type="text" value="{$row.title}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Code')}:</label>
+        <div class="col-xs-12 col-sm-5">
+            <input id="c-code" class="form-control form-control" value="{$row.code}" name="row[code]" type="text" readonly placeholder='生成后可通过兑换码得到此优惠券'>
+        </div>
+        <div class="col-xs-12 col-sm-2" style='padding:0;'>
+            <button class="btn btn-primary" id="set_rand_code" style='width:100%'>生成兑换码</button>
+        </div>
+        <div class="col-xs-12 col-sm-1" style='padding-left:0;'>
+            <button class="btn btn-danger" id="clear_rand_code" style='width:100%'><i class="fa fa-times"></i></button>
+        </div>
+    </div>
+	<?php echo base64_decode('5pu05aSa5rqQ56CB6K+36K6/6Zeu6LWE5rqQ6YKm5rqQ56CB572R4oCUd3d3LndhenliLmNvbQ=='); ?>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">兑换码兑换次数:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-code_num" class="form-control form-control" step="1" name="row[code_num]" type="number" value="{$row.code_num}">
+                <div class="input-group-addon">次</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Money')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-money" data-rule="required" class="form-control" step="0.01" name="row[money]" type="number" value="{$row.money}">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Satisfy_money')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-satisfy_money" data-rule="required" class="form-control form-control" step="0.01" name="row[satisfy_money]" type="number" value="{$row.satisfy_money}">
+                <div class="input-group-addon">元</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Day')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-day" data-rule="required" class="form-control form-control" name="row[day]" type="number" value="{$row.day}">
+                <div class="input-group-addon">天</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">距离(公里)内使用:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+            <input id="c-distance" data-rule="required" placeholder="" class="form-control form-control" name="row[distance]" type="text" value="{$row.distance}">
+                <div class="input-group-addon">公里</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">兑换积分:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-gral" data-rule="required" class="form-control form-control" name="row[gral]" type="number" value="{$row.gral}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">图片:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-img" class="form-control" size="80" name="row[img]" type="text" value="{$row.img}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-img" class="btn btn-danger plupload" data-input-id="c-img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-img"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-img" class="btn btn-primary fachoose" data-input-id="c-img" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-img"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-img"></ul>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>建议尺寸大小(宽*高): 750*300</span>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">使用规则说明:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-description" data-rule="" class="form-control form-control" name="row[description]" type="text" value="{$row.description}">
+        </div>
+    </div>
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

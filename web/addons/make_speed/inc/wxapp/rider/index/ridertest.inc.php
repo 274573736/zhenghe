@@ -1,0 +1,2 @@
+<?php
+ goto qyNb2; lzOBE: global $_GPC; goto WazAr; qyNb2: defined("\x49\x4e\x5f\x49\x41") or exit("\101\143\143\x65\163\163\40\x44\145\x6e\151\x65\144"); goto nUOvy; nUOvy: global $_W; goto lzOBE; WazAr: var_dump($GLOBALS["\165\156\x69\x61\143\x69\144"], $GLOBALS["\103\x55\122\x52\105\116\x54\137\x52\x49\x44\105\122"]);

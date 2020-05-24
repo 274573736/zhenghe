@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商家授权结果</title>
+
+    <link href="__PUBLIC__/assets/css/iconfont.css" rel="stylesheet">
+    <link href="__PUBLIC__/assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link href="__PUBLIC__/assets/plugins/layer/anime.css" rel="stylesheet" />
+
+    <script src="__PUBLIC__/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="__PUBLIC__/assets/plugins/layer/layer.js"></script>
+
+<style>
+    body p,span,li,a{
+        font-size: 2.45em;
+    }
+    .row{
+        margin-top: 8px;
+        width:100%;
+        display: inline-block;
+        background-color: #2fe5c2;
+        border-radius: 10px;
+    }
+    .row .auth-p{
+        height: 90px;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 2.7em;
+        line-height: 90px;
+    }
+    .content{
+        padding: 18px;
+    }
+    .content p,span,li{
+        text-align: left;
+    }
+
+    .content .name{
+        font-size: 2.55em;
+        font-weight: bold;
+        color:#13c4fc;
+    }
+
+    .error-span{
+        width: 100%;
+        height: auto;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+    }
+    .auth-error{
+        background-color: #ff566f;
+    }
+
+</style>
+</head>
+<body>
+
+{empty name="$info"}
+<div class="row animated fadeInDown {notempty name='$error_msg'}auth-error{/notempty}">
+    <p class="auth-p">
+        {notempty name='$error_msg'}
+        <i class="fa fa-times" aria-hidden="true"></i>&nbsp;授权失败, 请联系平台管理或重试
+        {else /}
+        <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;授权成功
+        {/notempty}
+    </p>
+</div>
+{/empty}
+
+<div class="content animated fadeInLeft" align="center">
+
+    <img src="__PUBLIC__{$ele['eleme_logo'] ?? ''}" class="logo" width="320px" height="320px"/>
+
+    <p class="name" style="text-align: center">{$ele['eleme_name'] ?? ''}</p>
+
+    {notempty name='$error_msg'}<span class="error-span">{$error_msg}</span>{/notempty}
+    {$ele['eleme_desc'] ?? ''}
+</div>
+
+<script>
+$(function () {
+
+});
+</script>
+</body>
+</html>

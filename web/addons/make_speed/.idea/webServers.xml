@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ae826c8d-1b3a-4af4-a13d-cbaf6b98e97c" name="suss" url="http://47.105.134.164">
+        <fileTransfer host="47.105.134.164" port="22" accessType="SFTP" password="dfd4df8bdfeadf9bdf98df99df9edf9fdff9dfd9dfcedfc6dfc2" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

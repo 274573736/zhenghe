@@ -1,0 +1,25 @@
+---------------------------------------------------------------
+[01-06 16:19:57] 171.43.246.173 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[01-06 16:42:07] 171.43.246.173 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[01-06 21:01:07] 171.43.246.173 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[01-06 21:03:21] 117.150.138.139 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[01-06 21:03:51] 171.43.246.173 GET /addons/make_speed/core/public/
+[ error ] [8]未定义变量: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+

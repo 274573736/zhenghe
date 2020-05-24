@@ -1,0 +1,2 @@
+<?php
+ use Model\Config; goto YAIr0; YAIr0: $type = Config::get("\144\143\150\x61\x72\x67\x65\x5f\x74\171\x70\x65"); goto Tz5cV; LmKrm: $data = ["\164\x79\160\145" => $type]; goto k1Aro; Tz5cV: $type = $type ? intval($type) : 1; goto LmKrm; k1Aro: return msg("\x6f\x6b", $data);

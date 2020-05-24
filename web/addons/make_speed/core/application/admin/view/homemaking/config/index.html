@@ -1,0 +1,101 @@
+
+
+
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#base" data-toggle="tab">基础配置</a></li>
+        </ul>
+    </div>
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="base">
+                <form id="base-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="homemaking/config/base">
+<!--                    <div class="form-group">-->
+<!--                        <label class="control-label col-xs-12 col-sm-2">货运订单推送范围:</label>-->
+<!--                        <div class="col-xs-12 col-sm-3">-->
+<!--                            <div class="input-group no-border no-padding">-->
+<!--                                <input id="c-driver_scope" data-rule="required" class="form-control" size="50"  name="row[driver_scope]" type="number" {present name="$setting['driver_scope']"} value="{$setting['driver_scope']}" {/present}>-->
+<!--                                <span class="input-group-addon">km</span>-->
+<!--                                <span class="msg-box n-right" for="c-driver_scope"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-12 col-sm-2">认证选择类目最多可选择:</label>
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="input-group no-border no-padding">
+                                <input id="c-driver_scope" data-rule="required" class="form-control" size="50"  name="row[happly_cates]" type="number"  value="{$setting['happly_cates'] ?? 5}" >
+                                <span class="input-group-addon">个</span>
+                                <span class="msg-box n-right" for="c-driver_scope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label  col-xs-12 col-sm-2" >下单拍照上传是否开启:</label>
+                        <div class="col-xs-12 col-sm-3">
+                            {:Form::radios('row[hupload_img_switch]',[1=>'开',0=>'关'],isset($setting['hupload_img_switch']) ? $setting['hupload_img_switch']:1 )}
+                        </div>
+                    </div>
+
+                    <div class="form-group layer-footer">
+                        <label class="control-label col-xs-12 col-sm-2"></label>
+                        <div class="col-xs-12 col-sm-8">
+                            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--<div class="panel panel-default panel-intro">-->
+    <!--<div class="panel-heading">-->
+
+        <!--<ul id="myTab" class="nav nav-tabs">-->
+            <!--<li class="active"><a href="#base" data-toggle="tab">基础配置</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <!--<div class="panel-body">-->
+        <!--<div id="myTabContent" class="tab-content">-->
+            <!--<div class="tab-pane fade" id="base">-->
+                <!--<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="freight/fconfig/base">-->
+                    <!--<div class="form-group">-->
+                        <!--<div>-->
+                            <!--<label class="control-label col-xs-12 col-sm-2">附近司机图标:</label>-->
+                            <!--<div class="col-xs-12 col-sm-3">-->
+                                <!--<div class="input-group">-->
+                                    <!--<input id="c-icon_path" data-rule="" data-tip="建议尺寸40*20" class="form-control" size="50" name="row[icon_path]" type="text" {present name="$setting['icon_path']"} value="{$setting['icon_path']}" {/present}>-->
+                                    <!--<div class="input-group-addon no-border no-padding">-->
+                                        <!--<span><button type="button" id="plupload-icon_path" class="btn btn-danger plupload" data-input-id="c-icon_path" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-icon_path"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>-->
+                                        <!--<span><button type="button" id="fachoose-icon_path" class="btn btn-primary fachoose" data-input-id="c-icon_path" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>-->
+                                    <!--</div>-->
+                                    <!--<span class="msg-box n-right" for="c-icon_path"></span>-->
+                                <!--</div>-->
+                                <!--<ul class="row list-inline plupload-preview" id="p-icon_path"></ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group layer-footer">-->
+                        <!--<label class="control-label col-xs-12 col-sm-2"></label>-->
+                        <!--<div class="col-xs-12 col-sm-8">-->
+                            <!--<button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>-->
+                            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

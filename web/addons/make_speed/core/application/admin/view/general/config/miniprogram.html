@@ -1,0 +1,219 @@
+<style>
+.tplclass{
+    background-color: #eeeeee;
+    opacity: 1;
+    cursor: not-allowed;
+}
+</style>
+<form id="program-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="general/config/miniprogram">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户端背景颜色：</label>
+        <div class="col-sm-2">
+            <div class="input-group"  style="display:inline">
+                <input type="text" id='mycp' data-rule="" autocomplete="off" class="form-control" name="row[program_background]" value="{$result['program_background'] ?? ''}" >
+            </div>
+        </div>
+        <label class="col-sm-1 control-label">字体颜色：</label>
+        <div class="col-sm-2">
+            <div class="input-group"  style="display:inline">
+                <select  id="c-status" data-rule="required" class="form-control selectpicker" style="display: inline-block !important;" name="row[program_font]">
+                    <option value="#000000" {notempty name="$result['program_font']"}{eq name="$result['program_font']" value="#000000"}selected{/eq}{/notempty}>黑色</option>
+                    <option value="#ffffff" {notempty name="$result['program_font']"}{eq name="$result['program_font']" value="#ffffff"}selected{/eq}{/notempty}>白色</option>
+                </select>
+            </div>
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>用户端小程序顶部导航栏颜色</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">骑手端背景颜色：</label>
+        <div class="col-sm-2">
+            <div class="input-group"  style="display:inline">
+                <input type="text" id='rmycp' data-rule="" autocomplete="off" class="form-control" name="row[rider_program_background]" value="{$result['rider_program_background'] ?? ''}" placeholder="">
+                <!--<div class="input-group-addon">公里</div>-->
+            </div>
+        </div>
+        <label class="col-sm-1 control-label">字体颜色：</label>
+        <div class="col-sm-2">
+
+            <select  id="rc-status" data-rule="required" class="form-control selectpicker" style="display: inline-block !important;" name="row[rider_program_font]">
+                <option value="#000000" {notempty name="$result['rider_program_font']"}{eq name="$result['rider_program_font']" value="#000000"}selected{/eq}{/notempty}>黑色</option>
+                <option value="#ffffff" {notempty name="$result['rider_program_font']"}{eq name="$result['rider_program_font']" value="#ffffff"}selected{/eq}{/notempty}>白色</option>
+            </select>
+
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>骑手端小程序顶部导航栏颜色</span>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">反馈客服电话：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[kefu_phone]" value="{$result['kefu_phone'] ?? ''}">
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>填写用户端联系客服电话</span>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="col-sm-2 control-label">下单通知模板消息通知ID：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control tplclass" name="row[template_id]" value="{$result['template_id'] ?? ''}">
+        </div>
+        <div class="col-xs-12 col-sm-1" style='padding-left:0;'>
+            {empty name="$result['template_id']"}
+            <button  type="button" class="btn btn-info start_tpl" id="start_ridertpl" data-id="0">启用</button>
+            {else /}
+            <button class="btn btn-info start_tpl" id="start_ridertpl" data-id="0" style="opacity: 0.65;box-shadow: none;">已启用</button>
+            {/empty}
+        </div>
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>[用户端小程序申请]（标题：下单成功通知）订单名称、订单编号、取货地址、收货地址、支付金额、订单状态、下单时间、取单号、揽收码</span>-->
+    </div>
+
+    <div class="form-group layer-footer" >
+        <label class="col-sm-2 control-label">取消订单模板消息通知ID：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control tplclass" name="row[cancel_template_id]" value="{$result['cancel_template_id'] ?? ''}">
+        </div>
+        <div class="col-xs-12 col-sm-1" style='padding-left:0;'>
+            {empty name="$result['cancel_template_id']"}
+            <button type="submit" class="btn btn-info start_tpl " id="start_ridertpl" data-id="1">启用</button>
+            {else /}
+            <button class="btn btn-info start_tpl" id="start_ridertpl" data-id="1" style="opacity: 0.65;box-shadow: none;">已启用</button>
+            {/empty}
+        </div>
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>[用户端小程序申请]（标题：订单取消通知）订单编号、订单金额、下单时间、订单状态、取消时间、温馨提示</span>-->
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="col-sm-2 control-label">通知骑手接单消息模板ID：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control tplclass" name="row[acceptorder_template_id]" value="{$result['acceptorder_template_id'] ?? ''}">
+        </div>
+        <div class="col-xs-12 col-sm-1" style='padding-left:0;'>
+            {empty name="$result['acceptorder_template_id']"}
+            <button type="button" class="btn btn-info start_tpl" id="start_ridertpl  " data-id="2">启用</button>
+            {else /}
+            <button class="btn btn-info start_tpl" id="start_ridertpl" data-id="2" style="opacity: 0.65;box-shadow: none;">已启用</button>
+            {/empty}
+        </div>
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>[骑手端小程序申请](标题: 接单提醒）订单号、商品名称、订单类型、订单金额、接单描述、预约地址</span>-->
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="col-sm-2 control-label">骑手接单后通知用户消息模板ID：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control tplclass" name="row[accepted_template_id]" value="{$result['accepted_template_id'] ?? ''}">
+        </div>
+        <div class="col-xs-12 col-sm-1" style='padding-left:0;'>
+            {empty name="$result['accepted_template_id']"}
+            <button type="button" class="btn btn-info start_tpl " id="start_ridertpl  " data-id="3">启用</button>
+            {else /}
+            <button class="btn btn-info start_tpl" id="start_ridertpl" data-id="3" style="opacity: 0.65;box-shadow: none;">已启用</button>
+            {/empty}
+        </div>
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>[用户端小程序申请](标题: 接单提醒）订单号、订单类型、预约时间、预约地址、接单人、联系电话、接单时间、订单状态</span>-->
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="col-sm-2 control-label">骑手送达后通知用户消息模板ID：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control tplclass " name="row[complete_template_id]" value="{$result['complete_template_id'] ?? ''}">
+        </div>
+        <div class="col-xs-12 col-sm-1" style='padding-left:0;'>
+            {empty name="$result['complete_template_id']"}
+            <button type="button"  class="btn btn-info start_tpl " id="start_ridertpl " data-id="4">启用</button>
+            {else /}
+            <button class="btn btn-info start_tpl" id="start_ridertpl" data-id="4" style="opacity: 0.65;box-shadow: none;">已启用</button>
+            {/empty}
+        </div>
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>[用户端小程序申请](标题: 订单完成通知）订单号码、订单类型、送达时间、骑手姓名、客服电话、订单状态</span>-->
+    </div>
+    <div class="form-group layer-footer">
+        <label class="col-sm-2 control-label">审核骑手通过/失败消息通知：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control tplclass" name="row[audit_rider_tpl]" value="{$result['audit_rider_tpl'] ?? ''}">
+        </div>
+        <div class="col-xs-12 col-sm-1" style='padding-left:0;'>
+            {empty name="$result['audit_rider_tpl']"}
+            <button type="button" class="btn btn-info start_tpl  "   id="start_ridertpl" data-id="5">启用</button>
+            {else /}
+            <button class="btn btn-info start_tpl" id="start_ridertpl" data-id="5" style="opacity: 0.65;box-shadow: none;">已启用</button>
+            {/empty}
+        </div>
+<!--        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>[骑手端小程序申请](标题: 审核结果通知）申请时间、审核结果、备注、审核时间</span>-->
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户端腾讯地图KEY：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[tencent_key]" value="{$result['tencent_key'] ?? ''}">
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>填入申请开通好的腾讯地图key值<a target="_blank" href="https://lbs.qq.com/dev/console/key/add">点击跳转</a></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户端高德地图KEY：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[gaode_key]" value="{$result['gaode_key'] ?? ''}">
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>填入申请开通好的高德地图key值 <a target="_blank" href="https://lbs.amap.com/dev/key/app">点击跳转</a></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">骑手端腾讯地图KEY：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[rider_tencent_key]" value="{$result['rider_tencent_key'] ?? ''}">
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>填入申请开通好的腾讯地图key值 <a target="_blank" href="https://lbs.qq.com/dev/console/key/add">点击跳转</a></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">骑手端高德地图KEY：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[rider_gaode_key]" value="{$result['rider_gaode_key'] ?? ''}">
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>填入申请开通好的高德地图key值 <a target="_blank" href="https://lbs.amap.com/dev/key/app">点击跳转</a></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户端小程序标题：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[user_program_title]" value="{$result['user_program_title'] ?? ''}">
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>小程序首页顶部标题</span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">骑手端小程序标题：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[rider_program_title]" value="{$result['rider_program_title'] ?? ''}">
+        </div>
+
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>小程序首页顶部标题</span>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户端版权信息：</label>
+        <div class="col-sm-3">
+            <input type="text" data-rule="" class="form-control" name="row[speed_copyright]" value="{$result['speed_copyright'] ?? ''}">
+        </div>
+        <span class="help-block"><i class="fa fa-info-circle mr-xs"></i>用户端底部版权信息</span>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <!--<button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>-->
+        </div>
+    </div>
+</form>
+            

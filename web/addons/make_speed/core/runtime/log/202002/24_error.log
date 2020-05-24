@@ -1,0 +1,30 @@
+---------------------------------------------------------------
+[02-24 23:20:28] 110.184.220.201 GET /addons/make_speed/core/public/index.php/admin/index/index
+[ error ] [8]Undefined variable: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[02-24 23:21:53] 110.184.220.201 GET /addons/make_speed/core/public/
+[ error ] [8]Undefined variable: port
+[/www/wwwroot/t.sgsinnova.com/addons/make_speed/core/runtime/temp/731477766f64d529ecdac2cf4b0dad9c.php:371]
+
+---------------------------------------------------------------
+[02-24 23:54:24] 50.98.38.37 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+
+---------------------------------------------------------------
+[02-24 23:57:48] 50.98.38.37 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+
+---------------------------------------------------------------
+[02-24 23:58:28] 50.98.38.37 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+
+---------------------------------------------------------------
+[02-24 23:58:29] 50.98.38.37 GET /addons/make_speed/core/public/index.php/admin/index/login
+[ error ] [8]未定义数组索引: site
+[/www/wwwroot/t.sgsinnova.com/framework/function/global.func.php:190]
+
